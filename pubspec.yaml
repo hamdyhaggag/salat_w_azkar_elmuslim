@@ -62,6 +62,9 @@ flutter:
     - assets/
 
   fonts:
-    - family: ar
+    - family: Cairo
       fonts:
-        - asset: assets/fonts/1.ttf
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+
