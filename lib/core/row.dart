@@ -28,7 +28,7 @@ class MyCustomRow extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 16,
                   ),
                   CircleAvatar(
                       backgroundColor: Color(0xff1E5A83),
