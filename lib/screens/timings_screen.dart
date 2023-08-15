@@ -1,9 +1,15 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/core/bottom_nav_bar.dart';
+import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
+import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
+
+import '../core/functions.dart';
 
 class TimingsScreen extends StatelessWidget {
   const TimingsScreen({Key? key}) : super(key: key);
@@ -18,15 +24,27 @@ class TimingsScreen extends StatelessWidget {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            centerTitle: true,
-            title: const Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text('مواقيت الصلاة',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-              ],
-            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        navigateTo(context, const SettingsScreens());
+                      },
+                      icon: const Padding(
+                        padding: EdgeInsets.only(right: 25, top: 5),
+                        child: Icon(
+                          FontAwesomeIcons.bars,
+                          color: Color(0xff1E5A83),
+                          size: 30,
+                        ),
+                      )),
+                ],
+              )
+            ],
           ),
           bottomNavigationBar: ClipRRect(
             borderRadius: const BorderRadius.only(

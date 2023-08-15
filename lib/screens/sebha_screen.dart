@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/core/bottom_nav_bar.dart';
-import 'package:salat_w_azkar_elmuslim/core/row.dart';
+import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
+import 'package:salat_w_azkar_elmuslim/models/row.dart';
 import 'package:salat_w_azkar_elmuslim/models/floating_button.dart';
 
 class Sebha extends StatefulWidget {

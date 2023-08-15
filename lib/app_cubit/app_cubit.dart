@@ -13,6 +13,7 @@ import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
 import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 import 'package:salat_w_azkar_elmuslim/models/direction_model.dart';
 import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
+import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
@@ -29,7 +30,7 @@ class AppCubit extends Cubit<AppStates> {
       navigateTo(context, const TimingsScreen());
     }
     if (index == 1) {
-      navigateTo(context, const SettingsScreens());
+      navigateTo(context, const Sebha());
     }
     if (index == 2) {
       navigateTo(context, const AzkarScreen());
