@@ -11,7 +11,7 @@ class MyCustomRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 15, right: 0),
+          padding: EdgeInsets.only(left: 15, right: 3),
           child: Text(
             'تسبيحة',
             style: TextStyle(
