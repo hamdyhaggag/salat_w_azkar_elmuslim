@@ -49,7 +49,9 @@ class _SebhaState extends State<Sebha> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(
                 FontAwesomeIcons.chevronRight,
                 color: Color(0xff1E5A83),
