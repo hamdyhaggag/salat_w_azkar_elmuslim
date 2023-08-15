@@ -2,8 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/core/bottom_nav_bar.dart';
+import 'package:salat_w_azkar_elmuslim/core/row.dart';
 
 class Sebha extends StatefulWidget {
+  const Sebha({super.key});
+
   @override
   _SebhaState createState() => _SebhaState();
 }
@@ -17,13 +20,19 @@ class _SebhaState extends State<Sebha> {
     });
   }
 
+  void resetCounter() {
+    setState(() {
+      counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 1,
+        elevation: 0,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -57,14 +66,14 @@ class _SebhaState extends State<Sebha> {
                   const BottomNavBar(),
                   Image.asset(
                     'assets/circle2.png',
-                    height: 700,
+                    height: 811,
                     width: 700,
                     fit: BoxFit.cover,
                     alignment: Alignment.center,
                   ),
                   Positioned(
-                    top: 270,
-                    left: 230 - counterWidth() / 2,
+                    top: 316,
+                    left: 232 - counterWidth() / 2,
                     child: Text(
                       '$counter',
                       style: const TextStyle(
@@ -74,10 +83,32 @@ class _SebhaState extends State<Sebha> {
                       ),
                     ),
                   ),
+                  const Positioned(
+                    top: 680, // Adjust the position as needed
+                    left: 0,
+                    right: 0,
+                    child: MyCustomRow(),
+                  ),
                 ],
               ),
             ),
           )),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     resetCounter();
+      //   },
+      //   label: const Text(
+      //     'البدء من جديد',
+      //     style: TextStyle(
+      //       fontSize: 20,
+      //       color: Colors.white,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   icon: const Icon(Icons.restore),
+      //   backgroundColor: const Color(0xff1E5A83),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat
     );
   }
 
