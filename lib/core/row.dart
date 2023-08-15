@@ -11,7 +11,7 @@ class MyCustomRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 19, right: 26),
+          padding: EdgeInsets.only(left: 15, right: 0),
           child: Text(
             'تسبيحة',
             style: TextStyle(
@@ -27,9 +27,12 @@ class MyCustomRow extends StatelessWidget {
             children: [
               Row(
                 children: [
+                  SizedBox(
+                    width: 20,
+                  ),
                   CircleAvatar(
                       backgroundColor: Color(0xff1E5A83),
-                      radius: 25,
+                      radius: 27,
                       child: Padding(
                         padding: EdgeInsets.only(right: 6),
                         child: Icon(
@@ -56,7 +59,7 @@ class MyCustomRow extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 8, right: 19),
+          padding: EdgeInsets.only(left: 3, right: 19),
           child: Text(
             'ينتهي بعد',
             style: TextStyle(

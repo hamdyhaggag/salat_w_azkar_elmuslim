@@ -67,13 +67,13 @@ class _SebhaState extends State<Sebha> {
                   const BottomNavBar(),
                   Image.asset(
                     'assets/circle2.png',
-                    height: 811,
+                    height: 711,
                     width: 700,
                     fit: BoxFit.cover,
                     alignment: Alignment.center,
                   ),
                   Positioned(
-                    top: 316,
+                    top: 270,
                     left: 232 - counterWidth() / 2,
                     child: Text(
                       '$counter',
@@ -85,36 +85,20 @@ class _SebhaState extends State<Sebha> {
                     ),
                   ),
                   const Positioned(
-                    top: 630, // Adjust the position as needed
+                    top: 630,
                     left: 0,
                     right: 0,
                     child: MyCustomRow(),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 716,
-                    left: 200 - counterWidth() / 2,
-                    child: const CustomFloatingActionButton(),
+                    left: 130,
+                    child: CustomResetButton(),
                   ),
                 ],
               ),
             ),
           )),
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: () {
-      //     resetCounter();
-      //   },
-      //   label: const Text(
-      //     'البدء من جديد',
-      //     style: TextStyle(
-      //       fontSize: 20,
-      //       color: Colors.white,
-      //       fontWeight: FontWeight.bold,
-      //     ),
-      //   ),
-      //   icon: const Icon(Icons.restore),
-      //   backgroundColor: const Color(0xff1E5A83),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat
     );
   }
 

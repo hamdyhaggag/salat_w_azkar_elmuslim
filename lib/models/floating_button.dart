@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomFloatingActionButton extends StatefulWidget {
-  const CustomFloatingActionButton({
-    super.key,
-  });
+class CustomResetButton extends StatefulWidget {
+  const CustomResetButton({Key? key}) : super(key: key);
 
   @override
-  State<CustomFloatingActionButton> createState() =>
-      _CustomFloatingActionButtonState();
+  State<CustomResetButton> createState() => _CustomResetButtonState();
 }
 
-class _CustomFloatingActionButtonState
-    extends State<CustomFloatingActionButton> {
+class _CustomResetButtonState extends State<CustomResetButton> {
   int counter = 0;
   void resetCounter() {
     setState(() {

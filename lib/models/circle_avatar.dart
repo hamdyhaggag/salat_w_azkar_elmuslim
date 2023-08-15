@@ -12,7 +12,7 @@ class CustomCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       backgroundColor: const Color(0xff1E5A83),
-      radius: 25,
+      radius: 27,
       child: Text(
         title,
         style: const TextStyle(
