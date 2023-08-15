@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
+import 'package:salat_w_azkar_elmuslim/core/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 
 class TimingsScreen extends StatelessWidget {
