@@ -19,6 +19,7 @@ class AzkarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('الأذكار الصحيحة',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),

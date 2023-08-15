@@ -21,20 +21,22 @@ Widget prayTimeRow({
               flex: 2,
               child: Text(
                 en,
-                style: const TextStyle(fontSize: 40),
+                style: const TextStyle(fontSize: 35),
               )),
           Expanded(
               child: Text(
             time,
             style: const TextStyle(
-                fontSize: 40, fontWeight: FontWeight.bold, color: Colors.brown),
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1E5A83)),
           )),
           Expanded(
               flex: 2,
               child: Text(
                 ar,
                 textDirection: TextDirection.rtl,
-                style: const TextStyle(fontSize: 40),
+                style: const TextStyle(fontSize: 35),
               )),
         ],
       ),
@@ -211,7 +213,7 @@ Widget radioItem({
     RadioListTile(
       title: Text(title,
           textDirection: TextDirection.rtl,
-          style: const TextStyle(color: Colors.brown)),
+          style: const TextStyle(color: Color(0xff1E5A83))),
       value: value,
       groupValue: radioValue,
       onChanged: (value) {

@@ -37,17 +37,18 @@ class MyApp extends StatelessWidget {
               const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
               const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
             ],
-            background: Container(color: const Color(0xFFF5F5F5))),
-        title: "صلاة و اذكار المسلم",
+            background: Container(color: const Color(0xFFFFFFFF))),
+        title: "Tafakkur - تَفكر",
         theme: ThemeData(
           tooltipTheme: const TooltipThemeData(
-              textStyle: TextStyle(fontSize: 30, color: Colors.white)),
+              textStyle: TextStyle(
+                  fontSize: 30, color: Colors.white, fontFamily: 'Cairo')),
           textTheme: const TextTheme(
-            subtitle1: TextStyle(fontSize: 30),
-            bodyText2: TextStyle(fontSize: 30),
+            titleMedium: TextStyle(fontSize: 25, fontFamily: 'Cairo'),
+            bodyMedium: TextStyle(fontSize: 30, fontFamily: 'Cairo'),
           ),
-          primarySwatch: Colors.brown,
-          fontFamily: 'ar',
+          // primarySwatch: Colors.cyan,
+          fontFamily: 'Cairo',
         ),
         debugShowCheckedModeBanner: false,
         home: const SplashScreen(),

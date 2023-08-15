@@ -14,6 +14,7 @@ import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 import 'package:salat_w_azkar_elmuslim/models/direction_model.dart';
 import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
+import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
@@ -25,13 +26,19 @@ class AppCubit extends Cubit<AppStates> {
   void changeBottomNavBar(int index, context) {
     currentIndex = index;
     if (index == 0) {
-      navigateTo(context, const SettingsScreens());
+      navigateTo(context, const TimingsScreen());
     }
     if (index == 1) {
-      navigateTo(context, const QiblaScreen());
+      navigateTo(context, const SettingsScreens());
     }
     if (index == 2) {
       navigateTo(context, const AzkarScreen());
+    }
+    if (index == 3) {
+      navigateTo(context, const SettingsScreens());
+    }
+    if (index == 4) {
+      navigateTo(context, const QiblaScreen());
     }
 
     Vibrate.feedback(FeedbackType.impact);
@@ -40,11 +47,30 @@ class AppCubit extends Cubit<AppStates> {
 
   List<BottomNavigationBarItem> bottomItems = [
     const BottomNavigationBarItem(
-        icon: Icon(Icons.settings), label: 'الاعدادات'),
+        icon: ImageIcon(
+          AssetImage("assets/home.png"),
+        ),
+        label: 'الرئيسية'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.compass_calibration_outlined), label: 'القبلة'),
+        icon: ImageIcon(
+          AssetImage("assets/tasbih.png"),
+        ),
+        label: 'السبحة'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.chat_outlined), label: 'الاذكار'),
+        icon: ImageIcon(
+          AssetImage("assets/azkar.png"),
+        ),
+        label: 'الأذكار'),
+    const BottomNavigationBarItem(
+        icon: ImageIcon(
+          AssetImage("assets/motafarrekat.png"),
+        ),
+        label: 'متفرقات'),
+    const BottomNavigationBarItem(
+        icon: ImageIcon(
+          AssetImage("assets/compass.png"),
+        ),
+        label: 'القبلة'),
   ];
 
   Position? position;

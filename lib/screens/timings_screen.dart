@@ -15,34 +15,27 @@ class TimingsScreen extends StatelessWidget {
         var appCubit = AppCubit.get(context);
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             centerTitle: true,
-            title: appCubit.timesModel == null
-                ? const Center(
-                    child: Text('مواقيت الصلاة',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30)),
-                  )
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text('مواقيت الصلاة',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 30)),
-                      Text("(${appCubit.timesModel!.data.meta.method.name})",
-                          style: const TextStyle(fontSize: 15)),
-                    ],
-                  ),
+            title: const Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text('مواقيت الصلاة',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+              ],
+            ),
           ),
           bottomNavigationBar: ClipRRect(
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(15), topRight: Radius.circular(30)),
+                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             child: BottomNavigationBar(
-                selectedFontSize: 30,
-                unselectedFontSize: 30,
-                iconSize: 25,
-                elevation: 50,
-                backgroundColor: Colors.brown[50],
+                selectedFontSize: 23,
+                unselectedFontSize: 23,
+                iconSize: 30,
+                elevation: 100,
+                backgroundColor: Colors.white,
                 type: BottomNavigationBarType.fixed,
                 items: appCubit.bottomItems,
                 currentIndex: appCubit.currentIndex,
@@ -51,12 +44,12 @@ class TimingsScreen extends StatelessWidget {
                 }),
           ),
           body: appCubit.errorStatus == true
-              ? Padding(
-                  padding: const EdgeInsets.all(20),
+              ? const Padding(
+                  padding: EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text('"تاكد من الاتصال بالانترنت و تفعيل الموقع"'),
                       Text(
                           '"Make sure you are connected to the internet and GPS is on"')
@@ -66,7 +59,7 @@ class TimingsScreen extends StatelessWidget {
                   ? const Center(child: CircularProgressIndicator())
                   : SingleChildScrollView(
                       child: Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(20),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -74,24 +67,26 @@ class TimingsScreen extends StatelessWidget {
                               //location
                               Text(
                                 appCubit.address!.locality.toString(),
-                                style: const TextStyle(color: Colors.brown),
+                                style:
+                                    const TextStyle(color: Color(0xff1E5A83)),
                               ),
                               const SizedBox(height: 10),
-
+                              //location
                               Text(
                                 '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
-                                style: const TextStyle(color: Colors.brown),
+                                style:
+                                    const TextStyle(color: Color(0xff1E5A83)),
                               ),
                               const SizedBox(height: 15),
                               //date
                               Text(
                                 appCubit.timesModel!.data.date.readable,
                                 style: const TextStyle(
-                                  color: Colors.brown,
+                                  color: Color(0xff1E5A83),
                                 ),
                               ),
                               const SizedBox(height: 10),
-
+                              //day
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
@@ -99,24 +94,22 @@ class TimingsScreen extends StatelessWidget {
                                   Text(
                                     appCubit.timesModel!.data.date.gregorian
                                         .weekday.en,
-                                    style: const TextStyle(color: Colors.brown),
+                                    style: const TextStyle(
+                                        color: Color(0xff1E5A83)),
                                   ),
                                   Text(
                                       appCubit.timesModel!.data.date.hijri
                                           .weekday.ar,
                                       textDirection: TextDirection.rtl,
-                                      style:
-                                          const TextStyle(color: Colors.brown)),
+                                      style: const TextStyle(
+                                          color: Color(0xff1E5A83))),
                                 ],
                               ),
                               const SizedBox(height: 20),
                               //times
                               Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.brown, width: 2),
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.brown[50]),
+                                decoration: const BoxDecoration(
+                                    color: Color(0xFFFFFFFF)),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 30.0),

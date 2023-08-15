@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
@@ -25,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animation = CurvedAnimation(
       parent: _animationController,
-      curve: Curves.easeInOut,
+      curve: Curves.decelerate,
     );
 
     _animationController.forward();
@@ -50,8 +52,7 @@ class _SplashScreenState extends State<SplashScreen>
         body: Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image:
-              AssetImage('assets/splash.png'), // Replace with your image asset
+          image: AssetImage('assets/splash.png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -59,7 +60,6 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Animated Logo Icon
             AnimatedBuilder(
               animation: _animation,
               builder: (context, child) {
@@ -91,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen>
                   fontSize: 27,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Cairo', // Replace with your custom font
+                  fontFamily: 'Cairo',
                 ),
               ),
             )
