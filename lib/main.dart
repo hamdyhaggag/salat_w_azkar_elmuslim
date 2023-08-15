@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
             titleMedium: TextStyle(fontSize: 25, fontFamily: 'Cairo'),
             bodyMedium: TextStyle(fontSize: 30, fontFamily: 'Cairo'),
           ),
-          // primarySwatch: Colors.cyan,
           fontFamily: 'Cairo',
         ),
         debugShowCheckedModeBanner: false,

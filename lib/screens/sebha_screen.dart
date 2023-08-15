@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/core/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/core/row.dart';
+import 'package:salat_w_azkar_elmuslim/models/floating_button.dart';
 
 class Sebha extends StatefulWidget {
   const Sebha({super.key});
@@ -84,10 +85,15 @@ class _SebhaState extends State<Sebha> {
                     ),
                   ),
                   const Positioned(
-                    top: 680, // Adjust the position as needed
+                    top: 630, // Adjust the position as needed
                     left: 0,
                     right: 0,
                     child: MyCustomRow(),
+                  ),
+                  Positioned(
+                    top: 716,
+                    left: 200 - counterWidth() / 2,
+                    child: const CustomFloatingActionButton(),
                   ),
                 ],
               ),
