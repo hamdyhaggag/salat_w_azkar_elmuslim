@@ -1,20 +1,37 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'package:salat_w_azkar_elmuslim/models/copy_button.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_divider.dart';
 
-class CustomContainer extends StatelessWidget {
+class CustomContainer extends StatefulWidget {
   final String title;
+
   const CustomContainer({
     Key? key,
     required this.title,
   }) : super(key: key);
 
   @override
+  _CustomContainerState createState() => _CustomContainerState();
+}
+
+class _CustomContainerState extends State<CustomContainer> {
+  int counterValue = 3;
+  bool showCheckIcon = false;
+
+  void decrementCounter() {
+    if (counterValue > 0) {
+      setState(() {
+        counterValue--;
+        if (counterValue == 0) {
+          showCheckIcon = true;
+        }
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: decrementCounter,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Container(
@@ -32,13 +49,13 @@ class CustomContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CopyButton(title),
+                  CopyButton(widget.title),
                   Column(
                     children: [
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          title,
+                          widget.title,
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.rtl,
                           style: const TextStyle(
@@ -50,39 +67,40 @@ class CustomContainer extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      // const CustomDivider(),
                       Stack(
                         children: [
-                          // The Container
                           Container(
                             height: 2,
                             width: 300,
                             color: const Color(0xff1E5A83),
                           ),
-
-                          const Positioned(
+                          Positioned(
                             top: 10,
                             left: (300 - 54) / 2,
                             child: CircleAvatar(
-                              backgroundColor: Color(0xff1E5A83),
+                              backgroundColor: const Color(0xff1E5A83),
                               radius: 27,
-                              child: Text(
-                                '3',
-                                style: TextStyle(
-                                  fontFamily: 'Cairo',
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
+                              child: showCheckIcon
+                                  ? const Icon(
+                                      Icons.check,
+                                      size: 30,
+                                      color: Colors.white,
+                                    )
+                                  : Text(
+                                      counterValue.toString(),
+                                      style: const TextStyle(
+                                        fontFamily: 'Cairo',
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
                             ),
                           ),
-
                           const SizedBox(
                             height: 70,
                           ),
                         ],
                       ),
-
                       const Text(
                         'عدد التكرارات',
                         style: TextStyle(
