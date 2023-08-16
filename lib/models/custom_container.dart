@@ -11,7 +11,7 @@ class CustomContainer extends StatefulWidget {
     Key? key,
     required this.title,
     required this.maxValue,
-    required this.initialCounterValue, // Provide a default value if not specified
+    this.initialCounterValue = 3, // Provide a default value if not specified
   }) : super(key: key);
 
   @override
@@ -19,13 +19,13 @@ class CustomContainer extends StatefulWidget {
 }
 
 class _CustomContainerState extends State<CustomContainer> {
-  late int counterValue;
+  late int counterValue; // Change this line to use late keyword
   bool showCheckIcon = false;
 
   @override
   void initState() {
     super.initState();
-    counterValue = widget.initialCounterValue;
+    counterValue = widget.initialCounterValue; // Initialize counterValue
   }
 
   void decrementCounter() {
@@ -97,7 +97,7 @@ class _CustomContainerState extends State<CustomContainer> {
                                   ? const Icon(
                                       Icons.check,
                                       size: 30,
-                                      color: Colors.white,
+                                      color: Color(0xff1E5A83),
                                     )
                                   : Text(
                                       counterValue.toString(),
