@@ -33,7 +33,6 @@ class CircleProgressPainter extends CustomPainter {
     // Draw the check icon if needed
     if (showCheckIcon) {
       final iconPaint = Paint()..color = Colors.transparent;
-      ;
 
       final iconPath = Path()
         ..moveTo(center.dx - 10, center.dy)
