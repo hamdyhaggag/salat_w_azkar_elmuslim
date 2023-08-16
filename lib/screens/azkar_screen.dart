@@ -13,6 +13,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/sleep.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/tasabeh.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/wake.dart';
 
+import '../models/rounded_container.dart';
+
 class AzkarScreen extends StatelessWidget {
   const AzkarScreen({Key? key}) : super(key: key);
 

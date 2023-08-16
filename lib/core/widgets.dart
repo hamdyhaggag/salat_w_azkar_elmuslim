@@ -42,42 +42,6 @@ Widget prayTimeRow({
       ),
     );
 
-Widget azkarButton({
-  required String name,
-  required Widget screeen,
-  required BuildContext context,
-}) =>
-    Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(color: Colors.brown)),
-        width: double.infinity,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: MaterialButton(
-            color: Colors.brown[50],
-            highlightColor: Colors.brown[200],
-            splashColor: Colors.brown[200],
-            onPressed: () {
-              navigateTo(context, screeen);
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                name,
-                style: const TextStyle(
-                  color: Colors.brown,
-                  fontSize: 33.0,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-
 Widget divider() => Padding(
       padding: const EdgeInsets.all(15),
       child: Container(
