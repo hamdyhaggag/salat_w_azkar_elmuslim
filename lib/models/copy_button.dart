@@ -23,9 +23,12 @@ class CopyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(FontAwesomeIcons.copy, color: Color(0xff1E5A83)),
-      onPressed: copyTextToClipboard,
+    return Padding(
+      padding: const EdgeInsets.only(left: 0, bottom: 10),
+      child: IconButton(
+        icon: const Icon(FontAwesomeIcons.copy, color: Color(0xff1E5A83)),
+        onPressed: copyTextToClipboard,
+      ),
     );
   }
 }

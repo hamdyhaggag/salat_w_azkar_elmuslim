@@ -4,7 +4,6 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget prayTimeRow({
@@ -39,14 +38,6 @@ Widget prayTimeRow({
                 style: const TextStyle(fontSize: 35),
               )),
         ],
-      ),
-    );
-
-Widget divider() => Padding(
-      padding: const EdgeInsets.all(15),
-      child: Container(
-        height: 2,
-        color: Colors.brown[200],
       ),
     );
 
@@ -163,7 +154,6 @@ Widget zekr({
             ],
           ),
         ),
-        divider(),
       ],
     );
 
