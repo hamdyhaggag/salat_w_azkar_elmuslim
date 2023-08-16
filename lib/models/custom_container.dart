@@ -82,14 +82,15 @@ class _CustomContainerState extends State<CustomContainer> {
                             top: 10,
                             left: (300 - 54) / 2,
                             child: CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 195, 205, 212),
+                              backgroundColor: showCheckIcon
+                                  ? const Color(0xff1E5A83)
+                                  : const Color.fromARGB(255, 195, 205, 212),
                               radius: 27,
                               child: showCheckIcon
                                   ? const Icon(
                                       Icons.check,
                                       size: 30,
-                                      color: Color(0xff1E5A83),
+                                      color: Colors.white,
                                     )
                                   : Text(
                                       counterValue.toString(),
@@ -109,7 +110,7 @@ class _CustomContainerState extends State<CustomContainer> {
                                 progress: counterValue / maxValue,
                                 showCheckIcon: showCheckIcon,
                               ),
-                              child: SizedBox(
+                              child: const SizedBox(
                                 width: 54,
                                 height: 54,
                               ),
