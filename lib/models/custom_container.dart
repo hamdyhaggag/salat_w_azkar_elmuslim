@@ -48,10 +48,39 @@ class CustomContainer extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const CustomDivider(),
-                    const SizedBox(
-                      height: 12,
+                    // const CustomDivider(),
+                    Stack(
+                      children: [
+                        // The Container
+                        Container(
+                          height: 2,
+                          width: 300,
+                          color: const Color(0xff1E5A83),
+                        ),
+
+                        const Positioned(
+                          top: 10,
+                          left: (300 - 54) / 2,
+                          child: CircleAvatar(
+                            backgroundColor: Color(0xff1E5A83),
+                            radius: 27,
+                            child: Text(
+                              '3',
+                              style: TextStyle(
+                                fontFamily: 'Cairo',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(
+                          height: 70,
+                        ),
+                      ],
                     ),
+
                     const Text(
                       'عدد التكرارات',
                       style: TextStyle(
