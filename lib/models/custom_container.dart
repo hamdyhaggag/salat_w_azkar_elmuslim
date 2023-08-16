@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/copy_button.dart';
-
 import 'circle_progress.dart';
 
 class CustomContainer extends StatefulWidget {
   final String title;
+  final int maxValue;
+  final int initialCounterValue; // Add this line for initial counter value
 
   const CustomContainer({
     Key? key,
     required this.title,
+    required this.maxValue,
+    required this.initialCounterValue, // Provide a default value if not specified
   }) : super(key: key);
 
   @override
@@ -16,10 +19,14 @@ class CustomContainer extends StatefulWidget {
 }
 
 class _CustomContainerState extends State<CustomContainer> {
-  int counterValue = 3;
+  late int counterValue;
   bool showCheckIcon = false;
 
-  final maxValue = 3;
+  @override
+  void initState() {
+    super.initState();
+    counterValue = widget.initialCounterValue;
+  }
 
   void decrementCounter() {
     if (counterValue > 0) {
@@ -107,7 +114,8 @@ class _CustomContainerState extends State<CustomContainer> {
                             left: (300 - 54) / 2,
                             child: CustomPaint(
                               painter: CircleProgressPainter(
-                                progress: counterValue / maxValue,
+                                progress: counterValue /
+                                    widget.maxValue, // Use widget.maxValue
                                 showCheckIcon: showCheckIcon,
                               ),
                               child: const SizedBox(
