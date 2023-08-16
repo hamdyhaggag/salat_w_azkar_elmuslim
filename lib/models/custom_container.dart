@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/copy_button.dart';
 
+import 'circle_progress.dart';
+
 class CustomContainer extends StatefulWidget {
   final String title;
 
@@ -16,6 +18,8 @@ class CustomContainer extends StatefulWidget {
 class _CustomContainerState extends State<CustomContainer> {
   int counterValue = 3;
   bool showCheckIcon = false;
+
+  final maxValue = 3;
 
   void decrementCounter() {
     if (counterValue > 0) {
@@ -85,7 +89,7 @@ class _CustomContainerState extends State<CustomContainer> {
                                   ? const Icon(
                                       Icons.check,
                                       size: 30,
-                                      color: Colors.white,
+                                      color: Color(0xff1E5A83),
                                     )
                                   : Text(
                                       counterValue.toString(),
@@ -95,6 +99,20 @@ class _CustomContainerState extends State<CustomContainer> {
                                         color: Colors.white,
                                       ),
                                     ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 10,
+                            left: (300 - 54) / 2,
+                            child: CustomPaint(
+                              painter: CircleProgressPainter(
+                                progress: counterValue / maxValue,
+                                showCheckIcon: showCheckIcon,
+                              ),
+                              child: SizedBox(
+                                width: 54,
+                                height: 54,
+                              ),
                             ),
                           ),
                           const SizedBox(
