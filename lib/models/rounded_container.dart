@@ -21,8 +21,8 @@ Widget azkarButton({
           borderRadius: BorderRadius.circular(15),
           child: MaterialButton(
             color: Colors.white,
-            highlightColor: const Color.fromARGB(255, 40, 148, 220),
-            // splashColor: Colors.brown[200],
+            highlightColor: const Color(0xff5d82a1),
+            // splashColor: Colors.white,
             onPressed: () {
               navigateTo(context, screeen);
             },

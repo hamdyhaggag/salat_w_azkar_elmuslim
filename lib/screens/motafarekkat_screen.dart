@@ -24,16 +24,21 @@ class MotafarekkatScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          title: const Row(
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
-                'متفرقات',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xff1E5A83),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Text(
+                  'متفرقات',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontFamily: 'Cairo',
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff1E5A83),
+                  ),
                 ),
               ),
             ],
