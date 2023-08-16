@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/azkar_button.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/roqia.dart';
-import 'azkar_screens/collection.dart';
 import 'azkar_screens/dead.dart';
 import 'azkar_screens/evening.dart';
 import 'azkar_screens/mohamed.dart';
-import 'azkar_screens/morning.dart';
+import 'azkar_screens/morning_view.dart';
 import 'azkar_screens/plus.dart';
 import 'azkar_screens/pray.dart';
 import 'azkar_screens/quran.dart';
@@ -61,53 +60,49 @@ class MotafarekkatScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     azkarButton(
-                        name: 'أذكار الصباح',
+                        name: 'الدعاء عند رؤية الهلال',
                         screeen: const MorningAzkar(title: 'أذكار الصباح'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار  المساء',
+                        name: 'من أدعية الاستسقاء',
                         screeen: const EveningAzkar(title: 'أذكار  المساء'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار بعد الصلاة',
+                        name: 'الدعاء إذا نزل المطر',
                         screeen: const PrayAzkar(title: 'أذكار بعد الصلاة'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار النوم',
+                        name: 'الدعاء عند شدة نزول المطر',
                         screeen: const SleepAzkar(title: 'أذكار النوم'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار الإستيقاظ',
+                        name: 'الدعاء عند هبوب الريح',
+                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
+                        context: context),
+                    azkarButton(
+                        name: 'دعاء الرعد',
+                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
+                        context: context),
+                    azkarButton(
+                        name: 'ما يعصم الله به من الدجال ',
                         screeen: const WakeUpAzkar(title: 'أذكار الإستيقاظ'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار متفرقة',
-                        screeen: const CollectionAzkar(title: 'أذكار متفرقة'),
-                        context: context),
-                    azkarButton(
-                        name: 'الْأدْعِيَةُ القرآنية',
-                        screeen:
-                            const QuranAzkar(title: 'الْأدْعِيَةُ القرآنية'),
-                        context: context),
-                    azkarButton(
-                        name: 'الْأدْعِيَةُ النبوية',
+                        name: 'دعاء قضاء الدين',
                         screeen:
                             const MohamedAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                     azkarButton(
-                        name: 'تسابيح',
+                        name: 'دعاء من استصعب علية أمر',
                         screeen: const Tasabeh(title: 'تسابيح'),
                         context: context),
                     azkarButton(
-                        name: 'جوامع الدعاء',
-                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
+                        name: 'الرُّقية الشرعية من القرآن ',
+                        screeen: const Rokia(
+                            title: 'الرُّقية الشرعية من القرآن والسنة'),
                         context: context),
                     azkarButton(
-                        name: 'أدعية للميّت',
-                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
-                        context: context),
-                    azkarButton(
-                        name: 'الرُّقية الشرعية من القرآن والسنة',
+                        name: 'الرُّقية الشرعية من السنة',
                         screeen: const Rokia(
                             title: 'الرُّقية الشرعية من القرآن والسنة'),
                         context: context),
