@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
+
+import '../models/custom_app_bar.dart';
 
 class QiblaScreen extends StatefulWidget {
   const QiblaScreen({Key? key}) : super(key: key);
@@ -19,40 +19,7 @@ class QiblaScreenState extends State<QiblaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Text(
-                'القبلة',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xff1E5A83),
-                ),
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              FontAwesomeIcons.chevronRight,
-              color: Color(0xff1E5A83),
-            ),
-          ),
-        ],
-      ),
+      appBar: const CustomAppBar(title: 'القبلة'),
       backgroundColor: AppCubit.get(context).directionModel == null
           ? Colors.white
           : Colors.white,

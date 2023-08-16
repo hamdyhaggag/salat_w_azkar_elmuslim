@@ -32,7 +32,7 @@ Widget azkarButton({
                 name,
                 style: const TextStyle(
                   color: Color(0xFF1E5A83),
-                  fontSize: 33.0,
+                  fontSize: 30.0,
                 ),
               ),
             ),

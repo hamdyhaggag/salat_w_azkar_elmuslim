@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
+import '../models/custom_app_bar.dart';
 import '../models/row_with_text_and_icon.dart';
 
 class SettingsScreens extends StatelessWidget {
@@ -10,35 +10,10 @@ class SettingsScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'الإعدادات',
-                style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff1E5A83)),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  FontAwesomeIcons.chevronRight,
-                  color: Color(0xff1E5A83),
-                ))
-          ],
-        ),
+        appBar: CustomAppBar(title: 'الإعدادات'),
+
         // body: const Column(
         //   children: [
         //     const SizedBox(
@@ -98,7 +73,7 @@ class SettingsScreens extends StatelessWidget {
         //     ),
         //   ],
         // ),
-        body: const Column(children: [
+        body: Column(children: [
           SizedBox(height: 20.0), // Add a SizedBox here for spacing
           Column(
             children: <Widget>[

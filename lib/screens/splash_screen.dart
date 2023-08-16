@@ -2,7 +2,6 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/collection.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/dead.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/evening.dart';
@@ -22,47 +22,14 @@ class AzkarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  'الأذكار',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff1E5A83),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.chevronRight,
-                color: Color(0xff1E5A83),
-              ),
-            ),
-          ],
-        ),
+        appBar: const CustomAppBar(title: 'الأذكار'),
         body: ListView(
           children: [
             const SizedBox(
               height: 12,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30),
+              padding: const EdgeInsets.only(left: 18, right: 18),
               child: Stack(
                 children: [
                   Image.asset(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/rounded_container.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/roqia.dart';
 import 'azkar_screens/collection.dart';
@@ -21,40 +21,7 @@ class MotafarekkatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  'متفرقات',
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff1E5A83),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.chevronRight,
-                color: Color(0xff1E5A83),
-              ),
-            ),
-          ],
-        ),
+        appBar: const CustomAppBar(title: 'متفرقات'),
         body: ListView(
           children: [
             const SizedBox(

@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, library_private_types_in_public_api
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/row.dart';
 import 'package:salat_w_azkar_elmuslim/models/floating_button.dart';
+
+import '../models/custom_app_bar.dart';
 
 class Sebha extends StatefulWidget {
   const Sebha({super.key});
@@ -31,38 +32,7 @@ class _SebhaState extends State<Sebha> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Text(
-                'السبحة',
-                style: TextStyle(
-                    fontSize: 35,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff1E5A83)),
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.chevronRight,
-                color: Color(0xff1E5A83),
-              ))
-        ],
-      ),
+      appBar: const CustomAppBar(title: 'السبحة'),
       body: SizedBox(
           width: double.infinity,
           child: GestureDetector(

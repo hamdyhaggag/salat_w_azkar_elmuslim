@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 
+import '../../models/custom_app_bar.dart';
+
 class MorningAzkar extends StatelessWidget {
   final String title;
   const MorningAzkar({Key? key, required this.title}) : super(key: key);
@@ -8,10 +10,7 @@ class MorningAzkar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'أذكار الصباح'),
       body: SingleChildScrollView(
         child: Column(
           children: [
