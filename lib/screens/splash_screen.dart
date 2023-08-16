@@ -3,6 +3,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
+import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Sebha()),
+        MaterialPageRoute(builder: (context) => const TimingsScreen()),
       );
     });
   }

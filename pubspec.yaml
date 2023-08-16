@@ -27,34 +27,27 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  responsive_framework: ^0.2.0
-  dio: ^4.0.6
   bloc: ^8.0.3
-  flutter_bloc: ^8.0.1
-  geolocator: ^8.2.1
-  geocoding: ^2.0.4
-  flutter_compass: ^0.7.0
-  flutter_vibrate: ^1.3.0
-  shared_preferences: ^2.0.15
-  url_launcher: ^6.1.3
-  font_awesome_flutter: ^10.1.0
-
-
-
-
+  cupertino_icons: ^1.0.5
+  dio: ^4.0.6
   flutter:
     sdk: flutter
-
-
-  cupertino_icons: ^1.0.5
+  flutter_bloc: ^8.0.1
+  flutter_compass: ^0.7.0
+  flutter_svg: ^2.0.7
+  flutter_vibrate: ^1.3.0
+  font_awesome_flutter: ^10.1.0
+  geocoding: ^2.0.4
+  geolocator: ^8.2.1
+  responsive_framework: ^0.2.0
+  shared_preferences: ^2.0.15
+  url_launcher: ^6.1.3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
 
   flutter_lints: ^2.0.1
-
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
@@ -66,4 +59,3 @@ flutter:
         - asset: assets/fonts/Cairo-Regular.ttf
         - asset: assets/fonts/Cairo-Bold.ttf
         - asset: assets/fonts/Cairo-SemiBold.ttf
-
