@@ -32,8 +32,7 @@ class CustomContainer extends StatelessWidget {
                 Column(
                   children: [
                     SizedBox(
-                      width:
-                          double.infinity, // Make the container take full width
+                      width: double.infinity,
                       child: Text(
                         title,
                         textAlign: TextAlign.center,
