@@ -97,7 +97,7 @@ class _CustomContainerState extends State<CustomContainer> {
                                   ? const Icon(
                                       Icons.check,
                                       size: 30,
-                                      color: Color(0xff1E5A83),
+                                      color: Colors.white,
                                     )
                                   : Text(
                                       counterValue.toString(),
