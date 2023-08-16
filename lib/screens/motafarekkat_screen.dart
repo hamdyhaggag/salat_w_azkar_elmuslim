@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MotafarekkatScreen extends StatelessWidget {
@@ -41,18 +40,18 @@ class MotafarekkatScreen extends StatelessWidget {
             height: 12,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 80, right: 40),
+            padding: const EdgeInsets.only(left: 40, right: 40),
             child: Stack(children: [
               Image.asset(
                 'assets/mot.png',
                 alignment: Alignment.topCenter,
               ),
               const Positioned(
-                top: 30,
-                left: 90,
+                top: 50,
+                left: 125,
                 child: Text('متفرقات',
                     style: TextStyle(
-                        fontSize: 35,
+                        fontSize: 40,
                         fontFamily: 'Cairo',
                         fontWeight: FontWeight.w600,
                         color: Color.fromARGB(255, 255, 255, 255))),
