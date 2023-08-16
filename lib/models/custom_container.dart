@@ -13,9 +13,13 @@ class CustomContainer extends StatefulWidget {
   _CustomContainerState createState() => _CustomContainerState();
 }
 
-class _CustomContainerState extends State<CustomContainer> {
+class _CustomContainerState extends State<CustomContainer>
+    with SingleTickerProviderStateMixin {
   int counterValue = 3;
   bool showCheckIcon = false;
+
+  late AnimationController _animationController;
+  late Animation<double> _animation;
 
   void decrementCounter() {
     if (counterValue > 0) {
@@ -23,9 +27,28 @@ class _CustomContainerState extends State<CustomContainer> {
         counterValue--;
         if (counterValue == 0) {
           showCheckIcon = true;
+          _animationController.forward();
         }
       });
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    _animation = Tween<double>(begin: 0, end: -400).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -34,83 +57,92 @@ class _CustomContainerState extends State<CustomContainer> {
       onTap: decrementCounter,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(
-              color: const Color(0xFF1E5A83),
+        child: AnimatedBuilder(
+          animation: _animationController,
+          builder: (context, child) {
+            return Transform.translate(
+              offset: Offset(0, _animation.value),
+              child: child,
+            );
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(
+                color: const Color(0xFF1E5A83),
+              ),
             ),
-          ),
-          width: double.infinity,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CopyButton(widget.title),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          widget.title,
-                          textAlign: TextAlign.center,
-                          textDirection: TextDirection.rtl,
-                          style: const TextStyle(
+            width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CopyButton(widget.title),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          child: Text(
+                            widget.title,
+                            textAlign: TextAlign.center,
+                            textDirection: TextDirection.rtl,
+                            style: const TextStyle(
+                              color: Color(0xFF1E5A83),
+                              fontSize: 25.0,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Stack(
+                          children: [
+                            Container(
+                              height: 2,
+                              width: 300,
+                              color: const Color(0xff1E5A83),
+                            ),
+                            Positioned(
+                              top: 10,
+                              left: (300 - 54) / 2,
+                              child: CircleAvatar(
+                                backgroundColor: const Color(0xff1E5A83),
+                                radius: 27,
+                                child: showCheckIcon
+                                    ? const Icon(
+                                        Icons.check,
+                                        size: 30,
+                                        color: Colors.white,
+                                      )
+                                    : Text(
+                                        counterValue.toString(),
+                                        style: const TextStyle(
+                                          fontFamily: 'Cairo',
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 70,
+                            ),
+                          ],
+                        ),
+                        const Text(
+                          'عدد التكرارات',
+                          style: TextStyle(
                             color: Color(0xFF1E5A83),
                             fontSize: 25.0,
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Stack(
-                        children: [
-                          Container(
-                            height: 2,
-                            width: 300,
-                            color: const Color(0xff1E5A83),
-                          ),
-                          Positioned(
-                            top: 10,
-                            left: (300 - 54) / 2,
-                            child: CircleAvatar(
-                              backgroundColor: const Color(0xff1E5A83),
-                              radius: 27,
-                              child: showCheckIcon
-                                  ? const Icon(
-                                      Icons.check,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  : Text(
-                                      counterValue.toString(),
-                                      style: const TextStyle(
-                                        fontFamily: 'Cairo',
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 70,
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        'عدد التكرارات',
-                        style: TextStyle(
-                          color: Color(0xFF1E5A83),
-                          fontSize: 25.0,
-                        ),
-                      )
-                    ],
-                  ),
-                ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
