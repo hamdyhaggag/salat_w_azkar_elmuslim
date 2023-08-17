@@ -15,7 +15,6 @@ import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 import 'package:salat_w_azkar_elmuslim/models/direction_model.dart';
 import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
-import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
 class AppCubit extends Cubit<AppStates> {

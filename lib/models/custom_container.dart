@@ -11,7 +11,7 @@ class CustomContainer extends StatefulWidget {
     Key? key,
     required this.title,
     required this.maxValue,
-    this.initialCounterValue = 3, // Provide a default value if not specified
+    this.initialCounterValue = 0, // Set initialCounterValue to 0
   }) : super(key: key);
 
   @override
@@ -28,11 +28,13 @@ class _CustomContainerState extends State<CustomContainer> {
     counterValue = widget.initialCounterValue; // Initialize counterValue
   }
 
-  void decrementCounter() {
-    if (counterValue > 0) {
+  void incrementCounter() {
+    if (counterValue < widget.maxValue) {
+      // Check against maxValue
       setState(() {
-        counterValue--;
-        if (counterValue == 0) {
+        counterValue++;
+        if (counterValue == widget.maxValue) {
+          // Check against maxValue
           showCheckIcon = true;
         }
       });
@@ -42,7 +44,7 @@ class _CustomContainerState extends State<CustomContainer> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: decrementCounter,
+      onTap: incrementCounter, // Change to incrementCounter
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Container(
@@ -114,8 +116,7 @@ class _CustomContainerState extends State<CustomContainer> {
                             left: (300 - 54) / 2,
                             child: CustomPaint(
                               painter: CircleProgressPainter(
-                                progress: counterValue /
-                                    widget.maxValue, // Use widget.maxValue
+                                progress: counterValue / widget.maxValue,
                                 showCheckIcon: showCheckIcon,
                               ),
                               child: const SizedBox(
