@@ -8,20 +8,20 @@ import 'custom_app_bar.dart';
 class CustomZekrFolder extends StatelessWidget {
   const CustomZekrFolder({
     Key? key,
-    required this.title2,
-    required this.title3,
+    required this.titleOfAppBar,
+    required this.titleOfRow,
   }) : super(key: key);
-  final String title2;
-  final String title3;
+  final String titleOfAppBar;
+  final String titleOfRow;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: CustomAppBar(title: title2),
+        appBar: CustomAppBar(title: titleOfAppBar),
         body: Column(
           children: [
-            CustomFolderRow(title: title3),
+            CustomFolderRow(title: titleOfRow),
           ],
         ));
   }

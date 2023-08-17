@@ -43,8 +43,8 @@ class AppCubit extends Cubit<AppStates> {
       navigateTo(
           context,
           const CustomZekrFolder(
-            title3: 'تجربة',
-            title2: 'تجربة',
+            titleOfRow: 'تجربة',
+            titleOfAppBar: 'تجربة',
           ));
     }
 
