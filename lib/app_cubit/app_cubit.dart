@@ -40,7 +40,13 @@ class AppCubit extends Cubit<AppStates> {
       navigateTo(context, const MotafarekkatScreen());
     }
     if (index == 4) {
-      navigateTo(context, const QiblaScreen());
+      navigateTo(
+          context,
+          const CustomZekrFolder(
+            screenName: QiblaScreen(),
+            titleOfRow: 'تجربة',
+            titleOfAppBar: 'تجربة',
+          ));
     }
 
     Vibrate.feedback(FeedbackType.impact);

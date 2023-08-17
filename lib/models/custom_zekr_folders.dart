@@ -10,19 +10,33 @@ class CustomZekrFolder extends StatelessWidget {
     Key? key,
     required this.titleOfAppBar,
     required this.titleOfRow,
+    required this.screenName,
   }) : super(key: key);
   final String titleOfAppBar;
   final String titleOfRow;
+  final dynamic screenName;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: CustomAppBar(title: titleOfAppBar),
-        body: Column(
-          children: [
-            CustomFolderRow(title: titleOfRow),
-          ],
+        body: GestureDetector(
+          onTap: () {
+            // Navigate to the destination screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    screenName, // Replace with your destination screen
+              ),
+            );
+          },
+          child: Column(
+            children: [
+              CustomFolderRow(title: titleOfRow),
+            ],
+          ),
         ));
   }
 }
