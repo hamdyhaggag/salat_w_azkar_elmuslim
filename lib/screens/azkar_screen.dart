@@ -92,7 +92,7 @@ class AzkarScreen extends StatelessWidget {
                     azkarButton(
                         name: 'الْأدْعِيَةُ النبوية',
                         screeen:
-                            const MohamedAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                            const EveningAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                     azkarButton(
                         name: 'تسابيح',

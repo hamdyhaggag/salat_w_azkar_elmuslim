@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/azkar_button.dart';
+import 'package:salat_w_azkar_elmuslim/models/custom_zekr_folders.dart';
+import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/quran.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/roqia.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/roqia_from_quraan.dart';
 import 'azkar_screens/dead.dart';
 import 'azkar_screens/evening.dart';
 import 'azkar_screens/mohamed.dart';
 import 'azkar_screens/morning_view.dart';
 import 'azkar_screens/plus.dart';
 import 'azkar_screens/pray.dart';
-import 'azkar_screens/quran.dart';
 import 'azkar_screens/sleep.dart';
 import 'azkar_screens/tasabeh.dart';
 import 'azkar_screens/wake.dart';
@@ -60,51 +62,33 @@ class MotafarekkatScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     azkarButton(
-                        name: 'الدعاء عند رؤية الهلال',
-                        screeen: const MorningAzkar(title: 'أذكار الصباح'),
+                        name: 'الأدعية القراّنية',
+                        screeen: const QuranAzkar(title: 'الأدعية القراّنية'),
                         context: context),
                     azkarButton(
-                        name: 'من أدعية الاستسقاء',
-                        screeen: const EveningAzkar(title: 'أذكار  المساء'),
-                        context: context),
-                    azkarButton(
-                        name: 'الدعاء إذا نزل المطر',
-                        screeen: const PrayAzkar(title: 'أذكار بعد الصلاة'),
-                        context: context),
-                    azkarButton(
-                        name: 'الدعاء عند شدة نزول المطر',
-                        screeen: const SleepAzkar(title: 'أذكار النوم'),
-                        context: context),
-                    azkarButton(
-                        name: 'الدعاء عند هبوب الريح',
-                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
-                        context: context),
-                    azkarButton(
-                        name: 'دعاء الرعد',
-                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
-                        context: context),
-                    azkarButton(
-                        name: 'ما يعصم الله به من الدجال ',
-                        screeen: const WakeUpAzkar(title: 'أذكار الإستيقاظ'),
-                        context: context),
-                    azkarButton(
-                        name: 'دعاء قضاء الدين',
+                        name: 'الأدعية النبوية',
                         screeen:
-                            const MohamedAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                            const EveningAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                     azkarButton(
-                        name: 'دعاء من استصعب علية أمر',
+                        name: 'تسابيح',
                         screeen: const Tasabeh(title: 'تسابيح'),
                         context: context),
                     azkarButton(
-                        name: 'الرُّقية الشرعية من القرآن ',
-                        screeen: const Rokia(
-                            title: 'الرُّقية الشرعية من القرآن والسنة'),
+                        name: 'جوامع الدعاء',
+                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
                         context: context),
                     azkarButton(
-                        name: 'الرُّقية الشرعية من السنة',
-                        screeen: const Rokia(
-                            title: 'الرُّقية الشرعية من القرآن والسنة'),
+                        name: 'أدعية للميت',
+                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
+                        context: context),
+                    azkarButton(
+                        name: 'الرقية الشرعية',
+                        screeen: const CustomZekrFolder(
+                          titleOfAppBar: 'الرقية الشرعية',
+                          titleOfRow: ' الرقية الشرعية من القراّن',
+                          screenName: RoqiaFromQuraan(),
+                        ),
                         context: context),
                   ],
                 ),
