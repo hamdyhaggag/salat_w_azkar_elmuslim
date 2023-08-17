@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/row.dart';
-import 'package:salat_w_azkar_elmuslim/models/floating_button.dart';
-
+import 'package:salat_w_azkar_elmuslim/models/custom_reset_button.dart';
 import '../models/custom_app_bar.dart';
 
 class Sebha extends StatefulWidget {
@@ -50,13 +49,15 @@ class _SebhaState extends State<Sebha> {
                     alignment: Alignment.center,
                   ),
                   Positioned(
-                    top: 270,
-                    left: 232 - counterWidth() / 2,
+                    top: counter <= 1000 ? 268 : 285,
+                    left: counter <= 1000
+                        ? 225 - counterWidth() / 2
+                        : 238 - counterWidth() / 2,
                     child: Text(
                       '$counter',
-                      style: const TextStyle(
-                        fontSize: 90,
-                        color: Color(0xff1E5A83),
+                      style: TextStyle(
+                        fontSize: counter < 1000 ? 90 : 70,
+                        color: const Color(0xff1E5A83),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -84,7 +85,7 @@ class _SebhaState extends State<Sebha> {
       text: TextSpan(
         text: '$counter',
         style: const TextStyle(
-          fontSize: 80,
+          fontSize: 70,
           fontWeight: FontWeight.bold,
         ),
       ),
