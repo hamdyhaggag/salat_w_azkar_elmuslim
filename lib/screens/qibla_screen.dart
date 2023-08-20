@@ -24,17 +24,25 @@ class QiblaScreenState extends State<QiblaScreen> {
           ? Colors.white
           : Colors.white,
       body: AppCubit.get(context).directionModel == null
-          ? const Padding(
-              padding: EdgeInsets.all(20),
+          ? Padding(
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('"تاكد من الاتصال بالانترنت و تفعيل الموقع"'),
-                  Text(
-                      '"Make sure you are connected to the internet and GPS is on"')
+                  if (AppCubit.get(context).directionModel == null)
+                    Image.asset(
+                      'assets/404.gif',
+                      width: 410,
+                      height: 370,
+                    ),
+                  const Text(
+                    "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
+                    textAlign: TextAlign.center,
+                  ),
                 ],
-              ))
+              ),
+            )
           : Builder(builder: (context) {
               return Column(
                 children: <Widget>[
