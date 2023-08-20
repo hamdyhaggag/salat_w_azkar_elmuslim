@@ -5,13 +5,13 @@ import 'circle_progress.dart';
 class CustomContainer extends StatefulWidget {
   final String title;
   final int maxValue;
-  final int initialCounterValue; // Add this line for initial counter value
+  final int initialCounterValue;
 
   const CustomContainer({
     Key? key,
     required this.title,
     required this.maxValue,
-    this.initialCounterValue = 0, // Set initialCounterValue to 0
+    this.initialCounterValue = 0,
   }) : super(key: key);
 
   @override
@@ -19,22 +19,20 @@ class CustomContainer extends StatefulWidget {
 }
 
 class _CustomContainerState extends State<CustomContainer> {
-  late int counterValue; // Change this line to use late keyword
+  late int counterValue;
   bool showCheckIcon = false;
 
   @override
   void initState() {
     super.initState();
-    counterValue = widget.initialCounterValue; // Initialize counterValue
+    counterValue = widget.initialCounterValue;
   }
 
   void incrementCounter() {
     if (counterValue < widget.maxValue) {
-      // Check against maxValue
       setState(() {
         counterValue++;
         if (counterValue == widget.maxValue) {
-          // Check against maxValue
           showCheckIcon = true;
         }
       });
@@ -130,9 +128,9 @@ class _CustomContainerState extends State<CustomContainer> {
                           ),
                         ],
                       ),
-                      const Text(
-                        'عدد التكرارات',
-                        style: TextStyle(
+                      Text(
+                        ' ${widget.maxValue} : عدد التكرارات ',
+                        style: const TextStyle(
                           color: Color(0xFF1E5A83),
                           fontSize: 25.0,
                         ),
