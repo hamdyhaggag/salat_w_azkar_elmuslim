@@ -24,25 +24,6 @@ class TimingsScreen extends StatelessWidget {
 
         return Scaffold(
             backgroundColor: Colors.white,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent, // Set transparent background
-              elevation: 0,
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    navigateTo(context, const SettingsScreens());
-                  },
-                  icon: const Padding(
-                    padding: EdgeInsets.only(right: 25, top: 5),
-                    child: Icon(
-                      FontAwesomeIcons.bars,
-                      color: Color(0xff1E5A83),
-                      size: 30,
-                    ),
-                  ),
-                ),
-              ],
-            ),
             bottomNavigationBar: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -83,119 +64,144 @@ class TimingsScreen extends StatelessWidget {
                   )
                 : appCubit.timesModel == null
                     ? const Center(child: CircularProgressIndicator())
-                    : SingleChildScrollView(
-                        child: Stack(children: [
-                          Positioned(
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            child: Image.asset(
-                              'assets/mousq.png',
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height * 0.5,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Padding(
-                              padding: const EdgeInsets.only(top: 300),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  //location
-                                  Text(
-                                    appCubit.address!.locality.toString(),
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 0, 0, 0)),
+                    : SafeArea(
+                        child: Stack(
+                          alignment: AlignmentDirectional.topEnd,
+                          children: [
+                            SingleChildScrollView(
+                              child: Stack(children: [
+                                Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: Image.asset(
+                                    'assets/mousq.png',
+                                    width: MediaQuery.of(context).size.width,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.5,
+                                    fit: BoxFit.cover,
                                   ),
-                                  //location
-                                  Text(
-                                    '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 0, 0, 0)),
-                                  ),
+                                ),
+                                Padding(
+                                    padding: const EdgeInsets.only(top: 300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        //location
+                                        Text(
+                                          appCubit.address!.locality.toString(),
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0)),
+                                        ),
+                                        //location
+                                        Text(
+                                          '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0)),
+                                        ),
 
-                                  //date
-                                  // Text(
-                                  //   appCubit.timesModel!.data.date.readable,
-                                  //   style: const TextStyle(
-                                  //     color: Color(0xff1E5A83),
-                                  //   ),
-                                  // ),
-                                  const SizedBox(height: 4),
-                                  //day
-                                  // Row(
-                                  //   mainAxisAlignment:
-                                  //       MainAxisAlignment.spaceAround,
-                                  //   children: [
-                                  //     // Text(
-                                  //     //   appCubit.timesModel!.data.date.gregorian
-                                  //     //       .weekday.en,
-                                  //     //   style: const TextStyle(
-                                  //     //       color: Color(0xff1E5A83)),
-                                  //     // ),
-                                  //     Text(
-                                  //         appCubit.timesModel!.data.date.hijri
-                                  //             .weekday.ar,
-                                  //         textDirection: TextDirection.rtl,
-                                  //         style: const TextStyle(
-                                  //             color: Color(0xff1E5A83))),
-                                  //   ],
-                                  // ),
-                                  const SizedBox(height: 30),
-                                  //times
-                                  Container(
-                                    decoration: const BoxDecoration(
-                                        color: Color(0xFFFFFFFF)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 1.0),
-                                      child: Column(
-                                        children: [
-                                          prayTimeRow(
-                                              en: 'Fajr',
-                                              time: appCubit.timesModel!.data
-                                                  .timings.fajr,
-                                              ar: 'الفجر'),
-                                          const SizedBox(height: 10),
-                                          prayTimeRow(
-                                              en: 'Sunrise',
-                                              time: appCubit.timesModel!.data
-                                                  .timings.sunrise,
-                                              ar: 'الشروق'),
-                                          const SizedBox(height: 10),
-                                          prayTimeRow(
-                                              en: 'Dhuhr',
-                                              time: appCubit.timesModel!.data
-                                                  .timings.dhuhr,
-                                              ar: 'الظهر'),
-                                          const SizedBox(height: 10),
-                                          prayTimeRow(
-                                              en: 'Asr',
-                                              time: appCubit
-                                                  .timesModel!.data.timings.asr,
-                                              ar: 'العصر'),
-                                          const SizedBox(height: 10),
-                                          prayTimeRow(
-                                              en: 'Maghrib',
-                                              time: appCubit.timesModel!.data
-                                                  .timings.maghrib,
-                                              ar: 'المغرب'),
-                                          const SizedBox(height: 10),
-                                          prayTimeRow(
-                                              en: 'Isha',
-                                              time: appCubit.timesModel!.data
-                                                  .timings.isha,
-                                              ar: 'العشاء'),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )),
-                        ]),
+                                        //date
+                                        // Text(
+                                        //   appCubit.timesModel!.data.date.readable,
+                                        //   style: const TextStyle(
+                                        //     color: Color(0xff1E5A83),
+                                        //   ),
+                                        // ),
+                                        const SizedBox(height: 4),
+                                        //day
+                                        // Row(
+                                        //   mainAxisAlignment:
+                                        //       MainAxisAlignment.spaceAround,
+                                        //   children: [
+                                        //     // Text(
+                                        //     //   appCubit.timesModel!.data.date.gregorian
+                                        //     //       .weekday.en,
+                                        //     //   style: const TextStyle(
+                                        //     //       color: Color(0xff1E5A83)),
+                                        //     // ),
+                                        //     Text(
+                                        //         appCubit.timesModel!.data.date.hijri
+                                        //             .weekday.ar,
+                                        //         textDirection: TextDirection.rtl,
+                                        //         style: const TextStyle(
+                                        //             color: Color(0xff1E5A83))),
+                                        //   ],
+                                        // ),
+                                        const SizedBox(height: 30),
+                                        //times
+                                        Container(
+                                          decoration: const BoxDecoration(
+                                              color: Color(0xFFFFFFFF)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 1.0),
+                                            child: Column(
+                                              children: [
+                                                prayTimeRow(
+                                                    en: 'Fajr',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.fajr,
+                                                    ar: 'الفجر'),
+                                                const SizedBox(height: 10),
+                                                prayTimeRow(
+                                                    en: 'Sunrise',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.sunrise,
+                                                    ar: 'الشروق'),
+                                                const SizedBox(height: 10),
+                                                prayTimeRow(
+                                                    en: 'Dhuhr',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.dhuhr,
+                                                    ar: 'الظهر'),
+                                                const SizedBox(height: 10),
+                                                prayTimeRow(
+                                                    en: 'Asr',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.asr,
+                                                    ar: 'العصر'),
+                                                const SizedBox(height: 10),
+                                                prayTimeRow(
+                                                    en: 'Maghrib',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.maghrib,
+                                                    ar: 'المغرب'),
+                                                const SizedBox(height: 10),
+                                                prayTimeRow(
+                                                    en: 'Isha',
+                                                    time: appCubit.timesModel!
+                                                        .data.timings.isha,
+                                                    ar: 'العشاء'),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )),
+                              ]),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                navigateTo(context, const SettingsScreens());
+                              },
+                              icon: const Padding(
+                                padding: EdgeInsets.only(right: 25, top: 5),
+                                child: Icon(
+                                  FontAwesomeIcons.bars,
+                                  color: Color(0xff1E5A83),
+                                  size: 30,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ));
       },
     );
