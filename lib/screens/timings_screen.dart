@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
@@ -63,17 +64,25 @@ class TimingsScreen extends StatelessWidget {
                 }),
           ),
           body: appCubit.errorStatus == true
-              ? const Padding(
-                  padding: EdgeInsets.all(20),
+              ? Padding(
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('"تاكد من الاتصال بالانترنت و تفعيل الموقع"'),
-                      Text(
-                          '"Make sure you are connected to the internet and GPS is on"')
+                      if (appCubit.errorStatus)
+                        Image.asset(
+                          'assets/404.gif',
+                          width: 405,
+                          height: 370,
+                        ),
+                      const Text(
+                        "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
+                        textAlign: TextAlign.center,
+                      ),
                     ],
-                  ))
+                  ),
+                )
               : appCubit.timesModel == null
                   ? const Center(child: CircularProgressIndicator())
                   : SingleChildScrollView(

@@ -7,7 +7,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_zekr_folders.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/qibla_screen.dart';
