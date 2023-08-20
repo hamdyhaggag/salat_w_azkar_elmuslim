@@ -90,13 +90,32 @@ class TimingsScreen extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
+                                        const SizedBox(
+                                          height: 30,
+                                        ),
                                         //location
-                                        Text(
-                                          appCubit.address!.locality.toString(),
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              appCubit.address!.locality
+                                                  .toString(),
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Color.fromARGB(
+                                                      255, 0, 0, 0)),
+                                            ),
+                                            const SizedBox(
+                                              width: 12,
+                                            ),
+                                            const Icon(
+                                              Icons.location_on,
                                               color:
-                                                  Color.fromARGB(255, 0, 0, 0)),
+                                                  Color.fromARGB(255, 0, 0, 0),
+                                              size: 30,
+                                            ),
+                                          ],
                                         ),
                                         //location
                                         Text(
@@ -120,12 +139,7 @@ class TimingsScreen extends StatelessWidget {
                                         //   mainAxisAlignment:
                                         //       MainAxisAlignment.spaceAround,
                                         //   children: [
-                                        //     // Text(
-                                        //     //   appCubit.timesModel!.data.date.gregorian
-                                        //     //       .weekday.en,
-                                        //     //   style: const TextStyle(
-                                        //     //       color: Color(0xff1E5A83)),
-                                        //     // ),
+                                        //
                                         //     Text(
                                         //         appCubit.timesModel!.data.date.hijri
                                         //             .weekday.ar,
