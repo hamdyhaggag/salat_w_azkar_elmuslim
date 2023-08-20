@@ -23,7 +23,7 @@ class MotafarekkatScreen extends StatelessWidget {
               height: 12,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30),
+              padding: const EdgeInsets.only(left: 18, right: 18),
               child: Stack(
                 children: [
                   Image.asset(
@@ -31,8 +31,8 @@ class MotafarekkatScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                   ),
                   const Positioned(
-                    top: 50,
-                    left: 135,
+                    top: 60,
+                    left: 145,
                     child: Text(
                       'متفرقات',
                       style: TextStyle(
