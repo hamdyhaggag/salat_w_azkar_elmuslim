@@ -78,7 +78,7 @@ class MotafarekkatScreen extends StatelessWidget {
                         context: context),
                     azkarButton(
                         name: 'الرقية الشرعية',
-                        screeen: const CustomZekrFolder(
+                        screeen: const PrayAzkarFolder(
                           titleOfAppBar: 'الرقية الشرعية',
                           titleOfRow: ' الرقية الشرعية من القراّن',
                           screenName: RoqiaFromQuraan(),

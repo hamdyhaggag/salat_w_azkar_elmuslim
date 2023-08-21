@@ -5,8 +5,8 @@ import 'package:salat_w_azkar_elmuslim/models/custom_folder_row.dart';
 
 import '../../models/custom_app_bar.dart';
 
-class CustomZekrFolder extends StatelessWidget {
-  const CustomZekrFolder({
+class PrayAzkarFolder extends StatelessWidget {
+  const PrayAzkarFolder({
     Key? key,
     required this.titleOfAppBar,
     required this.titleOfRow,
@@ -33,6 +33,8 @@ class CustomZekrFolder extends StatelessWidget {
           },
           child: Column(
             children: [
+              CustomFolderRow(title: titleOfRow),
+              CustomFolderRow(title: titleOfRow),
               CustomFolderRow(title: titleOfRow),
               CustomFolderRow(title: titleOfRow),
             ],

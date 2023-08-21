@@ -18,7 +18,7 @@ class CustomFolderRow extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 25,
                 fontFamily: 'Cairo',
                 fontWeight: FontWeight.w500,
                 color: Color(0xff1E5A83),
