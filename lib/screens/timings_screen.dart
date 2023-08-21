@@ -21,9 +21,19 @@ class TimingsScreen extends StatefulWidget {
 }
 
 class _TimingsScreenState extends State<TimingsScreen> {
+  bool isRefreshing = false;
+
   void refreshScreen() {
     setState(() {
+      isRefreshing = true; // Show loading indicator
       // Add the logic to update your screen here
+
+      // Simulate a delay to demonstrate the loading indicator
+      Future.delayed(const Duration(seconds: 2), () {
+        setState(() {
+          isRefreshing = false; // Hide loading indicator after refresh
+        });
+      });
     });
   }
 
@@ -148,27 +158,36 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                           onTap: () {
                                             refreshScreen();
                                           },
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                          child: Stack(
+                                            alignment: Alignment.topCenter,
                                             children: [
-                                              Text(
-                                                '  $formattedTime : اخر تحديث',
-                                                style: const TextStyle(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 23,
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    '  $formattedTime : اخر تحديث',
+                                                    style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 23,
+                                                      color: Color.fromARGB(
+                                                          255, 0, 0, 0),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 8,
+                                                  ),
+                                                  const Icon(
+                                                    Icons.update,
                                                     color: Color.fromARGB(
-                                                        255, 0, 0, 0)),
+                                                        255, 0, 0, 0),
+                                                    size: 20,
+                                                  ),
+                                                ],
                                               ),
-                                              const SizedBox(
-                                                width: 8,
-                                              ),
-                                              const Icon(
-                                                Icons.update,
-                                                color: Color.fromARGB(
-                                                    255, 0, 0, 0),
-                                                size: 20,
-                                              ),
+                                              if (isRefreshing)
+                                                const CircularProgressIndicator(),
                                             ],
                                           ),
                                         ),
