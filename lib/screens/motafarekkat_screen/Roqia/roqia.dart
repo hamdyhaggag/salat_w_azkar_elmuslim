@@ -4,7 +4,7 @@ import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_2
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_3.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_4.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_5.dart';
-import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_6%20copy.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_6.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_7.dart';
 import '../../../models/custom_app_bar.dart';
 import '../../../models/custom_folder_row.dart';
