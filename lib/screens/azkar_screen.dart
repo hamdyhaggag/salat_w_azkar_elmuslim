@@ -68,47 +68,30 @@ class AzkarScreen extends StatelessWidget {
                         screeen: const EveningAzkar(title: 'أذكار  المساء'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار بعد الصلاة',
-                        screeen: const PrayAzkar(title: 'أذكار بعد الصلاة'),
-                        context: context),
-                    azkarButton(
-                        name: 'أذكار النوم',
-                        screeen: const SleepAzkar(title: 'أذكار النوم'),
+                        name: 'أذكار الصلاة',
+                        screeen: const PrayAzkar(title: 'أذكار الصلاة'),
                         context: context),
                     azkarButton(
                         name: 'أذكار الإستيقاظ',
                         screeen: const WakeUpAzkar(title: 'أذكار الإستيقاظ'),
                         context: context),
                     azkarButton(
+                        name: 'أذكار النوم',
+                        screeen: const SleepAzkar(title: 'أذكار النوم'),
+                        context: context),
+                    azkarButton(
                         name: 'أذكار متفرقة',
                         screeen: const CollectionAzkar(title: 'أذكار متفرقة'),
                         context: context),
                     azkarButton(
-                        name: 'الْأدْعِيَةُ القرآنية',
+                        name: 'أذكار الطعام',
                         screeen:
                             const QuranAzkar(title: 'الْأدْعِيَةُ القرآنية'),
                         context: context),
                     azkarButton(
-                        name: 'الْأدْعِيَةُ النبوية',
+                        name: 'أذكار السفر',
                         screeen:
                             const EveningAzkar(title: 'الْأدْعِيَةُ النبوية'),
-                        context: context),
-                    azkarButton(
-                        name: 'تسابيح',
-                        screeen: const Tasabeh(title: 'تسابيح'),
-                        context: context),
-                    azkarButton(
-                        name: 'جوامع الدعاء',
-                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
-                        context: context),
-                    azkarButton(
-                        name: 'أدعية للميّت',
-                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
-                        context: context),
-                    azkarButton(
-                        name: 'الرُّقية الشرعية من القرآن والسنة',
-                        screeen: const Rokia(
-                            title: 'الرُّقية الشرعية من القرآن والسنة'),
                         context: context),
                   ],
                 ),
