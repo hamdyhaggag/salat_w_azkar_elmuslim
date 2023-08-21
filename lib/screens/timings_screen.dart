@@ -9,6 +9,7 @@ import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
+import 'package:intl/intl.dart';
 
 import '../core/functions.dart';
 
@@ -21,6 +22,12 @@ class TimingsScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
+// Get the current time
+        final currentTime = DateTime.now();
+
+// Format the current time as desired
+        final formattedTime = DateFormat('hh:mm a')
+            .format(currentTime); // Example format: 01:30 PM
 
         return Scaffold(
             backgroundColor: Colors.white,
@@ -91,7 +98,7 @@ class TimingsScreen extends StatelessWidget {
                                           CrossAxisAlignment.center,
                                       children: [
                                         const SizedBox(
-                                          height: 30,
+                                          height: 25,
                                         ),
                                         //location
                                         Row(
@@ -126,10 +133,33 @@ class TimingsScreen extends StatelessWidget {
                                                   Color.fromARGB(255, 0, 0, 0)),
                                         ),
 
-                                        const SizedBox(height: 4),
-
-                                        const SizedBox(height: 30),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              '  $formattedTime : اخر تحديث',
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 23,
+                                                  color: Color.fromARGB(
+                                                      255, 0, 0, 0)),
+                                            ),
+                                            const SizedBox(
+                                              width: 8,
+                                            ),
+                                            const Icon(
+                                              Icons.update,
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0),
+                                              size: 20,
+                                            ),
+                                          ],
+                                        ),
                                         //times
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
                                         Container(
                                           decoration: const BoxDecoration(
                                               color: Color(0xFFFFFFFF)),
