@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food.dart';
+import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Travel_Azkar/travel.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/mix_Azkar/collection.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/evening.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/morning_view.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/quran.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/sleep.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/wake.dart';
 import '../models/azkar_button.dart';
@@ -87,7 +87,7 @@ class AzkarScreen extends StatelessWidget {
                     azkarButton(
                         name: 'أذكار السفر',
                         screeen:
-                            const EveningAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                            const TravelAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                   ],
                 ),
