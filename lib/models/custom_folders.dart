@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:salat_w_azkar_elmuslim/models/custom_folder_row.dart';
 
-import '../../models/custom_app_bar.dart';
+import 'custom_app_bar.dart';
 
 class PrayAzkarFolder extends StatelessWidget {
   const PrayAzkarFolder({

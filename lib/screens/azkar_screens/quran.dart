@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_container.dart';
 
+import '../../models/custom_app_bar.dart';
+
 class QuranAzkar extends StatelessWidget {
   final String title;
   const QuranAzkar({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
-      body: const SingleChildScrollView(
+    return const Scaffold(
+      appBar: CustomAppBar(title: 'الأدعية القرآنية '),
+      body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 15),
