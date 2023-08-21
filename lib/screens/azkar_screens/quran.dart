@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_container.dart';
 
 class QuranAzkar extends StatelessWidget {

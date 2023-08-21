@@ -126,28 +126,8 @@ class TimingsScreen extends StatelessWidget {
                                                   Color.fromARGB(255, 0, 0, 0)),
                                         ),
 
-                                        //date
-                                        // Text(
-                                        //   appCubit.timesModel!.data.date.readable,
-                                        //   style: const TextStyle(
-                                        //     color: Color(0xff1E5A83),
-                                        //   ),
-                                        // ),
                                         const SizedBox(height: 4),
-                                        //day
-                                        // Row(
-                                        //   mainAxisAlignment:
-                                        //       MainAxisAlignment.spaceAround,
-                                        //   children: [
-                                        //
-                                        //     Text(
-                                        //         appCubit.timesModel!.data.date.hijri
-                                        //             .weekday.ar,
-                                        //         textDirection: TextDirection.rtl,
-                                        //         style: const TextStyle(
-                                        //             color: Color(0xff1E5A83))),
-                                        //   ],
-                                        // ),
+
                                         const SizedBox(height: 30),
                                         //times
                                         Container(
