@@ -13,8 +13,19 @@ import 'package:intl/intl.dart';
 
 import '../core/functions.dart';
 
-class TimingsScreen extends StatelessWidget {
+class TimingsScreen extends StatefulWidget {
   const TimingsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<TimingsScreen> createState() => _TimingsScreenState();
+}
+
+class _TimingsScreenState extends State<TimingsScreen> {
+  void refreshScreen() {
+    setState(() {
+      // Add the logic to update your screen here
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,28 +144,33 @@ class TimingsScreen extends StatelessWidget {
                                                   Color.fromARGB(255, 0, 0, 0)),
                                         ),
 
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              '  $formattedTime : اخر تحديث',
-                                              style: const TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 23,
-                                                  color: Color.fromARGB(
-                                                      255, 0, 0, 0)),
-                                            ),
-                                            const SizedBox(
-                                              width: 8,
-                                            ),
-                                            const Icon(
-                                              Icons.update,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0),
-                                              size: 20,
-                                            ),
-                                          ],
+                                        GestureDetector(
+                                          onTap: () {
+                                            refreshScreen();
+                                          },
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                '  $formattedTime : اخر تحديث',
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 23,
+                                                    color: Color.fromARGB(
+                                                        255, 0, 0, 0)),
+                                              ),
+                                              const SizedBox(
+                                                width: 8,
+                                              ),
+                                              const Icon(
+                                                Icons.update,
+                                                color: Color.fromARGB(
+                                                    255, 0, 0, 0),
+                                                size: 20,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         //times
                                         const SizedBox(
