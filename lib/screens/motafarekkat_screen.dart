@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/azkar_button.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_folders.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/quran.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/nabawi_Azkar.dart';
-import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/roqia_1.dart';
 import 'azkar_screens/dead.dart';
 import 'motafarekkat_screen/plus.dart';
 import 'motafarekkat_screen/tasabeh.dart';
@@ -78,11 +77,7 @@ class MotafarekkatScreen extends StatelessWidget {
                         context: context),
                     azkarButton(
                         name: 'الرقية الشرعية',
-                        screeen: const PrayAzkarFolder(
-                          titleOfAppBar: 'الرقية الشرعية',
-                          titleOfRow: ' الرقية الشرعية من القراّن',
-                          screenName: RoqiaFromQuraan(),
-                        ),
+                        screeen: const RoqiaScreen(title: 'الرقية الشرعية'),
                         context: context),
                   ],
                 ),
