@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/azkar_button.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/motafarekkat_screen/custom_folders.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/custom_folders.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/quran.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/motafarekkat_screen/roqia_from_quraan.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/roqia_from_quraan.dart';
 import 'azkar_screens/dead.dart';
 import 'azkar_screens/evening.dart';
 import 'azkar_screens/plus.dart';
