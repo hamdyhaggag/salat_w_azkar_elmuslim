@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
+import 'package:salat_w_azkar_elmuslim/models/custom_container.dart';
+
+import '../../models/custom_app_bar.dart';
 
 class CollectionAzkar extends StatelessWidget {
   final String title;
@@ -8,29 +11,35 @@ class CollectionAzkar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'أذكار متفرقة'),
       body: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(height: 15),
-            zekr(
-              text1: 'دعاء لبس الثوب',
-              text2:
-                  'الحمدُ للهِ الّذي كَساني هذا (الثّوب) وَرَزَقَنيه مِنْ غَـيـْرِ حَولٍ مِنّي وَلا قـوّة. ',
-              text3: '',
-              times: 1,
-              context: context,
-            ),
-            zekr(
-              text1: 'دعاء لبس الثوب الجديد',
-              text2: 'اللهم لك الحمد أنت كسوتنيه، أسألك من خيره ',
-              text3: '',
-              times: 1,
-              context: context,
-            ),
+            const CustomContainer(
+                title:
+                    'الحمدُ للهِ الذي عافاني في جَسَدي وَرَدّ عَليّ روحي وَأَذِنَ لي بِذِكْرِه.',
+                maxValue: 1,
+                initialCounterValue: 0),
+            const SizedBox(height: 15),
+            const CustomContainer(
+                title:
+                    'دعاء لبس الثوب\n الحمدُ للهِ الّذي كَساني هذا (الثّوب) وَرَزَقَنيه مِنْ غَـيـْرِ حَولٍ مِنّي وَلا قـوّة  ',
+                maxValue: 1,
+                initialCounterValue: 0),
+            const SizedBox(height: 15),
+            const CustomContainer(
+                title:
+                    ' دعاء لبس الثوب الجديد\n اللهم لك الحمد أنت كسوتنيه، أسألك من خيره   ',
+                maxValue: 1,
+                initialCounterValue: 0),
+            const SizedBox(height: 15),
+            const CustomContainer(
+                title:
+                    ' دعاء الكرب\n لا إله إلا الله العظيم الحليم، لا إله إلا الله رب العرش العظيم، لا إله إلا الله رب السماوات، ورب الأرض ورب العرش الكريم   ',
+                maxValue: 1,
+                initialCounterValue: 0),
+            const SizedBox(height: 15),
             zekr(
               text1: 'دعاء الكرب',
               text2:
