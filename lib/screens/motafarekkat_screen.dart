@@ -3,11 +3,11 @@ import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/models/azkar_button.dart';
 import 'package:salat_w_azkar_elmuslim/models/custom_folders.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/quran.dart';
+import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/nabawi_Azkar.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/roqia_1.dart';
 import 'azkar_screens/dead.dart';
-import 'azkar_screens/evening.dart';
-import 'azkar_screens/plus.dart';
-import 'azkar_screens/tasabeh.dart';
+import 'motafarekkat_screen/plus.dart';
+import 'motafarekkat_screen/tasabeh.dart';
 
 class MotafarekkatScreen extends StatelessWidget {
   const MotafarekkatScreen({Key? key}) : super(key: key);
@@ -62,7 +62,7 @@ class MotafarekkatScreen extends StatelessWidget {
                     azkarButton(
                         name: 'الأدعية النبوية',
                         screeen:
-                            const EveningAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                            const NabawiAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                     azkarButton(
                         name: 'تسابيح',
