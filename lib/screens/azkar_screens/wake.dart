@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
+
+import '../../models/custom_app_bar.dart';
+import '../../models/custom_container.dart';
 
 class WakeUpAzkar extends StatelessWidget {
   final String title;
@@ -7,39 +9,29 @@ class WakeUpAzkar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
+    return const Scaffold(
+      appBar: CustomAppBar(title: 'أذكار الإستيقاظ'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 15),
-            zekr(
-              text1: '',
-              text2:
-                  'الحَمْـدُ لِلّهِ الّذي أَحْـيانا بَعْـدَ ما أَماتَـنا وَإليه النُّـشور.',
-              text3: '',
-              times: 1,
-              context: context,
-            ),
-            zekr(
-              text1: '',
-              text2:
-                  'الحمدُ للهِ الذي عافاني في جَسَدي وَرَدّ عَليّ روحي وَأَذِنَ لي بِذِكْرِه.',
-              text3: '',
-              times: 1,
-              context: context,
-            ),
-            zekr(
-              text1: '',
-              text2:
-                  'لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شَـريكَ له، لهُ المُلـكُ ولهُ الحَمـد، وهوَ على كلّ شيءٍ قدير، سُـبْحانَ اللهِ، والحمْـدُ لله ، ولا إلهَ إلاّ اللهُ واللهُ أكبَر، وَلا حَولَ وَلا قوّة إلاّ باللّهِ العليّ العظيم. رَبِّ اغْفرْ لي.',
-              text3: '',
-              times: 1,
-              context: context,
-            ),
+            CustomContainer(
+                title:
+                    'الحَمْـدُ لِلّهِ الّذي أَحْـيانا بَعْـدَ ما أَماتَـنا وَإليه النُّـشور.',
+                maxValue: 1,
+                initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title:
+                    'الحمدُ للهِ الذي عافاني في جَسَدي وَرَدّ عَليّ روحي وَأَذِنَ لي بِذِكْرِه.',
+                maxValue: 1,
+                initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title:
+                    'لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شَـريكَ له، لهُ المُلـكُ ولهُ الحَمـد، وهوَ على كلّ شيءٍ قدير، سُـبْحانَ اللهِ، والحمْـدُ لله ، ولا إلهَ إلاّ اللهُ واللهُ أكبَر، وَلا حَولَ وَلا قوّة إلاّ باللّهِ العليّ العظيم. رَبِّ اغْفرْ لي.',
+                maxValue: 1,
+                initialCounterValue: 0),
+            SizedBox(height: 15),
           ],
         ),
       ),

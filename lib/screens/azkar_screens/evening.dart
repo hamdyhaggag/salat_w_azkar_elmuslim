@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 
 import '../../models/custom_app_bar.dart';
 import '../../models/custom_container.dart';
