@@ -122,12 +122,6 @@ class QiblaScreenState extends State<QiblaScreen> {
                           fontSize: 65,
                         ),
                       ),
-                      if (direction == qibla)
-                        const Icon(
-                          Icons.done_outline,
-                          size: 30,
-                          color: Color(0xff1E5A83),
-                        ),
                     ],
                   ),
                 ),
@@ -202,7 +196,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'اتجاة القبلة هو $qibla من الشمال ',
+                        'اتجاة القبلة هو $qibla° من الشمال ',
                         style: const TextStyle(
                           color: Color(0xff1E5A83),
                           fontSize: 30,
