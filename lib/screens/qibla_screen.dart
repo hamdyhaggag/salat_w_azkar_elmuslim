@@ -108,29 +108,26 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                   child: Transform.rotate(
                     angle: ((direction) * (math.pi / 180) * -1),
-                    child: Image.asset('assets/qiblascreen.png'),
+                    child: Image.asset('assets/qibla_screen.png'),
                   ),
                 ),
                 Center(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
-                        height: 40,
-                      ),
                       Text(
                         '${direction.round()}°',
                         style: const TextStyle(
                           color: Color(0xff1E5A83),
-                          fontSize: 56,
+                          fontSize: 65,
                         ),
                       ),
                       if (direction == qibla)
                         const Icon(
                           Icons.done_outline,
-                          size: 35,
+                          size: 30,
                           color: Color(0xff1E5A83),
-                        )
+                        ),
                     ],
                   ),
                 ),
@@ -191,6 +188,25 @@ class QiblaScreenState extends State<QiblaScreen> {
                               ],
                             ),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 500,
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: (60),
+                  top: (790),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'اتجاة القبلة هو $qibla من الشمال ',
+                        style: const TextStyle(
+                          color: Color(0xff1E5A83),
+                          fontSize: 30,
+                        ),
                       ),
                     ],
                   ),
