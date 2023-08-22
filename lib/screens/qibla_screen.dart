@@ -158,7 +158,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                                   width: 5,
                                 ),
                                 Icon(
-                                  FontAwesomeIcons.arrowRight,
+                                  FontAwesomeIcons.arrowRightLong,
                                   color: Color(0xff1E5A83),
                                   size: 40,
                                 ),
@@ -184,7 +184,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                                   width: 5,
                                 ),
                                 Icon(
-                                  FontAwesomeIcons.arrowLeft,
+                                  FontAwesomeIcons.arrowLeftLong,
                                   color: Color(0xff1E5A83),
                                   size: 40,
                                 ),
