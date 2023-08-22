@@ -176,17 +176,17 @@ class QiblaScreenState extends State<QiblaScreen> {
                           if (direction > qibla)
                             const Row(
                               children: [
-                                Text(
-                                  'تحرك إلى اليسار',
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
                                 Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff1E5A83),
                                   size: 40,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  'تحرك إلى اليسار',
+                                  style: TextStyle(fontSize: 20),
                                 ),
                               ],
                             ),
