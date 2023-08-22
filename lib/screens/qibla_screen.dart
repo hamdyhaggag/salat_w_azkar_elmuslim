@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 
@@ -107,13 +108,16 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                   child: Transform.rotate(
                     angle: ((direction) * (math.pi / 180) * -1),
-                    child: Image.asset('assets/compass.png'),
+                    child: Image.asset('assets/qiblascreen.png'),
                   ),
                 ),
                 Center(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        height: 40,
+                      ),
                       Text(
                         '${direction.round()}°',
                         style: const TextStyle(
@@ -125,7 +129,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                         const Icon(
                           Icons.done_outline,
                           size: 35,
-                          color: Colors.green,
+                          color: Color(0xff1E5A83),
                         )
                     ],
                   ),
@@ -137,7 +141,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                     width: width / 80,
                     height: width / 10,
                     child: Container(
-                      color: Colors.green,
+                      color: const Color(0xff1E5A83),
                     ),
                   ),
                 ),
@@ -149,20 +153,42 @@ class QiblaScreenState extends State<QiblaScreen> {
                       Row(
                         children: [
                           if (direction < qibla!)
-                            const Icon(
-                              Icons.arrow_forward,
-                              color: Colors.green,
-                              size: 40,
+                            const Row(
+                              children: [
+                                Text(
+                                  'تحرك إلى اليمين',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Icon(
+                                  FontAwesomeIcons.arrowRight,
+                                  color: Color(0xff1E5A83),
+                                  size: 40,
+                                ),
+                              ],
                             ),
                           SizedBox(
                               height: qibla == direction ? 100 : 70,
                               width: qibla == direction ? 100 : 70,
-                              child: Image.asset('assets/qibla.png')),
+                              child: Image.asset('assets/qibla_icon.png')),
                           if (direction > qibla)
-                            const Icon(
-                              Icons.arrow_back,
-                              color: Colors.green,
-                              size: 40,
+                            const Row(
+                              children: [
+                                Text(
+                                  'تحرك إلى اليسار',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Icon(
+                                  FontAwesomeIcons.arrowLeft,
+                                  color: Color(0xff1E5A83),
+                                  size: 40,
+                                ),
+                              ],
                             ),
                         ],
                       ),
