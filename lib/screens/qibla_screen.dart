@@ -57,6 +57,8 @@ class QiblaScreenState extends State<QiblaScreen> {
   Widget _buildCompass() {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    // Adjust this value to control rotation speed
+
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -78,7 +80,9 @@ class QiblaScreenState extends State<QiblaScreen> {
               );
             }
 
-            double? direction = snapshot.data!.heading;
+            double? direction =
+                snapshot.data?.heading; // Use null safe operator
+            double? rotatedAngle;
 
             if (direction != null) {
               direction = direction.round().toDouble();
@@ -88,6 +92,10 @@ class QiblaScreenState extends State<QiblaScreen> {
               if (qibla == direction) {
                 Vibrate.feedback(FeedbackType.error);
               }
+              double rotationSpeedFactor =
+                  0.2; // Adjust this value to control rotation speed
+              rotatedAngle =
+                  (direction * (math.pi / 180) * -1) * rotationSpeedFactor;
             }
 
             // if direction is null, then device does not support this sensor
@@ -107,7 +115,8 @@ class QiblaScreenState extends State<QiblaScreen> {
                     color: Color(0xFFEBEBEB),
                   ),
                   child: Transform.rotate(
-                    angle: ((direction) * (math.pi / 180) * -1),
+                    angle: rotatedAngle ??
+                        0, // Use the rotatedAngle value if not null
                     child: Image.asset('assets/qibla_screen.png'),
                   ),
                 ),
@@ -126,29 +135,24 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                 ),
                 Positioned(
-                  left: (width / 2) - ((width / 80) / 2),
-                  top: (height - width) / 2,
-                  child: SizedBox(
-                    width: width / 80,
-                    height: width / 10,
-                    child: Container(
-                      color: const Color(0xff1E5A83),
-                    ),
-                  ),
-                ),
-                Positioned(
                   left: (width / 2) - ((width / 4) / 2),
                   top: (height - width) / 3.5,
                   child: Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           if (direction < qibla!)
                             const Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
                                   'تحرك إلى اليمين',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff1E5A83),
+                                  ),
                                 ),
                                 SizedBox(
                                   width: 5,
@@ -160,31 +164,38 @@ class QiblaScreenState extends State<QiblaScreen> {
                                 ),
                               ],
                             ),
-                          SizedBox(
-                              height: qibla == direction ? 100 : 70,
-                              width: qibla == direction ? 100 : 70,
-                              child: Image.asset('assets/qibla_icon.png')),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
                           if (direction > qibla)
                             const Row(
                               children: [
+                                Text(
+                                  'تحرك إلى اليسار',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff1E5A83),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
                                 Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff1E5A83),
                                   size: 40,
                                 ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  'تحرك إلى اليسار',
-                                  style: TextStyle(fontSize: 20),
-                                ),
                               ],
                             ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 500,
+                      SizedBox(
+                        height: qibla == direction ? 100 : 70,
+                        width: qibla == direction ? 100 : 70,
+                        child: Image.asset('assets/qibla_icon.png'),
                       ),
                     ],
                   ),
@@ -196,7 +207,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'اتجاة القبلة هو $qibla° من الشمال ',
+                        ' اتجاة القبلة هو  $qibla° من الشمال ',
                         style: const TextStyle(
                           color: Color(0xff1E5A83),
                           fontSize: 30,
