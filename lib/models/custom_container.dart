@@ -4,11 +4,14 @@ import 'circle_progress.dart';
 
 class CustomContainer extends StatefulWidget {
   final String title;
+  final String? headtitle; // New parameter for optional text
+
   final int maxValue;
   final int initialCounterValue;
 
   const CustomContainer({
     Key? key,
+    this.headtitle,
     required this.title,
     required this.maxValue,
     this.initialCounterValue = 0,
@@ -63,6 +66,17 @@ class _CustomContainerState extends State<CustomContainer> {
                   CopyButton(widget.title),
                   Column(
                     children: [
+                      if (widget.headtitle != null)
+                        Text(
+                          widget.headtitle!,
+                          style: const TextStyle(
+                              color: Color(0xFF1E5A83),
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      SizedBox(
+                        height: 12,
+                      ),
                       SizedBox(
                         width: double.infinity,
                         child: Text(

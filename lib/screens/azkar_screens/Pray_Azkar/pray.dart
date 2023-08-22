@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_1.dart';
+import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/azan/azan.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_10.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_11.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_12.dart';
@@ -8,7 +8,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_14.
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_15.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_16.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_17.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_2.dart.dart';
+import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_18.dart';
+import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_3.dart.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_4.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_5.dart';
@@ -36,7 +37,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray1(),
+                    builder: (context) => const Azan(title: 'الآذان'),
                   ),
                 );
               },
@@ -47,7 +48,9 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray1(),
+                    builder: (context) => const Wodoo(
+                      title: 'الوضوء',
+                    ),
                   ),
                 );
               },
@@ -58,7 +61,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray2(),
+                    builder: (context) => const Pray3(),
                   ),
                 );
               },
@@ -69,23 +72,11 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray3(),
-                  ),
-                );
-              },
-              child: const CustomFolderRow(title: 'دعاء استفتاح الصلاة'),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
                     builder: (context) => const Pray4(),
                   ),
                 );
               },
-              child: const CustomFolderRow(
-                  title: ' دعاء استفتاح الصلاة إذا قام من الليل'),
+              child: const CustomFolderRow(title: 'دعاء استفتاح الصلاة'),
             ),
             GestureDetector(
               onTap: () {
@@ -97,7 +88,7 @@ class PrayAzkar extends StatelessWidget {
                 );
               },
               child: const CustomFolderRow(
-                  title: ' دعاء الوسوسة في الصلاة و القراءة'),
+                  title: ' دعاء استفتاح الصلاة إذا قام من الليل'),
             ),
             GestureDetector(
               onTap: () {
@@ -108,7 +99,8 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: ' دعاء الركوع'),
+              child: const CustomFolderRow(
+                  title: ' دعاء الوسوسة في الصلاة و القراءة'),
             ),
             GestureDetector(
               onTap: () {
@@ -119,7 +111,7 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: ' دعاء الرفع من الركوع'),
+              child: const CustomFolderRow(title: ' دعاء الركوع'),
             ),
             GestureDetector(
               onTap: () {
@@ -130,7 +122,7 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'دعاء السجود'),
+              child: const CustomFolderRow(title: ' دعاء الرفع من الركوع'),
             ),
             GestureDetector(
               onTap: () {
@@ -141,7 +133,7 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: ' دعاء الجلسة بين السجدتين'),
+              child: const CustomFolderRow(title: 'دعاء السجود'),
             ),
             GestureDetector(
               onTap: () {
@@ -152,7 +144,7 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: ' التشهد'),
+              child: const CustomFolderRow(title: ' دعاء الجلسة بين السجدتين'),
             ),
             GestureDetector(
               onTap: () {
@@ -160,6 +152,17 @@ class PrayAzkar extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Pray11(),
+                  ),
+                );
+              },
+              child: const CustomFolderRow(title: ' التشهد'),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Pray12(),
                   ),
                 );
               },
@@ -171,7 +174,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray12(),
+                    builder: (context) => const Pray13(),
                   ),
                 );
               },
@@ -183,7 +186,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray13(),
+                    builder: (context) => const Pray14(),
                   ),
                 );
               },
@@ -194,7 +197,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray14(),
+                    builder: (context) => const Pray15(),
                   ),
                 );
               },
@@ -205,7 +208,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray15(),
+                    builder: (context) => const Pray16(),
                   ),
                 );
               },
@@ -216,7 +219,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray16(),
+                    builder: (context) => const Pray17(),
                   ),
                 );
               },
@@ -227,7 +230,7 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Pray17(),
+                    builder: (context) => const Pray18(),
                   ),
                 );
               },
