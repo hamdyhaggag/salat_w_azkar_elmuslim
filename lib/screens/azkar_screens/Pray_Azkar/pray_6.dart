@@ -9,11 +9,15 @@ class Pray6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: ' دعاء الوسوسة في الصلاة '),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title: 'أعوذ بالله من الشيطان الرجيم واتفل على يسارك',
+                maxValue: 3,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),
