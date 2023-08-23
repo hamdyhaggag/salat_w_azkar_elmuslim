@@ -287,13 +287,6 @@ showInfo(context) {
               Colors.green,
             ),
             const SizedBox(height: 5),
-            // buildRow(
-            //   FontAwesomeIcons.solidStar,
-            //   googlePlayUrl,
-            //   'Rate App with 5 stars',
-            //   Colors.yellow,
-            // ),
-            const SizedBox(height: 5),
           ],
         );
       });
