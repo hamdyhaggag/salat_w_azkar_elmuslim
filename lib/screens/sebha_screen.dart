@@ -50,9 +50,8 @@ class Sebha extends StatelessWidget {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Text(cubit.maxCounter.toString()),
                     const MyCustomRow(),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     AppButton(
                       horizontalPadding: 50,
                       onPressed: cubit.resetCounter,

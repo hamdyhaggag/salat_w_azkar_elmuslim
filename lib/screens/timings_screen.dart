@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -42,10 +44,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
       listener: (context, state) {},
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
-// Get the current time
+        // Get the current time
         final currentTime = DateTime.now();
-
-// Format the current time as desired
+        // Format the current time as desired
         final formattedTime = DateFormat('hh:mm a')
             .format(currentTime); // Example format: 01:30 PM
 
@@ -77,155 +78,187 @@ class _TimingsScreenState extends State<TimingsScreen> {
                         child: Stack(
                           alignment: AlignmentDirectional.topEnd,
                           children: [
-                            SingleChildScrollView(
-                              child: Stack(children: [
-                                Positioned(
-                                  top: 0,
-                                  left: 0,
-                                  right: 0,
-                                  child: Image.asset(
-                                    'assets/mousq.png',
-                                    width: MediaQuery.of(context).size.width,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.5,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Padding(
-                                    padding: const EdgeInsets.only(top: 300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        const SizedBox(
-                                          height: 25,
-                                        ),
-                                        //location
-                                        Row(
+                            RefreshIndicator(
+                              onRefresh: () async {
+                                log('onRefresh');
+                                return appCubit.getMyCurrentLocation();
+                              },
+                              child: SingleChildScrollView(
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      top: 0,
+                                      left: 0,
+                                      right: 0,
+                                      child: Image.asset(
+                                        'assets/mousq.png',
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.5,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 300),
+                                        child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
+                                            const SizedBox(
+                                              height: 25,
+                                            ),
+                                            //location
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  appCubit.address!.locality
+                                                      .toString(),
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Color.fromARGB(
+                                                          255, 0, 0, 0)),
+                                                ),
+                                                const SizedBox(
+                                                  width: 12,
+                                                ),
+                                                const Icon(
+                                                  Icons.location_on,
+                                                  color: Color.fromARGB(
+                                                      255, 0, 0, 0),
+                                                  size: 30,
+                                                ),
+                                              ],
+                                            ),
+                                            //location
                                             Text(
-                                              appCubit.address!.locality
-                                                  .toString(),
+                                              '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0)),
                                             ),
-                                            const SizedBox(
-                                              width: 12,
-                                            ),
-                                            const Icon(
-                                              Icons.location_on,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0),
-                                              size: 30,
-                                            ),
-                                          ],
-                                        ),
-                                        //location
-                                        Text(
-                                          '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0)),
-                                        ),
 
-                                        GestureDetector(
-                                          onTap: () {
-                                            refreshScreen();
-                                          },
-                                          child: Stack(
-                                            alignment: Alignment.topCenter,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                            GestureDetector(
+                                              onTap: () {
+                                                refreshScreen();
+                                              },
+                                              child: Stack(
+                                                alignment: Alignment.topCenter,
                                                 children: [
-                                                  Text(
-                                                    '  $formattedTime : اخر تحديث',
-                                                    style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 23,
-                                                      color: Color.fromARGB(
-                                                          255, 0, 0, 0),
-                                                    ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        '  $formattedTime : اخر تحديث',
+                                                        style: const TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontSize: 23,
+                                                          color: Color.fromARGB(
+                                                              255, 0, 0, 0),
+                                                        ),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 8,
+                                                      ),
+                                                      const Icon(
+                                                        Icons.update,
+                                                        color: Color.fromARGB(
+                                                            255, 0, 0, 0),
+                                                        size: 20,
+                                                      ),
+                                                    ],
                                                   ),
-                                                  const SizedBox(
-                                                    width: 8,
-                                                  ),
-                                                  const Icon(
-                                                    Icons.update,
-                                                    color: Color.fromARGB(
-                                                        255, 0, 0, 0),
-                                                    size: 20,
-                                                  ),
+                                                  if (isRefreshing)
+                                                    const CircularProgressIndicator(),
                                                 ],
                                               ),
-                                              if (isRefreshing)
-                                                const CircularProgressIndicator(),
-                                            ],
-                                          ),
-                                        ),
-                                        //times
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                        Container(
-                                          decoration: const BoxDecoration(
-                                              color: Color(0xFFFFFFFF)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 1.0),
-                                            child: Column(
-                                              children: [
-                                                prayTimeRow(
-                                                    en: 'Fajr',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.fajr,
-                                                    ar: 'الفجر'),
-                                                const SizedBox(height: 10),
-                                                prayTimeRow(
-                                                    en: 'Sunrise',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.sunrise,
-                                                    ar: 'الشروق'),
-                                                const SizedBox(height: 10),
-                                                prayTimeRow(
-                                                    en: 'Dhuhr',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.dhuhr,
-                                                    ar: 'الظهر'),
-                                                const SizedBox(height: 10),
-                                                prayTimeRow(
-                                                    en: 'Asr',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.asr,
-                                                    ar: 'العصر'),
-                                                const SizedBox(height: 10),
-                                                prayTimeRow(
-                                                    en: 'Maghrib',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.maghrib,
-                                                    ar: 'المغرب'),
-                                                const SizedBox(height: 10),
-                                                prayTimeRow(
-                                                    en: 'Isha',
-                                                    time: appCubit.timesModel!
-                                                        .data.timings.isha,
-                                                    ar: 'العشاء'),
-                                              ],
                                             ),
-                                          ),
-                                        ),
-                                      ],
-                                    )),
-                              ]),
+                                            //times
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                            Container(
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFFFFFF)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 1.0),
+                                                child: Column(
+                                                  children: [
+                                                    prayTimeRow(
+                                                        en: 'Fajr',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .fajr,
+                                                        ar: 'الفجر'),
+                                                    const SizedBox(height: 10),
+                                                    prayTimeRow(
+                                                        en: 'Sunrise',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .sunrise,
+                                                        ar: 'الشروق'),
+                                                    const SizedBox(height: 10),
+                                                    prayTimeRow(
+                                                        en: 'Dhuhr',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .dhuhr,
+                                                        ar: 'الظهر'),
+                                                    const SizedBox(height: 10),
+                                                    prayTimeRow(
+                                                        en: 'Asr',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .asr,
+                                                        ar: 'العصر'),
+                                                    const SizedBox(height: 10),
+                                                    prayTimeRow(
+                                                        en: 'Maghrib',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .maghrib,
+                                                        ar: 'المغرب'),
+                                                    const SizedBox(height: 10),
+                                                    prayTimeRow(
+                                                        en: 'Isha',
+                                                        time: appCubit
+                                                            .timesModel!
+                                                            .data
+                                                            .timings
+                                                            .isha,
+                                                        ar: 'العشاء'),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )),
+                                  ],
+                                ),
+                              ),
                             ),
                             IconButton(
                               onPressed: () {
