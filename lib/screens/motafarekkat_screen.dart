@@ -55,7 +55,7 @@ class MotafarekkatScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     azkarButton(
-                        name: 'الأدعية القراّنية',
+                        name: 'الأدعية القرآنية',
                         screeen: const QuranAzkar(title: 'الأدعية القراّنية'),
                         context: context),
                     azkarButton(

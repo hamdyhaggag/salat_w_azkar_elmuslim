@@ -82,7 +82,6 @@ class _TimingsScreenState extends State<TimingsScreen> {
                             RefreshIndicator(
                               onRefresh: () async {
                                 appCubit.getMyCurrentLocation();
-                                // You might want to add additional logic here if needed
                               },
                               child: SingleChildScrollView(
                                 physics: const AlwaysScrollableScrollPhysics(),
@@ -161,7 +160,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                             .center,
                                                     children: [
                                                       Text(
-                                                        '  $formattedTime : اخر تحديث',
+                                                        '  $formattedTime : آخر تحديث',
                                                         style: const TextStyle(
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -173,16 +172,8 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                       const SizedBox(
                                                         width: 8,
                                                       ),
-                                                      const Icon(
-                                                        Icons.update,
-                                                        color: Color.fromARGB(
-                                                            255, 0, 0, 0),
-                                                        size: 20,
-                                                      ),
                                                     ],
                                                   ),
-                                                  if (isRefreshing)
-                                                    const CircularProgressIndicator(),
                                                 ],
                                               ),
                                             ),

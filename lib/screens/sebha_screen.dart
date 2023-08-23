@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
@@ -54,7 +55,10 @@ class Sebha extends StatelessWidget {
                     const SizedBox(height: 20),
                     AppButton(
                       horizontalPadding: 50,
-                      onPressed: cubit.resetCounter,
+                      onPressed: () {
+                        cubit.resetCounter();
+                        Vibrate.feedback(FeedbackType.heavy);
+                      },
                       title: 'البدء من جديد',
                     ),
                   ],

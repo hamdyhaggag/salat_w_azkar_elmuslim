@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
+
 import 'package:salat_w_azkar_elmuslim/models/circle_avatar.dart';
 
 class MyCustomRow extends StatelessWidget {
