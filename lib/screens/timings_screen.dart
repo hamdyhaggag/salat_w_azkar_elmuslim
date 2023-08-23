@@ -81,10 +81,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                           children: [
                             RefreshIndicator(
                               onRefresh: () async {
-                                log('onRefresh');
-                                return appCubit.getMyCurrentLocation();
+                                appCubit.getMyCurrentLocation();
+                                // You might want to add additional logic here if needed
                               },
                               child: SingleChildScrollView(
+                                physics: const AlwaysScrollableScrollPhysics(),
                                 child: Stack(
                                   children: [
                                     Positioned(
