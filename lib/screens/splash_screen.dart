@@ -23,18 +23,18 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 2),
     );
 
     _animation = CurvedAnimation(
       parent: _animationController,
-      curve: Curves.decelerate,
+      curve: Curves.easeInCubic,
     );
 
     _animationController.forward();
 
-    Timer(const Duration(seconds: 3), () {
-     navigateAndFinish(context, const ScreenLayout());
+    Timer(const Duration(seconds: 2), () {
+      navigateAndFinish(context, const ScreenLayout());
     });
   }
 
