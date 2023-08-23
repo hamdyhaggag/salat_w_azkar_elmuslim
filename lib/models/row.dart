@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/models/circle_avatar.dart';
 
 class MyCustomRow extends StatelessWidget {
@@ -27,30 +28,14 @@ class MyCustomRow extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(
-                    width: 16,
-                  ),
-                  CircleAvatar(
-                      backgroundColor: Color(0xff1E5A83),
-                      radius: 27,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 6),
-                        child: Icon(
-                          FontAwesomeIcons.infinity,
-                          color: Colors.white,
-                          size: 22,
-                        ),
-                      )),
-                  SizedBox(
-                    width: 12,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: CustomCircleAvatar(),
                   ),
                   CustomCircleAvatar(title: '1000'),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  CustomCircleAvatar(title: '100'),
-                  SizedBox(
-                    width: 12,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: CustomCircleAvatar(title: '100'),
                   ),
                   CustomCircleAvatar(title: '33'),
                 ],

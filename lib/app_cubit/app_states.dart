@@ -4,6 +4,10 @@ class AppInitialState extends AppStates {}
 
 class ChangeBottomNavState extends AppStates {}
 
+class ChangeCounterState extends AppStates {}
+
+class ChangeMaxCounterState extends AppStates {}
+
 class GetCurrentLocationSuccess extends AppStates {}
 
 class GetCurrentLocationError extends AppStates {}

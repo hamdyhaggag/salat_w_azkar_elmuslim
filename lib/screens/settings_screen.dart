@@ -31,7 +31,7 @@ class SettingsScreens extends StatelessWidget {
         //             },
         //             child: Container(
         //               decoration: BoxDecoration(
-        //                   border: Border.all(color: const Color(0xff1E5A83)),
+        //                   border: Border.all(color: AppColors.primaryColor),
         //                   borderRadius: BorderRadius.circular(15),
         //                   color: Colors.white),
         //               child: const Padding(
@@ -53,7 +53,7 @@ class SettingsScreens extends StatelessWidget {
         //             },
         //             child: Container(
         //               decoration: BoxDecoration(
-        //                   border: Border.all(color: const Color(0xff1E5A83)),
+        //                   border: Border.all(color: AppColors.primaryColor),
         //                   borderRadius: BorderRadius.circular(15),
         //                   color: Colors.white),
         //               child: const Padding(

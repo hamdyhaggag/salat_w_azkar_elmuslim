@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/models/bottom_nav_bar.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
 import 'package:intl/intl.dart';
@@ -52,24 +51,6 @@ class _TimingsScreenState extends State<TimingsScreen> {
 
         return Scaffold(
             backgroundColor: Colors.white,
-            bottomNavigationBar: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-              ),
-              child: BottomNavigationBar(
-                  selectedFontSize: 23,
-                  unselectedFontSize: 23,
-                  iconSize: 30,
-                  elevation: 100,
-                  backgroundColor: Colors.white,
-                  type: BottomNavigationBarType.fixed,
-                  items: appCubit.bottomItems,
-                  currentIndex: appCubit.currentIndex,
-                  onTap: (index) {
-                    appCubit.changeBottomNavBar(index, context);
-                  }),
-            ),
             body: appCubit.errorStatus == true
                 ? Padding(
                     padding: const EdgeInsets.all(20),

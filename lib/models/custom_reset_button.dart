@@ -1,36 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 
-class CustomResetButton extends StatefulWidget {
-  const CustomResetButton({Key? key}) : super(key: key);
-
-  @override
-  State<CustomResetButton> createState() => _CustomResetButtonState();
-}
-
-class _CustomResetButtonState extends State<CustomResetButton> {
-  int counter = 0;
-  void resetCounter() {
-    setState(() {
-      counter = 0;
-    });
-  }
+class AppButton extends StatelessWidget {
+  const AppButton({
+    Key? key,
+    required this.title,
+    required this.onPressed,
+    this.verticalPadding,
+    this.horizontalPadding,
+  }) : super(key: key);
+  final String title;
+  final Function() onPressed;
+  final double? verticalPadding;
+  final double? horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton.extended(
-      onPressed: () {
-        resetCounter();
-      },
-      label: const Text(
-        'البدء من جديد',
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: verticalPadding ?? 15,
+        horizontal: horizontalPadding ?? 15,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: MaterialButton(
+          color: AppColors.primaryColor,
+          onPressed: onPressed,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
       ),
-      icon: const Icon(Icons.restore),
-      backgroundColor: const Color(0xff1E5A83),
     );
   }
 }

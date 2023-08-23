@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 
 class RowWithTextAndIcon extends StatelessWidget {
@@ -35,7 +36,7 @@ class RowWithTextAndIcon extends StatelessWidget {
           ),
           Icon(
             icon,
-            color: const Color(0xff1E5A83),
+            color: AppColors.primaryColor,
           ),
           const SizedBox(width: 16.0),
         ],

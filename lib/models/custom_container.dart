@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 import 'package:salat_w_azkar_elmuslim/models/copy_button.dart';
 import 'circle_progress.dart';
 
@@ -52,7 +53,7 @@ class _CustomContainerState extends State<CustomContainer> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             border: Border.all(
-              color: const Color(0xFF1E5A83),
+              color: AppColors.primaryColor,
             ),
           ),
           width: double.infinity,
@@ -97,14 +98,14 @@ class _CustomContainerState extends State<CustomContainer> {
                           Container(
                             height: 2,
                             width: 300,
-                            color: const Color(0xff1E5A83),
+                            color: AppColors.primaryColor,
                           ),
                           Positioned(
                             top: 10,
                             left: (300 - 54) / 2,
                             child: CircleAvatar(
                               backgroundColor: showCheckIcon
-                                  ? const Color(0xff1E5A83)
+                                  ? AppColors.primaryColor
                                   : const Color.fromARGB(255, 195, 205, 212),
                               radius: 27,
                               child: showCheckIcon

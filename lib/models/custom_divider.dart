@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({
@@ -28,7 +29,7 @@ class CustomDivider extends StatelessWidget {
           child: Container(
             height: 2,
             width: 15,
-            color: const Color(0xff1E5A83),
+            color: AppColors.primaryColor,
           ),
         ),
       ],

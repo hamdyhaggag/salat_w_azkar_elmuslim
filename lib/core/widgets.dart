@@ -4,6 +4,7 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget prayTimeRow({
@@ -167,7 +168,7 @@ Widget radioItem({
     RadioListTile(
       title: Text(title,
           textDirection: TextDirection.rtl,
-          style: const TextStyle(color: Color(0xff1E5A83))),
+          style: TextStyle(color: AppColors.primaryColor)),
       value: value,
       groupValue: radioValue,
       onChanged: (value) {

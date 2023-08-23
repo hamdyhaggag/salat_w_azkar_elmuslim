@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 
 class CircleProgressPainter extends CustomPainter {
   final double progress;
@@ -18,7 +19,7 @@ class CircleProgressPainter extends CustomPainter {
 
     // Draw the progress arc
     final progressPaint = Paint()
-      ..color = const Color(0xFF1E5A83)
+      ..color = AppColors.primaryColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 4;
 

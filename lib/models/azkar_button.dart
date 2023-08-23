@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 
 import '../core/functions.dart';
 
@@ -14,7 +15,7 @@ Widget azkarButton({
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             border: Border.all(
-              color: const Color(0xFF1E5A83),
+              color: AppColors.primaryColor,
             )),
         width: double.infinity,
         child: ClipRRect(

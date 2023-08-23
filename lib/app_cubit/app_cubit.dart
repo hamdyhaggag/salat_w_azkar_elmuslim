@@ -11,7 +11,6 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/qibla_screen.dart';
 import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 import 'package:salat_w_azkar_elmuslim/models/direction_model.dart';
 import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
@@ -22,26 +21,20 @@ class AppCubit extends Cubit<AppStates> {
 
   static AppCubit get(context) => BlocProvider.of(context);
 
-  int currentIndex = 0;
+  int index = 0;
 
-  void changeBottomNavBar(int index, context) {
-    currentIndex = index;
-    if (index == 0) {
-      navigateTo(context, const TimingsScreen());
-    }
-    if (index == 1) {
-      navigateTo(context, const Sebha());
-    }
-    if (index == 2) {
-      navigateTo(context, const AzkarScreen());
-    }
-    if (index == 3) {
-      navigateTo(context, const MotafarekkatScreen());
-    }
-    if (index == 4) {
-      navigateTo(context, const QiblaScreen());
-    }
+  List<Widget> get buildScreens {
+    return [
+      const TimingsScreen(),
+      const Sebha(),
+      const AzkarScreen(),
+      const MotafarekkatScreen(),
+      const QiblaScreen(),
+    ];
+  }
 
+  void changeIndex(int newIndex) {
+    index = newIndex;
     Vibrate.feedback(FeedbackType.impact);
     emit(ChangeBottomNavState());
   }
@@ -73,6 +66,40 @@ class AppCubit extends Cubit<AppStates> {
         ),
         label: 'القبلة'),
   ];
+
+  ////////////////////////////////////////////////////////////////////
+
+  int counter = 30;
+
+  void incrementCounter() {
+    if (counter < maxCounter) {
+      counter++;
+      emit(ChangeCounterState());
+      if (counter == maxCounter) {
+        counterReachedMax();
+      }
+    } else {
+      Vibrate.feedback(FeedbackType.heavy);
+    }
+  }
+
+  void counterReachedMax() {
+    log('Vibrate'); //showToast
+  }
+
+  int maxCounter = 9999;
+
+  void changeMaxCounter(int max) {
+    maxCounter = max;
+    emit(ChangeMaxCounterState());
+  }
+
+  void resetCounter() {
+    counter = 0;
+    emit(ChangeCounterState());
+  }
+
+  ////////////////////////////////////////////////////////////////////
 
   Position? position;
 
@@ -170,6 +197,8 @@ class AppCubit extends Cubit<AppStates> {
       emit(GetCurrentAddressError());
     });
   }
+
+  ////////////////////////////////////////////////////////////////////
 
   void decreaseTimes({required int times}) {
     emit(DecreaseTimes());
