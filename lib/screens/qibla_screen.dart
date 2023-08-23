@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 
+import '../core/colors.dart';
 import '../models/custom_app_bar.dart';
 
 class QiblaScreen extends StatefulWidget {
@@ -126,8 +127,8 @@ class QiblaScreenState extends State<QiblaScreen> {
                     children: [
                       Text(
                         '${direction.round()}°',
-                        style: const TextStyle(
-                          color: Color(0xff1E5A83),
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
                           fontSize: 65,
                         ),
                       ),
@@ -143,7 +144,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           if (direction < qibla!)
-                            const Row(
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
@@ -151,15 +152,15 @@ class QiblaScreenState extends State<QiblaScreen> {
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xff1E5A83),
+                                    color: AppColors.primaryColor,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowRightLong,
-                                  color: Color(0xff1E5A83),
+                                  color: AppColors.primaryColor,
                                   size: 40,
                                 ),
                               ],
@@ -170,22 +171,22 @@ class QiblaScreenState extends State<QiblaScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           if (direction > qibla)
-                            const Row(
+                            Row(
                               children: [
                                 Text(
                                   'تحرك إلى اليسار',
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xff1E5A83),
+                                    color: AppColors.primaryColor,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowLeftLong,
-                                  color: Color(0xff1E5A83),
+                                  color: AppColors.primaryColor,
                                   size: 40,
                                 ),
                               ],
@@ -208,8 +209,8 @@ class QiblaScreenState extends State<QiblaScreen> {
                     children: [
                       Text(
                         ' اتجاة القبلة هو  $qibla° من الشمال ',
-                        style: const TextStyle(
-                          color: Color(0xff1E5A83),
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
                           fontSize: 30,
                         ),
                       ),

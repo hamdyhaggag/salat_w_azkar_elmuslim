@@ -70,12 +70,12 @@ class _CustomContainerState extends State<CustomContainer> {
                       if (widget.headtitle != null)
                         Text(
                           widget.headtitle!,
-                          style: const TextStyle(
-                              color: Color(0xFF1E5A83),
+                          style: TextStyle(
+                              color: AppColors.primaryColor,
                               fontSize: 25.0,
                               fontWeight: FontWeight.bold),
                         ),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                       SizedBox(
@@ -84,8 +84,8 @@ class _CustomContainerState extends State<CustomContainer> {
                           widget.title,
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.rtl,
-                          style: const TextStyle(
-                            color: Color(0xFF1E5A83),
+                          style: TextStyle(
+                            color: AppColors.primaryColor,
                             fontSize: 25.0,
                           ),
                         ),
@@ -145,8 +145,8 @@ class _CustomContainerState extends State<CustomContainer> {
                       ),
                       Text(
                         ' ${widget.maxValue} : عدد التكرارات ',
-                        style: const TextStyle(
-                          color: Color(0xFF1E5A83),
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
                           fontSize: 25.0,
                         ),
                       )

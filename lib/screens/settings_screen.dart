@@ -41,7 +41,7 @@ class SettingsScreens extends StatelessWidget {
         //                   'طريقة تحديد مواقيت الصلاة',
         //                   textDirection: TextDirection.rtl,
         //                   style:
-        //                       TextStyle(fontSize: 30, color: Color(0xff1E5A83)),
+        //                       TextStyle(fontSize: 30, color: AppColors.primaryColor),
         //                 ),
         //               ),
         //             ),
@@ -63,7 +63,7 @@ class SettingsScreens extends StatelessWidget {
         //                   'تواصل معنا',
         //                   textDirection: TextDirection.rtl,
         //                   style:
-        //                       TextStyle(fontSize: 30, color: Color(0xff1E5A83)),
+        //                       TextStyle(fontSize: 30, color: AppColors.primaryColor),
         //                 ),
         //               ),
         //             ),

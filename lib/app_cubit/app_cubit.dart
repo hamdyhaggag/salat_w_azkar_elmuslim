@@ -69,7 +69,7 @@ class AppCubit extends Cubit<AppStates> {
 
   ////////////////////////////////////////////////////////////////////
 
-  int counter = 30;
+  int counter = 0;
 
   void incrementCounter() {
     if (counter < maxCounter) {

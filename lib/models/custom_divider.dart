@@ -10,10 +10,10 @@ class CustomDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const CircleAvatar(
-          backgroundColor: Color(0xff1E5A83),
+        CircleAvatar(
+          backgroundColor: AppColors.primaryColor,
           radius: 27,
-          child: Text(
+          child: const Text(
             '3',
             style: TextStyle(
               fontFamily: 'Cairo',

@@ -25,11 +25,11 @@ class RowWithTextAndIcon extends StatelessWidget {
         children: <Widget>[
           Text(
             text,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 27,
                 fontFamily: 'Cairo',
                 fontWeight: FontWeight.w500,
-                color: Color(0xff1E5A83)),
+                color: AppColors.primaryColor),
           ),
           const SizedBox(
             width: 20,

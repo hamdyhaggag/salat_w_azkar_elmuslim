@@ -12,6 +12,7 @@ import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/screens/settings_screen.dart';
 import 'package:intl/intl.dart';
 
+import '../core/colors.dart';
 import '../core/functions.dart';
 
 class TimingsScreen extends StatefulWidget {

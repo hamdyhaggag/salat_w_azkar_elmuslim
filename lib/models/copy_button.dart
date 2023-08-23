@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 
 class CopyButton extends StatelessWidget {
   final String textToCopy;

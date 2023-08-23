@@ -22,7 +22,7 @@ class AppButton extends StatelessWidget {
         horizontal: horizontalPadding ?? 15,
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(16),
         child: MaterialButton(
           color: AppColors.primaryColor,
           onPressed: onPressed,

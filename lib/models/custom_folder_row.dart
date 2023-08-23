@@ -18,19 +18,19 @@ class CustomFolderRow extends StatelessWidget {
           child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 25,
                 fontFamily: 'Cairo',
                 fontWeight: FontWeight.w500,
-                color: Color(0xff1E5A83),
+                color: AppColors.primaryColor,
               ),
             ),
             const SizedBox(
               width: 22,
             ),
-            const Icon(
+            Icon(
               FontAwesomeIcons.fileLines,
-              color: Color(0xff1E5A83),
+              color: AppColors.primaryColor,
             )
           ]),
         ),
