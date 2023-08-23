@@ -137,7 +137,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                 ),
                 Positioned(
                   left: (width / 2) - ((width / 4) / 2),
-                  top: (height - width) / 3.5,
+                  top: (height - width) / 10,
                   child: Column(
                     children: [
                       Row(
@@ -145,7 +145,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                         children: [
                           if (direction < qibla!)
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   'تحرك إلى اليمين',
@@ -168,7 +168,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                         ],
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           if (direction > qibla)
                             Row(
@@ -194,8 +194,8 @@ class QiblaScreenState extends State<QiblaScreen> {
                         ],
                       ),
                       SizedBox(
-                        height: qibla == direction ? 100 : 70,
-                        width: qibla == direction ? 100 : 70,
+                        height: qibla == direction ? 100 : 0,
+                        width: qibla == direction ? 100 : 0,
                         child: Image.asset('assets/qibla_icon.png'),
                       ),
                     ],
@@ -203,7 +203,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                 ),
                 Positioned(
                   left: (60),
-                  top: (790),
+                  top: (700),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
