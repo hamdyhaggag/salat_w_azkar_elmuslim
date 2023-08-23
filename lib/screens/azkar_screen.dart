@@ -17,7 +17,7 @@ class AzkarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: const CustomAppBar(title: 'الأذكار'),
+        appBar: const CustomAppBar(title: 'الأذكار', isHome: true),
         body: ListView(
           children: [
             const SizedBox(

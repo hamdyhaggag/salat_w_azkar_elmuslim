@@ -15,7 +15,7 @@ class Sebha extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'السبحة'),
+      appBar: const CustomAppBar(title: 'السبحة', isHome: true),
       body: BlocBuilder<AppCubit, AppStates>(
         builder: (context, state) {
           final cubit = AppCubit.get(context);

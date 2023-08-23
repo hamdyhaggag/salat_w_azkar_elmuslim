@@ -119,8 +119,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  appCubit.address!.locality
-                                                      .toString(),
+                                                  appCubit.address?.locality
+                                                          .toString() ??
+                                                      '',
                                                   style: const TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -140,7 +141,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                             ),
                                             //location
                                             Text(
-                                              '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
+                                              appCubit.address == null
+                                                  ? ''
+                                                  : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   color: Color.fromARGB(

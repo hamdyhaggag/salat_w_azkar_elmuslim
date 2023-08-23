@@ -15,7 +15,7 @@ class MotafarekkatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: const CustomAppBar(title: 'متفرقات'),
+        appBar: const CustomAppBar(title: 'متفرقات', isHome: true),
         body: ListView(
           children: [
             const SizedBox(

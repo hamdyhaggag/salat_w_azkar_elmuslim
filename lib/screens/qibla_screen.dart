@@ -21,7 +21,7 @@ class QiblaScreenState extends State<QiblaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'القبلة'),
+      appBar: const CustomAppBar(title: 'القبلة', isHome: true),
       backgroundColor: AppCubit.get(context).directionModel == null
           ? Colors.white
           : Colors.white,
