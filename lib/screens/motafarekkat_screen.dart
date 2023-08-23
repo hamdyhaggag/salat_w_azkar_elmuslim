@@ -64,7 +64,7 @@ class MotafarekkatScreen extends StatelessWidget {
                             const NabawiAzkar(title: 'الْأدْعِيَةُ النبوية'),
                         context: context),
                     azkarButton(
-                        name: 'تسابيح',
+                        name: 'تسبيحات',
                         screeen: const Tasabeh(title: 'تسابيح'),
                         context: context),
                     azkarButton(

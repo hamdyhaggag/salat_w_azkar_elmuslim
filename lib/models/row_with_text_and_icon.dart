@@ -1,25 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/core/functions.dart';
 
 class RowWithTextAndIcon extends StatelessWidget {
   final String text;
   final IconData icon;
   final Widget? widget;
+  final void Function()? onTap;
 
   const RowWithTextAndIcon(
     this.text,
     this.icon, {
     super.key,
     this.widget,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        navigateTo(context, widget);
-      },
+      onTap: onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[

@@ -5,6 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import 'package:salat_w_azkar_elmuslim/core/functions.dart';
+import 'package:salat_w_azkar_elmuslim/screens/Settings/app_info.dart';
+import 'package:salat_w_azkar_elmuslim/screens/Settings/privacy_policy.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget prayTimeRow({
@@ -40,11 +44,6 @@ Widget prayTimeRow({
               )),
         ],
       ),
-    );
-
-Widget divider2() => Container(
-      height: 2,
-      color: Colors.brown[200],
     );
 
 Widget zekr({
@@ -258,47 +257,109 @@ showInfo(context) {
       builder: (BuildContext context) {
         return SimpleDialog(
           titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-          title: const Text('تواصل عبر :',
+          title: const Text('تواصل مع المطور عبر :',
               textDirection: TextDirection.rtl,
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          contentPadding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Cairo')),
+          contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
           children: <Widget>[
-            buildRow(
-              FontAwesomeIcons.github,
-              'https://github.com/elsaraff',
-              'Github',
-              Colors.grey,
-            ),
+            buildRow(FontAwesomeIcons.github, 'https://github.com/hamdyhaggag',
+                'جيت هب', Colors.black),
             const SizedBox(height: 5),
             buildRow(
               FontAwesomeIcons.linkedin,
-              'https://www.linkedin.com/in/mohamedelsaraff/',
-              'Linkedin',
+              'https://www.linkedin.com/in/hamdyhaggag74/',
+              'لينكد ان',
               Colors.blueAccent,
             ),
             const SizedBox(height: 5),
             buildRow(
               FontAwesomeIcons.facebook,
-              'https://www.facebook.com/m7md.elsaraff/',
-              'Facebook',
+              'https://www.facebook.com/hamdyhaggag74/',
+              'فيسبوك',
               Colors.blue,
             ),
             const SizedBox(height: 5),
             buildRow(
               FontAwesomeIcons.whatsapp,
-              'https://api.whatsapp.com/send?phone=201124609150',
-              'Whatsapp',
+              'https://api.whatsapp.com/send?phone=201154620997',
+              'واتس اب',
               Colors.green,
             ),
             const SizedBox(height: 5),
-            buildRow(
-              FontAwesomeIcons.solidStar,
-              googlePlayUrl,
-              'Rate App with 5 stars',
-              Colors.yellow,
-            ),
+            // buildRow(
+            //   FontAwesomeIcons.solidStar,
+            //   googlePlayUrl,
+            //   'Rate App with 5 stars',
+            //   Colors.yellow,
+            // ),
             const SizedBox(height: 5),
           ],
         );
       });
+}
+
+////////////////////////////////////////
+
+showprivacy(context) {
+  navigateTo(context, const PrivacyPolicy());
+}
+
+showappinfo(context) {
+  navigateTo(context, const AppInfo());
+}
+
+///////////////////////////////
+///
+showAlertdialogExampleDidntused(context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Magical Portal'),
+        content: const Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('You have discovered a magical portal!'),
+            SizedBox(height: 10),
+            Text('Where would you like to go?'),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              // TODO: Add logic for the chosen action
+            },
+            child: const Text('Forest'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              // TODO: Add logic for the chosen action
+            },
+            child: const Text('Mountains'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              // TODO: Add logic for the chosen action
+            },
+            child: const Text('Beach'),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+////////////////////////////////////////////////
+
+void shareOptions(BuildContext context) async {
+  const String text = googlePlayUrl;
+  const String subject = "  Tafakkur - تطبيق تَفكر";
+
+  // You can customize the sharing message as needed
+  await Share.share(text, subject: subject);
 }
