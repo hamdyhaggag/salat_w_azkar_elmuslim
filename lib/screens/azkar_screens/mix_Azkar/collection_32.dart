@@ -9,7 +9,7 @@ class Mix32 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: ' دعاء دخول السوق'),
       body: SingleChildScrollView(
         child: Column(
           children: [

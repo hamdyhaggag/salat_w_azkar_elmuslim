@@ -394,7 +394,7 @@ class CollectionAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'دعـــــاء الاستفــتــــاح '),
+              child: const CustomFolderRow(title: 'دعاء الاستفتاح '),
             ),
             GestureDetector(
               onTap: () {
@@ -417,7 +417,7 @@ class CollectionAzkar extends StatelessWidget {
                 );
               },
               child: const CustomFolderRow(
-                  title: ' عنــــد فعــــل الذنب أو ارتكاب المعصية'),
+                  title: 'عند فعل الذنب أو ارتكاب المعصية'),
             ),
             GestureDetector(
               onTap: () {
@@ -429,7 +429,7 @@ class CollectionAzkar extends StatelessWidget {
                 );
               },
               child: const CustomFolderRow(
-                  title: ' الدعـــاء عنــــد سماع أصوات الحيوانات'),
+                  title: 'الدعاء عند سماع أصوات الحيوانات'),
             ),
             GestureDetector(
               onTap: () {
@@ -451,8 +451,8 @@ class CollectionAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(
-                  title: ' الدعـــاء إذا أحسست بوجع في جسدك'),
+              child:
+                  const CustomFolderRow(title: 'الدعاء إذا أحسست بوجع في جسدك'),
             ),
           ],
         ),

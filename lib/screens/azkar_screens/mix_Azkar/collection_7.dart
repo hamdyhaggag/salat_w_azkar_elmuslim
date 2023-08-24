@@ -9,7 +9,7 @@ class Mix7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: ' دعاء الرعـد'),
       body: SingleChildScrollView(
         child: Column(
           children: [
