@@ -9,11 +9,16 @@ class Food3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: 'دعاء الضيف لصاحب الطعام'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title:
+                    'اللَّهُمَّ بَارِكْ لَهُمْ فِي مَا رَزَقْتَهُمْ ، وَاغْفِرْ لَهُمْ ، وَارْحَمْهُمْ',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

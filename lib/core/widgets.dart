@@ -185,9 +185,13 @@ showMethods(context) {
           builder: (context, state) {
             return SimpleDialog(
               titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-              title: const Text('طريقة تحديد مواقيت الصلاة',
+              title: Text('طريقة تحديد مواقيت الصلاة',
                   textDirection: TextDirection.rtl,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                    color: AppColors.primaryColor,
+                  )),
               contentPadding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
               children: <Widget>[
                 radioItem(
