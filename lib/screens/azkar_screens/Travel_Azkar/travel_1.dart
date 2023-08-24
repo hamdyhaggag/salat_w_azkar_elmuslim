@@ -9,11 +9,16 @@ class Travel1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: 'دعاء المسافر للمقيم'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title:
+                    'اسْتَوْدَعْتُكَ اللَّهَ الَّذِي لَا يُضِيعُ وَدَائِعَهُ',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

@@ -9,11 +9,13 @@ class Travel5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: '1'),
+      appBar: CustomAppBar(title: ' الدعاء إذا عثر المركوب'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            SizedBox(height: 15),
+            CustomContainer(
+                title: 'بسم الله', maxValue: 1, initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

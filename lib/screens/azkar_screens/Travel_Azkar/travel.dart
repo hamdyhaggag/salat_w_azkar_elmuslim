@@ -33,7 +33,7 @@ class TravelAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'دعاء السفر للمقيم'),
+              child: const CustomFolderRow(title: 'دعاء المسافر للمقيم'),
             ),
             GestureDetector(
               onTap: () {
