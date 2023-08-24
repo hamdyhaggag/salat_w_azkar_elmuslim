@@ -9,7 +9,7 @@ class Food4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'الدعاء لمن سقاه أو إذا أراد ذلك'),
+      appBar: CustomAppBar(title: 'الدعاء لمن سقاه '),
       body: SingleChildScrollView(
         child: Column(
           children: [
