@@ -4,7 +4,6 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_1
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_2.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_3.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_4.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_5.dart';
 import '../../../models/custom_app_bar.dart';
 import '../../../models/custom_folder_row.dart';
 
@@ -40,7 +39,7 @@ class SleepAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'أذكار الاستيقاظ من النوم'),
+              child: const CustomFolderRow(title: 'الدعاء إذا تقلب ليلاً'),
             ),
             GestureDetector(
               onTap: () {
@@ -51,17 +50,6 @@ class SleepAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'الدعاء إذا تقلب ليلاً'),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Sleep4(),
-                  ),
-                );
-              },
               child: const CustomFolderRow(title: 'دعاء الفزع في النوم'),
             ),
             GestureDetector(
@@ -69,7 +57,7 @@ class SleepAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Sleep5(),
+                    builder: (context) => const Sleep4(),
                   ),
                 );
               },

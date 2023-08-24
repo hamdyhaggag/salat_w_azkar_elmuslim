@@ -69,12 +69,12 @@ class AzkarScreen extends StatelessWidget {
                         screeen: const PrayAzkar(title: 'أذكار الصلاة'),
                         context: context),
                     azkarButton(
-                        name: 'أذكار الإستيقاظ',
-                        screeen: const WakeUpAzkar(title: 'أذكار الإستيقاظ'),
-                        context: context),
-                    azkarButton(
                         name: 'أذكار النوم',
                         screeen: const SleepAzkar(title: 'أذكار النوم'),
+                        context: context),
+                    azkarButton(
+                        name: 'أذكار الإستيقاظ',
+                        screeen: const WakeUpAzkar(title: 'أذكار الإستيقاظ'),
                         context: context),
                     azkarButton(
                         name: 'أذكار متفرقة',
