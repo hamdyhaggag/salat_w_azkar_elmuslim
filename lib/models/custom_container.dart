@@ -6,7 +6,7 @@ import 'circle_progress.dart';
 
 class CustomContainer extends StatefulWidget {
   final String title;
-  final String? headtitle; // New parameter for optional text
+  final String? headtitle;
 
   final int maxValue;
   final int initialCounterValue;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 
 import '../core/widgets.dart';
 import '../models/custom_app_bar.dart';
@@ -17,8 +16,16 @@ class SettingsScreens extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const SizedBox(height: 16.0),
-          const RowWithTextAndIcon('الشاشة الرئيسية', FontAwesomeIcons.house,
-              widget: TimingsScreen()),
+          InkWell(
+            onTap: () {
+              Navigator.pop(
+                  context); // This will pop the current screen from the navigation stack.
+            },
+            child: const RowWithTextAndIcon(
+              'الشاشة الرئيسية',
+              FontAwesomeIcons.house,
+            ),
+          ),
           const SizedBox(height: 16.0),
           InkWell(
             onTap: () {
