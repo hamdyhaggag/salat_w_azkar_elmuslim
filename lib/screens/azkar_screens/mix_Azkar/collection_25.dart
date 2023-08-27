@@ -13,7 +13,11 @@ class Mix25 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title:
+                    'لابأس طهور إن شاء الله مامن عبد مسلم يعود مريضاً لم يحضر أجله فيقول سبع مرات : أسأل الله العظيم رب العرش العظيم أن يشفيك إلا عوفي',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

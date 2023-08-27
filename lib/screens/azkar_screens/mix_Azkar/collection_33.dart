@@ -9,11 +9,15 @@ class Mix33 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'عند فعل الذنب أو ارتكاب المعصية'),
+      appBar: CustomAppBar(title: ' فعل الذنب '),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title:
+                    'كما أخبرنا رسول الله صلى الله عليه وسلم ( ما من عبد يذنب ذنباً فيتوضأ فيحسن الطهور،ثم يقوم فيصلي ركعتين ، ثم يستغفر الله لذلك الذنب إلاَّ غُفر له )',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

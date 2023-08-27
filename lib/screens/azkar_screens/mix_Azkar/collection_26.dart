@@ -9,11 +9,14 @@ class Mix26 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'دعاء المريض الذي يئس من حياته '),
+      appBar: CustomAppBar(title: ' المريض الذي يئس من حياته'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title: 'اللهم اغفر لي وارحمني والحقني بالرفيق الأعلى',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

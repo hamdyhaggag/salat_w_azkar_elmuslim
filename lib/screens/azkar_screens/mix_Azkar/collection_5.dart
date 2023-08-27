@@ -13,7 +13,10 @@ class Mix5 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title: 'اللهم اكفنى بحلالك عن حرامك وأغننى بفضلك عمن سواك',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

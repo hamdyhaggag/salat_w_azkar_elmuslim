@@ -9,11 +9,15 @@ class Mix34 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'الدعاء عند سماع أصوات الحيوانات'),
+      appBar: CustomAppBar(title: ' سماع أصوات الحيوانات'),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title:
+                    'الدعاء عند صياح الديك : ( اللهم إني أسألك من فضلـــك ). ( إذا سمعتم صياح الديك[من الليل]،فاسألوا الله من فَضْلِهِ فإنها رأت ملكاً و إذا سمعتم نهيق الحمار،فتعوَّذوا بالله من الشيطان فإنها رأت شَيْطَاناً ). متفق عليه.\n الدعاء عند صياح الديك و نهيق الحمار و نباح الكلاب: ( أعوذ بالله من الشيطان الرجيم ).\n ( إذا سمعتم نُباحَ الكلاب و نهيق الحمير بالليل فتعوذوا بالله فإنهن يَرَيْنَ ما لا ترون )',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

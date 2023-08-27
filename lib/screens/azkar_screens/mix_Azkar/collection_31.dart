@@ -13,7 +13,11 @@ class Mix31 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title:
+                    'اللهم باعد بيني وبين خطاياي كما باعدت بين المشرق والغرب ، اللهم نقني من خطاياي كما ينقى الثوب الأبيض من الدنس، اللهم اغسلني من خطاياي بالثلج والماء والبرد. \n سبحانك اللهم وبحمدك وتبارك اسمك وتعالى جدُّك ولاإله غيرك. \n الله اكبر كبيرا ، الله اكبر كبيرا ، الله اكبر كبيرا ، والحمد لله كثيرا ، والحمد لله كثيرا ، والحمد لله كثيرا ، وسبحان الله بكرة وأصيلا(ثلاثـــا) \n اعوذ بالله من الشيطان من نفحه ونفثه وهمزه',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

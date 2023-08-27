@@ -13,7 +13,10 @@ class Mix21 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title: 'ذهب الضمـأ ، وأبتلت العروق ، وثبت الأجر إن شاء الله',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),

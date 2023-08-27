@@ -13,7 +13,11 @@ class Mix20 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomContainer(title: '', maxValue: 1, initialCounterValue: 0),
+            CustomContainer(
+                title:
+                    'إذا عطـس أحـدكم فليقل : الحمـد لله ، وليقل له أخـوه ، أو صاحبه : يرحمـك الله فـإذا قال له : يرحمك الله ، فليقل : يهديكم الله ويصلح بالكم',
+                maxValue: 1,
+                initialCounterValue: 0),
             SizedBox(height: 15),
           ],
         ),
