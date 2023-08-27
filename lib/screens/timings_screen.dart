@@ -67,6 +67,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                   )
                 : appCubit.timesModel == null
                     ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           RefreshIndicator(
                             onRefresh: () async {
