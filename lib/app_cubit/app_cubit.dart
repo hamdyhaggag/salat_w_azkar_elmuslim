@@ -130,7 +130,7 @@ class AppCubit extends Cubit<AppStates> {
 
         emit(GetCurrentLocationSuccess());
       }).catchError((error) async {
-        timesModel = await getCachedTimeModel();
+        timesModel = await getTimeModel();
         if (timesModel == null) {
           errorStatus = true;
           log('Error when get Current Location $error');
@@ -165,7 +165,7 @@ class AppCubit extends Cubit<AppStates> {
       saveTimeModel(timeModel: timesModel!);
       emit(GetTimingsSuccess());
     }).catchError((error) async {
-      timesModel = await getCachedTimeModel();
+      timesModel = await getTimeModel();
       if (timesModel == null) {
         errorStatus = true;
         log(error.toString());

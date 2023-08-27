@@ -68,7 +68,7 @@ void saveTimeModel({
   );
 }
 
-Future<TimesModel?> getCachedTimeModel() async {
+Future<TimesModel?> getTimeModel() async {
   final timeModel = CacheHelper.getData(key: 'TimesModel');
   if (timeModel.isNotEmpty) {
     return TimesModel.fromJson(jsonDecode(timeModel));

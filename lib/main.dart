@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/core/bloc_observer/bloc_observer.dart';
 import 'package:salat_w_azkar_elmuslim/core/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
 import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
@@ -16,8 +15,6 @@ void main() async {
   radioValue = CacheHelper.getInteger(key: 'value');
 
   DioHelper.init();
-
-  Bloc.observer = MyGlobalObserver();
 
   runApp(const MyApp());
 }

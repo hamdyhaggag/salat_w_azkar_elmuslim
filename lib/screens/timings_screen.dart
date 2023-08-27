@@ -266,11 +266,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                 navigateTo(context, const SettingsScreens());
                               },
                               icon: const Padding(
-                                padding: EdgeInsets.only(right: 25, top: 5),
+                                padding: EdgeInsets.only(right: 35, top: 10),
                                 child: Icon(
-                                  FontAwesomeIcons.bars,
-                                  color: Color(0xff1E5A83),
-                                  size: 30,
+                                  FontAwesomeIcons.gear,
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  size: 32,
                                 ),
                               ),
                             ),
