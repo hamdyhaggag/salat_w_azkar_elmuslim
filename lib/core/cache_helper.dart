@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -13,6 +17,8 @@ class CacheHelper {
     required String key,
     required dynamic value,
   }) async {
+    log("saving >>> $value into local >>> with key $key");
+
     if (value is String) {
       if (sharedPreferences != null) sharedPreferences!.setString(key, value);
     }
@@ -50,5 +56,23 @@ class CacheHelper {
   static Future<bool> removeData({required String key}) async {
     //return await sharedPreferences!.clear();
     return await sharedPreferences!.remove(key);
+  }
+}
+
+void saveTimeModel({
+  required TimesModel timeModel,
+}) async {
+  await CacheHelper.saveData(
+    key: 'TimesModel',
+    value: json.encode(timeModel.toJson()),
+  );
+}
+
+Future<TimesModel?> getCachedTimeModel() async {
+  final timeModel = CacheHelper.getData(key: 'TimesModel');
+  if (timeModel.isNotEmpty) {
+    return TimesModel.fromJson(jsonDecode(timeModel));
+  } else {
+    return null;
   }
 }

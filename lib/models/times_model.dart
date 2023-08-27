@@ -1,10 +1,5 @@
 class TimesModel {
-  TimesModel({
-    required this.code,
-    required this.status,
-    required this.data,
-  });
-
+  TimesModel({required this.code, required this.status, required this.data});
   int code;
   String status;
   Data data;
@@ -14,15 +9,16 @@ class TimesModel {
         status: json["status"],
         data: Data.fromJson(json["data"]),
       );
+
+  Map<String, dynamic> toJson() => {
+        "code": code,
+        "status": status,
+        "data": data.toJson(),
+      };
 }
 
 class Data {
-  Data({
-    required this.timings,
-    required this.date,
-    required this.meta,
-  });
-
+  Data({required this.timings, required this.date, required this.meta});
   Timings timings;
   Date date;
   Meta meta;
@@ -32,6 +28,12 @@ class Data {
         date: Date.fromJson(json["date"]),
         meta: Meta.fromJson(json["meta"]),
       );
+
+  Map<String, dynamic> toJson() => {
+        "timings": timings.toJson(),
+        "date": date.toJson(),
+        "meta": meta.toJson(),
+      };
 }
 
 class Date {
@@ -41,7 +43,6 @@ class Date {
     required this.hijri,
     required this.gregorian,
   });
-
   String readable;
   String timestamp;
   Hijri hijri;
@@ -53,6 +54,13 @@ class Date {
         hijri: Hijri.fromJson(json["hijri"]),
         gregorian: Gregorian.fromJson(json["gregorian"]),
       );
+
+  Map<String, dynamic> toJson() => {
+        "readable": readable,
+        "timestamp": timestamp,
+        "hijri": hijri.toJson(),
+        "gregorian": gregorian.toJson(),
+      };
 }
 
 class Gregorian {
@@ -64,7 +72,6 @@ class Gregorian {
     required this.month,
     required this.year,
   });
-
   String date;
   String format;
   String day;
@@ -80,14 +87,19 @@ class Gregorian {
         month: GregorianMonth.fromJson(json["month"]),
         year: json["year"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "date": date,
+        "format": format,
+        "day": day,
+        "weekday": weekday.toJson(),
+        "month": month.toJson(),
+        "year": year,
+      };
 }
 
 class GregorianMonth {
-  GregorianMonth({
-    required this.number,
-    required this.en,
-  });
-
+  GregorianMonth({required this.number, required this.en});
   int number;
   String en;
 
@@ -95,19 +107,25 @@ class GregorianMonth {
         number: json["number"],
         en: json["en"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "number": number,
+        "en": en,
+      };
 }
 
 class GregorianWeekday {
-  GregorianWeekday({
-    required this.en,
-  });
-
+  GregorianWeekday({required this.en});
   String en;
 
   factory GregorianWeekday.fromJson(Map<String, dynamic> json) =>
       GregorianWeekday(
         en: json["en"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "en": en,
+      };
 }
 
 class Hijri {
@@ -120,7 +138,6 @@ class Hijri {
     required this.year,
     required this.holidays,
   });
-
   String date;
   String format;
   String day;
@@ -138,6 +155,16 @@ class Hijri {
         year: json["year"],
         holidays: List<dynamic>.from(json["holidays"].map((x) => x)),
       );
+
+  Map<String, dynamic> toJson() => {
+        "date": date,
+        "format": format,
+        "day": day,
+        "weekday": weekday.toJson(),
+        "month": month.toJson(),
+        "year": year,
+        "holidays": holidays,
+      };
 }
 
 class HijriMonth {
@@ -146,7 +173,6 @@ class HijriMonth {
     required this.en,
     required this.ar,
   });
-
   int number;
   String en;
   String ar;
@@ -156,11 +182,16 @@ class HijriMonth {
         en: json["en"],
         ar: json["ar"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "number": number,
+        "en": en,
+        "ar": ar,
+      };
 }
 
 class HijriWeekday {
-  HijriWeekday({required this.en, required this.ar, required});
-
+  HijriWeekday({required this.en, required this.ar});
   String en;
   String ar;
 
@@ -168,6 +199,11 @@ class HijriWeekday {
         en: json["en"],
         ar: json["ar"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "en": en,
+        "ar": ar,
+      };
 }
 
 class Meta {
@@ -180,7 +216,6 @@ class Meta {
     required this.midnightMode,
     required this.school,
   });
-
   double latitude;
   double longitude;
   String timezone;
@@ -198,6 +233,16 @@ class Meta {
         midnightMode: json["midnightMode"],
         school: json["school"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "latitude": latitude,
+        "longitude": longitude,
+        "timezone": timezone,
+        "method": method.toJson(),
+        "latitudeAdjustmentMethod": latitudeAdjustmentMethod,
+        "midnightMode": midnightMode,
+        "school": school,
+      };
 }
 
 class Method {
@@ -207,7 +252,6 @@ class Method {
     required this.params,
     required this.location,
   });
-
   int id;
   String name;
   Params params;
@@ -219,6 +263,13 @@ class Method {
         params: Params.fromJson(json["params"]),
         location: Location.fromJson(json["location"]),
       );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+        "params": params.toJson(),
+        "location": location.toJson(),
+      };
 }
 
 class Location {
@@ -226,7 +277,6 @@ class Location {
     required this.latitude,
     required this.longitude,
   });
-
   double latitude;
   double longitude;
 
@@ -234,6 +284,11 @@ class Location {
         latitude: json["latitude"].toDouble(),
         longitude: json["longitude"].toDouble(),
       );
+
+  Map<String, dynamic> toJson() => {
+        "latitude": latitude,
+        "longitude": longitude,
+      };
 }
 
 class Params {
@@ -241,7 +296,6 @@ class Params {
     required this.fajr,
     required this.isha,
   });
-
   double fajr;
   double isha;
 
@@ -249,6 +303,11 @@ class Params {
         fajr: json["Fajr"].toDouble(),
         isha: json["Isha"].toDouble(),
       );
+
+  Map<String, dynamic> toJson() => {
+        "Fajr": fajr,
+        "Isha": isha,
+      };
 }
 
 class Timings {
@@ -263,7 +322,6 @@ class Timings {
     required this.imsak,
     required this.midnight,
   });
-
   String fajr;
   String sunrise;
   String dhuhr;
@@ -285,4 +343,16 @@ class Timings {
         imsak: json["Imsak"],
         midnight: json["Midnight"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "Fajr": fajr,
+        "Sunrise": sunrise,
+        "Dhuhr": dhuhr,
+        "Asr": asr,
+        "Sunset": sunset,
+        "Maghrib": maghrib,
+        "Isha": isha,
+        "Imsak": imsak,
+        "Midnight": midnight,
+      };
 }

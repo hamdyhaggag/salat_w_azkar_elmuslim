@@ -91,7 +91,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                 direction = direction + 360;
               }
               if (qibla == direction) {
-                Vibrate.feedback(FeedbackType.error);
+                Vibrate.feedback(FeedbackType.heavy);
               }
               double rotationSpeedFactor =
                   0.2; // Adjust this value to control rotation speed

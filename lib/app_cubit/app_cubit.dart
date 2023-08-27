@@ -87,7 +87,7 @@ class AppCubit extends Cubit<AppStates> {
     log('Vibrate'); //showToast
   }
 
-  int maxCounter = 9999;
+  int maxCounter = 33;
 
   void changeMaxCounter(int max) {
     maxCounter = max;
@@ -103,35 +103,41 @@ class AppCubit extends Cubit<AppStates> {
 
   Position? position;
 
-  void getMyCurrentLocation() async {
+  Future<void> getMyCurrentLocation() async {
+    log('getMyCurrentLocation');
     await Geolocator.requestPermission().then((value) async {
       await Geolocator.getCurrentPosition(
+              timeLimit: const Duration(milliseconds: 3000),
               desiredAccuracy: LocationAccuracy.high)
-          .then((value) {
+          .then((value) async {
         position = value;
 
-        getCurrentLocationAddress(
+        await getCurrentLocationAddress(
           latitude: position!.latitude,
           longitude: position!.longitude,
         );
 
-        getTimings(
+        await getTimings(
           latitude: position!.latitude,
           longitude: position!.longitude,
           time: DateTime.now().millisecondsSinceEpoch.toString(),
         );
 
-        getDirection(
+        await getDirection(
           latitude: position!.latitude,
           longitude: position!.longitude,
         );
 
         emit(GetCurrentLocationSuccess());
-      }).catchError((error) {
-        errorStatus = true;
-        log('Error when get Current Location $error');
-
-        emit(GetCurrentLocationError());
+      }).catchError((error) async {
+        timesModel = await getCachedTimeModel();
+        if (timesModel == null) {
+          errorStatus = true;
+          log('Error when get Current Location $error');
+          emit(GetCurrentLocationError());
+        } else {
+          emit(GetTimingsSuccess());
+        }
       });
     }).catchError((error) {
       errorStatus = true;
@@ -143,35 +149,38 @@ class AppCubit extends Cubit<AppStates> {
   bool errorStatus = false;
   TimesModel? timesModel;
 
-  void getTimings({
+  Future<void> getTimings({
     required String time,
     required double latitude,
     required double longitude,
-  }) {
+  }) async {
     time = time.substring(0, time.length - 3);
-    DioHelper.getData(
+    await DioHelper.getData(
       url: "timings/$time",
       latitude: latitude,
       longitude: longitude,
       method: radioValue,
     ).then((value) {
       timesModel = TimesModel.fromJson(value.data);
+      saveTimeModel(timeModel: timesModel!);
       emit(GetTimingsSuccess());
-    }).catchError((error) {
-      errorStatus = true;
-
-      log(error.toString());
-      emit(GetTimingsError());
+    }).catchError((error) async {
+      timesModel = await getCachedTimeModel();
+      if (timesModel == null) {
+        errorStatus = true;
+        log(error.toString());
+        emit(GetTimingsError());
+      }
     });
   }
 
   DirectionModel? directionModel;
 
-  void getDirection({
+  Future<void> getDirection({
     required double latitude,
     required double longitude,
-  }) {
-    DioHelper.getData(
+  }) async {
+    await DioHelper.getData(
       url: "qibla/$latitude/$longitude",
     ).then((value) {
       directionModel = DirectionModel.fromJson(value.data);
@@ -185,10 +194,11 @@ class AppCubit extends Cubit<AppStates> {
 
   Placemark? address;
 
-  getCurrentLocationAddress({
+  Future<void> getCurrentLocationAddress({
     required double latitude,
     required double longitude,
   }) async {
+    log('getCurrentLocationAddress');
     await placemarkFromCoordinates(latitude, longitude).then((value) {
       address = value[0];
       emit(GetCurrentAddressSuccess());

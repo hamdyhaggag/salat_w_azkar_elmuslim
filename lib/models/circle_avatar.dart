@@ -20,7 +20,9 @@ class CustomCircleAvatar extends StatelessWidget {
             cubit.changeMaxCounter(int.parse(title ?? '9999'));
           },
           child: CircleAvatar(
-            backgroundColor: AppColors.primaryColor,
+            backgroundColor: cubit.maxCounter == int.parse(title ?? '9999')
+                ? AppColors.primaryColor
+                : AppColors.greyColor,
             radius: 27,
             child: title == null
                 ? const Padding(

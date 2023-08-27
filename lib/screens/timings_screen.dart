@@ -23,33 +23,25 @@ class TimingsScreen extends StatefulWidget {
 }
 
 class _TimingsScreenState extends State<TimingsScreen> {
-  bool isRefreshing = false;
-
-  void refreshScreen() {
-    setState(() {
-      isRefreshing = true; // Show loading indicator
-      // Add the logic to update your screen here
-
-      // Simulate a delay to demonstrate the loading indicator
-      Future.delayed(const Duration(seconds: 2), () {
-        setState(() {
-          isRefreshing = false; // Hide loading indicator after refresh
-        });
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
-        // Get the current time
-        final currentTime = DateTime.now();
-        // Format the current time as desired
-        final formattedTime = DateFormat('hh:mm a')
-            .format(currentTime); // Example format: 01:30 PM
+
+        String formatPrayTime(String time) {
+          DateTime now = DateTime.now();
+          List<String> parts = time.split(':');
+
+          final int hours = int.parse(parts[0]);
+          final int minutes = int.parse(parts[1]);
+
+          DateTime convertedDateTime =
+              DateTime(now.year, now.month, now.day, hours, minutes);
+          final formattedTime = DateFormat('hh:mm a').format(convertedDateTime);
+          return formattedTime;
+        }
 
         return Scaffold(
             backgroundColor: Colors.white,
@@ -74,7 +66,19 @@ class _TimingsScreenState extends State<TimingsScreen> {
                     ),
                   )
                 : appCubit.timesModel == null
-                    ? const Center(child: CircularProgressIndicator())
+                    ? Column(
+                        children: [
+                          RefreshIndicator(
+                            onRefresh: () async {
+                              appCubit.getMyCurrentLocation();
+                            },
+                            child: const SingleChildScrollView(
+                                child: Center(
+                              child: CircularProgressIndicator(),
+                            )),
+                          ),
+                        ],
+                      )
                     : SafeArea(
                         child: Stack(
                           alignment: AlignmentDirectional.topEnd,
@@ -150,35 +154,29 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                       255, 0, 0, 0)),
                                             ),
 
-                                            GestureDetector(
-                                              onTap: () {
-                                                refreshScreen();
-                                              },
-                                              child: Stack(
-                                                alignment: Alignment.topCenter,
-                                                children: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        '  $formattedTime : آخر تحديث',
-                                                        style: const TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontSize: 23,
-                                                          color: Color.fromARGB(
-                                                              255, 0, 0, 0),
-                                                        ),
+                                            Stack(
+                                              alignment: Alignment.topCenter,
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
+                                                      style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 23,
+                                                        color: Color.fromARGB(
+                                                            255, 0, 0, 0),
                                                       ),
-                                                      const SizedBox(
-                                                        width: 8,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 8,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
                                             ),
                                             //times
                                             const SizedBox(
@@ -195,56 +193,62 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   children: [
                                                     prayTimeRow(
                                                         en: 'Fajr',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .fajr,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .fajr),
                                                         ar: 'الفجر'),
                                                     const SizedBox(height: 10),
                                                     prayTimeRow(
                                                         en: 'Sunrise',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .sunrise,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .sunrise),
                                                         ar: 'الشروق'),
                                                     const SizedBox(height: 10),
                                                     prayTimeRow(
                                                         en: 'Dhuhr',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .dhuhr,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .dhuhr),
                                                         ar: 'الظهر'),
                                                     const SizedBox(height: 10),
                                                     prayTimeRow(
                                                         en: 'Asr',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .asr,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .asr),
                                                         ar: 'العصر'),
                                                     const SizedBox(height: 10),
                                                     prayTimeRow(
                                                         en: 'Maghrib',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .maghrib,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .maghrib),
                                                         ar: 'المغرب'),
                                                     const SizedBox(height: 10),
                                                     prayTimeRow(
                                                         en: 'Isha',
-                                                        time: appCubit
-                                                            .timesModel!
-                                                            .data
-                                                            .timings
-                                                            .isha,
+                                                        time: formatPrayTime(
+                                                            appCubit
+                                                                .timesModel!
+                                                                .data
+                                                                .timings
+                                                                .isha),
                                                         ar: 'العشاء'),
                                                   ],
                                                 ),

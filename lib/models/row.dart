@@ -8,21 +8,23 @@ class MyCustomRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: 15, right: 3),
-          child: Text(
-            'تسبيحة',
-            style: TextStyle(
-              fontSize: 21,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              color: Colors.grey,
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 15, right: 3),
+            child: Text(
+              'تسبيحة',
+              style: TextStyle(
+                fontSize: 21,
+                fontFamily: 'Cairo',
+                fontWeight: FontWeight.w700,
+                color: Colors.grey,
+              ),
             ),
           ),
         ),
         Expanded(
+          flex: 3,
           child: Stack(
             children: [
               Row(
@@ -42,15 +44,19 @@ class MyCustomRow extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(left: 3, right: 19),
-          child: Text(
-            'ينتهي بعد',
-            style: TextStyle(
-              fontSize: 21,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              color: Colors.grey,
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 3, right: 19),
+            child: Text(
+              'نبهني بعد',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: 21,
+                fontFamily: 'Cairo',
+                fontWeight: FontWeight.w700,
+                color: Colors.grey,
+              ),
             ),
           ),
         ),

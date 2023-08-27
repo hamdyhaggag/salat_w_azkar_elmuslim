@@ -22,11 +22,10 @@ Widget prayTimeRow({
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-              flex: 2,
               child: Text(
-                en,
-                style: const TextStyle(fontSize: 35),
-              )),
+            en,
+            style: const TextStyle(fontSize: 35),
+          )),
           Expanded(
               child: Text(
             time,
@@ -36,12 +35,11 @@ Widget prayTimeRow({
                 color: Color(0xFF1E5A83)),
           )),
           Expanded(
-              flex: 2,
               child: Text(
-                ar,
-                textDirection: TextDirection.rtl,
-                style: const TextStyle(fontSize: 35),
-              )),
+            ar,
+            textDirection: TextDirection.rtl,
+            style: const TextStyle(fontSize: 35),
+          )),
         ],
       ),
     );
@@ -211,10 +209,6 @@ showMethods(context) {
                 radioItem(
                     title: 'معهد الجيوفيزياء في جامعة طهران',
                     value: 7,
-                    context: context),
-                radioItem(
-                    title: 'مَذْهَب "الشيعة الاثنا عشرية"',
-                    value: 0,
                     context: context),
               ],
             );

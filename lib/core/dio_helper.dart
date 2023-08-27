@@ -6,8 +6,10 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-          baseUrl: 'http://api.aladhan.com/v1/',
-          receiveDataWhenStatusError: true),
+        baseUrl: 'http://api.aladhan.com/v1/',
+        connectTimeout: const Duration(milliseconds: 5000),
+        receiveTimeout: const Duration(milliseconds: 5000),
+      ),
     );
   }
 
