@@ -1,4 +1,4 @@
-package com.elmuslim.salat.azkar.salat_w_azkar_elmuslim
+package com.tafakkur
 
 import io.flutter.embedding.android.FlutterActivity
 
