@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:salat_w_azkar_elmuslim/models/circle_avatar.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/circle_avatar.dart';
 
 class MyCustomRow extends StatelessWidget {
   const MyCustomRow({super.key});

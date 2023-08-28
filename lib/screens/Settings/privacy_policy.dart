@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/custom_app_bar.dart';
 
 class PrivacyPolicy extends StatelessWidget {
   const PrivacyPolicy({super.key});

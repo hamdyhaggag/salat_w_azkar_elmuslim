@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../core/widgets.dart';
-import '../models/custom_app_bar.dart';
-import '../models/row_with_text_and_icon.dart';
+import '../Widgets/custom_app_bar.dart';
+import '../Widgets/row_with_text_and_icon.dart';
 
 class SettingsScreens extends StatelessWidget {
   const SettingsScreens({Key? key}) : super(key: key);

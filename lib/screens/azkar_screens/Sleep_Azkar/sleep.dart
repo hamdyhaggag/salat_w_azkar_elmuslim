@@ -4,8 +4,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_1
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_2.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_3.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep_4.dart';
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_folder_row.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_folder_row.dart';
 
 class SleepAzkar extends StatelessWidget {
   final String title;

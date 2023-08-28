@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/models/copy_button.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/copy_button.dart';
 import 'circle_progress.dart';
 
 class CustomContainer extends StatefulWidget {

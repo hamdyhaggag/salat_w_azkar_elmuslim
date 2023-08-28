@@ -4,8 +4,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food_2.d
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food_3.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food_4.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food_5.dart';
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_folder_row.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_folder_row.dart';
 
 class FoodAzkar extends StatelessWidget {
   final String title;

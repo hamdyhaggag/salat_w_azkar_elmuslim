@@ -36,8 +36,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/mix_Azkar/collectio
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/mix_Azkar/collection_8.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/mix_Azkar/collection_9.dart';
 
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_folder_row.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_folder_row.dart';
 
 class CollectionAzkar extends StatelessWidget {
   final String title;

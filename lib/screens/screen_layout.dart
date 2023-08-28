@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/models/app_dialog.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/app_dialog.dart';
 
 class ScreenLayout extends StatelessWidget {
   const ScreenLayout({super.key});

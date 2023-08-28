@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
+import 'package:salat_w_azkar_elmuslim/Model/times_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {

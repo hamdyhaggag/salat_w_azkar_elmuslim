@@ -5,9 +5,9 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/models/row.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_reset_button.dart';
-import '../models/custom_app_bar.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/row.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/custom_reset_button.dart';
+import '../Widgets/custom_app_bar.dart';
 
 class Sebha extends StatelessWidget {
   const Sebha({super.key});

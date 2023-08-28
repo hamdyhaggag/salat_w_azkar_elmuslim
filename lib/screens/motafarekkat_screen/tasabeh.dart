@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_container.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/custom_container.dart';
 
-import '../../models/custom_app_bar.dart';
+import '../../Widgets/custom_app_bar.dart';
 
 class Tasabeh extends StatelessWidget {
   final String title;
@@ -15,9 +15,8 @@ class Tasabeh extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 15),
-            CustomContainer(title: 'سُبْحَانَ اللَّهِ', maxValue: 100),   
+            CustomContainer(title: 'سُبْحَانَ اللَّهِ', maxValue: 100),
             SizedBox(height: 15),
-
             CustomContainer(title: 'سُبْحَانَ الله و بحمدِه', maxValue: 100),
             SizedBox(height: 15),
             CustomContainer(

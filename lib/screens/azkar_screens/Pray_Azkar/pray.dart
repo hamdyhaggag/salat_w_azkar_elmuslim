@@ -17,8 +17,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_6.d
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_7.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_8.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray_9.dart';
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_folder_row.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_folder_row.dart';
 
 class PrayAzkar extends StatelessWidget {
   final String title;

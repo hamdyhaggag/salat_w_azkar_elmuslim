@@ -6,8 +6,8 @@ import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_4
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_5.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_6.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen/Roqia/roqia_7.dart';
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_folder_row.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_folder_row.dart';
 
 class RoqiaScreen extends StatelessWidget {
   final String title;

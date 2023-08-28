@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/custom_app_bar.dart';
-import '../../../models/custom_container.dart';
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_container.dart';
 
 class Travel5 extends StatelessWidget {
   const Travel5({super.key});

@@ -11,8 +11,8 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/qibla_screen.dart';
 import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/models/direction_model.dart';
-import 'package:salat_w_azkar_elmuslim/models/times_model.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/direction_model.dart';
+import 'package:salat_w_azkar_elmuslim/Model/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
 import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
 

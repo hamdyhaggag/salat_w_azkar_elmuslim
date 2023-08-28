@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_app_bar.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/custom_app_bar.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Food_Azkar/food.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Sleep_Azkar/sleep.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Travel_Azkar/travel.dart';
@@ -8,7 +8,7 @@ import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/evening.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/morning_view.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/Pray_Azkar/pray.dart';
 import 'package:salat_w_azkar_elmuslim/screens/azkar_screens/wake.dart';
-import '../models/azkar_button.dart';
+import '../Widgets/azkar_button.dart';
 
 class AzkarScreen extends StatelessWidget {
   const AzkarScreen({Key? key}) : super(key: key);

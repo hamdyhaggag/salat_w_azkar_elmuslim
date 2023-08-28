@@ -8,7 +8,7 @@ import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 
 import '../core/colors.dart';
-import '../models/custom_app_bar.dart';
+import '../Widgets/custom_app_bar.dart';
 
 class QiblaScreen extends StatefulWidget {
   const QiblaScreen({Key? key}) : super(key: key);

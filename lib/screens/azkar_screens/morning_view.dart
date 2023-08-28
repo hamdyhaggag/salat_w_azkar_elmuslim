@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/models/custom_container.dart';
-import '../../models/custom_app_bar.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/custom_container.dart';
+import '../../Widgets/custom_app_bar.dart';
 
 class MorningAzkar extends StatelessWidget {
   final String title;
