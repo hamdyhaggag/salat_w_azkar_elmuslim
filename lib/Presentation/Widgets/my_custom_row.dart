@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'circle_avatar.dart';
 
 class MyCustomRow extends StatelessWidget {
@@ -45,7 +44,7 @@ class MyCustomRow extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 3, right: 19),
           child: Text(
-            'ينتهي بعد',
+            'نبهني بعد',
             style: TextStyle(
               fontSize: 21,
               fontFamily: 'Cairo',

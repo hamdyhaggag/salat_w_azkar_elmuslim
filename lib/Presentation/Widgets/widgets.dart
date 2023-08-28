@@ -46,117 +46,6 @@ Widget prayTimeRow({
       ),
     );
 
-Widget zekr({
-  required String text1,
-  required String text2,
-  required String text3,
-  required int times,
-  required BuildContext context,
-}) =>
-    Column(
-      children: [
-        IntrinsicHeight(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(width: 15),
-              Expanded(
-                  flex: 5,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    textDirection: TextDirection.rtl,
-                    children: [
-                      if (text1 != '')
-                        Text(text1,
-                            textDirection: TextDirection.rtl,
-                            style: const TextStyle(
-                              fontSize: 24,
-                              color: Colors.brown,
-                              fontWeight: FontWeight.bold,
-                            )),
-                      if (text1 != '') const SizedBox(height: 5),
-                      SelectableText(
-                        text2,
-                        textDirection: TextDirection.rtl,
-                        style: const TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      if (text3 != '') const SizedBox(height: 5),
-                      if (text3 != '')
-                        Text(text3,
-                            textDirection: TextDirection.rtl,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.green,
-                            )),
-                    ],
-                  )),
-              const SizedBox(width: 10),
-              Expanded(
-                  flex: 1,
-                  child: BlocConsumer<AppCubit, AppStates>(
-                    listener: (context, state) {},
-                    builder: (context, state) {
-                      return InkWell(
-                        onTap: () {
-                          if (times > 0) {
-                            times--;
-                            Vibrate.feedback(FeedbackType.impact);
-                            if (times == 0) {
-                              Vibrate.feedback(FeedbackType.success);
-                            }
-                          }
-                          AppCubit.get(context).decreaseTimes(times: times);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.brown[300]),
-                          child: Center(
-                              child: times == 0
-                                  ? const Text(
-                                      'تم',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 30),
-                                    )
-                                  : Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        const Text(
-                                          'التكرار',
-                                          textDirection: TextDirection.rtl,
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20),
-                                        ),
-                                        Text(
-                                          times.toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 40),
-                                        ),
-                                      ],
-                                    )),
-                        ),
-                      );
-                    },
-                  )),
-              const SizedBox(width: 5),
-            ],
-          ),
-        ),
-      ],
-    );
-
 int radioValue = 5;
 
 Widget radioItem({
@@ -220,7 +109,7 @@ showMethods(context) {
 }
 
 const String googlePlayUrl =
-    'https://play.google.com/store/apps/developer?id=dev.elsaraff';
+    'https://play.google.com/store/apps/developer?id=dev.hamdyhaggag';
 void _launchURL(String link) async {
   Uri url = Uri.parse(link);
 
@@ -335,7 +224,6 @@ showAlertdialogExampleDidntused(context) {
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
-              // TODO: Add logic for the chosen action
             },
             child: const Text('Beach'),
           ),
