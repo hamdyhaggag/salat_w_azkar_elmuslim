@@ -6,8 +6,8 @@ import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/colors.dart';
 import 'package:salat_w_azkar_elmuslim/core/functions.dart';
-import 'package:salat_w_azkar_elmuslim/screens/Settings/app_info.dart';
-import 'package:salat_w_azkar_elmuslim/screens/Settings/privacy_policy.dart';
+import 'package:salat_w_azkar_elmuslim/screens/SettingsScreen/app_info.dart';
+import 'package:salat_w_azkar_elmuslim/screens/SettingsScreen/privacy_policy.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

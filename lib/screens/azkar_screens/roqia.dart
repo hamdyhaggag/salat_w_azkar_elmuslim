@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/widgets.dart';
 
 class Rokia extends StatelessWidget {
   final String title;

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
 import 'package:salat_w_azkar_elmuslim/core/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/core/widgets.dart';
+import 'package:salat_w_azkar_elmuslim/Widgets/widgets.dart';
 import 'package:salat_w_azkar_elmuslim/screens/splash_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
