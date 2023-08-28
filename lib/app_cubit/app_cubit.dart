@@ -6,15 +6,16 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/core/cache_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Widgets/widgets.dart';
-import 'package:salat_w_azkar_elmuslim/screens/azkar_screen.dart';
-import 'package:salat_w_azkar_elmuslim/screens/motafarekkat_screen.dart';
-import 'package:salat_w_azkar_elmuslim/screens/qibla_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/motafarekkat_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/qibla_screen.dart';
 import 'package:salat_w_azkar_elmuslim/core/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Widgets/direction_model.dart';
 import 'package:salat_w_azkar_elmuslim/Model/times_model.dart';
-import 'package:salat_w_azkar_elmuslim/screens/sebha_screen.dart';
-import 'package:salat_w_azkar_elmuslim/screens/timings_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/sebha_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart';
+
+import '../Presentation/Widgets/direction_model.dart';
+import '../Presentation/Widgets/widgets.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
