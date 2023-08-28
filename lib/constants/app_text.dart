@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/core/dimentions.dart';
+import 'colors.dart';
+import 'dimentions.dart';
 
 // ignore: must_be_immutable
 class AppText extends StatelessWidget {

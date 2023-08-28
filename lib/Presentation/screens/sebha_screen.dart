@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import '../../../constants/colors.dart';
 
+import '../../Business_Logic/Cubit/app_cubit.dart';
+import '../../Business_Logic/Cubit/app_states.dart';
 import '../Widgets/custom_app_bar.dart';
 import '../Widgets/custom_reset_button.dart';
 import '../Widgets/my_custom_row.dart';

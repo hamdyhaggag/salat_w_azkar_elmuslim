@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import '../../../../constants/colors.dart';
 
 import '../../Widgets/custom_app_bar.dart';
 

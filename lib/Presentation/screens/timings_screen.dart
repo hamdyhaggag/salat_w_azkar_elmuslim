@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/settings_screen.dart';
 import 'package:intl/intl.dart';
 
-import '../../core/colors.dart';
-import '../../core/functions.dart';
+import '../../../constants/colors.dart';
+import '../../Business_Logic/Cubit/app_cubit.dart';
+import '../../Business_Logic/Cubit/app_states.dart';
+import '../../Data/Web_Services/functions.dart';
 import '../Widgets/widgets.dart';
 
 class TimingsScreen extends StatefulWidget {

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
-import 'package:salat_w_azkar_elmuslim/core/functions.dart';
+
+import '../../../constants/colors.dart';
+import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/app_info.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/privacy_policy.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../Business_Logic/Cubit/app_cubit.dart';
+import '../../Business_Logic/Cubit/app_states.dart';
 
 Widget prayTimeRow({
   required String en,
@@ -321,14 +323,12 @@ showAlertdialogExampleDidntused(context) {
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
-              // TODO: Add logic for the chosen action
             },
             child: const Text('Forest'),
           ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
-              // TODO: Add logic for the chosen action
             },
             child: const Text('Mountains'),
           ),

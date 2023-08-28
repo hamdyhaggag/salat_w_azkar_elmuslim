@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/colors.dart';
+import '../../../../constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
 
 class AppInfo extends StatelessWidget {

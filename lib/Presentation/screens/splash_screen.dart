@@ -2,7 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/functions.dart';
+import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
 
 class SplashScreen extends StatefulWidget {

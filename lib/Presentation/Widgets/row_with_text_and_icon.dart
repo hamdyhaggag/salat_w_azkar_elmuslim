@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import '../../../constants/colors.dart';
 
 class RowWithTextAndIcon extends StatelessWidget {
   final String text;

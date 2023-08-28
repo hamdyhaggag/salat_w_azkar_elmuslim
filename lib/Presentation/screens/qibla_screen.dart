@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/app_cubit/app_states.dart';
 
-import '../../core/colors.dart';
+import '../../../constants/colors.dart';
+import '../../Business_Logic/Cubit/app_cubit.dart';
+import '../../Business_Logic/Cubit/app_states.dart';
 import '../Widgets/custom_app_bar.dart';
 
 class QiblaScreen extends StatefulWidget {

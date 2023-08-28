@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import '../../../constants/colors.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
-import 'package:salat_w_azkar_elmuslim/core/colors.dart';
+import '../../../constants/colors.dart';
 import 'circle_progress.dart';
 import 'copy_button.dart';
 
