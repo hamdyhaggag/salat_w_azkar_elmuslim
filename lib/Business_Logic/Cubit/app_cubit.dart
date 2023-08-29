@@ -13,7 +13,7 @@ import 'package:salat_w_azkar_elmuslim/Data/Model/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/sebha_screen.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart';
 
-import '../../Presentation/Widgets/direction_model.dart';
+import '../../Data/Model/direction_model.dart';
 import '../../Presentation/Widgets/widgets.dart';
 import 'app_states.dart';
 

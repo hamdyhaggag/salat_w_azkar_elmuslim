@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/settings_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/settings_screen.dart';
 import 'package:intl/intl.dart';
 
 import '../../../constants/colors.dart';

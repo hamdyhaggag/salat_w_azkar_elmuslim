@@ -21,8 +21,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       title: Align(
-        alignment:
-            isHome ? AlignmentDirectional.center : AlignmentDirectional.topEnd,
+        alignment: isHome
+            ? AlignmentDirectional.topCenter
+            : AlignmentDirectional.topEnd,
         child: Text(
           title,
           style: TextStyle(

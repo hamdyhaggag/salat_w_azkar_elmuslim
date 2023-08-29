@@ -140,42 +140,31 @@ Widget buildRow(IconData icon, String url, String title, Color color) {
   );
 }
 
-showInfo(context) {
+Donate(context) {
   showDialog(
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
           titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-          title: const Text('تواصل مع المطور عبر :',
+          title: const Text('ادعمنا من خلال :',
               textDirection: TextDirection.rtl,
               style:
                   TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Cairo')),
           contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
           children: <Widget>[
-            buildRow(FontAwesomeIcons.github, 'https://github.com/hamdyhaggag',
-                'جيت هب', Colors.black),
-            const SizedBox(height: 5),
             buildRow(
-              FontAwesomeIcons.linkedin,
-              'https://www.linkedin.com/in/hamdyhaggag74/',
-              'لينكد ان',
-              Colors.blueAccent,
+              FontAwesomeIcons.circleDollarToSlot,
+              'https://www.buymeacoffee.com/hamdyhaggag74',
+              'Buy Me A Cofee',
+              AppColors.primaryColor,
             ),
             const SizedBox(height: 5),
             buildRow(
-              FontAwesomeIcons.facebook,
-              'https://www.facebook.com/hamdyhaggag74/',
-              'فيسبوك',
-              Colors.blue,
+              FontAwesomeIcons.circleDollarToSlot,
+              'https://www.paypal.com/paypalme/hamdyhaggag74',
+              'paypal',
+              AppColors.primaryColor,
             ),
-            const SizedBox(height: 5),
-            buildRow(
-              FontAwesomeIcons.whatsapp,
-              'https://api.whatsapp.com/send?phone=201154620997',
-              'واتس اب',
-              Colors.green,
-            ),
-            const SizedBox(height: 5),
           ],
         );
       });
@@ -242,3 +231,39 @@ void shareOptions(BuildContext context) async {
   // You can customize the sharing message as needed
   await Share.share(text, subject: subject);
 }
+
+////////////////////////////////////////////////
+void openGooglePlayForFeedback() async {
+  const String packageName = 'com.tafakkur'; // Replace with your package name
+  const String googlePlayUrl = 'market://details?id=$packageName';
+
+  final Uri googlePlayUri = Uri.parse(googlePlayUrl);
+
+  if (await canLaunchUrl(googlePlayUri)) {
+    await launchUrl(googlePlayUri);
+  } else {
+    throw 'Could not launch Google Play Store.';
+  }
+}
+
+void shareFeedback(BuildContext context) {
+  openGooglePlayForFeedback();
+}
+
+////////////////////////////////////////////////
+void sendEmail() async {
+  final Uri emailUri = Uri(
+    scheme: 'mailto',
+    path: 'tafakkurapp@gmail.com', // Replace with the recipient's email address
+    query:
+        'subject=ملاحظات&body=  .. السلام عليكم ورحمة الله وبركاته ..\n  تمت تعبئة هذة الرسالة تلقائيا ، امسح نص الرسالة و اترك رسالتك', // Replace with your desired subject and body
+  );
+
+  if (await canLaunchUrl(emailUri)) {
+    await launchUrl(emailUri);
+  } else {
+    throw 'Could not launch email';
+  }
+}
+
+////////////////////////////////////////////////
