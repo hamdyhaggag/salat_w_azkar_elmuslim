@@ -130,16 +130,14 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   style: const TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
-                                                      color: Color.fromARGB(
-                                                          255, 0, 0, 0)),
+                                                      color: Colors.black54),
                                                 ),
                                                 const SizedBox(
                                                   width: 12,
                                                 ),
                                                 const Icon(
                                                   Icons.location_on,
-                                                  color: Color.fromARGB(
-                                                      255, 0, 0, 0),
+                                                  color: Colors.black54,
                                                   size: 30,
                                                 ),
                                               ],
@@ -151,8 +149,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  color: Color.fromARGB(
-                                                      255, 0, 0, 0)),
+                                                  color: Colors.black54),
                                             ),
 
                                             Stack(
