@@ -8,6 +8,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Presentation/Widgets/widgets.dart';
+import 'Presentation/onBoarading/onboarding_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Cairo',
           ),
           debugShowCheckedModeBanner: false,
-          home: const SplashScreen(),
+          home: const OnboardingScreen(),
         ),
       ),
     );
