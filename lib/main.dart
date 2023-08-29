@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/splash_screen.dart';
+
 import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Business_Logic/Cubit/app_cubit.dart';

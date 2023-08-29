@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/size_config.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart';
 
 import 'onboarding_contents.dart';
 
@@ -24,13 +23,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   int _currentPage = 0;
   List colors = const [
-    Color(0xffffffff),
-    Color(0xffffffff),
-    Color(0xffffffff),
-    Color(0xffffffff),
-    Color(0xffffffff),
-    Color(0xffffffff),
-    Color(0xffffffff),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
+    Color(0xfff3eded),
   ];
 
   AnimatedContainer _buildDots({
