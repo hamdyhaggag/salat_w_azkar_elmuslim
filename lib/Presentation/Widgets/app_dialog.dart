@@ -78,12 +78,12 @@ class _AppDialogState extends State<AppDialog>
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 20),
+                  padding: const EdgeInsets.only(top: 10, bottom: 30),
                   child: Text(
                     widget.content,
                     style: TextStyle(
@@ -106,7 +106,7 @@ class _AppDialogState extends State<AppDialog>
                         ),
                         onPressed: widget.cancelAction.onTap,
                         child: Container(
-                          height: 30,
+                          height: 50,
                           alignment: Alignment.center,
                           child: Text(
                             widget.cancelAction.title,
@@ -129,7 +129,7 @@ class _AppDialogState extends State<AppDialog>
                         ),
                         onPressed: widget.okAction.onTap,
                         child: Container(
-                          height: 30,
+                          height: 50,
                           alignment: Alignment.center,
                           child: Text(
                             widget.okAction.title,
