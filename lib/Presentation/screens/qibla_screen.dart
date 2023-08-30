@@ -26,26 +26,35 @@ class QiblaScreenState extends State<QiblaScreen> {
           ? Colors.white
           : Colors.white,
       body: AppCubit.get(context).directionModel == null
-          ? Padding(
-              padding: const EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (AppCubit.get(context).directionModel == null)
-                      Image.asset(
-                        'assets/404.gif',
-                        width: MediaQuery.of(context).size.width *
-                            0.8, // 80% of the screen width
-                        height: MediaQuery.of(context).size.height *
-                            0.4, // 50% of the screen height
+          ? RefreshIndicator(
+              onRefresh: () async {
+                AppCubit.get(context).directionModel;
+              },
+              child: ScrollConfiguration(
+                behavior: const ScrollBehavior().copyWith(overscroll: false),
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (AppCubit.get(context).directionModel == null)
+                            Image.asset(
+                              'assets/404.gif',
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              height: MediaQuery.of(context).size.height * 0.4,
+                            ),
+                          const Text(
+                            "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
-                    const Text(
-                      "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
-                      textAlign: TextAlign.center,
                     ),
-                  ],
+                  ),
                 ),
               ),
             )

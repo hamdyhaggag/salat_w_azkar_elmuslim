@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController.forward();
 
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       if (isEnterBefore) {
         navigateAndFinish(context, const ScreenLayout());
       } else {

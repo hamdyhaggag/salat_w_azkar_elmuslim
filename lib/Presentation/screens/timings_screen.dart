@@ -46,23 +46,28 @@ class _TimingsScreenState extends State<TimingsScreen> {
         return Scaffold(
             backgroundColor: Colors.white,
             body: appCubit.errorStatus == true
-                ? Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if (appCubit.errorStatus)
-                          Image.asset(
-                            'assets/404.gif',
-                            width: MediaQuery.of(context).size.width * 2,
-                            height: MediaQuery.of(context).size.height * 0.3,
+                ? RefreshIndicator(
+                    onRefresh: () async {
+                      appCubit.getMyCurrentLocation();
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (appCubit.errorStatus)
+                            Image.asset(
+                              'assets/404.gif',
+                              width: MediaQuery.of(context).size.width * 2,
+                              height: MediaQuery.of(context).size.height * 0.3,
+                            ),
+                          const Text(
+                            "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
+                            textAlign: TextAlign.center,
                           ),
-                        const Text(
-                          "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 : appCubit.timesModel == null
