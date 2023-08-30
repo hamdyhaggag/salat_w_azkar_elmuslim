@@ -5,9 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/splash_screen.dart';
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Presentation/Widgets/widgets.dart';
 import 'Presentation/onBoarading/onboarding_screen.dart';
+
+bool isEnterBefore = true;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +18,7 @@ void main() async {
   await CacheHelper.init();
 
   radioValue = CacheHelper.getInteger(key: 'value');
+  isEnterBefore = CacheHelper.getBoolean(key: 'isEnterBefore');
 
   DioHelper.init();
 
@@ -59,7 +63,7 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Cairo',
           ),
           debugShowCheckedModeBanner: false,
-          home: const OnboardingScreen(),
+          home: const SplashScreen(),
         ),
       ),
     );

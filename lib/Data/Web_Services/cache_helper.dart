@@ -20,35 +20,31 @@ class CacheHelper {
     log("saving >>> $value into local >>> with key $key");
 
     if (value is String) {
-      if (sharedPreferences != null) sharedPreferences!.setString(key, value);
+      sharedPreferences!.setString(key, value);
     }
     if (value is int) {
-      if (sharedPreferences != null) sharedPreferences!.setInt(key, value);
+      sharedPreferences!.setInt(key, value);
     }
     if (value is double) {
-      if (sharedPreferences != null) sharedPreferences!.setDouble(key, value);
+      sharedPreferences!.setDouble(key, value);
     }
     if (value is bool) {
-      if (sharedPreferences != null) sharedPreferences!.setBool(key, value);
+      sharedPreferences!.setBool(key, value);
     }
   }
 
   //===============================================================
 
   static String getData({required String key}) {
-    return sharedPreferences == null
-        ? 'DEFAULT_VALUE'
-        : sharedPreferences!.getString(key) ?? "";
+    return sharedPreferences!.getString(key) ?? "";
   }
 
   static int getInteger({required String key}) {
-    return sharedPreferences == null ? 0 : sharedPreferences!.getInt(key) ?? 0;
+    return sharedPreferences!.getInt(key) ?? 0;
   }
 
   static bool getBoolean({required String key}) {
-    return sharedPreferences == null
-        ? false
-        : sharedPreferences!.getBool(key) ?? false;
+    return sharedPreferences!.getBool(key) ?? false;
   }
 
   //===============================================================

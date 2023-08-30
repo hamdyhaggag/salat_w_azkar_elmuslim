@@ -3,7 +3,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/onboarding_screen.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
+import 'package:salat_w_azkar_elmuslim/main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,7 +36,11 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     Timer(const Duration(seconds: 2), () {
-      navigateAndFinish(context, const ScreenLayout());
+      if (isEnterBefore) {
+        navigateAndFinish(context, const ScreenLayout());
+      } else {
+        navigateAndFinish(context, const OnboardingScreen());
+      }
     });
   }
 

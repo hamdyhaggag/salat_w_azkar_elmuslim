@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/size_config.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
@@ -127,6 +128,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               navigateTo(context, const ScreenLayout());
+                              CacheHelper.saveData(
+                                  key: 'isEnterBefore', value: true);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF1E5A83),
@@ -152,7 +155,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  _controller.jumpToPage(6);
+                                  navigateTo(context, const ScreenLayout());
+                                  CacheHelper.saveData(
+                                      key: 'isEnterBefore', value: true);
                                 },
                                 style: TextButton.styleFrom(
                                   elevation: 0,
