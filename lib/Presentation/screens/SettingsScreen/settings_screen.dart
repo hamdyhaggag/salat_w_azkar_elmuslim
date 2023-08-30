@@ -16,7 +16,7 @@ class SettingsScreens extends StatelessWidget {
       appBar: const CustomAppBar(title: 'الإعدادات'),
       body: Column(
         children: <Widget>[
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           InkWell(
             onTap: () {
               Navigator.pop(
@@ -27,7 +27,7 @@ class SettingsScreens extends StatelessWidget {
               FontAwesomeIcons.house,
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           Container(
             height: 2,
             width: 420,
@@ -42,7 +42,7 @@ class SettingsScreens extends StatelessWidget {
               Icons.timer,
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           Container(
             height: 2,
             width: 420,
@@ -57,7 +57,7 @@ class SettingsScreens extends StatelessWidget {
               Icons.info,
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           Container(
             height: 2,
             width: 420,
@@ -72,7 +72,7 @@ class SettingsScreens extends StatelessWidget {
               Icons.privacy_tip_rounded,
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           Container(
             height: 2,
             width: 420,
@@ -87,7 +87,7 @@ class SettingsScreens extends StatelessWidget {
               Icons.mail_rounded,
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 7),
           Container(
             height: 2,
             width: 420,
@@ -138,111 +138,111 @@ class SettingsScreens extends StatelessWidget {
             width: 420,
             color: colorWithOpacity,
           ),
-          InkWell(
-            onTap: () {
-              // Handle the tap event here
-              // You can toggle the Switch's state or perform any other action
-            },
-            child: Row(
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: Container(), // Adjust the flex value as needed
-                  // Replace with any content you want before the Switch
-                ),
-                Switch(
-                  value: false, // Replace with the actual boolean value
-                  onChanged: (newValue) {
-                    // Update the switch's state when it's toggled
-                    // You can also perform any additional actions here
-                  },
-                ),
-                const Flexible(
-                  flex: 14, // Adjust the flex value as needed
-                  child: RowWithTextAndIcon(
-                    'التنبية لأذكار الصباح',
-                    Icons.sunny,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          Container(
-            height: 2,
-            width: 420,
-            color: colorWithOpacity,
-          ),
-          InkWell(
-            onTap: () {
-              // Handle the tap event here
-              // You can toggle the Switch's state or perform any other action
-            },
-            child: Row(
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: Container(), // Adjust the flex value as needed
-                  // Replace with any content you want before the Switch
-                ),
-                Switch(
-                  value: true, // Replace with the actual boolean value
-                  onChanged: (newValue) {
-                    // Update the switch's state when it's toggled
-                    // You can also perform any additional actions here
-                  },
-                ),
-                const Flexible(
-                  flex: 14, // Adjust the flex value as needed
-                  child: RowWithTextAndIcon(
-                    'التنبية لأذكار المساء',
-                    Icons.notifications_active_rounded,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          Container(
-            height: 2,
-            width: 420,
-            color: colorWithOpacity,
-          ),
-          InkWell(
-            onTap: () {
-              // Handle the tap event here
-              // You can toggle the Switch's state or perform any other action
-            },
-            child: Row(
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: Container(), // Adjust the flex value as needed
-                  // Replace with any content you want before the Switch
-                ),
-                Switch(
-                  value: true, // Replace with the actual boolean value
-                  onChanged: (newValue) {
-                    // Update the switch's state when it's toggled
-                    // You can also perform any additional actions here
-                  },
-                ),
-                const Flexible(
-                  flex: 14, // Adjust the flex value as needed
-                  child: RowWithTextAndIcon(
-                    'إشعار يوم الجمعة',
-                    Icons.notifications_active_rounded,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          Container(
-            height: 2,
-            width: 420,
-            color: colorWithOpacity,
-          ),
+          // InkWell(
+          //   onTap: () {
+          //     // Handle the tap event here
+          //     // You can toggle the Switch's state or perform any other action
+          //   },
+          //   child: Row(
+          //     children: [
+          //       Flexible(
+          //         flex: 1,
+          //         child: Container(), // Adjust the flex value as needed
+          //         // Replace with any content you want before the Switch
+          //       ),
+          //       Switch(
+          //         value: false, // Replace with the actual boolean value
+          //         onChanged: (newValue) {
+          //           // Update the switch's state when it's toggled
+          //           // You can also perform any additional actions here
+          //         },
+          //       ),
+          //       const Flexible(
+          //         flex: 14, // Adjust the flex value as needed
+          //         child: RowWithTextAndIcon(
+          //           'التنبية لأذكار الصباح',
+          //           Icons.sunny,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(height: 10.0),
+          // Container(
+          //   height: 2,
+          //   width: 420,
+          //   color: colorWithOpacity,
+          // ),
+          // InkWell(
+          //   onTap: () {
+          //     // Handle the tap event here
+          //     // You can toggle the Switch's state or perform any other action
+          //   },
+          //   child: Row(
+          //     children: [
+          //       Flexible(
+          //         flex: 1,
+          //         child: Container(), // Adjust the flex value as needed
+          //         // Replace with any content you want before the Switch
+          //       ),
+          //       Switch(
+          //         value: true, // Replace with the actual boolean value
+          //         onChanged: (newValue) {
+          //           // Update the switch's state when it's toggled
+          //           // You can also perform any additional actions here
+          //         },
+          //       ),
+          //       const Flexible(
+          //         flex: 14, // Adjust the flex value as needed
+          //         child: RowWithTextAndIcon(
+          //           'التنبية لأذكار المساء',
+          //           Icons.notifications_active_rounded,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(height: 10.0),
+          // Container(
+          //   height: 2,
+          //   width: 420,
+          //   color: colorWithOpacity,
+          // ),
+          // InkWell(
+          //   onTap: () {
+          //     // Handle the tap event here
+          //     // You can toggle the Switch's state or perform any other action
+          //   },
+          //   child: Row(
+          //     children: [
+          //       Flexible(
+          //         flex: 1,
+          //         child: Container(), // Adjust the flex value as needed
+          //         // Replace with any content you want before the Switch
+          //       ),
+          //       Switch(
+          //         value: true, // Replace with the actual boolean value
+          //         onChanged: (newValue) {
+          //           // Update the switch's state when it's toggled
+          //           // You can also perform any additional actions here
+          //         },
+          //       ),
+          //       const Flexible(
+          //         flex: 14, // Adjust the flex value as needed
+          //         child: RowWithTextAndIcon(
+          //           'إشعار يوم الجمعة',
+          //           Icons.notifications_active_rounded,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(height: 10.0),
+          // Container(
+          //   height: 2,
+          //   width: 420,
+          //   color: colorWithOpacity,
+          // ),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Sleep_Azkar/sleep.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel.dart';
@@ -8,6 +9,7 @@ import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/mornin
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/wake.dart';
 
+import '../../constants/app_text.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
 
@@ -38,21 +40,19 @@ class AzkarScreen extends StatelessWidget {
                   Positioned(
                     top: MediaQuery.of(context).size.height *
                         0.05500, // Adjust the vertical position for centering
-                    child: Text(
+                    child: AppText(
                       'الأذكار',
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.08,
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w600,
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
+                      fontSize: 35,
+                      fontFamily: 'Cairo',
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 20.h,
             ),
             SingleChildScrollView(
               child: Padding(

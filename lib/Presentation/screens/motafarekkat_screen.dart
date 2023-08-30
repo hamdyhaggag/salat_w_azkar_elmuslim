@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/motafarekkat_screen/Roqia/roqia.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/quran.dart';
@@ -46,8 +47,8 @@ class MotafarekkatScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 20.h,
             ),
             SingleChildScrollView(
               child: Padding(
@@ -66,7 +67,7 @@ class MotafarekkatScreen extends StatelessWidget {
                         context: context),
                     azkarButton(
                         name: 'تسبيحات',
-                        screeen: const Tasabeh(title: 'تسابيح'),
+                        screeen: const Tasabeh(title: 'تسبيحات'),
                         context: context),
                     azkarButton(
                         name: 'جوامع الدعاء',

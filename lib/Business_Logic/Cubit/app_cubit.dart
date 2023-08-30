@@ -22,15 +22,15 @@ class AppCubit extends Cubit<AppStates> {
 
   static AppCubit get(context) => BlocProvider.of(context);
 
-  int index = 0;
+  int index = 4;
 
   List<Widget> get buildScreens {
     return [
-      const TimingsScreen(),
-      const Sebha(),
-      const AzkarScreen(),
-      const MotafarekkatScreen(),
       const QiblaScreen(),
+      const MotafarekkatScreen(),
+      const AzkarScreen(),
+      const Sebha(),
+      const TimingsScreen(),
     ];
   }
 
@@ -43,19 +43,9 @@ class AppCubit extends Cubit<AppStates> {
   List<BottomNavigationBarItem> bottomItems = [
     const BottomNavigationBarItem(
         icon: ImageIcon(
-          AssetImage("assets/home.png"),
+          AssetImage("assets/compass.png"),
         ),
-        label: 'الرئيسية'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/tasbih.png"),
-        ),
-        label: 'السبحة'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/azkar.png"),
-        ),
-        label: 'الأذكار'),
+        label: 'القبلة'),
     const BottomNavigationBarItem(
         icon: ImageIcon(
           AssetImage("assets/motafarrekat.png"),
@@ -63,9 +53,19 @@ class AppCubit extends Cubit<AppStates> {
         label: 'متفرقات'),
     const BottomNavigationBarItem(
         icon: ImageIcon(
-          AssetImage("assets/compass.png"),
+          AssetImage("assets/azkar.png"),
         ),
-        label: 'القبلة'),
+        label: 'الأذكار'),
+    const BottomNavigationBarItem(
+        icon: ImageIcon(
+          AssetImage("assets/tasbih.png"),
+        ),
+        label: 'السبحة'),
+    const BottomNavigationBarItem(
+        icon: ImageIcon(
+          AssetImage("assets/home.png"),
+        ),
+        label: 'الرئيسية'),
   ];
 
   ////////////////////////////////////////////////////////////////////
@@ -218,6 +218,7 @@ class AppCubit extends Cubit<AppStates> {
   void changeRadio(value) {
     radioValue = value;
     emit(ChangeRadio());
+
     CacheHelper.saveData(key: 'value', value: value);
     getMyCurrentLocation();
   }

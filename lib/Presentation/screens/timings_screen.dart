@@ -4,6 +4,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/settings_screen.dart';
@@ -13,6 +14,7 @@ import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
 import '../../Data/Web_Services/functions.dart';
+import '../../constants/app_text.dart';
 import '../Widgets/widgets.dart';
 
 class TimingsScreen extends StatefulWidget {
@@ -122,21 +124,20 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             const SizedBox(
-                                              height: 18,
+                                              height: 27,
                                             ),
                                             //location
                                             Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Text(
+                                                AppText(
                                                   appCubit.address?.locality
                                                           .toString() ??
                                                       '',
-                                                  style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.black54),
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black54,
+                                                  fontSize: 24,
                                                 ),
                                                 const SizedBox(
                                                   width: 12,
@@ -149,14 +150,15 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                               ],
                                             ),
                                             //location
-                                            Text(
+                                            AppText(
                                               appCubit.address == null
                                                   ? ''
                                                   : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
-                                              style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black54),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black54,
+                                              fontSize: 24,
                                             ),
+
                                             Stack(
                                               alignment: Alignment.topCenter,
                                               children: [
@@ -196,14 +198,16 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                             ),
 
                                             //times
-
+                                            SizedBox(
+                                              height: 15.h,
+                                            ),
                                             Container(
                                               decoration: const BoxDecoration(
                                                   color: Color(0xFFFFFFFF)),
                                               child: Padding(
                                                 padding:
                                                     const EdgeInsets.symmetric(
-                                                        vertical: 1.0),
+                                                        vertical: 3.0),
                                                 child: Column(
                                                   children: [
                                                     prayTimeRow(
@@ -282,8 +286,8 @@ class _TimingsScreenState extends State<TimingsScreen> {
                               icon: const Padding(
                                 padding: EdgeInsets.only(right: 35, top: 10),
                                 child: Icon(
-                                  FontAwesomeIcons.gear,
-                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  FontAwesomeIcons.bars,
+                                  color: Colors.black54,
                                   size: 32,
                                 ),
                               ),

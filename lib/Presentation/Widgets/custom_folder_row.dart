@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants/colors.dart';
+import '../../constants/app_text.dart';
 
 class CustomFolderRow extends StatelessWidget {
   const CustomFolderRow({
@@ -16,14 +17,12 @@ class CustomFolderRow extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 12, top: 12),
           child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            Text(
+            AppText(
               title,
-              style: TextStyle(
-                fontSize: 25,
-                fontFamily: 'Cairo',
-                fontWeight: FontWeight.w500,
-                color: AppColors.primaryColor,
-              ),
+              fontSize: 19,
+              fontFamily: 'Cairo',
+              fontWeight: FontWeight.w500,
+              color: AppColors.primaryColor,
             ),
             const SizedBox(
               width: 22,

@@ -10,7 +10,7 @@ class Tasabeh extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'تسابيح '),
+      appBar: CustomAppBar(title: 'تسبيحات '),
       body: SingleChildScrollView(
         child: Column(
           children: [

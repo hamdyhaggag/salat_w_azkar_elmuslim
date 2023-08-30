@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../../constants/colors.dart';
 import '../../Data/Web_Services/functions.dart';
+import '../../constants/app_text.dart';
 
 Widget azkarButton({
   required String name,
@@ -27,12 +28,10 @@ Widget azkarButton({
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
+              child: AppText(
                 name,
-                style: const TextStyle(
-                  color: Color(0xFF1E5A83),
-                  fontSize: 30.0,
-                ),
+                color: Color(0xFF1E5A83),
+                fontSize: 23.0,
               ),
             ),
           ),

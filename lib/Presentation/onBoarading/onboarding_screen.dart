@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/size_config.dart';
@@ -72,6 +73,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                        SizedBox(
+                          height: 70.h,
+                        ),
                         Image.asset(
                           contents[i].image,
                           height:

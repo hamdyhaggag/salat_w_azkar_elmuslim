@@ -235,8 +235,7 @@ class PrayAzkar extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(
-                  title: ' كيف كان النبي صلى الله علية و سلم يُسبح'),
+              child: const CustomFolderRow(title: ' كيف كان النبي  يُسَّبح'),
             ),
           ],
         ),

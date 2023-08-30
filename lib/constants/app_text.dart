@@ -7,8 +7,9 @@ class AppText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
   Color? color;
-  final double size;
+  final double fontSize;
   final TextAlign? align;
+  final TextDirection? textDirection;
   final TextDecoration? decoration;
   final TextOverflow? overflow;
   final int? maxLines;
@@ -16,13 +17,14 @@ class AppText extends StatelessWidget {
   final double? height;
   final String? fontFamily;
 
-  AppText({
+  AppText(
+    this.text, {
     super.key,
-    required this.text,
-    this.size = 14,
+    this.fontSize = 14,
     this.color,
     this.fontWeight = FontWeight.w100,
     this.align,
+    this.textDirection,
     this.decoration,
     this.overflow,
     this.maxLines,
@@ -36,15 +38,16 @@ class AppText extends StatelessWidget {
     return Text(
       text,
       textAlign: align ?? TextAlign.start,
+      textDirection: textDirection ?? TextDirection.rtl,
       textScaleFactor: 1,
       style: TextStyle(
         color: color ?? AppColors.blackColor,
-        fontSize: size.toInt().font,
-        height: height != null ? height! / size : null,
+        fontSize: fontSize.toInt().font,
+        height: height != null ? height! / fontSize : null,
         decoration: decoration ?? TextDecoration.none,
         decorationStyle: TextDecorationStyle.solid,
         fontWeight: fontWeight,
-        fontFamily: fontFamily ?? "lotta",
+        fontFamily: fontFamily ?? "Cairo",
       ),
       overflow: overflow ?? TextOverflow.ellipsis,
       maxLines: maxLines,

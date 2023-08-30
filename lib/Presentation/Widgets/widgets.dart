@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/constants/app_text.dart';
 
 import '../../../constants/colors.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
@@ -25,30 +26,27 @@ Widget prayTimeRow({
         children: [
           Expanded(
             flex: 1,
-            child: Text(
+            child: AppText(
               en,
-              style: const TextStyle(
-                  fontSize: 23), // Adjust the font size as needed
+              fontSize: 24,
+              align: TextAlign.end,
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Text(
+            flex: 0,
+            child: AppText(
               time,
-              style: const TextStyle(
-                fontSize: 23, // Adjust the font size as needed
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF1E5A83),
-              ),
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: AppColors.primaryColor,
             ),
           ),
           Expanded(
             flex: 1,
-            child: Text(
+            child: AppText(
               ar,
+              fontSize: 24,
               textDirection: TextDirection.rtl,
-              style: const TextStyle(
-                  fontSize: 24), // Adjust the font size as needed
             ),
           ),
         ],
@@ -61,18 +59,25 @@ Widget radioItem({
   required String title,
   required int value,
   required BuildContext context,
-}) =>
-    RadioListTile(
-      title: Text(title,
-          textDirection: TextDirection.rtl,
-          style: TextStyle(color: AppColors.primaryColor)),
-      value: value,
-      groupValue: radioValue,
-      onChanged: (value) {
-        AppCubit.get(context).changeRadio(value);
-        Vibrate.feedback(FeedbackType.impact);
-      },
-    );
+}) {
+  final appCubit = AppCubit.get(context);
+
+  return RadioListTile(
+    title: AppText(
+      title,
+      fontSize: 16,
+      textDirection: TextDirection.rtl,
+      color: AppColors.primaryColor,
+    ),
+    value: value,
+    groupValue: radioValue,
+    onChanged: (newValue) {
+      appCubit.changeRadio(newValue);
+      Vibrate.feedback(FeedbackType.impact);
+      Navigator.pop(context, newValue);
+    },
+  );
+}
 
 showMethods(context) {
   showDialog(

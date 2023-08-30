@@ -31,8 +31,8 @@ class ScreenLayout extends StatelessWidget {
               }),
           body: WillPopScope(
               onWillPop: () async {
-                if (cubit.index != 0) {
-                  cubit.changeIndex(0);
+                if (cubit.index != 4) {
+                  cubit.changeIndex(4);
                   return Future.value(false);
                 } else {
                   AppDialog.showAppDialog(
