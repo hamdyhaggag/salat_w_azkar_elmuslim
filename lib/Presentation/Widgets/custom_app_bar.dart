@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../constants/colors.dart';
@@ -34,20 +35,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      actions: [
-        if (!isHome)
-          IconButton(
-            onPressed: () {
-              Navigator.canPop(context) == true
-                  ? Navigator.pop(context)
-                  : () {};
-            },
-            icon: Icon(
-              FontAwesomeIcons.chevronRight,
-              color: AppColors.primaryColor,
-            ),
-          ),
-      ],
+      leadingWidth: 0.0,
+      leading: const SizedBox(),
+      actions: !isHome
+          ? [
+              IconButton(
+                onPressed: () {
+                  Navigator.canPop(context) == true
+                      ? Navigator.pop(context)
+                      : () {};
+                },
+                icon: Icon(
+                  FontAwesomeIcons.chevronRight,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              SizedBox(width: 5.w),
+            ]
+          : [],
     );
   }
 }
