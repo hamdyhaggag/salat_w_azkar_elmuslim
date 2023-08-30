@@ -31,7 +31,7 @@ class Sebha extends StatelessWidget {
                     Image.asset(
                       'assets/circle2.png',
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 1.6,
+                      height: MediaQuery.of(context).size.height / 1.7,
                       fit: BoxFit.cover,
                       alignment: Alignment.center,
                     ),
@@ -40,7 +40,7 @@ class Sebha extends StatelessWidget {
                       child: Text(
                         '${cubit.counter}',
                         style: TextStyle(
-                          fontSize: cubit.counter < 1000 ? 85 : 65,
+                          fontSize: cubit.counter < 1000 ? 65 : 45,
                           color: AppColors.primaryColor,
                           fontWeight: FontWeight.bold,
                         ),

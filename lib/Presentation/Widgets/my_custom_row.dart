@@ -21,23 +21,15 @@ class MyCustomRow extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Stack(
+        Flexible(
+          flex: 3,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child: CustomCircleAvatar(),
-                  ),
-                  CustomCircleAvatar(title: '1000'),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child: CustomCircleAvatar(title: '100'),
-                  ),
-                  CustomCircleAvatar(title: '33'),
-                ],
-              )
+              CustomCircleAvatar(),
+              CustomCircleAvatar(title: '1000'),
+              CustomCircleAvatar(title: '100'),
+              CustomCircleAvatar(title: '33'),
             ],
           ),
         ),
