@@ -24,24 +24,33 @@ Widget prayTimeRow({
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-              child: Text(
-            en,
-            style: const TextStyle(fontSize: 35),
-          )),
+            flex: 1,
+            child: Text(
+              en,
+              style: const TextStyle(
+                  fontSize: 23), // Adjust the font size as needed
+            ),
+          ),
           Expanded(
-              child: Text(
-            time,
-            style: const TextStyle(
-                fontSize: 35,
+            flex: 1,
+            child: Text(
+              time,
+              style: const TextStyle(
+                fontSize: 23, // Adjust the font size as needed
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E5A83)),
-          )),
+                color: Color(0xFF1E5A83),
+              ),
+            ),
+          ),
           Expanded(
-              child: Text(
-            ar,
-            textDirection: TextDirection.rtl,
-            style: const TextStyle(fontSize: 35),
-          )),
+            flex: 1,
+            child: Text(
+              ar,
+              textDirection: TextDirection.rtl,
+              style: const TextStyle(
+                  fontSize: 24), // Adjust the font size as needed
+            ),
+          ),
         ],
       ),
     );

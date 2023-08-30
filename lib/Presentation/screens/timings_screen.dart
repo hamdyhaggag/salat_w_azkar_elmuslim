@@ -99,10 +99,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                       child: Image.asset(
                                         'assets/mousq.png',
                                         width:
-                                            MediaQuery.of(context).size.width,
+                                            MediaQuery.of(context).size.width *
+                                                0.5,
                                         height:
                                             MediaQuery.of(context).size.height *
-                                                0.5,
+                                                0.50,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -116,7 +117,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             const SizedBox(
-                                              height: 25,
+                                              height: 18,
                                             ),
                                             //location
                                             Row(
@@ -138,7 +139,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                 const Icon(
                                                   Icons.location_on,
                                                   color: Colors.black54,
-                                                  size: 30,
+                                                  size: 28,
                                                 ),
                                               ],
                                             ),
@@ -151,35 +152,46 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black54),
                                             ),
-
                                             Stack(
                                               alignment: Alignment.topCenter,
                                               children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
-                                                      style: const TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 23,
-                                                        color: Color.fromARGB(
-                                                            255, 0, 0, 0),
+                                                Container(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      vertical: 1,
+                                                      horizontal: 8),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Flexible(
+                                                        child: Text(
+                                                          '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style:
+                                                              const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontSize: 23,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    0,
+                                                                    0,
+                                                                    0),
+                                                          ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 8,
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ],
                                             ),
+
                                             //times
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
+
                                             Container(
                                               decoration: const BoxDecoration(
                                                   color: Color(0xFFFFFFFF)),
