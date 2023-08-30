@@ -25,23 +25,26 @@ class AzkarScreen extends StatelessWidget {
               height: 12,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 18, right: 18),
+              padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Stack(
+                alignment: Alignment.center,
                 children: [
                   Image.asset(
                     'assets/azkarcont.png',
                     alignment: Alignment.topCenter,
+                    fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * 0.1790,
                   ),
-                  const Positioned(
-                    top: 50,
-                    left: 65,
+                  Positioned(
+                    top: MediaQuery.of(context).size.height *
+                        0.05500, // Adjust the vertical position for centering
                     child: Text(
-                      'الأذكار ',
+                      'الأذكار',
                       style: TextStyle(
-                        fontSize: 40,
+                        fontSize: MediaQuery.of(context).size.width * 0.08,
                         fontFamily: 'Cairo',
                         fontWeight: FontWeight.w600,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                   ),

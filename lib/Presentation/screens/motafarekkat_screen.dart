@@ -25,21 +25,21 @@ class MotafarekkatScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 18, right: 18),
               child: Stack(
+                alignment: Alignment.center,
                 children: [
                   Image.asset(
                     'assets/mot.png',
                     alignment: Alignment.topCenter,
                   ),
-                  const Positioned(
-                    top: 60,
-                    left: 145,
+                  Positioned(
+                    top: MediaQuery.of(context).size.height * 0.0600,
                     child: Text(
                       'متفرقات',
                       style: TextStyle(
-                        fontSize: 40,
+                        fontSize: MediaQuery.of(context).size.width * 0.08,
                         fontFamily: 'Cairo',
                         fontWeight: FontWeight.w600,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                   ),
