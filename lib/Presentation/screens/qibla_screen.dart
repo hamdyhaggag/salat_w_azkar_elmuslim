@@ -28,21 +28,25 @@ class QiblaScreenState extends State<QiblaScreen> {
       body: AppCubit.get(context).directionModel == null
           ? Padding(
               padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (AppCubit.get(context).directionModel == null)
-                    Image.asset(
-                      'assets/404.gif',
-                      width: 410,
-                      height: 370,
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (AppCubit.get(context).directionModel == null)
+                      Image.asset(
+                        'assets/404.gif',
+                        width: MediaQuery.of(context).size.width *
+                            0.8, // 80% of the screen width
+                        height: MediaQuery.of(context).size.height *
+                            0.4, // 50% of the screen height
+                      ),
+                    const Text(
+                      "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
+                      textAlign: TextAlign.center,
                     ),
-                  const Text(
-                    "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           : Builder(builder: (context) {

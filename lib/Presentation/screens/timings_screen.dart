@@ -55,8 +55,8 @@ class _TimingsScreenState extends State<TimingsScreen> {
                         if (appCubit.errorStatus)
                           Image.asset(
                             'assets/404.gif',
-                            width: 405,
-                            height: 370,
+                            width: MediaQuery.of(context).size.width * 2,
+                            height: MediaQuery.of(context).size.height * 0.3,
                           ),
                         const Text(
                           "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
