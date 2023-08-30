@@ -142,32 +142,49 @@ Widget buildRow(IconData icon, String url, String title, Color color) {
 
 Donate(context) {
   showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return SimpleDialog(
-          titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-          title: const Text('ادعمنا من خلال :',
-              textDirection: TextDirection.rtl,
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Cairo')),
-          contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-          children: <Widget>[
-            buildRow(
-              FontAwesomeIcons.circleDollarToSlot,
-              'https://www.buymeacoffee.com/hamdyhaggag74',
-              'Buy Me A Cofee',
-              AppColors.primaryColor,
-            ),
-            const SizedBox(height: 5),
-            buildRow(
-              FontAwesomeIcons.circleDollarToSlot,
-              'https://www.paypal.com/paypalme/hamdyhaggag74',
-              'paypal',
-              AppColors.primaryColor,
-            ),
-          ],
-        );
-      });
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
+        title: Text(
+          'ادعمنا من خلال :',
+          textDirection: TextDirection.rtl,
+          style: TextStyle(
+            color: AppColors.primaryColor,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Cairo',
+          ),
+        ),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
+        content: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.8,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: buildRow(
+                  FontAwesomeIcons.circleDollarToSlot,
+                  'https://www.buymeacoffee.com/hamdyhaggag74',
+                  'Buy Me A Coffee',
+                  AppColors.primaryColor,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Center(
+                child: buildRow(
+                  FontAwesomeIcons.circleDollarToSlot,
+                  'https://www.paypal.com/paypalme/hamdyhaggag74',
+                  'paypal',
+                  AppColors.primaryColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }
 
 ////////////////////////////////////////
