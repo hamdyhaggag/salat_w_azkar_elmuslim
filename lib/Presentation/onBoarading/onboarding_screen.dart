@@ -32,15 +32,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Color(0xfff3eded),
   ];
 
-  AnimatedContainer _buildDots({
-    int? index,
-  }) {
+  AnimatedContainer _buildDots({required int index}) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
+        borderRadius: BorderRadius.all(Radius.circular(50)),
         color: Color(0xFF1E5A83),
       ),
       margin: const EdgeInsets.only(right: 5),
@@ -55,6 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     SizeConfig().init(context);
     double width = SizeConfig.screenW!;
     double height = SizeConfig.screenH!;
+    bool isSmallScreen = width <= 550;
 
     return Scaffold(
       backgroundColor: colors[_currentPage],
@@ -70,16 +67,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 itemCount: contents.length,
                 itemBuilder: (context, i) {
                   return Padding(
-                    padding: const EdgeInsets.all(40.0),
+                    padding: EdgeInsets.all(isSmallScreen ? 20.0 : 40.0),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Image.asset(
                           contents[i].image,
-                          height: SizeConfig.blockV! * 35,
+                          height:
+                              SizeConfig.blockV! * (isSmallScreen ? 25 : 35),
                         ),
-                        SizedBox(
-                          height: (height >= 840) ? 100 : 60,
-                        ),
+                        SizedBox(height: isSmallScreen ? 60 : 100),
                         Text(
                           contents[i].title,
                           textAlign: TextAlign.center,
@@ -87,20 +84,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             fontFamily: "Cairo",
                             fontWeight: FontWeight.w600,
                             color: const Color(0xFF1E5A83),
-                            fontSize: (width <= 550) ? 30 : 35,
+                            fontSize: isSmallScreen ? 28 : 35,
                           ),
                         ),
                         const SizedBox(height: 15),
-                        Text(
-                          contents[i].desc,
-                          style: TextStyle(
-                            fontFamily: "Cairo",
-                            fontWeight: FontWeight.w300,
-                            color: const Color(0xFF1E5A83),
-                            fontSize: (width <= 550) ? 23 : 19,
-                          ),
-                          textAlign: TextAlign.center,
-                        )
+                        LayoutBuilder(
+                          builder: (context, constraints) {
+                            double fontSize = isSmallScreen ? 19 : 23;
+                            return Text(
+                              contents[i].desc,
+                              style: TextStyle(
+                                fontFamily: "Cairo",
+                                fontWeight: FontWeight.w300,
+                                color: const Color(0xFF1E5A83),
+                                fontSize: fontSize,
+                              ),
+                              textAlign: TextAlign.center,
+                            );
+                          },
+                        ),
                       ],
                     ),
                   );
@@ -116,14 +118,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       contents.length,
-                      (int index) => _buildDots(
-                        index: index,
-                      ),
+                      (index) => _buildDots(index: index),
                     ),
                   ),
                   _currentPage + 1 == contents.length
                       ? Padding(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(isSmallScreen ? 20 : 30),
                           child: ElevatedButton(
                             onPressed: () {
                               navigateTo(context, const ScreenLayout());
@@ -133,22 +133,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
-                              padding: (width <= 550)
-                                  ? const EdgeInsets.symmetric(
-                                      horizontal: 100, vertical: 20)
-                                  : EdgeInsets.symmetric(
-                                      horizontal: width * 0.2, vertical: 25),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: isSmallScreen ? 60 : width * 0.2,
+                                vertical: isSmallScreen ? 15 : 20,
+                              ),
                               textStyle: TextStyle(
-                                  fontSize: (width <= 550) ? 23 : 19,
-                                  fontFamily: 'Cairo'),
+                                fontSize: isSmallScreen ? 20 : 23,
+                                fontFamily: 'Cairo',
+                              ),
                             ),
-                            child: const Text(
-                              "ابدأ الآن",
-                            ),
+                            child: const Text("ابدأ الآن"),
                           ),
                         )
                       : Padding(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(isSmallScreen ? 20 : 30),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -159,9 +157,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: TextButton.styleFrom(
                                   elevation: 0,
                                   textStyle: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: (width <= 550) ? 20 : 18,
-                                      fontFamily: 'Cairo'),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: isSmallScreen ? 18 : 20,
+                                    fontFamily: 'Cairo',
+                                  ),
                                 ),
                                 child: const Text(
                                   "التخطي",
@@ -181,20 +180,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                   elevation: 0,
-                                  padding: (width <= 550)
-                                      ? const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 20)
-                                      : const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 25),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isSmallScreen ? 20 : 30,
+                                    vertical: isSmallScreen ? 15 : 25,
+                                  ),
                                   textStyle: TextStyle(
-                                      fontSize: (width <= 550) ? 20 : 18,
-                                      fontFamily: 'Cairo'),
+                                    fontSize: isSmallScreen ? 18 : 20,
+                                    fontFamily: 'Cairo',
+                                  ),
                                 ),
                                 child: const Text("التالي"),
                               ),
                             ],
                           ),
-                        )
+                        ),
                 ],
               ),
             ),
