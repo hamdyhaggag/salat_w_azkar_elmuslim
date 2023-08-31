@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "951933412343",
+    "project_id": "tafakkur-582ed",
+    "storage_bucket": "tafakkur-582ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951933412343:android:d610d902519f1f3ffe44f2",
+        "android_client_info": {
+          "package_name": "com.tafakkur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951933412343-1ii2rur5fgeklo0nuicjfr2a3l6dpekj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd5kU_BOE--n-UJgMREbTnBVtf8ET3Zk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951933412343-1ii2rur5fgeklo0nuicjfr2a3l6dpekj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
