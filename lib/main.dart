@@ -1,4 +1,7 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,11 +11,22 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/splash_screen.dart';
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Presentation/Widgets/widgets.dart';
+import 'firebase_options.dart';
+
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  if (kDebugMode) {
+    print(message.messageId);
+  }
+}
 
 bool isEnterBefore = true;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
   await CacheHelper.init();
 

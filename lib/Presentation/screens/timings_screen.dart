@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/settings_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:salat_w_azkar_elmuslim/main.dart';
 
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
@@ -25,6 +27,24 @@ class TimingsScreen extends StatefulWidget {
 }
 
 class _TimingsScreenState extends State<TimingsScreen> {
+  void requestPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+    NotificationSettings settings = await messaging.requestPermission(
+        alert: true,
+        announcement: false,
+        badge: true,
+        carPlay: false,
+        criticalAlert: false,
+        provisional: false,
+        sound: true);
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      print('User Granted Permission');
+    }
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      navigateTo(context, const TimingsScreen());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
