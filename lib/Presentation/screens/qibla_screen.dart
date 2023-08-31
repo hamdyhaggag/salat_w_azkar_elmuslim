@@ -218,17 +218,15 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                 ),
                 Positioned(
-                  left: MediaQuery.of(context).size.width *
-                      0.10, // Adjust the multiplier as needed
-                  top: MediaQuery.of(context).size.height *
-                      0.68, // Adjust the multiplier as needed
+                  left: MediaQuery.of(context).size.width * 0.11,
+                  top: MediaQuery.of(context).size.height * 0.68,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       AppText(
                         'اتجاة القبلة هو  $qibla° من الشمال ',
                         color: AppColors.primaryColor,
-                        fontSize: MediaQuery.of(context).size.width * 0.050,
+                        fontSize: 23,
                       ),
                     ],
                   ),
