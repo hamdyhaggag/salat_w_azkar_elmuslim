@@ -2,12 +2,14 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_compass/flutter_compass.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
+import '../../constants/app_text.dart';
 import '../Widgets/custom_app_bar.dart';
 
 class QiblaScreen extends StatefulWidget {
@@ -47,9 +49,10 @@ class QiblaScreenState extends State<QiblaScreen> {
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: MediaQuery.of(context).size.height * 0.4,
                             ),
-                          const Text(
-                            "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
-                            textAlign: TextAlign.center,
+                          AppText(
+                            "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
+                            align: TextAlign.center,
+                            fontSize: 18,
                           ),
                         ],
                       ),
@@ -104,18 +107,18 @@ class QiblaScreenState extends State<QiblaScreen> {
                 direction = direction + 360;
               }
               if (qibla == direction) {
-                Vibrate.feedback(FeedbackType.heavy);
+                Vibrate.feedback(FeedbackType.medium);
               }
-              double rotationSpeedFactor =
-                  0.2; // Adjust this value to control rotation speed
+              double rotationSpeedFactor = 0.2;
               rotatedAngle =
                   (direction * (math.pi / 180) * -1) * rotationSpeedFactor;
             }
 
             // if direction is null, then device does not support this sensor
             if (direction == null) {
-              return const Center(
-                child: Text("Device does not have sensors !"),
+              return Center(
+                child:
+                    AppText("الجهاز لا يدعم السينسور المستخدم لتحديد الاتجاه"),
               );
             }
 
@@ -194,8 +197,8 @@ class QiblaScreenState extends State<QiblaScreen> {
                                     color: AppColors.primaryColor,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: 5.w,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowLeftLong,
@@ -216,19 +219,16 @@ class QiblaScreenState extends State<QiblaScreen> {
                 ),
                 Positioned(
                   left: MediaQuery.of(context).size.width *
-                      0.125, // Adjust the multiplier as needed
+                      0.10, // Adjust the multiplier as needed
                   top: MediaQuery.of(context).size.height *
-                      0.70, // Adjust the multiplier as needed
+                      0.68, // Adjust the multiplier as needed
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AppText(
                         'اتجاة القبلة هو  $qibla° من الشمال ',
-                        style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontSize: MediaQuery.of(context).size.width * 0.055,
-                        ),
-                        textAlign: TextAlign.center,
+                        color: AppColors.primaryColor,
+                        fontSize: MediaQuery.of(context).size.width * 0.050,
                       ),
                     ],
                   ),

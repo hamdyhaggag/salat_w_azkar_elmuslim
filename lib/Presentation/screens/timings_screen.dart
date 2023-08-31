@@ -64,9 +64,10 @@ class _TimingsScreenState extends State<TimingsScreen> {
                               width: MediaQuery.of(context).size.width * 2,
                               height: MediaQuery.of(context).size.height * 0.3,
                             ),
-                          const Text(
-                            "تأكد من الاتصال بالإنترنت \n وتفعيل الموقع",
-                            textAlign: TextAlign.center,
+                          AppText(
+                            "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
+                            align: TextAlign.center,
+                            fontSize: 18,
                           ),
                         ],
                       ),

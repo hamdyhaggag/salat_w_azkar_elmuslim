@@ -8,7 +8,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/splash_screen.dart';
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Presentation/Widgets/widgets.dart';
-import 'Presentation/onBoarading/onboarding_screen.dart';
 
 bool isEnterBefore = true;
 

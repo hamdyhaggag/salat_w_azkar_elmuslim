@@ -38,12 +38,12 @@ List<OnboardingContents> contents = [
     image: "assets/onboarding4.png",
     desc: "دع التطبيق يرشدك لاتجاه القبلة أثناء الصلاة ، بُناءً على موقعك",
   ),
-  OnboardingContents(
-    title: " تفعيل التنبيهات ",
-    image: "assets/onboarding5.png",
-    desc:
-        "لتحسين تجربتك أكثر ، يمكنك تفعيل التنبيهات من شاشة الإعدادات لتذكيرك بالأذكار اليومية ",
-  ),
+  // OnboardingContents(
+  //   title: " تفعيل التنبيهات ",
+  //   image: "assets/onboarding5.png",
+  //   desc:
+  //       "لتحسين تجربتك أكثر ، يمكنك تفعيل التنبيهات من شاشة الإعدادات لتذكيرك بالأذكار اليومية ",
+  // ),
   OnboardingContents(
     title: "تصميم بسيط وسهل الاستخدام",
     image: "assets/onboarding6.png",

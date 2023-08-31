@@ -31,7 +31,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Color(0xfff3eded),
     Color(0xfff3eded),
     Color(0xfff3eded),
-    Color(0xfff3eded),
+    // Color(0xfff3eded),
   ];
 
   AnimatedContainer _buildDots({required int index}) {
@@ -52,7 +52,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     double width = SizeConfig.screenW!;
-    double height = SizeConfig.screenH!;
     bool isSmallScreen = width <= 550;
 
     return Scaffold(
