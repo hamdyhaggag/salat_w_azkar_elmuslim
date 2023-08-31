@@ -38,11 +38,11 @@ class PrayAzkar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Azan(title: 'الآذان'),
+                    builder: (context) => const Azan(title: 'الأذان'),
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'الآذان'),
+              child: const CustomFolderRow(title: 'الأذان'),
             ),
             GestureDetector(
               onTap: () {

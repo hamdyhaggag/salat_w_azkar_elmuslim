@@ -9,7 +9,7 @@ class Azan1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'الآذان'),
+      appBar: CustomAppBar(title: 'الأذان'),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -13,7 +13,7 @@ class Azan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'الآذان'),
+      appBar: const CustomAppBar(title: 'الأذان'),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,7 +27,7 @@ class Azan extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'الآذان'),
+              child: const CustomFolderRow(title: 'الأذان'),
             ),
             GestureDetector(
               onTap: () {
@@ -38,7 +38,7 @@ class Azan extends StatelessWidget {
                   ),
                 );
               },
-              child: const CustomFolderRow(title: 'الدعاء بعد الآذان'),
+              child: const CustomFolderRow(title: 'الدعاء بعد الأذان'),
             ),
             GestureDetector(
               onTap: () {
@@ -50,7 +50,7 @@ class Azan extends StatelessWidget {
                 );
               },
               child:
-                  const CustomFolderRow(title: 'الدعاء بين الآذان و الإقامة'),
+                  const CustomFolderRow(title: 'الدعاء بين الأذان و الإقامة'),
             ),
           ],
         ),
