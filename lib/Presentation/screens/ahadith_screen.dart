@@ -68,7 +68,7 @@ class AhadithScreen extends StatelessWidget {
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.0600,
                     child: Text(
-                      'الأربعون النووية',
+                      'الأربعين النووية',
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.08,
                         fontFamily: 'Cairo',
