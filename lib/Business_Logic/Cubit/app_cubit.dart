@@ -6,7 +6,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/motafarekkat_screen.dart';
+import 'package:salat_w_azkar_elmuslim/Presentation/screens/ahadith_screen.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/qibla_screen.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Model/times_model.dart';
@@ -27,7 +27,7 @@ class AppCubit extends Cubit<AppStates> {
   List<Widget> get buildScreens {
     return [
       const QiblaScreen(),
-      const MotafarekkatScreen(),
+      const AhadithScreen(),
       const AzkarScreen(),
       const Sebha(),
       const TimingsScreen(),
@@ -50,7 +50,7 @@ class AppCubit extends Cubit<AppStates> {
         icon: ImageIcon(
           AssetImage("assets/motafarrekat.png"),
         ),
-        label: 'متفرقات'),
+        label: 'الأربعين'),
     const BottomNavigationBarItem(
         icon: ImageIcon(
           AssetImage("assets/azkar.png"),

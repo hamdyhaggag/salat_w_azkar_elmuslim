@@ -12,6 +12,12 @@ import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/wake.d
 import '../../constants/app_text.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
+import 'azkar_screens/dead.dart';
+import 'azkar_screens/quran.dart';
+import 'motafarekkat_screen/Roqia/roqia.dart';
+import 'motafarekkat_screen/nabawi_Azkar.dart';
+import 'motafarekkat_screen/plus.dart';
+import 'motafarekkat_screen/tasabeh.dart';
 
 class AzkarScreen extends StatelessWidget {
   const AzkarScreen({Key? key}) : super(key: key);
@@ -92,6 +98,31 @@ class AzkarScreen extends StatelessWidget {
                         name: 'أذكار السفر',
                         screeen:
                             const TravelAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                        context: context),
+                    azkarButton(
+                        name: 'الأدعية القرآنية',
+                        screeen: const QuranAzkar(title: 'الأدعية القراّنية'),
+                        context: context),
+                    azkarButton(
+                        name: 'الأدعية النبوية',
+                        screeen:
+                            const NabawiAzkar(title: 'الْأدْعِيَةُ النبوية'),
+                        context: context),
+                    azkarButton(
+                        name: 'تسبيحات',
+                        screeen: const Tasabeh(title: 'تسبيحات'),
+                        context: context),
+                    azkarButton(
+                        name: 'جوامع الدعاء',
+                        screeen: const PlusAzkar(title: 'جوامع الدعاء'),
+                        context: context),
+                    azkarButton(
+                        name: 'أدعية للميت',
+                        screeen: const DeadAzkar(title: 'أدعية للميّت'),
+                        context: context),
+                    azkarButton(
+                        name: 'الرقية الشرعية',
+                        screeen: const RoqiaScreen(title: 'الرقية الشرعية'),
                         context: context),
                   ],
                 ),
