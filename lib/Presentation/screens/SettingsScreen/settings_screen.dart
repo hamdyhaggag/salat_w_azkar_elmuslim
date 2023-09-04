@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../Widgets/custom_app_bar.dart';
@@ -16,7 +17,7 @@ class SettingsScreens extends StatelessWidget {
       appBar: const CustomAppBar(title: 'الإعدادات'),
       body: Column(
         children: <Widget>[
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           InkWell(
             onTap: () {
               Navigator.pop(
@@ -27,10 +28,10 @@ class SettingsScreens extends StatelessWidget {
               FontAwesomeIcons.house,
             ),
           ),
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -38,14 +39,14 @@ class SettingsScreens extends StatelessWidget {
               showMethods(context);
             },
             child: const RowWithTextAndIcon(
-              'طريقة تحديد مواعيد الصلاة',
+              'طريقة تحديد مواقيت الصلاة',
               Icons.timer,
             ),
           ),
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -57,10 +58,10 @@ class SettingsScreens extends StatelessWidget {
               Icons.info,
             ),
           ),
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -72,10 +73,10 @@ class SettingsScreens extends StatelessWidget {
               Icons.privacy_tip_rounded,
             ),
           ),
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -87,10 +88,10 @@ class SettingsScreens extends StatelessWidget {
               Icons.mail_rounded,
             ),
           ),
-          const SizedBox(height: 7),
+          SizedBox(height: 7.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -102,10 +103,10 @@ class SettingsScreens extends StatelessWidget {
               FontAwesomeIcons.circleDollarToSlot,
             ),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -117,10 +118,10 @@ class SettingsScreens extends StatelessWidget {
               Icons.star,
             ),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           InkWell(
@@ -132,10 +133,10 @@ class SettingsScreens extends StatelessWidget {
               Icons.share,
             ),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
           // InkWell(

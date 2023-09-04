@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
 import '../../constants/app_text.dart';
 
@@ -28,14 +29,14 @@ class RowWithTextAndIcon extends StatelessWidget {
               fontFamily: 'Cairo',
               fontWeight: FontWeight.w500,
               color: AppColors.primaryColor),
-          const SizedBox(
-            width: 20,
+          SizedBox(
+            width: 20.w,
           ),
           Icon(
             icon,
             color: AppColors.primaryColor,
           ),
-          const SizedBox(width: 16.0),
+          SizedBox(width: 16.0.w),
         ],
       ),
     );

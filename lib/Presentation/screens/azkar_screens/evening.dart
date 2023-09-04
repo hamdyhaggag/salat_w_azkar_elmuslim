@@ -88,7 +88,7 @@ class EveningAzkar extends StatelessWidget {
             CustomContainer(
                 title:
                     'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ',
-                maxValue: 1,
+                maxValue: 7,
                 initialCounterValue: 0),
             SizedBox(height: 15),
             CustomContainer(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/constants/app_text.dart';
@@ -20,7 +21,7 @@ Widget prayTimeRow({
   required String ar,
 }) =>
     Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -88,13 +89,13 @@ showMethods(context) {
           builder: (context, state) {
             return SimpleDialog(
               titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-              title: Text('طريقة تحديد مواقيت الصلاة',
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 23,
-                    color: AppColors.primaryColor,
-                  )),
+              title: AppText(
+                'طريقة تحديد مواقيت الصلاة',
+                textDirection: TextDirection.rtl,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: AppColors.primaryColor,
+              ),
               contentPadding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
               children: <Widget>[
                 radioItem(
@@ -141,13 +142,13 @@ Widget buildRow(IconData icon, String url, String title, Color color) {
       _launchURL(url);
     },
     child: SizedBox(
-      height: 40,
+      height: 40.h,
       child: Row(
         textDirection: TextDirection.rtl,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(icon, color: color, size: 30),
-          Text(title),
+          Icon(icon, color: color, size: 25),
+          AppText(title),
         ],
       ),
     ),
@@ -159,17 +160,15 @@ Donate(context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
-        title: Text(
+        titlePadding: const EdgeInsets.fromLTRB(0, 15, 17, 0),
+        title: AppText(
           'ادعمنا من خلال :',
           textDirection: TextDirection.rtl,
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Cairo',
-          ),
+          color: AppColors.primaryColor,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Cairo',
         ),
-        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
+        contentPadding: const EdgeInsets.fromLTRB(30, 20, 30, 40),
         content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,
           child: Column(
@@ -218,14 +217,14 @@ showAlertdialogExampleDidntused(context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text('Magical Portal'),
-        content: const Column(
+        title: AppText('Magical Portal'),
+        content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('You have discovered a magical portal!'),
-            SizedBox(height: 10),
-            Text('Where would you like to go?'),
+            AppText('You have discovered a magical portal!'),
+            SizedBox(height: 10.h),
+            AppText('Where would you like to go?'),
           ],
         ),
         actions: [

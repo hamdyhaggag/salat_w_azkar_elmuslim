@@ -37,7 +37,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false, // Set to true to enable DevicePreview
+      enabled: true, // Set to true to enable DevicePreview
       builder: (context) => const MyApp(),
     ),
   );
