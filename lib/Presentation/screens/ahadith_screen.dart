@@ -53,11 +53,11 @@ class AhadithScreen extends StatelessWidget {
         appBar: const CustomAppBar(title: 'الأربعين', isHome: true),
         body: ListView(
           children: [
-            const SizedBox(
-              height: 12,
+            SizedBox(
+              height: 12.h,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 18, right: 18),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -85,7 +85,7 @@ class AhadithScreen extends StatelessWidget {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: EdgeInsets.symmetric(horizontal: 15.0.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
