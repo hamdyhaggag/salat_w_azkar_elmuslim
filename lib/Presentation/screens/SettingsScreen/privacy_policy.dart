@@ -22,6 +22,7 @@ class PrivacyPolicy extends StatelessWidget {
               style: TextStyle(
                   color: AppColors.primaryColor,
                   fontSize: 20.0,
+                  fontFamily: 'Cairo',
                   fontWeight: FontWeight.w400),
             ),
           ),

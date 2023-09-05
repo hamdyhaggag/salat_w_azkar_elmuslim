@@ -1,7 +1,6 @@
 // ignore_for_file: unused_import
 
 import 'dart:developer';
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -136,16 +135,15 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                       ),
                                     ),
                                     Padding(
-                                        padding:
-                                            const EdgeInsets.only(top: 300),
+                                        padding: EdgeInsets.only(top: 300.h),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            const SizedBox(
-                                              height: 27,
+                                            SizedBox(
+                                              height: 27.h,
                                             ),
                                             //location
                                             Row(
@@ -160,8 +158,8 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   color: Colors.black54,
                                                   fontSize: 24,
                                                 ),
-                                                const SizedBox(
-                                                  width: 12,
+                                                SizedBox(
+                                                  width: 12.w,
                                                 ),
                                                 const Icon(
                                                   Icons.location_on,
@@ -173,7 +171,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                             //location
                                             AppText(
                                               appCubit.address == null
-                                                  ? ''
+                                                  ? '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}'
                                                   : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black54,
@@ -184,10 +182,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                               alignment: Alignment.topCenter,
                                               children: [
                                                 Container(
-                                                  padding: const EdgeInsets
-                                                      .symmetric(
-                                                      vertical: 1,
-                                                      horizontal: 8),
+                                                  padding: EdgeInsets.symmetric(
+                                                      vertical: 1.h,
+                                                      horizontal: 8.w),
                                                   child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -203,6 +200,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                             fontSize: 23,
+                                                            fontFamily: 'Cairo',
                                                             color:
                                                                 Color.fromARGB(
                                                                     255,
