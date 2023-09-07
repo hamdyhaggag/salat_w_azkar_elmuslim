@@ -94,7 +94,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                           ),
                         )
                       : ' اختر توقيتاً',
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primaryColor,
                   decoration: TextDecoration.underline,
@@ -146,7 +146,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                           ),
                         )
                       : ' اختر توقيتاً',
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primaryColor,
                   decoration: TextDecoration.underline,
