@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/Ahadith_screen/Ahadith1.dart';
+import '../../constants/app_text.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
 import 'Ahadith_screen/Ahadith10.dart';
@@ -67,14 +68,12 @@ class AhadithScreen extends StatelessWidget {
                   ),
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.0600,
-                    child: Text(
+                    child: AppText(
                       'الأربعين النووية',
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.08,
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w600,
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
+                      fontSize: MediaQuery.of(context).size.width * 0.06,
+                      fontFamily: 'Cairo',
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
                 ],

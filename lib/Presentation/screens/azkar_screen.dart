@@ -29,26 +29,23 @@ class AzkarScreen extends StatelessWidget {
         appBar: const CustomAppBar(title: 'الأذكار', isHome: true),
         body: ListView(
           children: [
-            const SizedBox(
-              height: 12,
+            SizedBox(
+              height: 12.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Image.asset(
                     'assets/azkarcont.png',
                     alignment: Alignment.topCenter,
-                    fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height * 0.1790,
                   ),
                   Positioned(
-                    top: MediaQuery.of(context).size.height *
-                        0.05500, // Adjust the vertical position for centering
+                    top: MediaQuery.of(context).size.height * 0.0600,
                     child: AppText(
                       'الأذكار',
-                      fontSize: 35,
+                      fontSize: MediaQuery.of(context).size.width * 0.06,
                       fontFamily: 'Cairo',
                       fontWeight: FontWeight.w600,
                       color: const Color.fromARGB(255, 255, 255, 255),

@@ -13,7 +13,7 @@ class Mix21 extends StatelessWidget {
         child: Column(
           children: [
             CustomContainer(
-                title: 'ذهب الضمـأ ، وأبتلت العروق ، وثبت الأجر إن شاء الله',
+                title: 'ذهب الظمـأ ، وأبتلت العروق ، وثبت الأجر إن شاء الله',
                 maxValue: 1,
                 initialCounterValue: 0),
             SizedBox(height: 15),
