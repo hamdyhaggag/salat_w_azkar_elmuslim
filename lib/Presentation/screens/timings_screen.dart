@@ -156,7 +156,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                       '',
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black54,
-                                                  fontSize: 24,
+                                                  fontSize: 21,
                                                 ),
                                                 SizedBox(
                                                   width: 12.w,
@@ -175,7 +175,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black54,
-                                              fontSize: 24,
+                                              fontSize: 21,
                                             ),
 
                                             Stack(
@@ -199,7 +199,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                               const TextStyle(
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            fontSize: 23,
+                                                            fontSize: 19,
                                                             fontFamily: 'Cairo',
                                                             color:
                                                                 Color.fromARGB(
