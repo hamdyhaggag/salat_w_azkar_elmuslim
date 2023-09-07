@@ -45,7 +45,7 @@ class AzkarScreen extends StatelessWidget {
                     top: MediaQuery.of(context).size.height * 0.0600,
                     child: AppText(
                       'الأذكار',
-                      fontSize: MediaQuery.of(context).size.width * 0.06,
+                      fontSize: MediaQuery.of(context).size.width * 0.07,
                       fontFamily: 'Cairo',
                       fontWeight: FontWeight.w600,
                       color: const Color.fromARGB(255, 255, 255, 255),
