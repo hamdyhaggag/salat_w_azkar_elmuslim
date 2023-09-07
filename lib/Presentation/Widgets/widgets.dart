@@ -29,7 +29,7 @@ Widget prayTimeRow({
             flex: 1,
             child: AppText(
               en,
-              fontSize: 24,
+              fontSize: 20,
               align: TextAlign.end,
             ),
           ),
@@ -37,7 +37,7 @@ Widget prayTimeRow({
             flex: 0,
             child: AppText(
               time,
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: AppColors.primaryColor,
             ),
@@ -46,7 +46,7 @@ Widget prayTimeRow({
             flex: 1,
             child: AppText(
               ar,
-              fontSize: 24,
+              fontSize: 20,
               textDirection: TextDirection.rtl,
             ),
           ),
