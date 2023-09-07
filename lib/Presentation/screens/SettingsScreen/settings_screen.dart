@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:salat_w_azkar_elmuslim/constants/colors.dart';
 
+import '../../../constants/app_text.dart';
 import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_folder_row.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
 import '../../Widgets/widgets.dart';
 
-class SettingsScreens extends StatelessWidget {
+class SettingsScreens extends StatefulWidget {
   const SettingsScreens({Key? key}) : super(key: key);
+
+  @override
+  _SettingsScreensState createState() => _SettingsScreensState();
+}
+
+class _SettingsScreensState extends State<SettingsScreens> {
+  TimeOfDay? selectedTime;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +28,10 @@ class SettingsScreens extends StatelessWidget {
       body: Column(
         children: <Widget>[
           SizedBox(height: 7.h),
+
           InkWell(
             onTap: () {
-              Navigator.pop(
-                  context); // This will pop the current screen from the navigation stack.
+              Navigator.pop(context);
             },
             child: const RowWithTextAndIcon(
               'الشاشة الرئيسية',
@@ -34,6 +44,7 @@ class SettingsScreens extends StatelessWidget {
             width: 420.w,
             color: colorWithOpacity,
           ),
+
           InkWell(
             onTap: () {
               showMethods(context);
@@ -49,6 +60,116 @@ class SettingsScreens extends StatelessWidget {
             width: 420.w,
             color: colorWithOpacity,
           ),
+          ///////////////////////
+          InkWell(
+            onTap: () async {
+              final pickedTime = await showTimePicker(
+                context: context,
+                initialTime: selectedTime ?? TimeOfDay.now(),
+              );
+
+              if (pickedTime != null) {
+                setState(() {
+                  selectedTime = pickedTime;
+                });
+
+                // Save the selected time in a variable or in your app state.
+                // You can use selectedTime to schedule local notifications.
+                // Example: scheduleLocalNotification(selectedTime);
+              }
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                AppText(
+                  selectedTime != null
+                      ? DateFormat('hh:mm a').format(
+                          DateTime(
+                            0,
+                            1,
+                            1,
+                            selectedTime!.hour,
+                            selectedTime!.minute,
+                          ),
+                        )
+                      : ' اختر توقيتاً',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryColor,
+                  decoration: TextDecoration.underline,
+                ),
+                SizedBox(
+                  width: 125.w,
+                ),
+                const RowWithTextAndIcon(
+                  'التنبية لأذكار الصباح',
+                  Icons.sunny,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 7.0.h),
+          Container(
+            height: 2.h,
+            width: 420.w,
+            color: colorWithOpacity,
+          ),
+          //////////////////////////////////////
+          InkWell(
+            onTap: () async {
+              final pickedTime = await showTimePicker(
+                context: context,
+                initialTime: selectedTime ?? TimeOfDay.now(),
+              );
+
+              if (pickedTime != null) {
+                setState(() {
+                  selectedTime = pickedTime;
+                });
+
+                // Save the selected time in a variable or in your app state.
+                // You can use selectedTime to schedule local notifications.
+                // Example: scheduleLocalNotification(selectedTime);
+              }
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                AppText(
+                  selectedTime != null
+                      ? DateFormat('hh:mm a').format(
+                          DateTime(
+                            0,
+                            1,
+                            1,
+                            selectedTime!.hour,
+                            selectedTime!.minute,
+                          ),
+                        )
+                      : ' اختر توقيتاً',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryColor,
+                  decoration: TextDecoration.underline,
+                ),
+                SizedBox(
+                  width: 117.w,
+                ),
+                const RowWithTextAndIcon(
+                  'التنبية لأذكار المساء',
+                  Icons.dark_mode,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 7.0.h),
+          Container(
+            height: 2.h,
+            width: 420.w,
+            color: colorWithOpacity,
+          ),
+          //////////////////////////////////////
+
           InkWell(
             onTap: () {
               showappinfo(context);
@@ -139,76 +260,7 @@ class SettingsScreens extends StatelessWidget {
             width: 420.w,
             color: colorWithOpacity,
           ),
-          // InkWell(
-          //   onTap: () {
-          //     // Handle the tap event here
-          //     // You can toggle the Switch's state or perform any other action
-          //   },
-          //   child: Row(
-          //     children: [
-          //       Flexible(
-          //         flex: 1,
-          //         child: Container(), // Adjust the flex value as needed
-          //         // Replace with any content you want before the Switch
-          //       ),
-          //       Switch(
-          //         value: false, // Replace with the actual boolean value
-          //         onChanged: (newValue) {
-          //           // Update the switch's state when it's toggled
-          //           // You can also perform any additional actions here
-          //         },
-          //       ),
-          //       const Flexible(
-          //         flex: 14, // Adjust the flex value as needed
-          //         child: RowWithTextAndIcon(
-          //           'التنبية لأذكار الصباح',
-          //           Icons.sunny,
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // const SizedBox(height: 10.0),
-          // Container(
-          //   height: 2,
-          //   width: 420,
-          //   color: colorWithOpacity,
-          // ),
-          // InkWell(
-          //   onTap: () {
-          //     // Handle the tap event here
-          //     // You can toggle the Switch's state or perform any other action
-          //   },
-          //   child: Row(
-          //     children: [
-          //       Flexible(
-          //         flex: 1,
-          //         child: Container(), // Adjust the flex value as needed
-          //         // Replace with any content you want before the Switch
-          //       ),
-          //       Switch(
-          //         value: true, // Replace with the actual boolean value
-          //         onChanged: (newValue) {
-          //           // Update the switch's state when it's toggled
-          //           // You can also perform any additional actions here
-          //         },
-          //       ),
-          //       const Flexible(
-          //         flex: 14, // Adjust the flex value as needed
-          //         child: RowWithTextAndIcon(
-          //           'التنبية لأذكار المساء',
-          //           Icons.notifications_active_rounded,
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // const SizedBox(height: 10.0),
-          // Container(
-          //   height: 2,
-          //   width: 420,
-          //   color: colorWithOpacity,
-          // ),
+
           // InkWell(
           //   onTap: () {
           //     // Handle the tap event here
