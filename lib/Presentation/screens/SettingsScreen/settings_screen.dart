@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:salat_w_azkar_elmuslim/constants/colors.dart';
-
 import '../../../constants/app_text.dart';
 import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_folder_row.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
 import '../../Widgets/widgets.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 class SettingsScreens extends StatefulWidget {
   const SettingsScreens({Key? key}) : super(key: key);
@@ -20,6 +21,40 @@ class SettingsScreens extends StatefulWidget {
 class _SettingsScreensState extends State<SettingsScreens> {
   TimeOfDay? selectedTimeMorning;
   TimeOfDay? selectedTimeEvening;
+
+  Future<void> scheduleLocalNotification(
+      TimeOfDay time, String title, String content) async {
+    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+    const androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      'your_channel_id',
+      'your_channel_name',
+      channelDescription:
+          'your_channel_description', // Use named argument for channel description
+      importance: Importance.max,
+      priority: Priority.high,
+      showWhen: false,
+    );
+
+    const platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    final now = DateTime.now();
+    final notificationTime =
+        DateTime(now.year, now.month, now.day, time.hour, time.minute);
+
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+      0,
+      title,
+      content,
+      tz.TZDateTime.from(notificationTime, tz.local),
+      platformChannelSpecifics,
+      // ignore: deprecated_member_use
+      androidAllowWhileIdle: true,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +110,9 @@ class _SettingsScreensState extends State<SettingsScreens> {
                   selectedTimeMorning = pickedTime;
                 });
 
-                // Save the selected time in a variable or in your app state for morning.
-                // Example: scheduleLocalNotification(selectedTimeMorning);
+                // Schedule a local notification for morning.
+                scheduleLocalNotification(selectedTimeMorning!, 'أذكار الصباح',
+                    'التنبية بأذكار الصباح');
               }
             },
             child: Row(
@@ -127,8 +163,9 @@ class _SettingsScreensState extends State<SettingsScreens> {
                   selectedTimeEvening = pickedTime;
                 });
 
-                // Save the selected time in a variable or in your app state for evening.
-                // Example: scheduleLocalNotification(selectedTimeEvening);
+                // Schedule a local notification for evening.
+                scheduleLocalNotification(selectedTimeEvening!, 'أذكار المساء',
+                    'التنبية بأذكار المساء');
               }
             },
             child: Row(
