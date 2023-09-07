@@ -18,7 +18,8 @@ class SettingsScreens extends StatefulWidget {
 }
 
 class _SettingsScreensState extends State<SettingsScreens> {
-  TimeOfDay? selectedTime;
+  TimeOfDay? selectedTimeMorning;
+  TimeOfDay? selectedTimeEvening;
 
   @override
   Widget build(BuildContext context) {
@@ -60,36 +61,36 @@ class _SettingsScreensState extends State<SettingsScreens> {
             width: 420.w,
             color: colorWithOpacity,
           ),
+
           ///////////////////////
           InkWell(
             onTap: () async {
               final pickedTime = await showTimePicker(
                 context: context,
-                initialTime: selectedTime ?? TimeOfDay.now(),
+                initialTime: selectedTimeMorning ?? TimeOfDay.now(),
               );
 
               if (pickedTime != null) {
                 setState(() {
-                  selectedTime = pickedTime;
+                  selectedTimeMorning = pickedTime;
                 });
 
-                // Save the selected time in a variable or in your app state.
-                // You can use selectedTime to schedule local notifications.
-                // Example: scheduleLocalNotification(selectedTime);
+                // Save the selected time in a variable or in your app state for morning.
+                // Example: scheduleLocalNotification(selectedTimeMorning);
               }
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 AppText(
-                  selectedTime != null
+                  selectedTimeMorning != null
                       ? DateFormat('hh:mm a').format(
                           DateTime(
                             0,
                             1,
                             1,
-                            selectedTime!.hour,
-                            selectedTime!.minute,
+                            selectedTimeMorning!.hour,
+                            selectedTimeMorning!.minute,
                           ),
                         )
                       : ' اختر توقيتاً',
@@ -114,36 +115,34 @@ class _SettingsScreensState extends State<SettingsScreens> {
             width: 420.w,
             color: colorWithOpacity,
           ),
-          //////////////////////////////////////
           InkWell(
             onTap: () async {
               final pickedTime = await showTimePicker(
                 context: context,
-                initialTime: selectedTime ?? TimeOfDay.now(),
+                initialTime: selectedTimeEvening ?? TimeOfDay.now(),
               );
 
               if (pickedTime != null) {
                 setState(() {
-                  selectedTime = pickedTime;
+                  selectedTimeEvening = pickedTime;
                 });
 
-                // Save the selected time in a variable or in your app state.
-                // You can use selectedTime to schedule local notifications.
-                // Example: scheduleLocalNotification(selectedTime);
+                // Save the selected time in a variable or in your app state for evening.
+                // Example: scheduleLocalNotification(selectedTimeEvening);
               }
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 AppText(
-                  selectedTime != null
+                  selectedTimeEvening != null
                       ? DateFormat('hh:mm a').format(
                           DateTime(
                             0,
                             1,
                             1,
-                            selectedTime!.hour,
-                            selectedTime!.minute,
+                            selectedTimeEvening!.hour,
+                            selectedTimeEvening!.minute,
                           ),
                         )
                       : ' اختر توقيتاً',
