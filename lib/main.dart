@@ -4,7 +4,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
@@ -24,13 +23,7 @@ bool isEnterBefore = true;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-  const settingsAndroid = AndroidInitializationSettings(
-      'android/app/src/main/res/drawable/notification_icon.png');
-  const initializationSettings =
-      InitializationSettings(android: settingsAndroid);
 
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -45,7 +38,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: true, // Set to true to enable DevicePreview
+      enabled: false, // Set to true to enable DevicePreview
       builder: (context) => const MyApp(),
     ),
   );

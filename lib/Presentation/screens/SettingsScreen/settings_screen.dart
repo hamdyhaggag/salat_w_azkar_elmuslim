@@ -129,14 +129,14 @@ class _SettingsScreensState extends State<SettingsScreens> {
                             selectedTimeMorning!.minute,
                           ),
                         )
-                      : ' اختر توقيتاً',
+                      : 'اختر التوقيت',
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primaryColor,
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 125.w,
+                  width: 105.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار الصباح',
@@ -182,14 +182,14 @@ class _SettingsScreensState extends State<SettingsScreens> {
                             selectedTimeEvening!.minute,
                           ),
                         )
-                      : ' اختر توقيتاً',
+                      : 'اختر التوقيت',
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primaryColor,
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 117.w,
+                  width: 97.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار المساء',
@@ -238,36 +238,6 @@ class _SettingsScreensState extends State<SettingsScreens> {
           ),
           InkWell(
             onTap: () {
-              sendEmail();
-            },
-            child: const RowWithTextAndIcon(
-              'تواصل معنا',
-              Icons.mail_rounded,
-            ),
-          ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
-          InkWell(
-            onTap: () {
-              Donate(context);
-            },
-            child: const RowWithTextAndIcon(
-              'ادعمنا',
-              FontAwesomeIcons.circleDollarToSlot,
-            ),
-          ),
-          SizedBox(height: 10.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
-          InkWell(
-            onTap: () {
               shareFeedback(context);
             },
             child: const RowWithTextAndIcon(
@@ -288,6 +258,37 @@ class _SettingsScreensState extends State<SettingsScreens> {
             child: const RowWithTextAndIcon(
               'شارك التطبيق',
               Icons.share,
+            ),
+          ),
+          SizedBox(height: 10.0.h),
+          Container(
+            height: 2.h,
+            width: 420.w,
+            color: colorWithOpacity,
+          ),
+
+          InkWell(
+            onTap: () {
+              sendEmail();
+            },
+            child: const RowWithTextAndIcon(
+              'تواصل معنا',
+              Icons.mail_rounded,
+            ),
+          ),
+          SizedBox(height: 7.h),
+          Container(
+            height: 2.h,
+            width: 420.w,
+            color: colorWithOpacity,
+          ),
+          InkWell(
+            onTap: () {
+              Donate(context);
+            },
+            child: const RowWithTextAndIcon(
+              'ادعمنا',
+              FontAwesomeIcons.circleDollarToSlot,
             ),
           ),
           SizedBox(height: 10.0.h),
