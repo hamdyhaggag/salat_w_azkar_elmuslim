@@ -104,6 +104,7 @@ class AppCubit extends Cubit<AppStates> {
   ////////////////////////////////////////////////////////////////////
 
   Position? position;
+  bool errorStatus = false;
 
   Future<void> getMyCurrentLocation() async {
     log('getMyCurrentLocation');
@@ -129,7 +130,6 @@ class AppCubit extends Cubit<AppStates> {
           latitude: position!.latitude,
           longitude: position!.longitude,
         );
-
         emit(GetCurrentLocationSuccess());
       }).catchError((error) async {
         timesModel = await getTimeModel();
@@ -149,7 +149,6 @@ class AppCubit extends Cubit<AppStates> {
     emit(GetCurrentAddressLoading());
   }
 
-  bool errorStatus = false;
   TimesModel? timesModel;
 
   Future<void> getTimings({
