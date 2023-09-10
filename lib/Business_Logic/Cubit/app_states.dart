@@ -20,6 +20,8 @@ class GetDirectionSuccess extends AppStates {}
 
 class GetDirectionError extends AppStates {}
 
+class GetCurrentAddressLoading extends AppStates {}
+
 class GetCurrentAddressSuccess extends AppStates {}
 
 class GetCurrentAddressError extends AppStates {}

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salat_w_azkar_elmuslim/constants/app_text.dart';
+import 'package:salat_w_azkar_elmuslim/main.dart';
 
 import '../../../constants/colors.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
@@ -54,8 +55,6 @@ Widget prayTimeRow({
       ),
     );
 
-int radioValue = 5;
-
 Widget radioItem({
   required String title,
   required int value,
@@ -71,7 +70,7 @@ Widget radioItem({
       color: AppColors.primaryColor,
     ),
     value: value,
-    groupValue: radioValue,
+    groupValue: radioValue == 0 ? 5 : radioValue,
     onChanged: (newValue) {
       appCubit.changeRadio(newValue);
       Vibrate.feedback(FeedbackType.impact);

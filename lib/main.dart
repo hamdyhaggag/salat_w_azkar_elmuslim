@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -9,6 +11,7 @@ import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/splash_screen.dart';
+import 'package:salat_w_azkar_elmuslim/bloc_observer/bloc_observer.dart';
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Presentation/Widgets/widgets.dart';
 import 'firebase_options.dart';
@@ -19,7 +22,8 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   }
 }
 
-bool isEnterBefore = true;
+bool isEnterBefore = false;
+int radioValue = 5;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +39,8 @@ void main() async {
   isEnterBefore = CacheHelper.getBoolean(key: 'isEnterBefore');
 
   DioHelper.init();
+
+  Bloc.observer = MyGlobalObserver();
 
   runApp(
     DevicePreview(

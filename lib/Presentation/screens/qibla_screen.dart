@@ -27,10 +27,13 @@ class QiblaScreenState extends State<QiblaScreen> {
       backgroundColor: AppCubit.get(context).directionModel == null
           ? Colors.white
           : Colors.white,
-      body: AppCubit.get(context).directionModel == null
-          ? RefreshIndicator(
+      body: BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          if (AppCubit.get(context).directionModel == null) {
+            return RefreshIndicator(
               onRefresh: () async {
-                AppCubit.get(context).directionModel;
+                await AppCubit.get(context).getMyCurrentLocation();
               },
               child: ScrollConfiguration(
                 behavior: const ScrollBehavior().copyWith(overscroll: false),
@@ -60,14 +63,18 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                 ),
               ),
-            )
-          : Builder(builder: (context) {
+            );
+          } else {
+            return Builder(builder: (context) {
               return Column(
                 children: <Widget>[
                   Expanded(child: _buildCompass()),
                 ],
               );
-            }),
+            });
+          }
+        },
+      ),
     );
   }
 

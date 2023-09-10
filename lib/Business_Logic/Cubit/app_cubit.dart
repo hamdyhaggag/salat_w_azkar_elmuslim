@@ -12,6 +12,7 @@ import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Data/Model/times_model.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/sebha_screen.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart';
+import 'package:salat_w_azkar_elmuslim/main.dart';
 
 import '../../Data/Model/direction_model.dart';
 import '../../Presentation/Widgets/widgets.dart';
@@ -145,6 +146,7 @@ class AppCubit extends Cubit<AppStates> {
       log('Error when request Location Permission $error');
       emit(GetCurrentLocationError());
     });
+    emit(GetCurrentAddressLoading());
   }
 
   bool errorStatus = false;
@@ -169,7 +171,7 @@ class AppCubit extends Cubit<AppStates> {
       timesModel = await getTimeModel();
       if (timesModel == null) {
         errorStatus = true;
-        log(error.toString());
+        log('getTimings error is $error');
         emit(GetTimingsError());
       }
     });
@@ -188,23 +190,33 @@ class AppCubit extends Cubit<AppStates> {
 
       emit(GetDirectionSuccess());
     }).catchError((error) {
-      log(error.toString());
+      log('getDirection error is $error');
       emit(GetDirectionError());
     });
   }
 
   Placemark? address;
+  String? administrativeArea;
+  String? country;
+  String? locality;
 
   Future<void> getCurrentLocationAddress({
     required double latitude,
     required double longitude,
   }) async {
-    log('getCurrentLocationAddress');
     await placemarkFromCoordinates(latitude, longitude).then((value) {
       address = value[0];
+      administrativeArea = address!.administrativeArea;
+      country = address!.country;
+      locality = address!.locality;
+      CacheHelper.saveData(
+          key: 'administrativeArea', value: administrativeArea);
+      CacheHelper.saveData(key: 'country', value: country);
+      CacheHelper.saveData(key: 'locality', value: locality);
+
       emit(GetCurrentAddressSuccess());
     }).catchError((error) {
-      log(error.toString());
+      log('getCurrentLocationAddress error is $error');
       emit(GetCurrentAddressError());
     });
   }

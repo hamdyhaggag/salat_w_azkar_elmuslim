@@ -7,10 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/settings_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:salat_w_azkar_elmuslim/main.dart';
-
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
@@ -50,6 +50,10 @@ class _TimingsScreenState extends State<TimingsScreen> {
       listener: (context, state) {},
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
+        final String administrativeArea =
+            CacheHelper.getString(key: "administrativeArea");
+        final String country = CacheHelper.getString(key: "country");
+        final String locality = CacheHelper.getString(key: "locality");
 
         String formatPrayTime(String time) {
           DateTime now = DateTime.now();
@@ -151,9 +155,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 AppText(
-                                                  appCubit.address?.locality
-                                                          .toString() ??
-                                                      '',
+                                                  appCubit.address == null
+                                                      ? locality
+                                                      : appCubit
+                                                          .address!.locality
+                                                          .toString(),
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black54,
                                                   fontSize: 21,
@@ -171,7 +177,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                             //location
                                             AppText(
                                               appCubit.address == null
-                                                  ? '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}'
+                                                  ? '$administrativeArea, $country'
                                                   : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black54,

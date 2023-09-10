@@ -35,7 +35,7 @@ class CacheHelper {
 
   //===============================================================
 
-  static String getData({required String key}) {
+  static String getString({required String key}) {
     return sharedPreferences!.getString(key) ?? "";
   }
 
@@ -65,7 +65,7 @@ void saveTimeModel({
 }
 
 Future<TimesModel?> getTimeModel() async {
-  final timeModel = CacheHelper.getData(key: 'TimesModel');
+  final timeModel = CacheHelper.getString(key: 'TimesModel');
   if (timeModel.isNotEmpty) {
     return TimesModel.fromJson(jsonDecode(timeModel));
   } else {
