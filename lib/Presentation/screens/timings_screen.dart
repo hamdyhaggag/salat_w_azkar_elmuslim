@@ -62,72 +62,77 @@ class _TimingsScreenState extends State<TimingsScreen> {
                 onRefresh: () async {
                   appCubit.getMyCurrentLocation();
                 },
-                child: SingleChildScrollView(
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  child: appCubit.errorStatus == true
-                      ? Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              if (appCubit.errorStatus)
-                                Image.asset(
-                                  'assets/404.gif',
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.8,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.4,
-                                ),
-                              AppText(
-                                "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
-                                align: TextAlign.center,
-                                fontSize: 18,
-                              ),
-                            ],
-                          ),
-                        )
-                      : appCubit.timesModel == null
-                          ? const CircularProgressIndicator()
-                          : Stack(
-                              alignment: AlignmentDirectional.topEnd,
+                child: ScrollConfiguration(
+                  behavior: const ScrollBehavior().copyWith(overscroll: false),
+                  child: SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: appCubit.errorStatus == true
+                        ? Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Column(
-                                  children: [
-                                    if (state is GetCurrentAddressLoading)
-                                      const LinearProgressIndicator(),
-                                    Stack(
-                                      alignment: AlignmentDirectional.bottomEnd,
-                                      children: [
-                                        Image.asset(
-                                          'assets/mousq.png',
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          fit: BoxFit.cover,
-                                        ),
-                                        addressWidget(appCubit),
-                                      ],
-                                    ),
-                                    timesWidget(appCubit),
-                                  ],
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    navigateTo(
-                                        context, const SettingsScreens());
-                                  },
-                                  icon: const Padding(
-                                    padding:
-                                        EdgeInsets.only(right: 35, top: 10),
-                                    child: Icon(
-                                      FontAwesomeIcons.bars,
-                                      color: Colors.black54,
-                                      size: 32,
-                                    ),
+                                if (appCubit.errorStatus)
+                                  Image.asset(
+                                    'assets/404.gif',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.8,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.4,
                                   ),
+                                AppText(
+                                  "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
+                                  align: TextAlign.center,
+                                  fontSize: 18,
                                 ),
                               ],
                             ),
+                          )
+                        : appCubit.timesModel == null
+                            ? const CircularProgressIndicator()
+                            : Stack(
+                                alignment: AlignmentDirectional.topEnd,
+                                children: [
+                                  Column(
+                                    children: [
+                                      if (state is GetCurrentAddressLoading)
+                                        const LinearProgressIndicator(),
+                                      Stack(
+                                        alignment:
+                                            AlignmentDirectional.bottomEnd,
+                                        children: [
+                                          Image.asset(
+                                            'assets/mousq.png',
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          addressWidget(appCubit),
+                                        ],
+                                      ),
+                                      timesWidget(appCubit),
+                                    ],
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      navigateTo(
+                                          context, const SettingsScreens());
+                                    },
+                                    icon: Padding(
+                                      padding: EdgeInsets.only(
+                                          right: 35.w, top: 10.h),
+                                      child: const Icon(
+                                        FontAwesomeIcons.bars,
+                                        color: Colors.black54,
+                                        size: 32,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                  ),
                 ),
               ),
             ));
@@ -212,7 +217,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
             ),
           ],
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 15.h),
         Container(
           decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
           child: Padding(

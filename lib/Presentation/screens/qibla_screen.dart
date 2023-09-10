@@ -148,12 +148,10 @@ class QiblaScreenState extends State<QiblaScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AppText(
                         '${direction.round()}°',
-                        style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontSize: 65,
-                        ),
+                        color: AppColors.primaryColor,
+                        fontSize: 50,
                       ),
                     ],
                   ),
@@ -170,16 +168,15 @@ class QiblaScreenState extends State<QiblaScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
+                                AppText(
                                   'تحرك إلى اليمين',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primaryColor,
-                                  ),
+                                  fontSize: 15,
+                                  fontFamily: 'Cairo',
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primaryColor,
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: 5.w,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowRightLong,
@@ -196,13 +193,12 @@ class QiblaScreenState extends State<QiblaScreen> {
                           if (direction > qibla)
                             Row(
                               children: [
-                                Text(
+                                AppText(
                                   'تحرك إلى اليسار',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primaryColor,
-                                  ),
+                                  fontSize: 15,
+                                  fontFamily: 'Cairo',
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primaryColor,
                                 ),
                                 SizedBox(
                                   width: 5.w,
@@ -225,7 +221,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                 ),
                 Positioned(
-                  left: MediaQuery.of(context).size.width * 0.11,
+                  left: MediaQuery.of(context).size.width * 0.16,
                   top: MediaQuery.of(context).size.height * 0.68,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -233,7 +229,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                       AppText(
                         'اتجاة القبلة هو  $qibla° من الشمال ',
                         color: AppColors.primaryColor,
-                        fontSize: 23,
+                        fontSize: 20,
                       ),
                     ],
                   ),

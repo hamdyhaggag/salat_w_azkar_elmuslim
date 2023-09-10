@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../constants/colors.dart';
+import '../../constants/app_text.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -28,13 +29,12 @@ class AppButton extends StatelessWidget {
           onPressed: onPressed,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
+            child: AppText(
               title,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              fontSize: 15,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Cairo',
             ),
           ),
         ),

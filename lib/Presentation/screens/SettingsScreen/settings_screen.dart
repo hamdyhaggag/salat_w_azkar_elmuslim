@@ -298,41 +298,41 @@ class _SettingsScreensState extends State<SettingsScreens> {
             color: colorWithOpacity,
           ),
 
-          // InkWell(
-          //   onTap: () {
-          //     // Handle the tap event here
-          //     // You can toggle the Switch's state or perform any other action
-          //   },
-          //   child: Row(
-          //     children: [
-          //       Flexible(
-          //         flex: 1,
-          //         child: Container(), // Adjust the flex value as needed
-          //         // Replace with any content you want before the Switch
-          //       ),
-          //       Switch(
-          //         value: true, // Replace with the actual boolean value
-          //         onChanged: (newValue) {
-          //           // Update the switch's state when it's toggled
-          //           // You can also perform any additional actions here
-          //         },
-          //       ),
-          //       const Flexible(
-          //         flex: 14, // Adjust the flex value as needed
-          //         child: RowWithTextAndIcon(
-          //           'إشعار يوم الجمعة',
-          //           Icons.notifications_active_rounded,
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // const SizedBox(height: 10.0),
-          // Container(
-          //   height: 2,
-          //   width: 420,
-          //   color: colorWithOpacity,
-          // ),
+          InkWell(
+            onTap: () {
+              // Handle the tap event here
+              // You can toggle the Switch's state or perform any other action
+            },
+            child: Row(
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Container(), // Adjust the flex value as needed
+                  // Replace  with any content you want before the Switch
+                ),
+                Switch(
+                  value: true, // Replace with the actual boolean value
+                  onChanged: (newValue) {
+                    // Update the switch's state when it's toggled
+                    // You can also perform any additional actions here
+                  },
+                ),
+                const Flexible(
+                  flex: 14, // Adjust the flex value as needed
+                  child: RowWithTextAndIcon(
+                    'إشعار يوم الجمعة',
+                    Icons.notifications_active_rounded,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10.0),
+          Container(
+            height: 2,
+            width: 420,
+            color: colorWithOpacity,
+          ),
         ],
       ),
     );

@@ -15,13 +15,20 @@ import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart'
 import 'package:salat_w_azkar_elmuslim/main.dart';
 
 import '../../Data/Model/direction_model.dart';
-import '../../Presentation/Widgets/widgets.dart';
 import 'app_states.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
 
   static AppCubit get(context) => BlocProvider.of(context);
+
+  bool isLightMode = true;
+
+  void changeAppMode({required bool? isLight}) {
+    isLightMode = !isLightMode;
+    CacheHelper.saveData(key: 'isLight', value: isLightMode);
+    emit(ThemeChangeModeState());
+  }
 
   int index = 4;
 

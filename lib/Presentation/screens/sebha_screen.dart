@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import '../../../constants/colors.dart';
 
@@ -56,7 +57,7 @@ class Sebha extends StatelessWidget {
                   child: Column(
                     children: [
                       const MyCustomRow(),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       AppButton(
                         horizontalPadding: 50,
                         onPressed: () {
