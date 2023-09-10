@@ -107,7 +107,7 @@ class AppCubit extends Cubit<AppStates> {
   bool errorStatus = false;
 
   Future<void> getMyCurrentLocation() async {
-    log('getMyCurrentLocation');
+    emit(GetCurrentAddressLoading());
     await Geolocator.requestPermission().then((value) async {
       await Geolocator.getCurrentPosition(
               timeLimit: const Duration(milliseconds: 3000),
@@ -146,7 +146,6 @@ class AppCubit extends Cubit<AppStates> {
       log('Error when request Location Permission $error');
       emit(GetCurrentLocationError());
     });
-    emit(GetCurrentAddressLoading());
   }
 
   TimesModel? timesModel;
@@ -156,6 +155,7 @@ class AppCubit extends Cubit<AppStates> {
     required double latitude,
     required double longitude,
   }) async {
+    emit(GetCurrentAddressLoading());
     time = time.substring(0, time.length - 3);
     await DioHelper.getData(
       url: "timings/$time",
@@ -182,6 +182,7 @@ class AppCubit extends Cubit<AppStates> {
     required double latitude,
     required double longitude,
   }) async {
+    emit(GetCurrentAddressLoading());
     await DioHelper.getData(
       url: "qibla/$latitude/$longitude",
     ).then((value) {
@@ -203,6 +204,7 @@ class AppCubit extends Cubit<AppStates> {
     required double latitude,
     required double longitude,
   }) async {
+    emit(GetCurrentAddressLoading());
     await placemarkFromCoordinates(latitude, longitude).then((value) {
       address = value[0];
       administrativeArea = address!.administrativeArea;

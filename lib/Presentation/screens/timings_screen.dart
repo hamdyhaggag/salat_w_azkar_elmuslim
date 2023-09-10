@@ -54,223 +54,210 @@ class _TimingsScreenState extends State<TimingsScreen> {
       },
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
-        final String administrativeArea =
-            CacheHelper.getString(key: "administrativeArea");
-        final String country = CacheHelper.getString(key: "country");
-        final String locality = CacheHelper.getString(key: "locality");
-
-        String formatPrayTime(String time) {
-          DateTime now = DateTime.now();
-          List<String> parts = time.split(':');
-
-          final int hours = int.parse(parts[0]);
-          final int minutes = int.parse(parts[1]);
-
-          DateTime convertedDateTime =
-              DateTime(now.year, now.month, now.day, hours, minutes);
-          final formattedTime = DateFormat('hh:mm a').format(convertedDateTime);
-          return formattedTime;
-        }
 
         return Scaffold(
+            backgroundColor: Colors.white,
             body: SafeArea(
-          child: Center(
-            child: RefreshIndicator(
-              onRefresh: () async {
-                appCubit.getMyCurrentLocation();
-              },
-              child: SingleChildScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: appCubit.errorStatus == true
-                    ? Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            if (appCubit.errorStatus)
-                              Image.asset(
-                                'assets/404.gif',
-                                width: MediaQuery.of(context).size.width * 0.8,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.4,
-                              ),
-                            AppText(
-                              "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
-                              align: TextAlign.center,
-                              fontSize: 18,
-                            ),
-                          ],
-                        ),
-                      )
-                    : appCubit.timesModel == null
-                        ? const CircularProgressIndicator()
-                        : Stack(
-                            alignment: AlignmentDirectional.topEnd,
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  appCubit.getMyCurrentLocation();
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: appCubit.errorStatus == true
+                      ? Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Column(
-                                children: [
-                                  Stack(
-                                    alignment: AlignmentDirectional.bottomEnd,
-                                    children: [
-                                      Image.asset(
-                                        'assets/mousq.png',
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        fit: BoxFit.cover,
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              AppText(
-                                                appCubit.address == null
-                                                    ? locality
-                                                    : appCubit.address!.locality
-                                                        .toString(),
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black54,
-                                                fontSize: 21,
-                                              ),
-                                              SizedBox(
-                                                width: 12.w,
-                                              ),
-                                              const Icon(
-                                                Icons.location_on,
-                                                color: Colors.black54,
-                                                size: 28,
-                                              ),
-                                            ],
-                                          ),
-                                          AppText(
-                                            appCubit.address == null
-                                                ? '$administrativeArea, $country'
-                                                : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black54,
-                                            fontSize: 21,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Flexible(
-                                                child: Text(
-                                                  '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
-                                                  textAlign: TextAlign.center,
-                                                  style: const TextStyle(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 19,
-                                                    fontFamily: 'Cairo',
-                                                    color: Color.fromARGB(
-                                                        255, 0, 0, 0),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      SizedBox(height: 15.h),
-                                      Container(
-                                        decoration: const BoxDecoration(
-                                            color: Color(0xFFFFFFFF)),
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 3.0),
-                                          child: Column(
-                                            children: [
-                                              prayTimeRow(
-                                                  en: 'Fajr',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .fajr),
-                                                  ar: 'الفجر'),
-                                              const SizedBox(height: 10),
-                                              prayTimeRow(
-                                                  en: 'Sunrise',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .sunrise),
-                                                  ar: 'الشروق'),
-                                              const SizedBox(height: 10),
-                                              prayTimeRow(
-                                                  en: 'Dhuhr',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .dhuhr),
-                                                  ar: 'الظهر'),
-                                              const SizedBox(height: 10),
-                                              prayTimeRow(
-                                                  en: 'Asr',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .asr),
-                                                  ar: 'العصر'),
-                                              const SizedBox(height: 10),
-                                              prayTimeRow(
-                                                  en: 'Maghrib',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .maghrib),
-                                                  ar: 'المغرب'),
-                                              const SizedBox(height: 10),
-                                              prayTimeRow(
-                                                  en: 'Isha',
-                                                  time: formatPrayTime(appCubit
-                                                      .timesModel!
-                                                      .data
-                                                      .timings
-                                                      .isha),
-                                                  ar: 'العشاء'),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  navigateTo(context, const SettingsScreens());
-                                },
-                                icon: const Padding(
-                                  padding: EdgeInsets.only(right: 35, top: 10),
-                                  child: Icon(
-                                    FontAwesomeIcons.bars,
-                                    color: Colors.black54,
-                                    size: 32,
-                                  ),
+                              if (appCubit.errorStatus)
+                                Image.asset(
+                                  'assets/404.gif',
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.8,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.4,
                                 ),
+                              AppText(
+                                "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
+                                align: TextAlign.center,
+                                fontSize: 18,
                               ),
                             ],
                           ),
+                        )
+                      : appCubit.timesModel == null
+                          ? const CircularProgressIndicator()
+                          : Stack(
+                              alignment: AlignmentDirectional.topEnd,
+                              children: [
+                                Column(
+                                  children: [
+                                    if (state is GetCurrentAddressLoading)
+                                      const LinearProgressIndicator(),
+                                    Stack(
+                                      alignment: AlignmentDirectional.bottomEnd,
+                                      children: [
+                                        Image.asset(
+                                          'assets/mousq.png',
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          fit: BoxFit.cover,
+                                        ),
+                                        addressWidget(appCubit),
+                                      ],
+                                    ),
+                                    timesWidget(appCubit),
+                                  ],
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    navigateTo(
+                                        context, const SettingsScreens());
+                                  },
+                                  icon: const Padding(
+                                    padding:
+                                        EdgeInsets.only(right: 35, top: 10),
+                                    child: Icon(
+                                      FontAwesomeIcons.bars,
+                                      color: Colors.black54,
+                                      size: 32,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                ),
+              ),
+            ));
+      },
+    );
+  }
+
+  Widget addressWidget(AppCubit appCubit) {
+    final String administrativeArea =
+        CacheHelper.getString(key: "administrativeArea");
+    final String country = CacheHelper.getString(key: "country");
+    final String locality = CacheHelper.getString(key: "locality");
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppText(
+              appCubit.address == null
+                  ? locality
+                  : appCubit.address!.locality.toString(),
+              fontWeight: FontWeight.bold,
+              color: Colors.black54,
+              fontSize: 21,
+            ),
+            SizedBox(
+              width: 12.w,
+            ),
+            const Icon(
+              Icons.location_on,
+              color: Colors.black54,
+              size: 28,
+            ),
+          ],
+        ),
+        AppText(
+          appCubit.address == null
+              ? '$administrativeArea, $country'
+              : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
+          fontWeight: FontWeight.bold,
+          color: Colors.black54,
+          fontSize: 21,
+        ),
+      ],
+    );
+  }
+
+  Widget timesWidget(AppCubit appCubit) {
+    String formatPrayTime(String time) {
+      DateTime now = DateTime.now();
+      List<String> parts = time.split(':');
+
+      final int hours = int.parse(parts[0]);
+      final int minutes = int.parse(parts[1]);
+
+      DateTime convertedDateTime =
+          DateTime(now.year, now.month, now.day, hours, minutes);
+      final formattedTime = DateFormat('hh:mm a').format(convertedDateTime);
+      return formattedTime;
+    }
+
+    return Column(
+      children: [
+        SizedBox(height: 15.h),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(
+                '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 19,
+                  fontFamily: 'Cairo',
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
             ),
+          ],
+        ),
+        SizedBox(height: 10.h),
+        Container(
+          decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 3.0),
+            child: Column(
+              children: [
+                prayTimeRow(
+                    en: 'Fajr',
+                    time:
+                        formatPrayTime(appCubit.timesModel!.data.timings.fajr),
+                    ar: 'الفجر'),
+                const SizedBox(height: 10),
+                prayTimeRow(
+                    en: 'Sunrise',
+                    time: formatPrayTime(
+                        appCubit.timesModel!.data.timings.sunrise),
+                    ar: 'الشروق'),
+                const SizedBox(height: 10),
+                prayTimeRow(
+                    en: 'Dhuhr',
+                    time:
+                        formatPrayTime(appCubit.timesModel!.data.timings.dhuhr),
+                    ar: 'الظهر'),
+                const SizedBox(height: 10),
+                prayTimeRow(
+                    en: 'Asr',
+                    time: formatPrayTime(appCubit.timesModel!.data.timings.asr),
+                    ar: 'العصر'),
+                const SizedBox(height: 10),
+                prayTimeRow(
+                    en: 'Maghrib',
+                    time: formatPrayTime(
+                        appCubit.timesModel!.data.timings.maghrib),
+                    ar: 'المغرب'),
+                const SizedBox(height: 10),
+                prayTimeRow(
+                    en: 'Isha',
+                    time:
+                        formatPrayTime(appCubit.timesModel!.data.timings.isha),
+                    ar: 'العشاء'),
+              ],
+            ),
           ),
-        ));
-      },
+        ),
+      ],
     );
   }
 }
