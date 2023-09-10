@@ -199,7 +199,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
 
     return Column(
       children: [
-        SizedBox(height: 15.h),
+        SizedBox(height: 5.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

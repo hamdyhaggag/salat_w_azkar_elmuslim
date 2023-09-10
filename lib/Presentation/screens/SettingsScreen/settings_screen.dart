@@ -136,7 +136,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 105.w,
+                  width: 98.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار الصباح',
@@ -189,7 +189,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 97.w,
+                  width: 90.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار المساء',
