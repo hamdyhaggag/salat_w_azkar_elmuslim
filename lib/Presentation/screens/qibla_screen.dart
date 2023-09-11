@@ -148,8 +148,9 @@ class QiblaScreenState extends State<QiblaScreen> {
                         0, // Use the rotatedAngle value if not null
                     child: Image.asset(
                       isDarkMode
-                          ? 'assets/qibla_screen_dark.png' // Dark mode image
-                          : 'assets/qibla_screen.png', // Light mode image
+                          ? 'assets/qibla_screen_dark.png'
+                          : // Dark mode image
+                          'assets/qibla_screen.png', // Light mode image
                     ),
                   ),
                 ),
