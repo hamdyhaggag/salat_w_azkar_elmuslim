@@ -16,6 +16,7 @@ class Ahadith12 extends StatelessWidget {
           children: [
             SizedBox(height: 15),
             CustomContainer(
+                headtitle: 'الحديث الثاني عشر',
                 title:
                     'عَنْ أَبِيْ هُرَيْرَةَ رَضِيَ اللهُ عَنْهُ قَالَ: قَالَ رَسُوْلُ اللهِ ﷺ : (مِنْ حُسْنِ إِسْلامِ المَرْءِ تَرْكُهُ مَا لاَ يَعْنِيْهِ) حديثٌ حسنٌ،\n رواه الترمذي وغيره هكذا.',
                 maxValue: 1),

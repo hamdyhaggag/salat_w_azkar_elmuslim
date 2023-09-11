@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
+import '../../constants/app_text.dart';
 
 class AppDialog extends StatefulWidget {
   const AppDialog({
@@ -83,14 +85,13 @@ class _AppDialogState extends State<AppDialog>
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 30),
-                  child: Text(
+                  padding: EdgeInsets.only(top: 10.h, bottom: 30.h),
+                  child: AppText(
                     widget.content,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.blackColor,
-                    ),
+                    fontSize: 21,
+                    fontFamily: 'Cairo',
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.blackColor,
                   ),
                 ),
                 Row(
@@ -106,19 +107,18 @@ class _AppDialogState extends State<AppDialog>
                         ),
                         onPressed: widget.cancelAction.onTap,
                         child: Container(
-                          height: 50,
+                          height: 50.h,
                           alignment: Alignment.center,
-                          child: Text(
+                          child: AppText(
                             widget.cancelAction.title,
-                            style: const TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            fontSize: 19,
+                            fontFamily: 'Cairo',
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 14),
+                    SizedBox(width: 14.w),
                     Expanded(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -129,14 +129,13 @@ class _AppDialogState extends State<AppDialog>
                         ),
                         onPressed: widget.okAction.onTap,
                         child: Container(
-                          height: 50,
+                          height: 50.h,
                           alignment: Alignment.center,
-                          child: Text(
+                          child: AppText(
                             widget.okAction.title,
-                            style: const TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            fontFamily: 'Cairo',
+                            fontSize: 19,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),

@@ -16,6 +16,7 @@ class Ahadith16 extends StatelessWidget {
           children: [
             SizedBox(height: 15),
             CustomContainer(
+                headtitle: 'الحديث السادس عشر',
                 title:
                     'عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللهُ عَنْهُ أَنَّ رَجُلاً قَالَ لِلنَّبيِّ ﷺ : أَوصِنِيْ، قَال : (لاَ تَغْضَبْ) .\n رواه البخاري',
                 maxValue: 1),

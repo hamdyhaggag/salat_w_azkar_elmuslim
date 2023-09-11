@@ -283,9 +283,9 @@ void shareFeedback(BuildContext context) {
 void sendEmail() async {
   final Uri emailUri = Uri(
     scheme: 'mailto',
-    path: 'tafakkurapp@gmail.com', // Replace with the recipient's email address
+    path: 'arabianatech@gmail.com',
     query:
-        'subject=ملاحظات&body=  .. السلام عليكم ورحمة الله وبركاته ..\n  تمت تعبئة هذة الرسالة تلقائيا ، امسح نص الرسالة و اترك رسالتك', // Replace with your desired subject and body
+        'subject=ملاحظات ( تطبيق تَفَكُّر )&body=  .. السلام عليكم ورحمة الله وبركاته ..\n  تمت تعبئة هذة الرسالة تلقائيا ، امسح نص الرسالة و اترك رسالتك', // Replace with your desired subject and body
   );
 
   if (await canLaunchUrl(emailUri)) {

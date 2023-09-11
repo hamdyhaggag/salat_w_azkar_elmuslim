@@ -69,24 +69,28 @@ class _TimingsScreenState extends State<TimingsScreen> {
                     child: appCubit.errorStatus == true
                         ? Padding(
                             padding: const EdgeInsets.all(20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                if (appCubit.errorStatus)
-                                  Image.asset(
-                                    'assets/404.gif',
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.8,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.4,
+                            child: Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  if (appCubit.errorStatus)
+                                    Image.asset(
+                                      'assets/404.gif',
+                                      width: MediaQuery.of(context).size.width *
+                                          0.8,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.6,
+                                    ),
+                                  AppText(
+                                    "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
+                                    align: TextAlign.center,
+                                    fontSize: 18,
+                                    color: AppColors.primaryColor,
                                   ),
-                                AppText(
-                                  "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
-                                  align: TextAlign.center,
-                                  fontSize: 18,
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           )
                         : appCubit.timesModel == null

@@ -43,7 +43,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: true, // Set to true to enable DevicePreview
+      enabled: false, // Set to true to enable DevicePreview
       builder: (context) => MyApp(
         isLight: isLight,
       ),

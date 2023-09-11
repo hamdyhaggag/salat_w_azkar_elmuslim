@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/Ahadith_screen/Ahadith1.dart';
-import '../../constants/app_text.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
 import 'Ahadith_screen/Ahadith10.dart';
@@ -59,24 +58,9 @@ class AhadithScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.w),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(
-                    'assets/mot.png',
-                    alignment: Alignment.topCenter,
-                  ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height * 0.0600,
-                    child: AppText(
-                      'الأربعين النووية',
-                      fontSize: MediaQuery.of(context).size.width * 0.07,
-                      fontFamily: 'Cairo',
-                      fontWeight: FontWeight.w600,
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                ],
+              child: Image.asset(
+                'assets/mot.png',
+                alignment: Alignment.topCenter,
               ),
             ),
             SizedBox(

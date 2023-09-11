@@ -16,6 +16,7 @@ class Ahadith32 extends StatelessWidget {
           children: [
             SizedBox(height: 15),
             CustomContainer(
+                headtitle: 'الحديث الثاني و الثلاثون',
                 title:
                     ' عن أبي سعيد سعد بن مالك بن سنان الخدري رضي الله عنه أن رسول الله ( ﷺ ) قال: (لا ضرر ولا ضرار) .\n حديث حسن رواه ابن ماجه والدار قطني وغيرهما مسنداً',
                 maxValue: 1),
