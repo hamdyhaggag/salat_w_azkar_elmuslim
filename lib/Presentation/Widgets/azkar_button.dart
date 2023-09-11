@@ -30,7 +30,7 @@ Widget azkarButton({
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: AppText(
                 name,
-                color: Color(0xFF1E5A83),
+                color: AppColors.primaryColor,
                 fontSize: 23.0,
               ),
             ),

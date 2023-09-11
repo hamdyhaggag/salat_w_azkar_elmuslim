@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import '../../../constants/colors.dart';
+import 'Share_button.dart';
 import 'circle_progress.dart';
 import 'copy_button.dart';
 
@@ -26,7 +27,6 @@ class CustomContainer extends StatefulWidget {
 class _CustomContainerState extends State<CustomContainer> {
   late int counterValue;
   bool showCheckIcon = false;
-
   @override
   void initState() {
     super.initState();
@@ -66,7 +66,12 @@ class _CustomContainerState extends State<CustomContainer> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CopyButton(widget.title),
+                  Row(
+                    children: [
+                      CopyButton(widget.title),
+                      ShareButton(widget.title),
+                    ],
+                  ),
                   Column(
                     children: [
                       if (widget.headtitle != null)
