@@ -132,6 +132,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                     AppText("الجهاز لا يدعم السينسور المستخدم لتحديد الاتجاه"),
               );
             }
+            final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
             return Stack(
               children: [
@@ -145,7 +146,11 @@ class QiblaScreenState extends State<QiblaScreen> {
                   child: Transform.rotate(
                     angle: rotatedAngle ??
                         0, // Use the rotatedAngle value if not null
-                    child: Image.asset('assets/qibla_screen.png'),
+                    child: Image.asset(
+                      isDarkMode
+                          ? 'assets/qibla_screen_dark.png' // Dark mode image
+                          : 'assets/qibla_screen.png', // Light mode image
+                    ),
                   ),
                 ),
                 Center(

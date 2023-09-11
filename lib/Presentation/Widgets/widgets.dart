@@ -61,13 +61,14 @@ Widget radioItem({
   required BuildContext context,
 }) {
   final appCubit = AppCubit.get(context);
+  final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
   return RadioListTile(
     title: AppText(
       title,
       fontSize: 16,
       textDirection: TextDirection.rtl,
-      color: AppColors.primaryColor,
+      color: isDarkMode ? Colors.white : AppColors.primaryColor,
     ),
     value: value,
     groupValue: radioValue == 0 ? 5 : radioValue,
@@ -86,6 +87,8 @@ showMethods(context) {
         return BlocConsumer<AppCubit, AppStates>(
           listener: (context, state) {},
           builder: (context, state) {
+            final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
             return SimpleDialog(
               titlePadding: const EdgeInsets.fromLTRB(0, 10, 12, 0),
               title: AppText(
@@ -93,7 +96,7 @@ showMethods(context) {
                 textDirection: TextDirection.rtl,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
-                color: AppColors.primaryColor,
+                color: isDarkMode ? Colors.white : AppColors.primaryColor,
               ),
               contentPadding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
               children: <Widget>[
@@ -158,12 +161,14 @@ Donate(context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
+      final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
       return AlertDialog(
         titlePadding: const EdgeInsets.fromLTRB(0, 15, 17, 0),
         title: AppText(
           'ادعمنا من خلال :',
           textDirection: TextDirection.rtl,
-          color: AppColors.primaryColor,
+          color: isDarkMode ? Colors.white : AppColors.primaryColor,
           fontWeight: FontWeight.bold,
           fontFamily: 'Cairo',
         ),
@@ -179,7 +184,7 @@ Donate(context) {
                   FontAwesomeIcons.circleDollarToSlot,
                   'https://www.buymeacoffee.com/hamdyhaggag74',
                   'Buy Me A Coffee',
-                  AppColors.primaryColor,
+                  isDarkMode ? Colors.white : AppColors.primaryColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -188,7 +193,7 @@ Donate(context) {
                   FontAwesomeIcons.circleDollarToSlot,
                   'https://www.paypal.com/paypalme/hamdyhaggag74',
                   'paypal',
-                  AppColors.primaryColor,
+                  isDarkMode ? Colors.white : AppColors.primaryColor,
                 ),
               ),
             ],

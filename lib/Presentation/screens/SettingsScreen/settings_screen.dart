@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_folder_row.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
@@ -56,8 +55,9 @@ class _SettingsScreensState extends State<SettingsScreens> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
       appBar: const CustomAppBar(title: 'الإعدادات'),
       body: Column(
         children: <Widget>[

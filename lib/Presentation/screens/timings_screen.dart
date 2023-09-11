@@ -109,12 +109,19 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                         alignment:
                                             AlignmentDirectional.bottomEnd,
                                         children: [
-                                          Image.asset(
-                                            'assets/mousq.png',
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            fit: BoxFit.cover,
+                                          Opacity(
+                                            opacity: isDarkMode
+                                                ? 0.2
+                                                : 1.0, // Adjust the opacity as needed
+                                            child: Image.asset(
+                                              isDarkMode
+                                                  ? 'assets/mousqblack.png' // Dark mode image
+                                                  : 'assets/mousq.png', // Light mode image
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                           addressWidget(appCubit),
                                         ],
