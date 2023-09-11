@@ -35,13 +35,15 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Text(
       text,
       textAlign: align ?? TextAlign.start,
       textDirection: textDirection ?? TextDirection.rtl,
       textScaleFactor: 1,
       style: TextStyle(
-        color: color ?? AppColors.blackColor,
+        color: color ?? (isDarkMode ? Colors.white : AppColors.primaryColor),
         fontSize: fontSize.toInt().font,
         height: height != null ? height! / fontSize : null,
         decoration: decoration ?? TextDecoration.none,

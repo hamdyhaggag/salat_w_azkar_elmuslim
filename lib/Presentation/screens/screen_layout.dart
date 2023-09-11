@@ -15,13 +15,15 @@ class ScreenLayout extends StatelessWidget {
     return BlocBuilder<AppCubit, AppStates>(
       builder: (context, state) {
         final cubit = AppCubit.get(context);
+        final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
         return Scaffold(
           bottomNavigationBar: BottomNavigationBar(
               selectedFontSize: 23,
               unselectedFontSize: 23,
               iconSize: 30,
               elevation: 100,
-              backgroundColor: Colors.white,
+              backgroundColor: isDarkMode ? Colors.transparent : Colors.white,
               type: BottomNavigationBarType.fixed,
               items: cubit.bottomItems,
               currentIndex: cubit.index,

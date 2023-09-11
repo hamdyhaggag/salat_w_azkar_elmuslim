@@ -13,6 +13,8 @@ class CustomFolderRow extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       children: [
         Padding(
@@ -23,14 +25,14 @@ class CustomFolderRow extends StatelessWidget {
               fontSize: 18,
               fontFamily: 'Cairo',
               fontWeight: FontWeight.w500,
-              color: AppColors.primaryColor,
+              color: isDarkMode ? Colors.white : AppColors.primaryColor,
             ),
             SizedBox(
               width: 22.w,
             ),
             Icon(
               FontAwesomeIcons.fileLines,
-              color: AppColors.primaryColor,
+              color: isDarkMode ? Colors.white : AppColors.primaryColor,
             )
           ]),
         ),

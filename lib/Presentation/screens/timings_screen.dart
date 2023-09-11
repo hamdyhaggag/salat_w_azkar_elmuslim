@@ -54,9 +54,10 @@ class _TimingsScreenState extends State<TimingsScreen> {
       },
       builder: (context, state) {
         var appCubit = AppCubit.get(context);
+        final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
         return Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
             body: SafeArea(
               child: RefreshIndicator(
                 onRefresh: () async {
@@ -87,7 +88,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                     "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
                                     align: TextAlign.center,
                                     fontSize: 18,
-                                    color: AppColors.primaryColor,
+                                    color: isDarkMode
+                                        ? Colors.white
+                                        : AppColors.primaryColor,
                                   ),
                                 ],
                               ),
@@ -127,9 +130,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                     icon: Padding(
                                       padding: EdgeInsets.only(
                                           right: 35.w, top: 10.h),
-                                      child: const Icon(
+                                      child: Icon(
                                         FontAwesomeIcons.bars,
-                                        color: Colors.black54,
+                                        color: isDarkMode
+                                            ? Colors.white
+                                            : Colors.black54,
                                         size: 32,
                                       ),
                                     ),
@@ -162,7 +167,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
                   ? locality
                   : appCubit.address!.locality.toString(),
               fontWeight: FontWeight.bold,
-              color: Colors.black54,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black54,
               fontSize: 21,
             ),
             SizedBox(
@@ -180,7 +187,9 @@ class _TimingsScreenState extends State<TimingsScreen> {
               ? '$administrativeArea, $country'
               : '${appCubit.address!.administrativeArea}, ${appCubit.address!.country}',
           fontWeight: FontWeight.bold,
-          color: Colors.black54,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.white
+              : Colors.black54,
           fontSize: 21,
         ),
       ],
@@ -197,7 +206,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
 
       DateTime convertedDateTime =
           DateTime(now.year, now.month, now.day, hours, minutes);
-      final formattedTime = DateFormat('hh:mm a').format(convertedDateTime);
+      final formattedTime = DateFormat(' hh:mma').format(convertedDateTime);
       return formattedTime;
     }
 
@@ -215,55 +224,49 @@ class _TimingsScreenState extends State<TimingsScreen> {
                   fontWeight: FontWeight.w500,
                   fontSize: 19,
                   fontFamily: 'Cairo',
-                  color: Color.fromARGB(255, 0, 0, 0),
+                  color: Colors.grey,
                 ),
               ),
             ),
           ],
         ),
         SizedBox(height: 15.h),
-        Container(
-          decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 3.0),
-            child: Column(
-              children: [
-                prayTimeRow(
-                    en: 'Fajr',
-                    time:
-                        formatPrayTime(appCubit.timesModel!.data.timings.fajr),
-                    ar: 'الفجر'),
-                const SizedBox(height: 10),
-                prayTimeRow(
-                    en: 'Sunrise',
-                    time: formatPrayTime(
-                        appCubit.timesModel!.data.timings.sunrise),
-                    ar: 'الشروق'),
-                const SizedBox(height: 10),
-                prayTimeRow(
-                    en: 'Dhuhr',
-                    time:
-                        formatPrayTime(appCubit.timesModel!.data.timings.dhuhr),
-                    ar: 'الظهر'),
-                const SizedBox(height: 10),
-                prayTimeRow(
-                    en: 'Asr',
-                    time: formatPrayTime(appCubit.timesModel!.data.timings.asr),
-                    ar: 'العصر'),
-                const SizedBox(height: 10),
-                prayTimeRow(
-                    en: 'Maghrib',
-                    time: formatPrayTime(
-                        appCubit.timesModel!.data.timings.maghrib),
-                    ar: 'المغرب'),
-                const SizedBox(height: 10),
-                prayTimeRow(
-                    en: 'Isha',
-                    time:
-                        formatPrayTime(appCubit.timesModel!.data.timings.isha),
-                    ar: 'العشاء'),
-              ],
-            ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 3.0),
+          child: Column(
+            children: [
+              prayTimeRow(
+                  en: 'Fajr',
+                  time: formatPrayTime(appCubit.timesModel!.data.timings.fajr),
+                  ar: 'الفجر'),
+              const SizedBox(height: 10),
+              prayTimeRow(
+                  en: 'Sunrise',
+                  time:
+                      formatPrayTime(appCubit.timesModel!.data.timings.sunrise),
+                  ar: 'الشروق'),
+              const SizedBox(height: 10),
+              prayTimeRow(
+                  en: 'Dhuhr',
+                  time: formatPrayTime(appCubit.timesModel!.data.timings.dhuhr),
+                  ar: 'الظهر'),
+              const SizedBox(height: 10),
+              prayTimeRow(
+                  en: 'Asr',
+                  time: formatPrayTime(appCubit.timesModel!.data.timings.asr),
+                  ar: 'العصر'),
+              const SizedBox(height: 10),
+              prayTimeRow(
+                  en: 'Maghrib',
+                  time:
+                      formatPrayTime(appCubit.timesModel!.data.timings.maghrib),
+                  ar: 'المغرب'),
+              const SizedBox(height: 10),
+              prayTimeRow(
+                  en: 'Isha',
+                  time: formatPrayTime(appCubit.timesModel!.data.timings.isha),
+                  ar: 'العشاء'),
+            ],
           ),
         ),
       ],

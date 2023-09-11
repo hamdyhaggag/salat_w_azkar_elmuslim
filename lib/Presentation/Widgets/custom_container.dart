@@ -47,6 +47,8 @@ class _CustomContainerState extends State<CustomContainer> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return GestureDetector(
       onTap: incrementCounter, // Change to incrementCounter
       child: Padding(
@@ -55,7 +57,7 @@ class _CustomContainerState extends State<CustomContainer> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             border: Border.all(
-              color: AppColors.primaryColor,
+              color: isDarkMode ? Colors.white : AppColors.primaryColor,
             ),
           ),
           width: double.infinity,
@@ -78,7 +80,9 @@ class _CustomContainerState extends State<CustomContainer> {
                         Text(
                           widget.headtitle!,
                           style: TextStyle(
-                              color: AppColors.primaryColor,
+                              color: isDarkMode
+                                  ? Colors.white
+                                  : AppColors.primaryColor,
                               fontSize: 25.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -92,7 +96,9 @@ class _CustomContainerState extends State<CustomContainer> {
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
-                            color: AppColors.primaryColor,
+                            color: isDarkMode
+                                ? Colors.white
+                                : AppColors.primaryColor,
                             fontSize: 25.0,
                           ),
                         ),
@@ -105,7 +111,9 @@ class _CustomContainerState extends State<CustomContainer> {
                           Container(
                             height: 2,
                             width: 300,
-                            color: AppColors.primaryColor,
+                            color: isDarkMode
+                                ? Colors.white
+                                : AppColors.primaryColor,
                           ),
                           Positioned(
                             top: 10,
@@ -153,7 +161,9 @@ class _CustomContainerState extends State<CustomContainer> {
                       Text(
                         ' ${widget.maxValue} : عدد التكرارات ',
                         style: TextStyle(
-                          color: AppColors.primaryColor,
+                          color: isDarkMode
+                              ? Colors.white
+                              : AppColors.primaryColor,
                           fontSize: 25.0,
                         ),
                       )

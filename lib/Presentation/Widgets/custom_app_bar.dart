@@ -18,8 +18,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: isDarkMode
+          ? Colors.transparent
+          : Colors.white, // Set background color based on dark mode
       elevation: 0,
       title: Align(
         alignment: isHome
@@ -31,7 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             fontSize: 23,
             fontFamily: 'Cairo',
             fontWeight: FontWeight.w700,
-            color: AppColors.primaryColor,
+            color: isDarkMode ? Colors.white : AppColors.primaryColor,
           ),
         ),
       ),
@@ -47,7 +51,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 },
                 icon: Icon(
                   FontAwesomeIcons.chevronRight,
-                  color: AppColors.primaryColor,
+                  color: isDarkMode ? Colors.white : AppColors.primaryColor,
                 ),
               ),
               SizedBox(width: 5.w),

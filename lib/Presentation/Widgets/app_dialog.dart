@@ -69,6 +69,8 @@ class _AppDialogState extends State<AppDialog>
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return ScaleTransition(
       scale: scaleAnimation,
       child: WillPopScope(
@@ -91,7 +93,7 @@ class _AppDialogState extends State<AppDialog>
                     fontSize: 21,
                     fontFamily: 'Cairo',
                     fontWeight: FontWeight.w600,
-                    color: AppColors.blackColor,
+                    color: isDarkMode ? Colors.white : Colors.black,
                   ),
                 ),
                 Row(

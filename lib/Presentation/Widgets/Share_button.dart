@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../constants/colors.dart';
+
 class ShareButton extends StatelessWidget {
   final String textToShare;
 
@@ -15,10 +17,12 @@ class ShareButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(left: 0, bottom: 10),
       child: IconButton(
-        icon: const Icon(Icons.share, color: Color(0xff1E5A83)),
+        icon: Icon(Icons.share,
+            color: isDarkMode ? Colors.white : AppColors.primaryColor),
         onPressed: shareText,
       ),
     );

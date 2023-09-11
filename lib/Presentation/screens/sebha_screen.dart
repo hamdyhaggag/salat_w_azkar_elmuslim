@@ -16,8 +16,9 @@ class Sebha extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
       appBar: const CustomAppBar(title: 'السبحة', isHome: true),
       body: BlocBuilder<AppCubit, AppStates>(
         builder: (context, state) {
@@ -53,7 +54,7 @@ class Sebha extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: Colors.white,
+                  color: isDarkMode ? Colors.transparent : Colors.white,
                   child: Column(
                     children: [
                       const MyCustomRow(),

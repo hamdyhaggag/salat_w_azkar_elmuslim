@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../constants/colors.dart';
+
 class CopyButton extends StatelessWidget {
   final String textToCopy;
 
@@ -23,10 +25,13 @@ class CopyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Padding(
       padding: const EdgeInsets.only(left: 0, bottom: 10),
       child: IconButton(
-        icon: const Icon(FontAwesomeIcons.copy, color: Color(0xff1E5A83)),
+        icon: Icon(FontAwesomeIcons.copy,
+            color: isDarkMode ? Colors.white : AppColors.primaryColor),
         onPressed: copyTextToClipboard,
       ),
     );

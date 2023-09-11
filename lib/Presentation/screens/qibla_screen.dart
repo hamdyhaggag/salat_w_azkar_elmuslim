@@ -22,11 +22,14 @@ class QiblaScreen extends StatefulWidget {
 class QiblaScreenState extends State<QiblaScreen> {
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
+      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
       appBar: const CustomAppBar(title: 'القبلة', isHome: true),
-      backgroundColor: AppCubit.get(context).directionModel == null
-          ? Colors.white
-          : Colors.white,
+      // backgroundColor: AppCubit.get(context).directionModel == null
+      //     ? Colors.black26
+      //     : Colors.white,
       body: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) {

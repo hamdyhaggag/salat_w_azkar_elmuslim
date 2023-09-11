@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
 import '../../constants/app_text.dart';
@@ -19,6 +20,8 @@ class RowWithTextAndIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return GestureDetector(
       onTap: onTap,
       child: Row(
@@ -28,13 +31,13 @@ class RowWithTextAndIcon extends StatelessWidget {
               fontSize: 19,
               fontFamily: 'Cairo',
               fontWeight: FontWeight.w500,
-              color: AppColors.primaryColor),
+              color: isDarkMode ? Colors.white : AppColors.primaryColor),
           SizedBox(
             width: 20.w,
           ),
           Icon(
             icon,
-            color: AppColors.primaryColor,
+            color: isDarkMode ? Colors.white : AppColors.primaryColor,
           ),
           SizedBox(width: 16.0.w),
         ],

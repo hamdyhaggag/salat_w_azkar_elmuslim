@@ -8,6 +8,8 @@ class CustomDivider extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Stack(
       children: [
         CircleAvatar(
@@ -29,7 +31,7 @@ class CustomDivider extends StatelessWidget {
           child: Container(
             height: 2,
             width: 15,
-            color: AppColors.primaryColor,
+            color: isDarkMode ? Colors.white : AppColors.primaryColor,
           ),
         ),
       ],

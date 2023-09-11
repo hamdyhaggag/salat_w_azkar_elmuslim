@@ -9,7 +9,6 @@ import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/mornin
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray.dart';
 import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/wake.dart';
 
-import '../../constants/app_text.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
 import 'azkar_screens/dead.dart';
@@ -24,8 +23,10 @@ class AzkarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
         appBar: const CustomAppBar(title: 'الأذكار', isHome: true),
         body: ListView(
           children: [

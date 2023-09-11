@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -22,7 +23,21 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 bool isEnterBefore = false;
 int radioValue = 5;
+bool isLight = CacheHelper.getBoolean(key: 'isLight');
 
+var lightThemeData = ThemeData(
+  primaryColor: Colors.blue,
+  textTheme: const TextTheme(labelLarge: TextStyle(color: Colors.white70)),
+  brightness: Brightness.light,
+  hintColor: Colors.blue,
+);
+
+var darkThemeData = ThemeData(
+  primaryColor: Colors.blue,
+  textTheme: const TextTheme(labelLarge: TextStyle(color: Colors.black54)),
+  brightness: Brightness.dark,
+  hintColor: Colors.blue,
+);
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -32,7 +47,6 @@ void main() async {
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
   await CacheHelper.init();
-  bool isLight = CacheHelper.getBoolean(key: 'isLight');
 
   radioValue = CacheHelper.getInteger(key: 'value');
   isEnterBefore = CacheHelper.getBoolean(key: 'isEnterBefore');
@@ -44,8 +58,10 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: false, // Set to true to enable DevicePreview
-      builder: (context) => MyApp(
-        isLight: isLight,
+      builder: (context) => EasyDynamicThemeWidget(
+        child: MyApp(
+          isLight: isLight,
+        ),
       ),
     ),
   );
@@ -64,8 +80,6 @@ class MyApp extends StatelessWidget {
         child: BlocConsumer<AppCubit, AppStates>(
           listener: (context, state) {},
           builder: (context, state) {
-            var cubit = AppCubit.get(context);
-
             return MaterialApp(
               builder: (context, child) => ResponsiveWrapper.builder(child,
                   maxWidth: 1200,
@@ -79,19 +93,21 @@ class MyApp extends StatelessWidget {
                   ],
                   background: Container(color: const Color(0xFFFFFFFF))),
               title: "Tafakkur - تَفكر",
-              theme: ThemeData.light().copyWith(
+              theme: lightThemeData.copyWith(
                 textTheme: const TextTheme(
                   titleMedium: TextStyle(fontSize: 25, fontFamily: 'Cairo'),
                   bodyMedium: TextStyle(fontSize: 30, fontFamily: 'Cairo'),
                 ),
               ),
-              darkTheme: ThemeData.dark().copyWith(
+              darkTheme: darkThemeData.copyWith(
                 textTheme: const TextTheme(
-                  titleMedium: TextStyle(fontSize: 25, fontFamily: 'Cairo'),
-                  bodyMedium: TextStyle(fontSize: 30, fontFamily: 'Cairo'),
+                  titleMedium: TextStyle(
+                      fontSize: 25, fontFamily: 'Cairo', color: Colors.white),
+                  bodyMedium: TextStyle(
+                      fontSize: 30, fontFamily: 'Cairo', color: Colors.white),
                 ),
               ),
-              themeMode: cubit.isLightMode ? ThemeMode.light : ThemeMode.dark,
+              themeMode: ThemeMode.system,
               debugShowCheckedModeBanner: false,
               home: const SplashScreen(),
             );
