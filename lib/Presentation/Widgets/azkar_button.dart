@@ -33,7 +33,7 @@ Widget azkarButton({
             child: AppText(
               name,
               color: isDarkMode ? Colors.white : AppColors.primaryColor,
-              fontSize: 23.0,
+              fontSize: 19.0,
             ),
           ),
         ),

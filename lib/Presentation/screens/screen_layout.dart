@@ -19,10 +19,10 @@ class ScreenLayout extends StatelessWidget {
 
         return Scaffold(
           bottomNavigationBar: BottomNavigationBar(
-              selectedFontSize: 23,
-              unselectedFontSize: 23,
-              iconSize: 30,
-              elevation: 5,
+              selectedFontSize: 19,
+              unselectedFontSize: 19,
+              iconSize: 25,
+              elevation: 90,
               backgroundColor:
                   isDarkMode ? const Color(0xb01f1f1f) : Colors.white,
               type: BottomNavigationBarType.fixed,

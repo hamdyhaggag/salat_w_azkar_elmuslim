@@ -238,7 +238,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                   ),
                 ),
                 Positioned(
-                  left: MediaQuery.of(context).size.width * 0.16,
+                  left: MediaQuery.of(context).size.width * 0.18,
                   top: MediaQuery.of(context).size.height * 0.68,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -248,7 +248,7 @@ class QiblaScreenState extends State<QiblaScreen> {
                         color: isDarkMode
                             ? const Color(0xff0c8ee1)
                             : AppColors.primaryColor,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ],
                   ),
