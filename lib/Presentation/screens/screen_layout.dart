@@ -22,9 +22,9 @@ class ScreenLayout extends StatelessWidget {
               selectedFontSize: 23,
               unselectedFontSize: 23,
               iconSize: 30,
-              elevation: 100,
+              elevation: 5,
               backgroundColor:
-                  isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
+                  isDarkMode ? const Color(0xb01f1f1f) : Colors.white,
               type: BottomNavigationBarType.fixed,
               items: cubit.bottomItems,
               currentIndex: cubit.index,
