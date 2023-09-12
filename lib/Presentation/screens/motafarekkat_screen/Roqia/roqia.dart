@@ -22,7 +22,7 @@ class RoqiaScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -33,7 +33,7 @@ class RoqiaScreen extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الرقية الشرعية من القرآن'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -44,7 +44,7 @@ class RoqiaScreen extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الرقية الشرعية من السنة'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -55,7 +55,7 @@ class RoqiaScreen extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' مشروعية الرقية'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -66,7 +66,7 @@ class RoqiaScreen extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' القرآن شفاء لكل داء'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -77,7 +77,7 @@ class RoqiaScreen extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الصلاة من أسباب العلاج'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -89,7 +89,7 @@ class RoqiaScreen extends StatelessWidget {
               child:
                   const CustomFolderRow(title: ' الدعاء في ثلث الليل الأخير'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

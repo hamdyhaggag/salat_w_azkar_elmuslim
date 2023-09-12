@@ -20,7 +20,7 @@ class SleepAzkar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -31,7 +31,7 @@ class SleepAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'أذكار النوم'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -42,7 +42,7 @@ class SleepAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الدعاء إذا تقلب ليلاً'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -53,7 +53,7 @@ class SleepAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء الفزع في النوم'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

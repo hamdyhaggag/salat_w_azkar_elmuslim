@@ -18,7 +18,7 @@ class Azan extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -29,7 +29,7 @@ class Azan extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الأذان'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -40,7 +40,7 @@ class Azan extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الدعاء بعد الأذان'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

@@ -50,7 +50,7 @@ class CollectionAzkar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -61,7 +61,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء لبس الثوب'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -72,7 +72,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء لبس الثوب الجديد'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -83,7 +83,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء الكرب'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -94,7 +94,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء الهم والحزن'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -105,7 +105,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء قضاء الدين'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -116,7 +116,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء الريح'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -127,7 +127,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء الرعـد'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -138,7 +138,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء زيارة القبور'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -149,7 +149,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء  نزول المطر'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -161,7 +161,7 @@ class CollectionAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: ' دعاء ركوب الدابة أو ما يقوم مقامها'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -172,7 +172,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء من استصعب عليه أمر'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -183,7 +183,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعـاء الخوف من الشــرك'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -194,7 +194,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' ما يقال في المجلس'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -205,7 +205,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' كفارة المجلس '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -216,7 +216,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء من رأى مبتلى'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -227,7 +227,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعـاء الغـضـب'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -238,7 +238,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الدعاء للمتزوج'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -249,7 +249,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء المتزوج لنفسه'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -260,7 +260,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الدعاء قبل الجماع '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -271,7 +271,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء العطاس '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -282,7 +282,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الدعاء عند افطار الصائم'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -294,7 +294,7 @@ class CollectionAzkar extends StatelessWidget {
               child:
                   const CustomFolderRow(title: 'الدعاء إذا أفطر عند أهل بيت '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -305,7 +305,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء رؤية الهلال '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -316,7 +316,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء من أصيب بمصيبة'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -327,7 +327,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الدعاء للمريض في عيادته'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -339,7 +339,7 @@ class CollectionAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: 'دعاء المريض الذي يئس من حياته '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -350,7 +350,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' ما يعوذ به الأولاد'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -362,7 +362,7 @@ class CollectionAzkar extends StatelessWidget {
               child:
                   const CustomFolderRow(title: 'دعاء لقاء العدو وذي السلطان '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -373,7 +373,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعـاء صـلاة الاستخـارة'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -384,7 +384,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعـاء سجود التلاوة'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -395,7 +395,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء الاستفتاح '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -406,7 +406,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' دعاء دخول السوق'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -418,7 +418,7 @@ class CollectionAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: 'عند فعل الذنب أو ارتكاب المعصية'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -430,7 +430,7 @@ class CollectionAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: 'الدعاء عند سماع أصوات الحيوانات'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -441,7 +441,7 @@ class CollectionAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'سيد الاستغفار '),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

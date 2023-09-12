@@ -1,7 +1,9 @@
+import 'package:day_night_switch/day_night_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:salat_w_azkar_elmuslim/constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_folder_row.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
@@ -52,6 +54,8 @@ class _SettingsScreensState extends State<SettingsScreens> {
           UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
+
+  bool val = false; // Define 'val' as a boolean variable and initialize it
 
   @override
   Widget build(BuildContext context) {
@@ -296,41 +300,42 @@ class _SettingsScreensState extends State<SettingsScreens> {
             color: colorWithOpacity,
           ),
 
-          // InkWell(
-          //   onTap: () {
-          //     // Handle the tap event here
-          //     // You can toggle the Switch's state or perform any other action
-          //   },
-          //   child: Row(
-          //     children: [
-          //       Flexible(
-          //         flex: 1,
-          //         child: Container(), // Adjust the flex value as needed
-          //         // Replace  with any content you want before the Switch
-          //       ),
-          //       Switch(
-          //         value: true, // Replace with the actual boolean value
-          //         onChanged: (newValue) {
-          //           // Update the switch's state when it's toggled
-          //           // You can also perform any additional actions here
-          //         },
-          //       ),
-          //       const Flexible(
-          //         flex: 14, // Adjust the flex value as needed
-          //         child: RowWithTextAndIcon(
-          //           'إشعار يوم الجمعة',
-          //           Icons.notifications_active_rounded,
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // const SizedBox(height: 10.0),
-          // Container(
-          //   height: 2,
-          //   width: 420,
-          //   color: colorWithOpacity,
-          // ),
+          Row(
+            children: [
+              Container(),
+              Transform.scale(
+                scale: 0.37,
+                child: DayNightSwitch(
+                  size: const Size(125, 45),
+                  value: val,
+                  sunColor: Colors.amber,
+                  moonColor: AppColors.primaryColor,
+                  dayColor: AppColors
+                      .primaryColor, // Replace with your defined day color
+                  nightColor:
+                      Colors.black26, // Replace with your defined night color
+                  onChanged: (value) {
+                    setState(() {
+                      val = value;
+                    });
+                  },
+                ),
+              ),
+              const Flexible(
+                flex: 14, // Adjust the flex value as needed
+                child: RowWithTextAndIcon(
+                  'الوضع الليلي',
+                  Icons.notifications_active_rounded,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10.0),
+          Container(
+            height: 2,
+            width: 420,
+            color: colorWithOpacity,
+          ),
         ],
       ),
     );

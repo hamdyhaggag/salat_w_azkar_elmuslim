@@ -25,7 +25,7 @@ class TravelAzkar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -36,7 +36,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء المسافر للمقيم'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -47,7 +47,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء المقيم للمسافر'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -58,7 +58,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'السفر'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -69,7 +69,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الركوب'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -80,7 +80,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: ' الدعاء إذا عثر المركوب'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -92,7 +92,7 @@ class TravelAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: 'التكبير و التسبيح في سير السفر'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -103,7 +103,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'نزول المنزل'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -114,7 +114,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء المسافر إذا أصبح'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -125,7 +125,7 @@ class TravelAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دخول البلدة'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

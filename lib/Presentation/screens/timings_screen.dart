@@ -182,9 +182,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
             SizedBox(
               width: 12.w,
             ),
-            const Icon(
+            Icon(
               Icons.location_on,
-              color: Colors.black54,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black54,
               size: 28,
             ),
           ],

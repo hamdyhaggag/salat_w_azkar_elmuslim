@@ -17,7 +17,7 @@ class Wodoo extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -28,7 +28,7 @@ class Wodoo extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'الذكر قبل الوضوء'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,

@@ -19,7 +19,7 @@ class FoodAzkar extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -30,7 +30,7 @@ class FoodAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'قبل الطعام'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -41,7 +41,7 @@ class FoodAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'بعد الطعام'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -52,7 +52,7 @@ class FoodAzkar extends StatelessWidget {
               },
               child: const CustomFolderRow(title: 'دعاء الضيف لصاحب الطعام'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -64,7 +64,7 @@ class FoodAzkar extends StatelessWidget {
               child: const CustomFolderRow(
                   title: 'الدعاء لمن سقاه أو إذا أراد ذلك'),
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
