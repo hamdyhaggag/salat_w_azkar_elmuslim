@@ -2,8 +2,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:tafakkur/constants/colors.dart';
 import '../../Data/Model/direction_model.dart';
 import '../../Data/Model/times_model.dart';
 import '../../Data/Web_Services/cache_helper.dart';
@@ -85,6 +87,15 @@ class AppCubit extends Cubit<AppStates> {
       emit(ChangeCounterState());
       if (counter == maxCounter) {
         counterReachedMax();
+        Fluttertoast.showToast(
+          msg: 'انتقل إلى عدد أكبر أو ابدأ من جديد ',
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.SNACKBAR,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.grey,
+          textColor: Colors.white,
+          fontSize: 16.0,
+        );
       }
     } else {
       Vibrate.feedback(FeedbackType.heavy);
