@@ -306,10 +306,11 @@ class SettingsScreensState extends State<SettingsScreens> {
                 child: DayNightSwitch(
                   size: const Size(125, 45),
                   value: isDarkMode,
-                  sunColor: Colors.amber,
-                  moonColor: AppColors.primaryColor,
+                  sunColor: isDarkMode ? const Color(0xff1F1F1F) : Colors.amber,
+                  moonColor: isDarkMode ? AppColors.primaryColor : Colors.white,
                   dayColor: AppColors.primaryColor,
-                  nightColor: Color(0xff1F1F1F),
+                  nightColor:
+                      isDarkMode ? Colors.black26 : AppColors.primaryColor,
                   onChanged: (value) {
                     setState(() {
                       isDarkMode = value;
