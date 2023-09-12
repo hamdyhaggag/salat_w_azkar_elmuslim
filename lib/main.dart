@@ -34,7 +34,7 @@ var lightThemeData = ThemeData(
 
 var darkThemeData = ThemeData(
   primaryColor: Colors.blue,
-  textTheme: const TextTheme(labelLarge: TextStyle(color: Colors.black54)),
+  textTheme: const TextTheme(labelLarge: TextStyle(color: Color(0xff1F1F1F))),
   brightness: Brightness.dark,
   hintColor: Colors.blue,
 );

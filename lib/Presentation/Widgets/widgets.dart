@@ -3,11 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../constants/colors.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
 import '../../Data/Web_Services/functions.dart';
@@ -20,40 +18,49 @@ Widget prayTimeRow({
   required String en,
   required String time,
   required String ar,
-}) =>
-    Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 1,
-            child: AppText(
-              en,
-              fontSize: 20,
-              align: TextAlign.end,
+}) {
+  return Builder(
+    builder: (context) {
+      final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.0.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 1,
+              child: AppText(
+                en,
+                fontSize: 20,
+                align: TextAlign.end,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 0,
-            child: AppText(
-              time,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primaryColor,
+            Expanded(
+              flex: 0,
+              child: AppText(
+                time,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: isDarkMode
+                    ? const Color(0xff0c8ee1)
+                    : AppColors.primaryColor,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppText(
-              ar,
-              fontSize: 20,
-              textDirection: TextDirection.rtl,
+            Expanded(
+              flex: 1,
+              child: AppText(
+                ar,
+                fontSize: 20,
+                textDirection: TextDirection.rtl,
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    },
+  );
+}
 
 Widget radioItem({
   required String title,

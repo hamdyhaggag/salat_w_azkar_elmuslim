@@ -23,11 +23,13 @@ class ScreenLayout extends StatelessWidget {
               unselectedFontSize: 23,
               iconSize: 30,
               elevation: 100,
-              backgroundColor: isDarkMode ? Colors.transparent : Colors.white,
+              backgroundColor:
+                  isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
               type: BottomNavigationBarType.fixed,
               items: cubit.bottomItems,
               currentIndex: cubit.index,
-              selectedItemColor: AppColors.primaryColor,
+              selectedItemColor:
+                  isDarkMode ? const Color(0xff0c8ee1) : Colors.white,
               onTap: (index) {
                 cubit.changeIndex(index);
               }),

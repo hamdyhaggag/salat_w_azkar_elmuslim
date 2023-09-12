@@ -57,7 +57,9 @@ class SettingsScreensState extends State<SettingsScreens> {
   bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
+    final isDarkModee = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
+      backgroundColor: isDarkModee ? const Color(0xff1F1F1F) : Colors.white,
       appBar: const CustomAppBar(title: 'الإعدادات'),
       body: Column(
         children: <Widget>[
@@ -307,7 +309,7 @@ class SettingsScreensState extends State<SettingsScreens> {
                   sunColor: Colors.amber,
                   moonColor: AppColors.primaryColor,
                   dayColor: AppColors.primaryColor,
-                  nightColor: Colors.black26,
+                  nightColor: Color(0xff1F1F1F),
                   onChanged: (value) {
                     setState(() {
                       isDarkMode = value;

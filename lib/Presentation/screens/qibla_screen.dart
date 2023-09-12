@@ -5,7 +5,6 @@ import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
@@ -25,10 +24,10 @@ class QiblaScreenState extends State<QiblaScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
+      backgroundColor: isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
       appBar: const CustomAppBar(title: 'القبلة', isHome: true),
       // backgroundColor: AppCubit.get(context).directionModel == null
-      //     ? Colors.black26
+      //     ? Color(0xff1F1F1F)
       //     : Colors.white,
       body: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
@@ -183,14 +182,18 @@ class QiblaScreenState extends State<QiblaScreen> {
                                   fontSize: 15,
                                   fontFamily: 'Cairo',
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.primaryColor,
+                                  color: isDarkMode
+                                      ? const Color(0xff0c8ee1)
+                                      : AppColors.primaryColor,
                                 ),
                                 SizedBox(
                                   width: 5.w,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowRightLong,
-                                  color: AppColors.primaryColor,
+                                  color: isDarkMode
+                                      ? const Color(0xff0c8ee1)
+                                      : AppColors.primaryColor,
                                   size: 40,
                                 ),
                               ],
@@ -208,14 +211,18 @@ class QiblaScreenState extends State<QiblaScreen> {
                                   fontSize: 15,
                                   fontFamily: 'Cairo',
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.primaryColor,
+                                  color: isDarkMode
+                                      ? const Color(0xff0c8ee1)
+                                      : AppColors.primaryColor,
                                 ),
                                 SizedBox(
                                   width: 5.w,
                                 ),
                                 Icon(
                                   FontAwesomeIcons.arrowLeftLong,
-                                  color: AppColors.primaryColor,
+                                  color: isDarkMode
+                                      ? const Color(0xff0c8ee1)
+                                      : AppColors.primaryColor,
                                   size: 40,
                                 ),
                               ],
@@ -238,7 +245,9 @@ class QiblaScreenState extends State<QiblaScreen> {
                     children: [
                       AppText(
                         'اتجاة القبلة هو  $qibla° من الشمال ',
-                        color: AppColors.primaryColor,
+                        color: isDarkMode
+                            ? const Color(0xff0c8ee1)
+                            : AppColors.primaryColor,
                         fontSize: 20,
                       ),
                     ],

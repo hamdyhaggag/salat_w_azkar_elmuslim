@@ -51,7 +51,7 @@ class AhadithScreen extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-        backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
+        backgroundColor: isDarkMode ? Color(0xff1F1F1F) : Colors.white,
         appBar: const CustomAppBar(title: 'الأربعين', isHome: true),
         body: ListView(
           children: [

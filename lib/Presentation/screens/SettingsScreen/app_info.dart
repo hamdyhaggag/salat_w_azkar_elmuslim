@@ -9,8 +9,8 @@ class AppInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
+        backgroundColor: isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
         appBar: const CustomAppBar(title: 'معلومات عن التطبيق'),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),

@@ -56,7 +56,8 @@ class _TimingsScreenState extends State<TimingsScreen> {
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
         return Scaffold(
-            backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
+            backgroundColor:
+                isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
             body: SafeArea(
               child: RefreshIndicator(
                 onRefresh: () async {

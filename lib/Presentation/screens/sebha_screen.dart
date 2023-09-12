@@ -18,7 +18,7 @@ class Sebha extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
+      backgroundColor: isDarkMode ? const Color(0xff1F1F1F) : Colors.white,
       appBar: const CustomAppBar(title: 'السبحة', isHome: true),
       body: BlocBuilder<AppCubit, AppStates>(
         builder: (context, state) {

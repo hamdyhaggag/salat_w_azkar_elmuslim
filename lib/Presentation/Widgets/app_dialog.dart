@@ -93,7 +93,7 @@ class _AppDialogState extends State<AppDialog>
                     fontSize: 21,
                     fontFamily: 'Cairo',
                     fontWeight: FontWeight.w600,
-                    color: isDarkMode ? Colors.white : Colors.black,
+                    color: isDarkMode ? Colors.white : AppColors.primaryColor,
                   ),
                 ),
                 Row(
@@ -103,9 +103,12 @@ class _AppDialogState extends State<AppDialog>
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: AppColors.blackColor,
-                          backgroundColor: AppColors.whiteColor,
+                          backgroundColor:
+                              isDarkMode ? Colors.black12 : Colors.white,
                           side: BorderSide(
-                              color: AppColors.primaryColor), // Border color
+                              color: isDarkMode
+                                  ? Colors.transparent
+                                  : AppColors.primaryColor), // Border color
                         ),
                         onPressed: widget.cancelAction.onTap,
                         child: Container(
@@ -116,6 +119,9 @@ class _AppDialogState extends State<AppDialog>
                             fontSize: 19,
                             fontFamily: 'Cairo',
                             fontWeight: FontWeight.w600,
+                            color: isDarkMode
+                                ? Colors.white
+                                : AppColors.primaryColor,
                           ),
                         ),
                       ),
@@ -125,9 +131,12 @@ class _AppDialogState extends State<AppDialog>
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: AppColors.blackColor,
-                          backgroundColor: AppColors.whiteColor,
+                          backgroundColor:
+                              isDarkMode ? Colors.black12 : Colors.white,
                           side: BorderSide(
-                              color: AppColors.primaryColor), // Border color
+                              color: isDarkMode
+                                  ? Colors.transparent
+                                  : AppColors.primaryColor), // Border color
                         ),
                         onPressed: widget.okAction.onTap,
                         child: Container(
@@ -138,6 +147,9 @@ class _AppDialogState extends State<AppDialog>
                             fontFamily: 'Cairo',
                             fontSize: 19,
                             fontWeight: FontWeight.w600,
+                            color: isDarkMode
+                                ? Colors.white
+                                : AppColors.primaryColor,
                           ),
                         ),
                       ),
