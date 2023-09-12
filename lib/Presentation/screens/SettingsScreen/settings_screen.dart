@@ -140,7 +140,7 @@ class SettingsScreensState extends State<SettingsScreens> {
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 98.w,
+                  width: 125.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار الصباح',
@@ -195,7 +195,7 @@ class SettingsScreensState extends State<SettingsScreens> {
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
-                  width: 90.w,
+                  width: 120.w,
                 ),
                 const RowWithTextAndIcon(
                   'التنبية لأذكار المساء',
@@ -310,7 +310,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               Transform.scale(
                 scale: 0.37,
                 child: DayNightSwitch(
-                  size: const Size(125, 45),
+                  size: Size(95.w, 35.h),
                   value: isDarkMode,
                   sunColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
                   moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
@@ -332,10 +332,10 @@ class SettingsScreensState extends State<SettingsScreens> {
               ),
             ],
           ),
-          SizedBox(height: 10.0.h),
+          SizedBox(height: 7.0.h),
           Container(
-            height: 2,
-            width: 420,
+            height: 2.h,
+            width: 420.w,
             color: colorWithOpacity,
           ),
         ],

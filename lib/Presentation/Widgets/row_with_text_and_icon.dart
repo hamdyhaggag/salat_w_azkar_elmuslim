@@ -27,7 +27,7 @@ class RowWithTextAndIcon extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           AppText(text,
-              fontSize: 19,
+              fontSize: 17,
               fontFamily: 'Cairo',
               fontWeight: FontWeight.w500,
               color: isDarkMode ? Colors.white : AppColors.primaryColor),

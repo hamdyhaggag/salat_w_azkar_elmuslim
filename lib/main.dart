@@ -57,7 +57,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => EasyDynamicThemeWidget(
         child: MyApp(
           isLight: isLight,
