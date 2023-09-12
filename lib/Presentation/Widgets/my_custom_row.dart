@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../constants/app_text.dart';
 import 'circle_avatar.dart';
 
 class MyCustomRow extends StatelessWidget {
@@ -6,22 +8,20 @@ class MyCustomRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 15, right: 3),
-          child: Text(
+          padding: EdgeInsets.only(left: 15.w, right: 3.w),
+          child: AppText(
             'تسبيحة',
-            style: TextStyle(
-              fontSize: 21,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              color: Colors.grey,
-            ),
+            fontSize: 14,
+            fontFamily: 'Cairo',
+            fontWeight: FontWeight.w700,
+            color: Colors.grey,
           ),
         ),
-        Flexible(
+        const Flexible(
           flex: 3,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,15 +34,13 @@ class MyCustomRow extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 3, right: 19),
-          child: Text(
+          padding: EdgeInsets.only(left: 3.w, right: 19.w),
+          child: AppText(
             'نبهني بعد',
-            style: TextStyle(
-              fontSize: 21,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              color: Colors.grey,
-            ),
+            fontSize: 14,
+            fontFamily: 'Cairo',
+            fontWeight: FontWeight.w700,
+            color: Colors.grey,
           ),
         ),
       ],

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
+import '../../constants/app_text.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({super.key, this.title});
@@ -23,23 +25,21 @@ class CustomCircleAvatar extends StatelessWidget {
             backgroundColor: cubit.maxCounter == int.parse(title ?? '9999')
                 ? AppColors.primaryColor
                 : AppColors.greyColor,
-            radius: 27,
+            radius: 24,
             child: title == null
-                ? const Padding(
-                    padding: EdgeInsets.only(right: 6),
-                    child: Icon(
+                ? Padding(
+                    padding: EdgeInsets.only(right: 6.w),
+                    child: const Icon(
                       FontAwesomeIcons.infinity,
                       color: Colors.white,
-                      size: 22,
+                      size: 18,
                     ),
                   )
-                : Text(
+                : AppText(
                     title!,
-                    style: const TextStyle(
-                      fontFamily: 'Cairo',
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                    fontFamily: 'Cairo',
+                    fontSize: 15,
+                    color: Colors.white,
                   ),
           ),
         );

@@ -31,7 +31,7 @@ class AppButton extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: AppText(
               title,
-              fontSize: 15,
+              fontSize: 14,
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontFamily: 'Cairo',

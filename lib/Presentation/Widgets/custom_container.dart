@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import '../../../constants/colors.dart';
 import 'Share_button.dart';
@@ -52,7 +53,7 @@ class _CustomContainerState extends State<CustomContainer> {
     return GestureDetector(
       onTap: incrementCounter, // Change to incrementCounter
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25.w),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
@@ -83,11 +84,11 @@ class _CustomContainerState extends State<CustomContainer> {
                               color: isDarkMode
                                   ? Colors.white
                                   : AppColors.primaryColor,
-                              fontSize: 25.0,
+                              fontSize: 23.0,
                               fontWeight: FontWeight.bold),
                         ),
-                      const SizedBox(
-                        height: 12,
+                      SizedBox(
+                        height: 12.h,
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -99,25 +100,25 @@ class _CustomContainerState extends State<CustomContainer> {
                             color: isDarkMode
                                 ? Colors.white
                                 : AppColors.primaryColor,
-                            fontSize: 25.0,
+                            fontSize: 21.0,
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 20.h,
                       ),
                       Stack(
                         children: [
                           Container(
-                            height: 2,
-                            width: 300,
+                            height: 2.h,
+                            width: 300.w,
                             color: isDarkMode
                                 ? Colors.white
                                 : AppColors.primaryColor,
                           ),
                           Positioned(
-                            top: 10,
-                            left: (300 - 54) / 2,
+                            top: 10.h,
+                            left: (300 - 1) / 2.w,
                             child: CircleAvatar(
                               backgroundColor: showCheckIcon
                                   ? AppColors.primaryColor
@@ -140,21 +141,21 @@ class _CustomContainerState extends State<CustomContainer> {
                             ),
                           ),
                           Positioned(
-                            top: 10,
-                            left: (300 - 54) / 2,
+                            top: 10.h,
+                            left: (300 - 1) / 2.w,
                             child: CustomPaint(
                               painter: CircleProgressPainter(
                                 progress: counterValue / widget.maxValue,
                                 showCheckIcon: showCheckIcon,
                               ),
-                              child: const SizedBox(
-                                width: 54,
-                                height: 54,
+                              child: SizedBox(
+                                width: 51.w,
+                                height: 44.h,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 70,
+                          SizedBox(
+                            height: 70.h,
                           ),
                         ],
                       ),
@@ -164,7 +165,7 @@ class _CustomContainerState extends State<CustomContainer> {
                           color: isDarkMode
                               ? Colors.white
                               : AppColors.primaryColor,
-                          fontSize: 25.0,
+                          fontSize: 21.0,
                         ),
                       )
                     ],

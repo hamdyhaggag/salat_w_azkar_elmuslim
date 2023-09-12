@@ -62,7 +62,7 @@ class Sebha extends StatelessWidget {
                       const MyCustomRow(),
                       SizedBox(height: 20.h),
                       AppButton(
-                        horizontalPadding: 50,
+                        horizontalPadding: 50.w,
                         onPressed: () {
                           cubit.resetCounter();
                           Vibrate.feedback(FeedbackType.heavy);
