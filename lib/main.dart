@@ -6,9 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:responsive_framework/responsive_framework.dart';
-
 import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Business_Logic/Cubit/app_states.dart';
 import 'Data/Web_Services/cache_helper.dart';

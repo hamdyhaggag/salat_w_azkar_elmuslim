@@ -14,10 +14,10 @@ class SettingsScreens extends StatefulWidget {
   const SettingsScreens({Key? key}) : super(key: key);
 
   @override
-  _SettingsScreensState createState() => _SettingsScreensState();
+  SettingsScreensState createState() => SettingsScreensState();
 }
 
-class _SettingsScreensState extends State<SettingsScreens> {
+class SettingsScreensState extends State<SettingsScreens> {
   TimeOfDay? selectedTimeMorning;
   TimeOfDay? selectedTimeEvening;
 
@@ -306,10 +306,8 @@ class _SettingsScreensState extends State<SettingsScreens> {
                   value: isDarkMode,
                   sunColor: Colors.amber,
                   moonColor: AppColors.primaryColor,
-                  dayColor: AppColors
-                      .primaryColor, // Replace with your defined day color
-                  nightColor:
-                      Colors.black26, // Replace with your defined night color
+                  dayColor: AppColors.primaryColor,
+                  nightColor: Colors.black26,
                   onChanged: (value) {
                     setState(() {
                       isDarkMode = value;
@@ -318,7 +316,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                 ),
               ),
               const Flexible(
-                flex: 14, // Adjust the flex value as needed
+                flex: 14,
                 child: RowWithTextAndIcon(
                   'الوضع الليلي',
                   Icons.wb_sunny_rounded,
