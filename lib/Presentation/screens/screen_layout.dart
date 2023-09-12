@@ -29,7 +29,7 @@ class ScreenLayout extends StatelessWidget {
               items: cubit.bottomItems,
               currentIndex: cubit.index,
               selectedItemColor:
-                  isDarkMode ? const Color(0xff0c8ee1) : Colors.white,
+                  isDarkMode ? const Color(0xff0c8ee1) : AppColors.primaryColor,
               onTap: (index) {
                 cubit.changeIndex(index);
               }),
