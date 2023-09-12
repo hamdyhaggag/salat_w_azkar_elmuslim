@@ -124,7 +124,7 @@ class SettingsScreensState extends State<SettingsScreens> {
                   padding: const EdgeInsets.only(left: 17),
                   child: AppText(
                     selectedTimeMorning != null
-                        ? DateFormat('hh:mm a').format(
+                        ? DateFormat('hh:mma').format(
                             DateTime(
                               0,
                               1,
@@ -182,7 +182,7 @@ class SettingsScreensState extends State<SettingsScreens> {
                   padding: const EdgeInsets.only(left: 17),
                   child: AppText(
                     selectedTimeEvening != null
-                        ? DateFormat('hh:mm a').format(
+                        ? DateFormat('hh:mma ').format(
                             DateTime(
                               0,
                               1,
