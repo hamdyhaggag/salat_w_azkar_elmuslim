@@ -111,7 +111,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                         children: [
                                           Opacity(
                                             opacity: isDarkMode
-                                                ? 0.2
+                                                ? 0.3
                                                 : 1.0, // Adjust the opacity as needed
                                             child: Image.asset(
                                               isDarkMode
