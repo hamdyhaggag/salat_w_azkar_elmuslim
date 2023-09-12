@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
-
-import 'package:salat_w_azkar_elmuslim/Data/Model/times_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Model/times_model.dart';
 
 class CacheHelper {
   static SharedPreferences? sharedPreferences;

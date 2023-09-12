@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_1.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_10.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_2.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_3.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_4.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_5.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_6.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_7.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_8.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel_9.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_1.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_10.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_2.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_3.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_4.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_5.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_6.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_7.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_8.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Travel_Azkar/travel_9.dart';
 
 import '../../../Widgets/custom_app_bar.dart';
 import '../../../Widgets/custom_folder_row.dart';

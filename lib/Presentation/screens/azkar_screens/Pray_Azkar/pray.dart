@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/azan/azan.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_10.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_11.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_12.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_13.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_14.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_15.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_16.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_17.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_18.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_3.dart.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_4.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_5.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_6.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_7.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_8.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray_9.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_10.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_11.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_12.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_13.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_14.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_15.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_16.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_17.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_18.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_3.dart.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_4.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_5.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_6.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_7.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_8.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/pray_9.dart';
 
 import '../../../Widgets/custom_app_bar.dart';
 import '../../../Widgets/custom_folder_row.dart';
+import 'Wodoo/wodoo.dart';
+import 'azan/azan.dart';
 
 class PrayAzkar extends StatelessWidget {
   final String title;

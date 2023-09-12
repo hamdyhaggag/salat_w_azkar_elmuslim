@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/Ahadith_screen/Ahadith1.dart';
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
+import 'Ahadith_screen/Ahadith1.dart';
 import 'Ahadith_screen/Ahadith10.dart';
 import 'Ahadith_screen/Ahadith11.dart';
 import 'Ahadith_screen/Ahadith12.dart';

@@ -7,16 +7,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/settings_screen.dart';
 import 'package:intl/intl.dart';
-import 'package:salat_w_azkar_elmuslim/main.dart';
 import '../../../constants/colors.dart';
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
+import '../../Data/Web_Services/cache_helper.dart';
 import '../../Data/Web_Services/functions.dart';
 import '../../constants/app_text.dart';
 import '../Widgets/widgets.dart';
+import 'SettingsScreen/settings_screen.dart';
 
 class TimingsScreen extends StatefulWidget {
   const TimingsScreen({Key? key}) : super(key: key);

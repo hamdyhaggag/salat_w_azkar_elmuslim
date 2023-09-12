@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../constants/colors.dart';
-
 import '../../Widgets/custom_app_bar.dart';
 
 class PrivacyPolicy extends StatelessWidget {
@@ -12,7 +11,6 @@ class PrivacyPolicy extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
       appBar: const CustomAppBar(title: 'سياسة الخصوصية'),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),

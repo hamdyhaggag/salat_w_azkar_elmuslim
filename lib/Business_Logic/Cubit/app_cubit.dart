@@ -4,17 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/ahadith_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/qibla_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/dio_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Model/times_model.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/sebha_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/timings_screen.dart';
-import 'package:salat_w_azkar_elmuslim/main.dart';
-
 import '../../Data/Model/direction_model.dart';
+import '../../Data/Model/times_model.dart';
+import '../../Data/Web_Services/cache_helper.dart';
+import '../../Data/Web_Services/dio_helper.dart';
+import '../../Presentation/screens/ahadith_screen.dart';
+import '../../Presentation/screens/azkar_screen.dart';
+import '../../Presentation/screens/qibla_screen.dart';
+import '../../Presentation/screens/sebha_screen.dart';
+import '../../Presentation/screens/timings_screen.dart';
+import '../../main.dart';
 import 'app_states.dart';
 
 class AppCubit extends Cubit<AppStates> {

@@ -2,10 +2,10 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/onboarding_screen.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
-import 'package:salat_w_azkar_elmuslim/main.dart';
+import 'package:tafakkur/Presentation/screens/screen_layout.dart';
+import '../../Data/Web_Services/functions.dart';
+import '../../main.dart';
+import '../onBoarading/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

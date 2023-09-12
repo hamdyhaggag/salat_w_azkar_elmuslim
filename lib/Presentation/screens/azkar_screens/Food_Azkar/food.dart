@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food_1.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food_2.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food_3.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food_4.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food_5.dart';
 import '../../../Widgets/custom_app_bar.dart';
 import '../../../Widgets/custom_folder_row.dart';
+import 'food_1.dart';
+import 'food_2.dart';
+import 'food_3.dart';
+import 'food_4.dart';
+import 'food_5.dart';
 
 class FoodAzkar extends StatelessWidget {
   final String title;

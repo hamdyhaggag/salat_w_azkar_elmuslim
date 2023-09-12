@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/azan/azan1.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/azan/azan2.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/azan/azan3.dart';
 
 import '../../../../Widgets/custom_app_bar.dart';
 import '../../../../Widgets/custom_folder_row.dart';
+import 'azan1.dart';
+import 'azan2.dart';
+import 'azan3.dart';
 
 class Azan extends StatelessWidget {
   final String title;

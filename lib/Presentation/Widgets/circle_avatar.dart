@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/Business_Logic/Cubit/app_cubit.dart';
-import 'package:salat_w_azkar_elmuslim/Business_Logic/Cubit/app_states.dart';
 import '../../../constants/colors.dart';
+import '../../Business_Logic/Cubit/app_cubit.dart';
+import '../../Business_Logic/Cubit/app_states.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({super.key, this.title});

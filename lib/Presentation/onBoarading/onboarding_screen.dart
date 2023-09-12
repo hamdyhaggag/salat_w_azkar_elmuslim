@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/cache_helper.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/onBoarading/size_config.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/screen_layout.dart';
-
+import 'package:tafakkur/Presentation/onBoarading/size_config.dart';
+import '../../Data/Web_Services/cache_helper.dart';
+import '../../Data/Web_Services/functions.dart';
+import '../screens/screen_layout.dart';
 import 'onboarding_contents.dart';
 
 class OnboardingScreen extends StatefulWidget {

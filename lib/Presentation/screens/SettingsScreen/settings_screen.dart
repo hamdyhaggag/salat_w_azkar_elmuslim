@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/constants/colors.dart';
+import '../../../constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_folder_row.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
@@ -28,8 +28,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
     const androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'your_channel_id',
       'your_channel_name',
-      channelDescription:
-          'your_channel_description', // Use named argument for channel description
+      channelDescription: 'your_channel_description',
       importance: Importance.max,
       priority: Priority.high,
       showWhen: false,
@@ -55,13 +54,10 @@ class _SettingsScreensState extends State<SettingsScreens> {
     );
   }
 
-  bool val = false; // Define 'val' as a boolean variable and initialize it
-
+  bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: isDarkMode ? Colors.black26 : Colors.white,
       appBar: const CustomAppBar(title: 'الإعدادات'),
       body: Column(
         children: <Widget>[
@@ -307,7 +303,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                 scale: 0.37,
                 child: DayNightSwitch(
                   size: const Size(125, 45),
-                  value: val,
+                  value: isDarkMode,
                   sunColor: Colors.amber,
                   moonColor: AppColors.primaryColor,
                   dayColor: AppColors
@@ -316,7 +312,7 @@ class _SettingsScreensState extends State<SettingsScreens> {
                       Colors.black26, // Replace with your defined night color
                   onChanged: (value) {
                     setState(() {
-                      val = value;
+                      isDarkMode = value;
                     });
                   },
                 ),
@@ -325,12 +321,12 @@ class _SettingsScreensState extends State<SettingsScreens> {
                 flex: 14, // Adjust the flex value as needed
                 child: RowWithTextAndIcon(
                   'الوضع الليلي',
-                  Icons.notifications_active_rounded,
+                  Icons.wb_sunny_rounded,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0.h),
           Container(
             height: 2,
             width: 420,

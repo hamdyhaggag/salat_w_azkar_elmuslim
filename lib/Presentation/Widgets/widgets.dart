@@ -3,18 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salat_w_azkar_elmuslim/constants/app_text.dart';
-import 'package:salat_w_azkar_elmuslim/main.dart';
 
 import '../../../constants/colors.dart';
-import 'package:salat_w_azkar_elmuslim/Data/Web_Services/functions.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/app_info.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/SettingsScreen/privacy_policy.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../Business_Logic/Cubit/app_cubit.dart';
 import '../../Business_Logic/Cubit/app_states.dart';
+import '../../Data/Web_Services/functions.dart';
+import '../../constants/app_text.dart';
+import '../../main.dart';
+import '../screens/SettingsScreen/app_info.dart';
+import '../screens/SettingsScreen/privacy_policy.dart';
 
 Widget prayTimeRow({
   required String en,

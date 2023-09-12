@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Food_Azkar/food.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Sleep_Azkar/sleep.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Travel_Azkar/travel.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/mix_Azkar/collection.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/evening.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/morning_view.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/pray.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/wake.dart';
 
 import '../Widgets/azkar_button.dart';
 import '../Widgets/custom_app_bar.dart';
+import 'azkar_screens/Food_Azkar/food.dart';
+import 'azkar_screens/Pray_Azkar/pray.dart';
+import 'azkar_screens/Sleep_Azkar/sleep.dart';
+import 'azkar_screens/Travel_Azkar/travel.dart';
 import 'azkar_screens/dead.dart';
+import 'azkar_screens/evening.dart';
+import 'azkar_screens/mix_Azkar/collection.dart';
+import 'azkar_screens/morning_view.dart';
 import 'azkar_screens/quran.dart';
+import 'azkar_screens/wake.dart';
 import 'motafarekkat_screen/Roqia/roqia.dart';
 import 'motafarekkat_screen/nabawi_Azkar.dart';
 import 'motafarekkat_screen/plus.dart';

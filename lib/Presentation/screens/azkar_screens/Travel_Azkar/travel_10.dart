@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/Widgets/custom_app_bar.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/Widgets/custom_container.dart';
+
+import '../../../Widgets/custom_app_bar.dart';
+import '../../../Widgets/custom_container.dart';
 
 class Travel10 extends StatelessWidget {
   const Travel10({super.key});

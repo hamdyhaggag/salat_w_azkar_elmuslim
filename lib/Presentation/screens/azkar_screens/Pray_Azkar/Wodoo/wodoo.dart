@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo1.dart';
-import 'package:salat_w_azkar_elmuslim/Presentation/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo2.dart';
-
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo1.dart';
+import 'package:tafakkur/Presentation/screens/azkar_screens/Pray_Azkar/Wodoo/wodoo2.dart';
 import '../../../../Widgets/custom_app_bar.dart';
 import '../../../../Widgets/custom_folder_row.dart';
 
