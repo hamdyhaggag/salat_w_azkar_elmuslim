@@ -188,7 +188,7 @@ Donate(context) {
             children: <Widget>[
               Center(
                 child: buildRow(
-                  FontAwesomeIcons.circleDollarToSlot,
+                  FontAwesomeIcons.moneyCheckDollar,
                   'https://www.buymeacoffee.com/hamdyhaggag74',
                   'Buy Me A Coffee',
                   isDarkMode ? Colors.white : AppColors.primaryColor,
@@ -197,7 +197,7 @@ Donate(context) {
               const SizedBox(height: 10),
               Center(
                 child: buildRow(
-                  FontAwesomeIcons.circleDollarToSlot,
+                  FontAwesomeIcons.paypal,
                   'https://www.paypal.com/paypalme/hamdyhaggag74',
                   'paypal',
                   isDarkMode ? Colors.white : AppColors.primaryColor,

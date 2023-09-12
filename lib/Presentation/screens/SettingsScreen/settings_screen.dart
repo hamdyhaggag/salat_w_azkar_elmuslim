@@ -134,7 +134,9 @@ class SettingsScreensState extends State<SettingsScreens> {
                       : 'اختر التوقيت',
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
-                  color: AppColors.primaryColor,
+                  color: isDarkModee
+                      ? const Color(0xff0c8ee1)
+                      : AppColors.primaryColor,
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
@@ -187,7 +189,9 @@ class SettingsScreensState extends State<SettingsScreens> {
                       : 'اختر التوقيت',
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
-                  color: AppColors.primaryColor,
+                  color: isDarkModee
+                      ? const Color(0xff0c8ee1)
+                      : AppColors.primaryColor,
                   decoration: TextDecoration.underline,
                 ),
                 SizedBox(
@@ -310,7 +314,9 @@ class SettingsScreensState extends State<SettingsScreens> {
                   value: isDarkMode,
                   sunColor: isDarkModee ? Colors.amber : Colors.amber,
                   moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
-                  dayColor: AppColors.primaryColor,
+                  dayColor: isDarkModee
+                      ? const Color(0xff0c8ee1)
+                      : AppColors.primaryColor,
                   nightColor: isDarkModee ? Colors.black26 : Colors.black26,
                   onChanged: (value) {
                     setState(() {
