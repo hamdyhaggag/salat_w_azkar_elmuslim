@@ -120,31 +120,34 @@ class SettingsScreensState extends State<SettingsScreens> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                AppText(
-                  selectedTimeMorning != null
-                      ? DateFormat('hh:mm a').format(
-                          DateTime(
-                            0,
-                            1,
-                            1,
-                            selectedTimeMorning!.hour,
-                            selectedTimeMorning!.minute,
-                          ),
-                        )
-                      : 'اختر التوقيت',
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: isDarkModee
-                      ? const Color(0xff0c8ee1)
-                      : AppColors.primaryColor,
-                  decoration: TextDecoration.underline,
+                Padding(
+                  padding: const EdgeInsets.only(left: 17),
+                  child: AppText(
+                    selectedTimeMorning != null
+                        ? DateFormat('hh:mm a').format(
+                            DateTime(
+                              0,
+                              1,
+                              1,
+                              selectedTimeMorning!.hour,
+                              selectedTimeMorning!.minute,
+                            ),
+                          )
+                        : 'اختر التوقيت',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: isDarkModee
+                        ? const Color(0xff0c8ee1)
+                        : AppColors.primaryColor,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-                SizedBox(
-                  width: 125.w,
-                ),
-                const RowWithTextAndIcon(
-                  'التنبية لأذكار الصباح',
-                  Icons.sunny,
+                const Flexible(
+                  flex: 8,
+                  child: RowWithTextAndIcon(
+                    'التنبية لأذكار الصباح',
+                    Icons.sunny,
+                  ),
                 ),
               ],
             ),
@@ -175,31 +178,34 @@ class SettingsScreensState extends State<SettingsScreens> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                AppText(
-                  selectedTimeEvening != null
-                      ? DateFormat('hh:mm a').format(
-                          DateTime(
-                            0,
-                            1,
-                            1,
-                            selectedTimeEvening!.hour,
-                            selectedTimeEvening!.minute,
-                          ),
-                        )
-                      : 'اختر التوقيت',
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: isDarkModee
-                      ? const Color(0xff0c8ee1)
-                      : AppColors.primaryColor,
-                  decoration: TextDecoration.underline,
+                Padding(
+                  padding: const EdgeInsets.only(left: 17),
+                  child: AppText(
+                    selectedTimeEvening != null
+                        ? DateFormat('hh:mm a').format(
+                            DateTime(
+                              0,
+                              1,
+                              1,
+                              selectedTimeEvening!.hour,
+                              selectedTimeEvening!.minute,
+                            ),
+                          )
+                        : 'اختر التوقيت',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: isDarkModee
+                        ? const Color(0xff0c8ee1)
+                        : AppColors.primaryColor,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-                SizedBox(
-                  width: 120.w,
-                ),
-                const RowWithTextAndIcon(
-                  'التنبية لأذكار المساء',
-                  Icons.dark_mode,
+                const Flexible(
+                  flex: 8,
+                  child: RowWithTextAndIcon(
+                    'التنبية لأذكار المساء',
+                    Icons.dark_mode,
+                  ),
                 ),
               ],
             ),
