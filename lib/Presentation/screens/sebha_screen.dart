@@ -34,7 +34,7 @@ class Sebha extends StatelessWidget {
                     children: [
                       Image.asset(
                         isDarkMode
-                            ? 'assets/circledark.png' // Dark mode image
+                            ? 'assets/circle1.png' // Dark mode image
                             : 'assets/circle2.png', // Light mode image
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height / 1.7,
@@ -47,7 +47,9 @@ class Sebha extends StatelessWidget {
                           '${cubit.counter}',
                           style: TextStyle(
                             fontSize: cubit.counter < 1000 ? 65 : 45,
-                            color: AppColors.primaryColor,
+                            color: isDarkMode
+                                ? Colors.grey
+                                : AppColors.primaryColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
