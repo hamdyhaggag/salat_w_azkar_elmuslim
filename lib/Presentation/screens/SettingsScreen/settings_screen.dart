@@ -216,6 +216,40 @@ class SettingsScreensState extends State<SettingsScreens> {
             width: 420.w,
             color: colorWithOpacity,
           ),
+          Row(
+            children: [
+              Container(),
+              Transform.scale(
+                scale: 0.37,
+                child: DayNightSwitch(
+                  size: Size(120.w, 35.h),
+                  value: isDarkMode,
+                  sunColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
+                  moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
+                  dayColor: isDarkModee ? Colors.black26 : Colors.black26,
+                  nightColor: isDarkModee ? Colors.black26 : Colors.black26,
+                  onChanged: (value) {
+                    setState(() {
+                      isDarkMode = value;
+                    });
+                  },
+                ),
+              ),
+              const Flexible(
+                flex: 14,
+                child: RowWithTextAndIcon(
+                  'تفعيل الوضع الليلي',
+                  Icons.wb_sunny_rounded,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 7.0.h),
+          Container(
+            height: 2.h,
+            width: 420.w,
+            color: colorWithOpacity,
+          ),
           //////////////////////////////////////
 
           InkWell(
@@ -304,41 +338,6 @@ class SettingsScreensState extends State<SettingsScreens> {
             ),
           ),
           SizedBox(height: 10.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
-
-          Row(
-            children: [
-              Container(),
-              Transform.scale(
-                scale: 0.37,
-                child: DayNightSwitch(
-                  size: Size(95.w, 35.h),
-                  value: isDarkMode,
-                  sunColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
-                  moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
-                  dayColor: isDarkModee ? Colors.black26 : Colors.black26,
-                  nightColor: isDarkModee ? Colors.black26 : Colors.black26,
-                  onChanged: (value) {
-                    setState(() {
-                      isDarkMode = value;
-                    });
-                  },
-                ),
-              ),
-              const Flexible(
-                flex: 14,
-                child: RowWithTextAndIcon(
-                  'الوضع الليلي',
-                  Icons.wb_sunny_rounded,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 7.0.h),
           Container(
             height: 2.h,
             width: 420.w,

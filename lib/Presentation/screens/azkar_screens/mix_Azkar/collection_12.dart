@@ -14,7 +14,7 @@ class Mix12 extends StatelessWidget {
           children: [
             CustomContainer(
                 title:
-                    'اللهم إني أ عوذ بك أن أشرك بك وأنا أعلم ، وأستغفرك لما لا أعلم',
+                    'اللهم إني أعوذ بك أن أشرك بك وأنا أعلم ، وأستغفرك لما لا أعلم',
                 maxValue: 1,
                 initialCounterValue: 0),
             SizedBox(height: 15),
