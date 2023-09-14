@@ -17,6 +17,8 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: verticalPadding ?? 15,
@@ -25,7 +27,7 @@ class AppButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: MaterialButton(
-          color: AppColors.primaryColor,
+          color: isDarkMode ? const Color(0xff0c8ee1) : AppColors.primaryColor,
           onPressed: onPressed,
           child: Padding(
             padding: const EdgeInsets.all(8.0),

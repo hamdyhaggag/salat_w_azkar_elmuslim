@@ -14,6 +14,8 @@ class CustomCircleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return BlocBuilder<AppCubit, AppStates>(
       builder: (context, state) {
         final cubit = AppCubit.get(context);
@@ -23,7 +25,9 @@ class CustomCircleAvatar extends StatelessWidget {
           },
           child: CircleAvatar(
             backgroundColor: cubit.maxCounter == int.parse(title ?? '9999')
-                ? AppColors.primaryColor
+                ? isDarkMode
+                    ? const Color(0xff0c8ee1)
+                    : AppColors.primaryColor
                 : AppColors.greyColor,
             radius: 24,
             child: title == null
