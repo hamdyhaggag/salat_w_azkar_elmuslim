@@ -6,10 +6,12 @@ import '../../../constants/colors.dart';
 class CircleProgressPainter extends CustomPainter {
   final double progress;
   final bool showCheckIcon;
+  final bool isDarkMode; // Add isDarkMode as a parameter
 
   CircleProgressPainter({
     required this.progress,
     required this.showCheckIcon,
+    required this.isDarkMode, // Initialize isDarkMode when creating the painter
   });
 
   @override
@@ -19,7 +21,7 @@ class CircleProgressPainter extends CustomPainter {
 
     // Draw the progress arc
     final progressPaint = Paint()
-      ..color = AppColors.primaryColor
+      ..color = isDarkMode ? const Color(0xff0c8ee1) : AppColors.primaryColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 4;
 
@@ -34,7 +36,6 @@ class CircleProgressPainter extends CustomPainter {
     // Draw the check icon if needed
     if (showCheckIcon) {
       final iconPaint = Paint()..color = Colors.transparent;
-      ;
 
       final iconPath = Path()
         ..moveTo(center.dx - 10, center.dy)

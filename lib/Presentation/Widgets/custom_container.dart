@@ -120,7 +120,9 @@ class _CustomContainerState extends State<CustomContainer> {
                             left: (300 - 54) / 2,
                             child: CircleAvatar(
                               backgroundColor: showCheckIcon
-                                  ? AppColors.primaryColor
+                                  ? isDarkMode
+                                      ? const Color(0xff0c8ee1)
+                                      : AppColors.primaryColor
                                   : const Color.fromARGB(255, 195, 205, 212),
                               radius: 27,
                               child: showCheckIcon
@@ -144,6 +146,7 @@ class _CustomContainerState extends State<CustomContainer> {
                             left: (300 - 54) / 2,
                             child: CustomPaint(
                               painter: CircleProgressPainter(
+                                isDarkMode: isDarkMode,
                                 progress: counterValue / widget.maxValue,
                                 showCheckIcon: showCheckIcon,
                               ),
