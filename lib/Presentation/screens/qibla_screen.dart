@@ -50,15 +50,18 @@ class QiblaScreenState extends State<QiblaScreen> {
                         children: [
                           if (AppCubit.get(context).directionModel == null)
                             Image.asset(
-                              'assets/404.gif',
+                              'assets/error404.png',
                               width: MediaQuery.of(context).size.width * 0.8,
-                              height: MediaQuery.of(context).size.height * 0.5,
+                              height: MediaQuery.of(context).size.height * 0.6,
                             ),
                           AppText(
                             "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
                             align: TextAlign.center,
                             fontSize: 18,
-                            color: AppColors.primaryColor,
+                            fontWeight: FontWeight.bold,
+                            color: isDarkMode
+                                ? Colors.white
+                                : AppColors.primaryColor,
                           ),
                         ],
                       ),

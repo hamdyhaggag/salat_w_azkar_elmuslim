@@ -76,7 +76,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                 children: [
                                   if (appCubit.errorStatus)
                                     Image.asset(
-                                      'assets/404.gif',
+                                      'assets/error404.png',
                                       width: MediaQuery.of(context).size.width *
                                           0.8,
                                       height:
@@ -87,6 +87,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                     "تأكد من الاتصال بالإنترنت \n و تفعيل الموقع",
                                     align: TextAlign.center,
                                     fontSize: 18,
+                                    fontWeight: FontWeight.bold,
                                     color: isDarkMode
                                         ? Colors.white
                                         : AppColors.primaryColor,
