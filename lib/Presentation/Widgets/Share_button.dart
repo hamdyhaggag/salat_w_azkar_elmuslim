@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 
+import '../../constants/app_text.dart';
 import '../../constants/colors.dart';
 
 class ShareButton extends StatelessWidget {
@@ -134,24 +135,58 @@ class ShareButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Padding(
       padding: const EdgeInsets.only(left: 0, bottom: 10),
       child: Row(
         children: [
-          IconButton(
-            icon: Icon(
-              Icons.share,
-              color: isDarkMode ? Colors.white : AppColors.primaryColor,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: PopupMenuButton<int>(
+              elevation: 0,
+              shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(3)),
+              icon: Icon(
+                Icons.share,
+                color: isDarkMode ? Colors.white : AppColors.primaryColor,
+              ),
+              onSelected: (value) {
+                if (value == 0) {
+                  shareText();
+                } else if (value == 2) {
+                  shareTextAsImage();
+                }
+              },
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem<int>(
+                    value: 0,
+                    child: Center(
+                      child: AppText(
+                        'شارك النص',
+                        color:
+                            isDarkMode ? Colors.white : AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 1,
+                    child: PopupMenuDivider(),
+                  ),
+                  PopupMenuItem<int>(
+                    value: 2,
+                    child: Center(
+                      child: AppText(
+                        'شارك النص كصورة',
+                        color:
+                            isDarkMode ? Colors.white : AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                ];
+              },
             ),
-            onPressed: shareText,
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.image,
-              color: isDarkMode ? Colors.white : AppColors.primaryColor,
-            ),
-            onPressed: shareTextAsImage,
-          ),
+          )
         ],
       ),
     );
