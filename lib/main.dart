@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,6 +17,16 @@ import 'Presentation/screens/splash_screen.dart';
 import 'bloc_observer/bloc_observer.dart';
 import 'firebase_options.dart';
 
+TimeOfDay? stringToTimeOfDay(String timeString) {
+  if (timeString.isNotEmpty) {
+    return TimeOfDay(
+        hour: int.parse(timeString.split(":")[0]),
+        minute: int.parse(timeString.split(":")[1]));
+  } else {
+    return null;
+  }
+}
+
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   if (kDebugMode) {
     print(message.messageId);
@@ -24,6 +36,10 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 bool isEnterBefore = false;
 int radioValue = 5;
 bool isLight = CacheHelper.getBoolean(key: 'isLight');
+TimeOfDay? selectedTimeMorning;
+TimeOfDay? selectedTimeEvening;
+String? selectedMorning;
+String? selectedEvening;
 
 var lightThemeData = ThemeData(
   primaryColor: Colors.blue,
@@ -50,6 +66,14 @@ void main() async {
 
   radioValue = CacheHelper.getInteger(key: 'value');
   isEnterBefore = CacheHelper.getBoolean(key: 'isEnterBefore');
+  selectedMorning = CacheHelper.getString(key: 'Morning');
+  selectedEvening = CacheHelper.getString(key: 'Evening');
+
+  log(selectedMorning!);
+  log(selectedEvening!);
+
+  selectedTimeMorning = stringToTimeOfDay(selectedMorning!);
+  selectedTimeEvening = stringToTimeOfDay(selectedEvening!);
 
   DioHelper.init();
 

@@ -4,6 +4,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:tafakkur/Data/Web_Services/cache_helper.dart';
+import 'package:tafakkur/main.dart';
 import '../../../constants/app_text.dart';
 import '../../../constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
@@ -20,9 +22,6 @@ class SettingsScreens extends StatefulWidget {
 }
 
 class SettingsScreensState extends State<SettingsScreens> {
-  TimeOfDay? selectedTimeMorning;
-  TimeOfDay? selectedTimeEvening;
-
   Future<void> scheduleLocalNotification(
       TimeOfDay time, String title, String content) async {
     final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
@@ -111,10 +110,14 @@ class SettingsScreensState extends State<SettingsScreens> {
                 setState(() {
                   selectedTimeMorning = pickedTime;
                 });
+                CacheHelper.saveData(
+                    key: 'Morning',
+                    value:
+                        "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}");
 
-                // Schedule a local notification for morning.
+                /*      // Schedule a local notification for morning.
                 scheduleLocalNotification(selectedTimeMorning!, 'أذكار الصباح',
-                    'التنبية بأذكار الصباح');
+                    'التنبية بأذكار الصباح');*/
               }
             },
             child: Row(
@@ -169,10 +172,13 @@ class SettingsScreensState extends State<SettingsScreens> {
                 setState(() {
                   selectedTimeEvening = pickedTime;
                 });
-
-                // Schedule a local notification for evening.
+                CacheHelper.saveData(
+                    key: 'Evening',
+                    value:
+                        "${selectedTimeEvening!.hour}:${selectedTimeEvening!.minute}");
+                /*    // Schedule a local notification for evening.
                 scheduleLocalNotification(selectedTimeEvening!, 'أذكار المساء',
-                    'التنبية بأذكار المساء');
+                    'التنبية بأذكار المساء');*/
               }
             },
             child: Row(
