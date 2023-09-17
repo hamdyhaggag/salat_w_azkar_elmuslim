@@ -11,41 +11,55 @@ class ShareButton extends StatelessWidget {
   ShareButton(this.textToShare, {Key? key});
 
   Future<void> shareTextAsImage() async {
-    // Create a picture recorder
-    final recorder = ui.PictureRecorder();
-    final canvas = Canvas(
-        recorder, Rect.fromPoints(const Offset(0, 0), const Offset(600, 200)));
+    // Define padding values
+    double verticalPadding = 50;
+    double horizontalPadding = 50;
 
-    // Background color
-    final backgroundPaint = Paint()..color = Colors.white;
-    canvas.drawRect(Rect.fromPoints(const Offset(0, 0), const Offset(600, 200)),
-        backgroundPaint);
+    // Define the maximum number of lines for the text
+    int maxLines = 10; // Adjust as needed
 
-    // Text styling
+    // Create a text painter with maxLines property
     final textPainter = TextPainter(
       text: TextSpan(
         text: textToShare,
         style: const TextStyle(
-          color: Colors.black,
-          fontSize: 24.0,
-        ),
+            color: Colors.white, fontSize: 24.0, fontFamily: 'Cairo'),
       ),
-      textDirection: TextDirection.ltr,
-    )..layout(minWidth: 600, maxWidth: 600);
+      textDirection: TextDirection.rtl,
+      maxLines: maxLines,
+    );
 
-    // Position the text
-    textPainter.paint(canvas, const Offset(10, 10));
+    // Layout the text within the available width while respecting maxLines
+    textPainter.layout(maxWidth: 600 - (2 * horizontalPadding));
 
-    // Create an image from the recorder
-    final img = await recorder.endRecording().toImage(600, 200);
+    // Calculate the image width and height based on the text size and padding
+    double imageWidth = textPainter.width + (2 * horizontalPadding);
+    double imageHeight = textPainter.height + (2 * verticalPadding);
+
+    // Create a picture recorder
+    final recorder = ui.PictureRecorder();
+    final canvas = Canvas(recorder,
+        Rect.fromPoints(Offset.zero, Offset(imageWidth, imageHeight)));
+
+    // Background color
+    final backgroundPaint = Paint()..color = AppColors.primaryColor;
+    canvas.drawRect(
+        Rect.fromPoints(Offset.zero, Offset(imageWidth, imageHeight)),
+        backgroundPaint);
+
+    // Position the text with padding
+    textPainter.paint(canvas, Offset(horizontalPadding, verticalPadding));
+
+    final img = await recorder
+        .endRecording()
+        .toImage(imageWidth.toInt(), imageHeight.toInt());
     final byteData = await img.toByteData(format: ui.ImageByteFormat.png);
     final buffer = byteData!.buffer.asUint8List();
 
-    // Share the image using esys_flutter_share_plus
     await Share.file(
       'شارك النص كصورة',
       'share.png',
-      Uint8List.fromList(buffer), // Convert to Uint8List
+      Uint8List.fromList(buffer),
       'image/png',
     );
   }
