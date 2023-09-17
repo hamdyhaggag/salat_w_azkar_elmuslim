@@ -21,9 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return AppBar(
-      backgroundColor: isDarkMode
-          ? Colors.transparent
-          : Colors.white, // Set background color based on dark mode
+      backgroundColor: isDarkMode ? Colors.transparent : Colors.white,
       elevation: 0,
       title: Align(
         alignment: isHome

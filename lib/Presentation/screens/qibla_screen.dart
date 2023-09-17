@@ -87,7 +87,6 @@ class QiblaScreenState extends State<QiblaScreen> {
   Widget _buildCompass() {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    // Adjust this value to control rotation speed
 
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
@@ -110,8 +109,7 @@ class QiblaScreenState extends State<QiblaScreen> {
               );
             }
 
-            double? direction =
-                snapshot.data?.heading; // Use null safe operator
+            double? direction = snapshot.data?.heading;
             double? rotatedAngle;
 
             if (direction != null) {
@@ -127,7 +125,6 @@ class QiblaScreenState extends State<QiblaScreen> {
                   (direction * (math.pi / 180) * -1) * rotationSpeedFactor;
             }
 
-            // if direction is null, then device does not support this sensor
             if (direction == null) {
               return Center(
                 child:
@@ -146,13 +143,11 @@ class QiblaScreenState extends State<QiblaScreen> {
                     color: Color(0xFFEBEBEB),
                   ),
                   child: Transform.rotate(
-                    angle: rotatedAngle ??
-                        0, // Use the rotatedAngle value if not null
+                    angle: rotatedAngle ?? 0,
                     child: Image.asset(
                       isDarkMode
                           ? 'assets/qibla_screen_dark.png'
-                          : // Dark mode image
-                          'assets/qibla_screen.png', // Light mode image
+                          : 'assets/qibla_screen.png',
                     ),
                   ),
                 ),

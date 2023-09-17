@@ -34,8 +34,8 @@ class Sebha extends StatelessWidget {
                     children: [
                       Image.asset(
                         isDarkMode
-                            ? 'assets/circle1.png' // Dark mode image
-                            : 'assets/circle2.png', // Light mode image
+                            ? 'assets/circle1.png'
+                            : 'assets/circle2.png',
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height / 1.7,
                         fit: BoxFit.cover,

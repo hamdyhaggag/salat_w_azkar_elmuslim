@@ -9,7 +9,7 @@ import 'package:tafakkur/main.dart';
 import '../../../constants/app_text.dart';
 import '../../../constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
-import '../../Widgets/custom_folder_row.dart';
+import '../../Widgets/custom_space.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
 import '../../Widgets/widgets.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -65,7 +65,6 @@ class SettingsScreensState extends State<SettingsScreens> {
       body: Column(
         children: <Widget>[
           SizedBox(height: 7.h),
-
           InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -75,13 +74,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               FontAwesomeIcons.house,
             ),
           ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
-
+          const CustomSpace(),
           InkWell(
             onTap: () {
               showMethods(context);
@@ -91,13 +84,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.timer,
             ),
           ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
-
+          const CustomSpace(),
           ///////////////////////
           InkWell(
             onTap: () async {
@@ -115,9 +102,9 @@ class SettingsScreensState extends State<SettingsScreens> {
                     value:
                         "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}");
 
-                /*      // Schedule a local notification for morning.
+                // Schedule a local notification for morning.
                 scheduleLocalNotification(selectedTimeMorning!, 'أذكار الصباح',
-                    'التنبية بأذكار الصباح');*/
+                    'التنبية بأذكار الصباح');
               }
             },
             child: Row(
@@ -155,12 +142,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               ],
             ),
           ),
-          SizedBox(height: 7.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
           InkWell(
             onTap: () async {
               final pickedTime = await showTimePicker(
@@ -176,9 +158,9 @@ class SettingsScreensState extends State<SettingsScreens> {
                     key: 'Evening',
                     value:
                         "${selectedTimeEvening!.hour}:${selectedTimeEvening!.minute}");
-                /*    // Schedule a local notification for evening.
+                // Schedule a local notification for evening.
                 scheduleLocalNotification(selectedTimeEvening!, 'أذكار المساء',
-                    'التنبية بأذكار المساء');*/
+                    'التنبية بأذكار المساء');
               }
             },
             child: Row(
@@ -216,12 +198,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               ],
             ),
           ),
-          SizedBox(height: 7.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
           Row(
             children: [
               Container(),
@@ -250,14 +227,8 @@ class SettingsScreensState extends State<SettingsScreens> {
               ),
             ],
           ),
-          SizedBox(height: 7.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
           //////////////////////////////////////
-
           InkWell(
             onTap: () {
               showappinfo(context);
@@ -267,12 +238,8 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.info,
             ),
           ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
+
           InkWell(
             onTap: () {
               showprivacy(context);
@@ -282,12 +249,8 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.privacy_tip_rounded,
             ),
           ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
+
           InkWell(
             onTap: () {
               shareFeedback(context);
@@ -297,12 +260,8 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.star,
             ),
           ),
-          SizedBox(height: 10.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
+
           InkWell(
             onTap: () {
               shareOptions(context);
@@ -312,12 +271,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.share,
             ),
           ),
-          SizedBox(height: 10.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
 
           InkWell(
             onTap: () {
@@ -328,12 +282,8 @@ class SettingsScreensState extends State<SettingsScreens> {
               Icons.mail_rounded,
             ),
           ),
-          SizedBox(height: 7.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
+
           InkWell(
             onTap: () {
               Donate(context);
@@ -343,12 +293,7 @@ class SettingsScreensState extends State<SettingsScreens> {
               FontAwesomeIcons.circleDollarToSlot,
             ),
           ),
-          SizedBox(height: 10.0.h),
-          Container(
-            height: 2.h,
-            width: 420.w,
-            color: colorWithOpacity,
-          ),
+          const CustomSpace(),
         ],
       ),
     );

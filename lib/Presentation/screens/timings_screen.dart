@@ -110,13 +110,11 @@ class _TimingsScreenState extends State<TimingsScreen> {
                                             AlignmentDirectional.bottomEnd,
                                         children: [
                                           Opacity(
-                                            opacity: isDarkMode
-                                                ? 0.3
-                                                : 1.0, // Adjust the opacity as needed
+                                            opacity: isDarkMode ? 0.3 : 1.0,
                                             child: Image.asset(
                                               isDarkMode
-                                                  ? 'assets/mousqblack.png' // Dark mode image
-                                                  : 'assets/mousq.png', // Light mode image
+                                                  ? 'assets/mousqblack.png'
+                                                  : 'assets/mousq.png',
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width,

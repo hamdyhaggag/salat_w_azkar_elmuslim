@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
                 width: 180.0,
               ),
             ),
-            const SizedBox(height: 45),
+            const SizedBox(height: 40),
             // App Name with Custom Font
 
             AnimatedBuilder(

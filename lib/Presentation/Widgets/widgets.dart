@@ -222,7 +222,7 @@ showappinfo(context) {
 }
 
 ///////////////////////////////
-///
+
 showAlertdialogExampleDidntused(context) {
   showDialog(
     context: context,
@@ -269,13 +269,12 @@ void shareOptions(BuildContext context) async {
   const String text = googlePlayUrl;
   const String subject = "  Tafakkur - تطبيق تَفكر";
 
-  // You can customize the sharing message as needed
   await Share.share(text, subject: subject);
 }
 
 ////////////////////////////////////////////////
 void openGooglePlayForFeedback() async {
-  const String packageName = 'com.tafakkur'; // Replace with your package name
+  const String packageName = 'com.tafakkur';
   const String googlePlayUrl = 'market://details?id=$packageName';
 
   final Uri googlePlayUri = Uri.parse(googlePlayUrl);
@@ -306,5 +305,3 @@ void sendEmail() async {
     throw 'Could not launch email';
   }
 }
-
-////////////////////////////////////////////////

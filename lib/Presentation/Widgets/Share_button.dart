@@ -16,9 +16,8 @@ class ShareButton extends StatelessWidget {
     double verticalPadding = 130;
     double horizontalPadding = 50;
 
-    int maxLines = 20; // Adjust as needed
+    int maxLines = 20;
 
-    // Create a text painter with maxLines property
     final textPainter = TextPainter(
       text: TextSpan(
         text: textToShare,
@@ -38,7 +37,6 @@ class ShareButton extends StatelessWidget {
     double imageWidth = textPainter.width + (2 * horizontalPadding);
     double imageHeight = textPainter.height + (3 * verticalPadding);
 
-    // Create a picture recorder
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(
       recorder,
@@ -51,7 +49,6 @@ class ShareButton extends StatelessWidget {
       backgroundPaint,
     );
 
-    // Load and draw the top image
     final topImage = await loadImage('assets/splash.png');
     if (topImage != null) {
       const topImageWidth = 800.0;
@@ -60,7 +57,7 @@ class ShareButton extends StatelessWidget {
       final topImageRect = Rect.fromCenter(
         center: Offset(
           imageWidth / 2,
-          topImageHeight / 2, // Adjust vertical position
+          topImageHeight / 2,
         ),
         width: topImageWidth,
         height: topImageHeight,
@@ -78,10 +75,10 @@ class ShareButton extends StatelessWidget {
 
     final bottomImage = await loadImage(
       'assets/nav2.png',
-    ); // Replace with your bottom image path
+    );
     if (bottomImage != null) {
       final aspectRatio = bottomImage.width / bottomImage.height;
-      const bottomImageWidth = 300.0; // Adjust as needed
+      const bottomImageWidth = 300.0;
       final bottomImageHeight = bottomImageWidth / aspectRatio;
 
       final bottomImageRect = Rect.fromCenter(
@@ -96,7 +93,6 @@ class ShareButton extends StatelessWidget {
         height: bottomImageHeight,
       );
 
-      // Draw the bottom image at the end of the text
       canvas.drawImageRect(
           bottomImage,
           Rect.fromLTRB(0, 0, bottomImage.width.toDouble(),
@@ -105,7 +101,6 @@ class ShareButton extends StatelessWidget {
           Paint());
     }
 
-    // Save the final image
     final img = await recorder.endRecording().toImage(
           imageWidth.toInt(),
           imageHeight.toInt(),
