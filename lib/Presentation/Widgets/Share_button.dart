@@ -152,7 +152,7 @@ class ShareButton extends StatelessWidget {
               onSelected: (value) {
                 if (value == 0) {
                   shareText();
-                } else if (value == 1) {
+                } else if (value == 2) {
                   shareTextAsImage();
                 }
               },
@@ -170,7 +170,7 @@ class ShareButton extends StatelessWidget {
                   ),
                   const PopupMenuDivider(),
                   PopupMenuItem<int>(
-                    value: 1,
+                    value: 2,
                     child: Center(
                       child: AppText(
                         'شارك النص كصورة',
