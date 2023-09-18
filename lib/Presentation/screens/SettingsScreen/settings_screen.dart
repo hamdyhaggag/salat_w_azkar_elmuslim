@@ -1,4 +1,3 @@
-import 'package:day_night_switch/day_night_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -199,35 +198,35 @@ class SettingsScreensState extends State<SettingsScreens> {
             ),
           ),
           const CustomSpace(),
-          Row(
-            children: [
-              Container(),
-              Transform.scale(
-                scale: 0.37,
-                child: DayNightSwitch(
-                  size: Size(120.w, 35.h),
-                  value: isDarkMode,
-                  sunColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
-                  moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
-                  dayColor: isDarkModee ? Colors.black26 : Colors.black26,
-                  nightColor: isDarkModee ? Colors.black26 : Colors.black26,
-                  onChanged: (value) {
-                    setState(() {
-                      isDarkMode = value;
-                    });
-                  },
-                ),
-              ),
-              const Flexible(
-                flex: 14,
-                child: RowWithTextAndIcon(
-                  'تفعيل الوضع الليلي',
-                  Icons.wb_sunny_rounded,
-                ),
-              ),
-            ],
-          ),
-          const CustomSpace(),
+          // Row(
+          //   children: [
+          //     Container(),
+          //     Transform.scale(
+          //       scale: 0.37,
+          //       child: DayNightSwitch(
+          //         size: Size(120.w, 35.h),
+          //         value: isDarkMode,
+          //         sunColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
+          //         moonColor: isDarkModee ? Colors.grey : AppColors.primaryColor,
+          //         dayColor: isDarkModee ? Colors.black26 : Colors.black26,
+          //         nightColor: isDarkModee ? Colors.black26 : Colors.black26,
+          //         onChanged: (value) {
+          //           setState(() {
+          //             isDarkMode = value;
+          //           });
+          //         },
+          //       ),
+          //     ),
+          //     const Flexible(
+          //       flex: 14,
+          //       child: RowWithTextAndIcon(
+          //         'تفعيل الوضع الليلي',
+          //         Icons.wb_sunny_rounded,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // const CustomSpace(),
           //////////////////////////////////////
           InkWell(
             onTap: () {

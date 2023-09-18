@@ -34,9 +34,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
         criticalAlert: false,
         provisional: false,
         sound: true);
-    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      print('User Granted Permission');
-    }
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {}
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       navigateTo(context, const TimingsScreen());
     });
@@ -175,7 +173,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
               color: Theme.of(context).brightness == Brightness.dark
                   ? Colors.white
                   : Colors.black54,
-              fontSize: 21,
+              fontSize: 20,
             ),
             SizedBox(
               width: 12.w,
@@ -197,7 +195,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
           color: Theme.of(context).brightness == Brightness.dark
               ? Colors.white
               : Colors.black54,
-          fontSize: 21,
+          fontSize: 20,
         ),
       ],
     );
@@ -224,15 +222,13 @@ class _TimingsScreenState extends State<TimingsScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
-              child: Text(
-                '  ${appCubit.timesModel!.data.date.readable} : آخر تحديث',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 19,
-                  fontFamily: 'Cairo',
-                  color: Colors.grey,
-                ),
+              child: AppText(
+                '    آخر تحديث :  ${appCubit.timesModel!.data.date.readable}',
+                align: TextAlign.center,
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                fontFamily: 'Cairo',
+                color: Colors.grey,
               ),
             ),
           ],

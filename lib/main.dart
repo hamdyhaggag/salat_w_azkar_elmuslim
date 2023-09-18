@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -81,7 +80,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => EasyDynamicThemeWidget(
         child: MyApp(
           isLight: isLight,
