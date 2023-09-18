@@ -17,6 +17,7 @@ import '../../Presentation/screens/sebha_screen.dart';
 import '../../Presentation/screens/timings_screen.dart';
 import '../../main.dart';
 import 'app_states.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
@@ -49,33 +50,75 @@ class AppCubit extends Cubit<AppStates> {
     emit(ChangeBottomNavState());
   }
 
-  List<BottomNavigationBarItem> bottomItems = [
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/compass.png"),
+  List<BottomNavigationBarItem> get bottomItems {
+    return [
+      BottomNavigationBarItem(
+        icon: ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            index == 0 ? AppColors.primaryColor : Colors.grey,
+            BlendMode.srcIn,
+          ),
+          child: SvgPicture.asset(
+            "assets/icon/Qibla.svg",
+            height: 24,
+          ),
         ),
-        label: 'القبلة'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/motafarrekat.png"),
+        label: 'القبلة',
+      ),
+      BottomNavigationBarItem(
+        icon: ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            index == 1 ? AppColors.primaryColor : Colors.grey,
+            BlendMode.srcIn, // This mode applies the color to the SVG icon.
+          ),
+          child: SvgPicture.asset(
+            "assets/icon/Ahadith.svg",
+            height: 24,
+          ),
         ),
-        label: 'الأربعين'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/azkar.png"),
+        label: 'الأربعين',
+      ),
+      BottomNavigationBarItem(
+        icon: ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            index == 2 ? AppColors.primaryColor : Colors.grey,
+            BlendMode.srcIn,
+          ),
+          child: SvgPicture.asset(
+            "assets/icon/Azkar.svg",
+            height: 24,
+          ),
         ),
-        label: 'الأذكار'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/tasbih.png"),
+        label: 'الأذكار',
+      ),
+      BottomNavigationBarItem(
+        icon: ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            index == 3 ? AppColors.primaryColor : Colors.grey,
+            BlendMode.srcIn,
+          ),
+          child: SvgPicture.asset(
+            "assets/icon/Tasbih.svg",
+            height: 24,
+          ),
         ),
-        label: 'السبحة'),
-    const BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/home.png"),
+        label: 'السبحة',
+      ),
+      BottomNavigationBarItem(
+        icon: ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            index == 4 ? AppColors.primaryColor : Colors.grey,
+            BlendMode.srcIn,
+          ),
+          child: SvgPicture.asset(
+            "assets/icon/Home.svg",
+            height: 24,
+          ),
         ),
-        label: 'الرئيسية'),
-  ];
+        label: 'الرئيسية',
+      ),
+    ];
+  }
 
   ////////////////////////////////////////////////////////////////////
 
