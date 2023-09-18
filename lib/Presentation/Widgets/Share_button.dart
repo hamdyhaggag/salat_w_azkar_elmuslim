@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:esys_flutter_share_plus/esys_flutter_share_plus.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
-import 'dart:typed_data';
-
 import '../../constants/app_text.dart';
 import '../../constants/colors.dart';
 
@@ -145,7 +143,8 @@ class ShareButton extends StatelessWidget {
             child: PopupMenuButton<int>(
               elevation: 0,
               shape: BeveledRectangleBorder(
-                  borderRadius: BorderRadius.circular(3)),
+                borderRadius: BorderRadius.circular(3),
+              ),
               icon: Icon(
                 Icons.share,
                 color: isDarkMode ? Colors.white : AppColors.primaryColor,
@@ -153,7 +152,7 @@ class ShareButton extends StatelessWidget {
               onSelected: (value) {
                 if (value == 0) {
                   shareText();
-                } else if (value == 2) {
+                } else if (value == 1) {
                   shareTextAsImage();
                 }
               },
@@ -169,10 +168,7 @@ class ShareButton extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const PopupMenuItem<int>(
-                    value: 1,
-                    child: PopupMenuDivider(),
-                  ),
+                  PopupMenuDivider(),
                   PopupMenuItem<int>(
                     value: 2,
                     child: Center(
