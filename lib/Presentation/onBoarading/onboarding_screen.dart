@@ -30,7 +30,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Color(0xfff3eded),
     Color(0xfff3eded),
     Color(0xfff3eded),
-    // Color(0xfff3eded),
   ];
 
   AnimatedContainer _buildDots({required int index}) {
@@ -63,6 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
                 controller: _controller,
+                reverse: true,
                 onPageChanged: (value) => setState(() => _currentPage = value),
                 itemCount: contents.length,
                 itemBuilder: (context, i) {
@@ -121,7 +121,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       contents.length,
-                      (index) => _buildDots(index: index),
+                      (index) => _buildDots(
+                          index:
+                              contents.length - index - 1), // Reverse the dots
                     ),
                   ),
                   _currentPage + 1 == contents.length
@@ -155,25 +157,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              TextButton(
-                                onPressed: () {
-                                  navigateTo(context, const ScreenLayout());
-                                  CacheHelper.saveData(
-                                      key: 'isEnterBefore', value: true);
-                                },
-                                style: TextButton.styleFrom(
-                                  elevation: 0,
-                                  textStyle: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: isSmallScreen ? 18 : 20,
-                                    fontFamily: 'Cairo',
-                                  ),
-                                ),
-                                child: const Text(
-                                  "التخطي",
-                                  style: TextStyle(color: Color(0xFF1E5A83)),
-                                ),
-                              ),
                               ElevatedButton(
                                 onPressed: () {
                                   _controller.nextPage(
@@ -197,6 +180,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   ),
                                 ),
                                 child: const Text("التالي"),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  navigateTo(context, const ScreenLayout());
+                                  CacheHelper.saveData(
+                                      key: 'isEnterBefore', value: true);
+                                },
+                                style: TextButton.styleFrom(
+                                  elevation: 0,
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: isSmallScreen ? 18 : 20,
+                                    fontFamily: 'Cairo',
+                                  ),
+                                ),
+                                child: const Text(
+                                  "التخطي",
+                                  style: TextStyle(color: Color(0xFF1E5A83)),
+                                ),
                               ),
                             ],
                           ),
