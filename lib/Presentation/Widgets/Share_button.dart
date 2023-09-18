@@ -168,9 +168,9 @@ class ShareButton extends StatelessWidget {
                       ),
                     ),
                   ),
-                  PopupMenuDivider(),
+                  const PopupMenuDivider(),
                   PopupMenuItem<int>(
-                    value: 2,
+                    value: 1,
                     child: Center(
                       child: AppText(
                         'شارك النص كصورة',
