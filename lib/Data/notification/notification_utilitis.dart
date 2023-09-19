@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'notification_button.dart';
 import 'notification_service.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class NotificationUtilitis extends StatelessWidget {
+  const NotificationUtilitis({super.key});
 
   @override
   Widget build(BuildContext context) {

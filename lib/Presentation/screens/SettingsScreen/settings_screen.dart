@@ -63,17 +63,36 @@ class SettingsScreensState extends State<SettingsScreens> {
                 setState(() {
                   selectedTimeMorning = pickedTime;
                 });
+
                 CacheHelper.saveData(
-                    key: 'Morning',
-                    value:
-                        "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}");
+                  key: 'Morning',
+                  value:
+                      "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}",
+                );
+
+                await NotificationService.showNotification(
+                  title: "التنبية بأذكار الصباح",
+                  payload: {
+                    "navigate": "true",
+                  },
+                  actionButtons: [
+                    NotificationActionButton(
+                      key: 'check',
+                      label: 'الدخول إلى التطبيق الآن',
+                      color: AppColors.primaryColor,
+                    ),
+                  ],
+                  scheduled: true,
+                  selectedTimeMorning: selectedTimeMorning,
+                  interval: 0,
+                );
               }
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 17),
+                  padding: const EdgeInsets.only(left: 20),
                   child: AppText(
                     selectedTimeMorning != null
                         ? DateFormat('hh:mma').format(
@@ -120,6 +139,22 @@ class SettingsScreensState extends State<SettingsScreens> {
                     key: 'Evening',
                     value:
                         "${selectedTimeEvening!.hour}:${selectedTimeEvening!.minute}");
+                await NotificationService.showNotification(
+                  title: "التنبية بأذكار المساء",
+                  payload: {
+                    "navigate": "true",
+                  },
+                  actionButtons: [
+                    NotificationActionButton(
+                      key: 'check',
+                      label: 'الدخول إلى التطبيق الآن',
+                      color: AppColors.primaryColor,
+                    ),
+                  ],
+                  scheduled: true,
+                  selectedTimeEvening: selectedTimeEvening,
+                  interval: 0,
+                );
               }
             },
             child: Row(
@@ -253,70 +288,6 @@ class SettingsScreensState extends State<SettingsScreens> {
             ),
           ),
           const CustomSpace(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 17),
-                child: GestureDetector(
-                  onTap: () async {
-                    final pickedTime = await showTimePicker(
-                      context: context,
-                      initialTime: selectedTimeMorning ?? TimeOfDay.now(),
-                    );
-
-                    if (pickedTime != null) {
-                      setState(() {
-                        selectedTimeMorning = pickedTime;
-                      });
-
-                      CacheHelper.saveData(
-                        key: 'Morning',
-                        value:
-                            "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}",
-                      );
-
-                      await NotificationService.showNotification(
-                        title: "التنبية بأذكار الصباح",
-                        payload: {
-                          "navigate": "true",
-                        },
-                        actionButtons: [
-                          NotificationActionButton(
-                            key: 'check',
-                            label: 'الدخول إلى التطبيق الآن',
-                            color: AppColors.primaryColor,
-                          ),
-                        ],
-                        scheduled: true,
-                        selectedTimeMorning: selectedTimeMorning,
-                        interval: 0,
-                      );
-                    }
-                  },
-                  child: AppText(
-                    selectedTimeMorning != null
-                        ? DateFormat('hh:mma').format(
-                            DateTime(
-                              0,
-                              1,
-                              1,
-                              selectedTimeMorning!.hour,
-                              selectedTimeMorning!.minute,
-                            ),
-                          )
-                        : 'اختر التوقيت',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: isDarkModee
-                        ? const Color(0xff0c8ee1)
-                        : AppColors.primaryColor,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ],
       ),
     );
