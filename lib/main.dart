@@ -12,6 +12,7 @@ import 'Business_Logic/Cubit/app_cubit.dart';
 import 'Business_Logic/Cubit/app_states.dart';
 import 'Data/Web_Services/cache_helper.dart';
 import 'Data/Web_Services/dio_helper.dart';
+import 'Data/notification/notification_service.dart';
 import 'Presentation/screens/splash_screen.dart';
 import 'bloc_observer/bloc_observer.dart';
 import 'firebase_options.dart';
@@ -55,7 +56,7 @@ var darkThemeData = ThemeData(
 );
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await NotificationService.initializeNotification();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -93,7 +94,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key, this.isLight}) : super(key: key);
   final bool? isLight;
-
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -104,6 +105,7 @@ class MyApp extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return MaterialApp(
+              navigatorKey: navigatorKey,
               builder: (context, child) => ResponsiveWrapper.builder(child,
                   maxWidth: 1200,
                   minWidth: 450,

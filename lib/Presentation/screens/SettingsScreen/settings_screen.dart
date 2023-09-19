@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:tafakkur/Data/Web_Services/cache_helper.dart';
 import 'package:tafakkur/main.dart';
+import '../../../Data/notification/notification_button.dart';
+import '../../../Data/notification/notification_service.dart';
 import '../../../constants/app_text.dart';
 import '../../../constants/colors.dart';
 import '../../Widgets/custom_app_bar.dart';
@@ -293,6 +296,23 @@ class SettingsScreensState extends State<SettingsScreens> {
             ),
           ),
           const CustomSpace(),
+          NotificationButton(
+            text: "الإشعارات",
+            onPressed: () async {
+              await NotificationService.showNotification(
+                  title: "التنبية بأذكار الصباح",
+                  payload: {
+                    "navigate": "true",
+                  },
+                  actionButtons: [
+                    NotificationActionButton(
+                      key: 'check',
+                      label: 'الدخول إلى التطبيق الآن',
+                      color: AppColors.primaryColor,
+                    )
+                  ]);
+            },
+          ),
         ],
       ),
     );
