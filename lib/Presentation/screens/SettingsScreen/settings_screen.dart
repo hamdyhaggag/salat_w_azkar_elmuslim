@@ -1,12 +1,10 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:tafakkur/Data/Web_Services/cache_helper.dart';
 import 'package:tafakkur/main.dart';
-import '../../../Data/notification/notification_button.dart';
 import '../../../Data/notification/notification_service.dart';
 import '../../../constants/app_text.dart';
 import '../../../constants/colors.dart';
@@ -14,7 +12,6 @@ import '../../Widgets/custom_app_bar.dart';
 import '../../Widgets/custom_space.dart';
 import '../../Widgets/row_with_text_and_icon.dart';
 import '../../Widgets/widgets.dart';
-import 'package:timezone/timezone.dart' as tz;
 
 class SettingsScreens extends StatefulWidget {
   const SettingsScreens({Key? key}) : super(key: key);
@@ -24,39 +21,6 @@ class SettingsScreens extends StatefulWidget {
 }
 
 class SettingsScreensState extends State<SettingsScreens> {
-  Future<void> scheduleLocalNotification(
-      TimeOfDay time, String title, String content) async {
-    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-
-    const androidPlatformChannelSpecifics = AndroidNotificationDetails(
-      'your_channel_id',
-      'your_channel_name',
-      channelDescription: 'your_channel_description',
-      importance: Importance.max,
-      priority: Priority.high,
-      showWhen: false,
-    );
-
-    const platformChannelSpecifics =
-        NotificationDetails(android: androidPlatformChannelSpecifics);
-
-    final now = DateTime.now();
-    final notificationTime =
-        DateTime(now.year, now.month, now.day, time.hour, time.minute);
-
-    await flutterLocalNotificationsPlugin.zonedSchedule(
-      0,
-      title,
-      content,
-      tz.TZDateTime.from(notificationTime, tz.local),
-      platformChannelSpecifics,
-      // ignore: deprecated_member_use
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-    );
-  }
-
   bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
@@ -103,10 +67,6 @@ class SettingsScreensState extends State<SettingsScreens> {
                     key: 'Morning',
                     value:
                         "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}");
-
-                // Schedule a local notification for morning.
-                scheduleLocalNotification(selectedTimeMorning!, 'أذكار الصباح',
-                    'التنبية بأذكار الصباح');
               }
             },
             child: Row(
@@ -160,9 +120,6 @@ class SettingsScreensState extends State<SettingsScreens> {
                     key: 'Evening',
                     value:
                         "${selectedTimeEvening!.hour}:${selectedTimeEvening!.minute}");
-                // Schedule a local notification for evening.
-                scheduleLocalNotification(selectedTimeEvening!, 'أذكار المساء',
-                    'التنبية بأذكار المساء');
               }
             },
             child: Row(
@@ -296,22 +253,69 @@ class SettingsScreensState extends State<SettingsScreens> {
             ),
           ),
           const CustomSpace(),
-          NotificationButton(
-            text: "الإشعارات",
-            onPressed: () async {
-              await NotificationService.showNotification(
-                  title: "التنبية بأذكار الصباح",
-                  payload: {
-                    "navigate": "true",
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 17),
+                child: GestureDetector(
+                  onTap: () async {
+                    final pickedTime = await showTimePicker(
+                      context: context,
+                      initialTime: selectedTimeMorning ?? TimeOfDay.now(),
+                    );
+
+                    if (pickedTime != null) {
+                      setState(() {
+                        selectedTimeMorning = pickedTime;
+                      });
+
+                      CacheHelper.saveData(
+                        key: 'Morning',
+                        value:
+                            "${selectedTimeMorning!.hour}:${selectedTimeMorning!.minute}",
+                      );
+
+                      await NotificationService.showNotification(
+                        title: "التنبية بأذكار الصباح",
+                        payload: {
+                          "navigate": "true",
+                        },
+                        actionButtons: [
+                          NotificationActionButton(
+                            key: 'check',
+                            label: 'الدخول إلى التطبيق الآن',
+                            color: AppColors.primaryColor,
+                          ),
+                        ],
+                        scheduled: true,
+                        selectedTimeMorning: selectedTimeMorning,
+                        interval: 0,
+                      );
+                    }
                   },
-                  actionButtons: [
-                    NotificationActionButton(
-                      key: 'check',
-                      label: 'الدخول إلى التطبيق الآن',
-                      color: AppColors.primaryColor,
-                    )
-                  ]);
-            },
+                  child: AppText(
+                    selectedTimeMorning != null
+                        ? DateFormat('hh:mma').format(
+                            DateTime(
+                              0,
+                              1,
+                              1,
+                              selectedTimeMorning!.hour,
+                              selectedTimeMorning!.minute,
+                            ),
+                          )
+                        : 'اختر التوقيت',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: isDarkModee
+                        ? const Color(0xff0c8ee1)
+                        : AppColors.primaryColor,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

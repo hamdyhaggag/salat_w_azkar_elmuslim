@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
                 await NotificationService.showNotification(
                   title: "Title of the notification",
                   body: "Body of the notification",
+                  interval: 0,
                 );
               },
             ),
@@ -39,6 +40,7 @@ class HomeScreen extends StatelessWidget {
                   body: "Body of the notification",
                   summary: "Small Summary",
                   notificationLayout: NotificationLayout.Inbox,
+                  interval: 0,
                 );
               },
             ),
@@ -50,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                   body: "Body of the notification",
                   summary: "Small Summary",
                   notificationLayout: NotificationLayout.ProgressBar,
+                  interval: 0,
                 );
               },
             ),
@@ -61,6 +64,7 @@ class HomeScreen extends StatelessWidget {
                   body: "Body of the notification",
                   summary: "Small Summary",
                   notificationLayout: NotificationLayout.Messaging,
+                  interval: 0,
                 );
               },
             ),
@@ -74,6 +78,7 @@ class HomeScreen extends StatelessWidget {
                   notificationLayout: NotificationLayout.BigPicture,
                   bigPicture:
                       "https://files.tecnoblog.net/wp-content/uploads/2019/09/emoji.jpg",
+                  interval: 0,
                 );
               },
             ),
@@ -92,7 +97,8 @@ class HomeScreen extends StatelessWidget {
                         label: 'Check it out',
                         color: Colors.green,
                       )
-                    ]);
+                    ],
+                    interval: 0);
               },
             ),
             NotificationButton(

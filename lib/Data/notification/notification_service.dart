@@ -89,31 +89,61 @@ class NotificationService {
     final String? bigPicture,
     final List<NotificationActionButton>? actionButtons,
     final bool scheduled = false,
-    final int? interval = 0,
+    TimeOfDay? selectedTimeMorning,
+    required int interval,
   }) async {
-    assert(!scheduled || (scheduled && interval != null));
+    assert(!scheduled || (scheduled && selectedTimeMorning != null));
 
-    await AwesomeNotifications().createNotification(
-      content: NotificationContent(
-        id: -1,
-        channelKey: 'high_importance_channel',
-        title: title,
-        body: body,
-        notificationLayout: notificationLayout,
-        summary: summary,
-        category: category,
-        payload: payload,
-        bigPicture: bigPicture,
-      ),
-      actionButtons: actionButtons,
-      schedule: scheduled
-          ? NotificationInterval(
-              interval: interval!,
-              timeZone:
-                  await AwesomeNotifications().getLocalTimeZoneIdentifier(),
-              preciseAlarm: true,
-            )
-          : null,
-    );
+    if (scheduled && selectedTimeMorning != null) {
+      final now = DateTime.now();
+      final scheduledTime = DateTime(
+        now.year,
+        now.month,
+        now.day,
+        selectedTimeMorning.hour,
+        selectedTimeMorning.minute,
+      );
+
+      // Check if the scheduled time is in the past for today; if so, schedule it for tomorrow
+      if (scheduledTime.isBefore(now)) {
+        scheduledTime.add(const Duration(days: 1));
+      }
+
+      final delay = scheduledTime.isBefore(now)
+          ? Duration.zero
+          : scheduledTime.difference(now);
+
+      await Future.delayed(delay, () async {
+        await AwesomeNotifications().createNotification(
+          content: NotificationContent(
+            id: -1,
+            channelKey: 'high_importance_channel',
+            title: title,
+            body: body,
+            notificationLayout: notificationLayout,
+            summary: summary,
+            category: category,
+            payload: payload,
+            bigPicture: bigPicture,
+          ),
+          actionButtons: actionButtons,
+        );
+      });
+    } else {
+      await AwesomeNotifications().createNotification(
+        content: NotificationContent(
+          id: -1,
+          channelKey: 'high_importance_channel',
+          title: title,
+          body: body,
+          notificationLayout: notificationLayout,
+          summary: summary,
+          category: category,
+          payload: payload,
+          bigPicture: bigPicture,
+        ),
+        actionButtons: actionButtons,
+      );
+    }
   }
 }
