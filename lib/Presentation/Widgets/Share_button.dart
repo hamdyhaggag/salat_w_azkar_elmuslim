@@ -12,10 +12,10 @@ class ShareButton extends StatelessWidget {
   const ShareButton(this.textToShare, {Key? key});
 
   Future<void> shareTextAsImage() async {
-    double verticalPadding = 130;
+    double verticalPadding = 100;
     double horizontalPadding = 50;
 
-    int maxLines = 20;
+    int maxLines = 35;
 
     final textPainter = TextPainter(
       text: TextSpan(
@@ -48,10 +48,10 @@ class ShareButton extends StatelessWidget {
       backgroundPaint,
     );
 
-    final topImage = await loadImage('assets/splash.png');
+    final topImage = await loadImage('assets/share.png');
     if (topImage != null) {
-      const topImageWidth = 800.0;
-      const topImageHeight = 800.0;
+      const topImageWidth = 900.0;
+      const topImageHeight = 1800.0;
 
       final topImageRect = Rect.fromCenter(
         center: Offset(
