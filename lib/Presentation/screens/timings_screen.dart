@@ -226,7 +226,7 @@ class _TimingsScreenState extends State<TimingsScreen> {
                 '    آخر تحديث :  ${appCubit.timesModel!.data.date.readable}',
                 align: TextAlign.center,
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: 15,
                 fontFamily: 'Cairo',
                 color: Colors.grey,
               ),
