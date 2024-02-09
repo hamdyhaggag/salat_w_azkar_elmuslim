@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tafakkur/Presentation/onBoarading/size_config.dart';
 import '../../Data/Web_Services/cache_helper.dart';
 import '../../Data/Web_Services/functions.dart';
 import '../screens/screen_layout.dart';
 import 'onboarding_contents.dart';
+import 'size_config.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

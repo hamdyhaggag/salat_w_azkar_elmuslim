@@ -1,8 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
-
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tafakkur/Presentation/screens/screen_layout.dart';
+import 'package:tatmaen/Presentation/screens/screen_layout.dart';
 import '../../Data/Web_Services/functions.dart';
 import '../../main.dart';
 import '../onBoarading/onboarding_screen.dart';

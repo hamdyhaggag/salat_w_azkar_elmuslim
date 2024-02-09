@@ -1,7 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:tafakkur/Presentation/screens/azkar_screen.dart';
-import 'package:tafakkur/main.dart';
+import 'package:tatmaen/Presentation/screens/azkar_screen.dart';
+import 'package:tatmaen/main.dart';
 
 class NotificationService {
   static Future<void> initializeNotification() async {

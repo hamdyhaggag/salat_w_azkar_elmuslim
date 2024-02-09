@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tafakkur/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_1.dart';
-import 'package:tafakkur/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_2.dart';
-import 'package:tafakkur/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_3.dart';
-import 'package:tafakkur/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_4.dart';
-
+import 'package:tatmaen/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_1.dart';
+import 'package:tatmaen/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_2.dart';
+import 'package:tatmaen/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_3.dart';
+import 'package:tatmaen/Presentation/screens/azkar_screens/Sleep_Azkar/sleep_4.dart';
 import '../../../Widgets/custom_app_bar.dart';
 import '../../../Widgets/custom_folder_row.dart';
 

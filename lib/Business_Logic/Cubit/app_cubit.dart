@@ -5,7 +5,7 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:tafakkur/constants/colors.dart';
+import 'package:tatmaen/constants/colors.dart';
 import '../../Data/Model/direction_model.dart';
 import '../../Data/Model/times_model.dart';
 import '../../Data/Web_Services/cache_helper.dart';
