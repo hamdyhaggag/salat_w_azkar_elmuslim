@@ -89,7 +89,7 @@ class _SplashScreenState extends State<SplashScreen>
                 );
               },
               child: const Text(
-                "Tafakkur - تَفكر",
+                "Tatmaen - تَطْمَئِن",
                 style: TextStyle(
                   fontSize: 27,
                   color: Colors.white,

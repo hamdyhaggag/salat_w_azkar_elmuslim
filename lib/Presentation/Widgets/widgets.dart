@@ -267,7 +267,7 @@ showAlertdialogExampleDidntused(context) {
 
 void shareOptions(BuildContext context) async {
   const String text = googlePlayUrl;
-  const String subject = "  Tafakkur - تطبيق تَفكر";
+  const String subject = "  Tatmaen - تطبيق تَطْمَئِن";
 
   await Share.share(text, subject: subject);
 }
@@ -296,7 +296,7 @@ void sendEmail() async {
     scheme: 'mailto',
     path: 'arabianatech@gmail.com',
     query:
-        'subject=ملاحظات ( تطبيق تَفَكُّر )&body=  .. السلام عليكم ورحمة الله وبركاته ..\n  تمت تعبئة هذة الرسالة تلقائيا ، امسح نص الرسالة و اترك رسالتك', // Replace with your desired subject and body
+        'subject=ملاحظات ( تطبيق تَطْمَئِن )&body=  .. السلام عليكم ورحمة الله وبركاته ..\n  تمت تعبئة هذة الرسالة تلقائيا ، امسح نص الرسالة و اترك رسالتك', // Replace with your desired subject and body
   );
 
   if (await canLaunchUrl(emailUri)) {

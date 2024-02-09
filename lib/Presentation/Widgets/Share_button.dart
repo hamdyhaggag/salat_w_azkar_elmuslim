@@ -125,7 +125,7 @@ class ShareButton extends StatelessWidget {
 
   void shareText() {
     String textWithCustomEnding =
-        '$textToShare\n تمت المشاركة من خلال تطبيق تَفَكُّر';
+        '$textToShare\n تمت المشاركة من خلال تطبيق تَطْمَئِن';
 
     Share.text('شارك النص', textWithCustomEnding, 'text/plain');
   }

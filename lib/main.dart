@@ -117,7 +117,7 @@ class MyApp extends StatelessWidget {
                     const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
                   ],
                   background: Container(color: const Color(0xFFFFFFFF))),
-              title: "Tafakkur - تَفكر",
+              title: "Tatmaen - تَطْمَئِن",
               theme: lightThemeData.copyWith(
                 textTheme: const TextTheme(
                   titleMedium: TextStyle(fontSize: 25, fontFamily: 'Cairo'),
