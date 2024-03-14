@@ -73,8 +73,8 @@ class _AppDialogState extends State<AppDialog>
 
     return ScaleTransition(
       scale: scaleAnimation,
-      child: WillPopScope(
-        onWillPop: () async {
+      child: PopScope(
+        onPopInvoked: (didPop) async {
           await controller.reverse();
           return Future.value(true);
         },

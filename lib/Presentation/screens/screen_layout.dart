@@ -33,8 +33,8 @@ class ScreenLayout extends StatelessWidget {
               onTap: (index) {
                 cubit.changeIndex(index);
               }),
-          body: WillPopScope(
-              onWillPop: () async {
+          body: PopScope(
+              onPopInvoked: (didPop) async {
                 if (cubit.index != 4) {
                   cubit.changeIndex(4);
                   return Future.value(false);

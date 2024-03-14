@@ -73,31 +73,31 @@ class _SplashScreenState extends State<SplashScreen>
               },
               child: const Image(
                 image: AssetImage('assets/logo.png'),
-                height: 180.0,
-                width: 180.0,
+                height: 240.0,
+                width: 240.0,
               ),
             ),
             const SizedBox(height: 40),
             // App Name with Custom Font
 
-            AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return Opacity(
-                  opacity: _animation.value,
-                  child: child,
-                );
-              },
-              child: const Text(
-                "Tatmaen - تَطْمَئِن",
-                style: TextStyle(
-                  fontSize: 27,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Cairo',
-                ),
-              ),
-            )
+            // AnimatedBuilder(
+            //   animation: _animation,
+            //   builder: (context, child) {
+            //     return Opacity(
+            //       opacity: _animation.value,
+            //       child: child,
+            //     );
+            //   },
+            //   child: const Text(
+            //     "Tatmaen - تَطْمَئِن",
+            //     style: TextStyle(
+            //       fontSize: 27,
+            //       color: Colors.white,
+            //       fontWeight: FontWeight.bold,
+            //       fontFamily: 'Cairo',
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
